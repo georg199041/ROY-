@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+
+.cbgw-block {
+	padding: 10px;
+}
+.cbgw-block th {
+	padding: 2px;
+}
+.cbgw-block td {
+	border-top: 1px solid #999;
+}

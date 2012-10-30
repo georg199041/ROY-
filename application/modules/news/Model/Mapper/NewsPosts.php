@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Core/Model/Mapper/Abstract.php';
+
 class News_Model_Mapper_NewsPosts extends Core_Model_Mapper_Abstract
 {
 	protected function _afterFetchAll(Core_Model_Collection_Abstract $collection)

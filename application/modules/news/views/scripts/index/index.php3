@@ -12,6 +12,6 @@
 <div class="template_name_highlighter">
 	<?php echo __FILE__; ?>
 </div>
-<?php// echo $this->image('/uploads/slide1.jpg', array('width' => '20'))->resizeToCrop(100, 100); ?>
+<?php // echo $this->image('/uploads/slide1.jpg', array('width' => '20'))->resizeToCrop(100, 100); ?>
 <?php //echo $this->getBlock('default/index/grid'); ?>
 <?php echo get_class($this); ?>

@@ -61,9 +61,8 @@ class News_Block_AdminPosts_Index extends Core_Block_View
 	
 	public function getGridData()
 	{
-		$mapper = Core::getInstance()->getMapper('news/news-posts');
+		$mapper = Core::getInstance()->getMapper('contents/static-posts');
 		$collection = $mapper->fetchAll();
-		
 		return $collection;
 	}
 }

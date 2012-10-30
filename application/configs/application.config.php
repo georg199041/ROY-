@@ -69,7 +69,6 @@ return array (
 		),
 		'viewRenderer' => array (
 			'viewSuffix' => 'php3',
-			//'view' => 'Core_View_Block'
 		),
 		'view' => array (
 			'encoding' => 'utf-8',
@@ -77,8 +76,8 @@ return array (
 			'charset' => 'utf-8',
 			'contentType' => 'text/html; charset=utf-8',
 			'helperPath' => array (
-				'Sunny_View_Helper' => 'Sunny/View/Helper',
-				'Core_View_Helper' => 'Core/View/Helper',
+				'Sunny_View_Helper'       => 'Sunny/View/Helper',
+				'Core_View_Helper'        => 'Core/View/Helper'
 			),
 		),
 		'image' => array (),

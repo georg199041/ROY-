@@ -34,6 +34,18 @@ if (!defined('PUBLIC_PATH')) {
 // Define Application data path
 if (!defined('APPLICATION_DATA_PATH')) {
 	define('APPLICATION_DATA_PATH', ROOT_PATH . '/data');
+	if (!is_dir(APPLICATION_DATA_PATH)) {
+		mkdir(APPLICATION_DATA_PATH, 0777, true);
+		if (!is_dir(APPLICATION_DATA_PATH . '/sessions')) {
+			mkdir(APPLICATION_DATA_PATH . '/sessions', 0777, true);
+		}
+		if (!is_dir(APPLICATION_DATA_PATH . '/cache')) {
+			mkdir(APPLICATION_DATA_PATH . '/cache', 0777, true);
+		}
+		if (!is_dir(APPLICATION_DATA_PATH . '/logs')) {
+			mkdir(APPLICATION_DATA_PATH . '/logs', 0777, true);
+		}
+	}
 }
 
 // Define env
