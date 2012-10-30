@@ -3,4 +3,11 @@ LICENSE.txt
 README.txt
 demos/
 extras/documentation
-
+.settings
+.gitignore
+.htaccess
+.buildpath
+.project
+data/
+library/
+application/configs/application.config.dev.php

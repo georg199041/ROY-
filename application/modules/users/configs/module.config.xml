@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<configdata xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
+	<production>
+		<resources>
+			<router>
+				<routes>
+					<login type="Zend_Controller_Router_Route_Static">
+						<route value="login" />
+						<defaults>
+							<module value="users" />
+							<controller value="index" />
+							<action value="login" />
+						</defaults>
+					</login>
+					<logout type="Zend_Controller_Router_Route_Static">
+						<route value="logout" />
+						<defaults>
+							<module value="users" />
+							<controller value="index" />
+							<action value="logout" />
+						</defaults>
+					</logout>
+				</routes>
+			</router>
+			<navigation>
+				<pages>
+					<backend>
+						<pages>
+							<login type="Zend_Navigation_Page_Mvc">
+								<label value="Login" />
+								<module value="users" />
+								<controller value="index" />
+								<action value="login" />
+							</login>
+							<users type="Zend_Navigation_Page_Mvc">
+								<label value="Logout" />
+								<module value="users" />
+								<controller value="index" />
+								<action value="logout" />
+							</users>
+							<delete type="Zend_Navigation_Page_Mvc">
+								<label value="Test delete" />
+								<module value="users" />
+								<controller value="admin-index" />
+								<action value="delete" />
+							</delete>
+							<deleteConfirm type="Zend_Navigation_Page_Mvc">
+								<label value="Test delete confirm" />
+								<module value="users" />
+								<controller value="admin-index" />
+								<action value="delete" />
+							</deleteConfirm>
+						</pages>
+					</backend>
+				</pages>
+			</navigation>
+		</resources>
+	</production>
+</configdata>
