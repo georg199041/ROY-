@@ -38,8 +38,9 @@ CREATE TABLE IF NOT EXISTS `contents_static_posts` (
   CONSTRAINT `contents_static_posts_ibfk_3` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-INSERT INTO `contents_static_posts` (`id`, `title`, `alias`, `introtext`, `fulltext`, `enabled`) VALUES
-(1, 'Test static content', 'test-static-alias', '<introtext>', '<fulltext>', 'YES');
+INSERT INTO `contents_static_posts` (`id`, `title`, `alias`, `introtext`, `fulltext`, `enabled`, `created_by`, `created_ts`) VALUES
+(1, 'Test static content', 'test-static-alias', '<introtext>', '<fulltext>', 'YES', '1', UNIX_TIMESTAMP()),
+(2, 'Other static content', 'other-static-alias', '<introtext>', '<fulltext>', 'YES', '1', UNIX_TIMESTAMP());
 		
 SET FOREIGN_KEY_CHECKS=1;
 

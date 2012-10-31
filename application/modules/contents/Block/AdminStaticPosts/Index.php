@@ -57,12 +57,29 @@ class Contents_Block_AdminStaticPosts_Index extends Core_Block_View
 				'cellspacing' => 0,
 				'data' => $this->getGridData(),
 				'columns' => array(
-					'id' => array('title' => 'ID', 'width' => '1%'),
-					'key' => array('title' => 'KEY', 'width' => '1%'),
-					'title' => array('title' => 'Название', 'align' => 'center', 'th-align' => 'left'),
-					'alias' => array('title' => 'Псевдоним', 'width' => '1%'),
-					'news_categories_id' => array('title' => 'Категория', 'width' => '1%'),
-					'created_ts' => array('title' => 'Дата создания', 'width' => '1%')
+					'id' => array(
+						'title' => $this->__('ID'),
+						'width' => '1%'
+					),
+					'title' => array(
+						'type' => 'hyperlink',
+						'title' => $this->__('Title'),
+						'th-align' => 'left',
+						'linkOptions' => '*/*/edit',
+						'linkBindFields' => array('id'),
+					),
+					'alias' => array(
+						'title' => $this->__('Alias'),
+						'width' => '1%'
+					),
+					'created_ts' => array(
+						'title' => $this->__('Date created'),
+						'width' => '1%'
+					),
+					'created_by' => array(
+						'title' => $this->__('Author'),
+						'width' => '1%'
+					)
 				)
 			)
 		));

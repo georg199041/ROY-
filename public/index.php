@@ -13,7 +13,7 @@ if (!defined('APPLICATION_PATH')) {
 // Define ZEND library(s)
 if (!defined('LIBRARY_PATH')) {
 	$libs  = array(ROOT_PATH . '/library');
-	$paths = array('W:/htdocs/zf1clean-lib', 'W:/Apache2/htdocs/zf1clean-lib');
+	$paths = array('W:/htdocs/zf1clean-lib', 'W:/Apache2/htdocs/zf1clean-lib', '/home/jenya/www/zf1clean-lib');
 	
 	foreach ($paths as $path) {
 		if (file_exists($path) && is_dir($path)) {
