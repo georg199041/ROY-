@@ -13,4 +13,9 @@ class Contents_AdminPostsController extends Core_Controller_Action
     {
 		
     }
+    
+    public function editAction()
+    {
+    	
+    }
 }

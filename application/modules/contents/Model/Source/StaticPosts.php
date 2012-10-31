@@ -6,6 +6,7 @@ class Contents_Model_Source_StaticPosts extends Core_Model_Source_DbTable
 {
 	public function install()
 	{
+		return;
 		
 $this->getAdapter()->query("
 SET FOREIGN_KEY_CHECKS=0;
@@ -14,7 +15,7 @@ SET AUTOCOMMIT=0;
 
 START TRANSACTION;
 
-DROP TABLE IF EXISTS `contents_static_posts`;
+#DROP TABLE IF EXISTS `contents_static_posts`;
 CREATE TABLE IF NOT EXISTS `contents_static_posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
