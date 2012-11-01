@@ -38,7 +38,12 @@ class Contents_Block_AdminStaticPosts_Edit extends Core_Block_Form_Widget
 			'cols' => 30,
 		));
 		
-		$this->addElement('submit', 'submit', array(
+		$this->addElement('submit', 'back', array(
+			'label' => $this->__('Save and continue'),
+			'ignore' => true,
+		));
+
+		$this->addElement('submit', 'save', array(
 			'label' => $this->__('Save'),
 			'ignore' => true,
 		));

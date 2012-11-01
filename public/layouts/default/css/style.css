@@ -17,6 +17,10 @@ html {
 img {
 	border: 0 none;
 }
+a {
+	color: #444;
+}
+
 .clearfix:after {
 	content: ".";
 	display: block;
