@@ -64,7 +64,7 @@ return array (
 		),
 		'layout' => array (
 			'layoutPath' => APPLICATION_PATH . '/layouts/scripts/',
-			'layout' => 'default/layout',
+			'layout' => 'default',
 			'viewSuffix' => 'php3',
 		),
 		'viewRenderer' => array (
