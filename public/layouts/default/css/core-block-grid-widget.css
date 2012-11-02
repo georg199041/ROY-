@@ -27,3 +27,9 @@
 .cbgw-block td.cbgw-columnlast {
 	border-right: 0px;
 }
+.cbgw-block td.cbgw-body-empty {
+	text-align: center;
+	padding: 20px;
+	border-left: 0px;
+	border-right: 0px;
+}

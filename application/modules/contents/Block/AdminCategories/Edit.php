@@ -1,12 +1,17 @@
 <?php
 
-class Contents_Block_AdminStaticPosts_Edit extends Core_Block_Form_Widget
+class Contents_Block_AdminCategories_Edit extends Core_Block_Form_Widget
 {
 	public function init()
 	{
 		$this->setAction('*/*/save');
 		
 		$this->addElement('hidden', 'id');
+				
+		$this->addElement('text', 'contents_categories_id', array(
+			'label' => $this->__('Category'),
+			'required' => true,
+		));
 		
 		$this->addElement('text', 'title', array(
 			'label' => $this->__('Title'),
@@ -24,14 +29,8 @@ class Contents_Block_AdminStaticPosts_Edit extends Core_Block_Form_Widget
 			'uncheckedValue' => 'NO',
 		));
 		
-		$this->addElement('textarea', 'introtext', array(
-			'label' => $this->__('Intro text'),
-			'rows' => 5,
-			'cols' => 30,
-		));
-		
-		$this->addElement('textarea', 'fulltext', array(
-			'label' => $this->__('Full text'),
+		$this->addElement('textarea', 'description', array(
+			'label' => $this->__('Description'),
 			'rows' => 5,
 			'cols' => 30,
 		));
@@ -54,7 +53,7 @@ class Contents_Block_AdminStaticPosts_Edit extends Core_Block_Form_Widget
 		}
 		
 		$this->addBlockChild(
-			Core::getBlock('contents/admin-static-posts/edit/toolbar'),
+			Core::getBlock('contents/admin-categories/edit/toolbar'),
 			self::BLOCK_PLACEMENT_BEFORE
 		);
 	}

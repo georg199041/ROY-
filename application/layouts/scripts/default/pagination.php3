@@ -69,7 +69,7 @@ function isViewedPage($object, $page)
 	return false;
 }
 ?>
-<div class="cbpw-block">
+<div class="cbpw-wrapper">
 	<!-- First page link -->
 		<?php $firstTitle = isset($this->widget->firstTitle) ? $this->widget->firstTitle : 'First'; ?>
 		<?php if (isset($this->previous)): ?>

@@ -12,11 +12,6 @@
 		<div class="layout_push_top"></div>
 		<div class="layout_body_container">
 			<?php echo $this->partial('default/body.php3'); ?>
-			<?php //echo get_class($this); ?>
-			<pre><?php //var_export(Zend_Registry::get('Core_Config')->toArray()); ?></pre>
-			<pre><?php //var_export(Zend_Registry::get('Zend_Navigation')); ?></pre>
-			<?php //echo $this->navigation()->menu()->render(); ?>
-			<?php //var_dump($this->layout()->getView()); ?>
 		</div>
 		<div class="layout_push_bottom"></div>
 	</div>

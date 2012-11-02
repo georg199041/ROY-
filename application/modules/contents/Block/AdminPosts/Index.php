@@ -1,6 +1,6 @@
 <?php
 
-class Contents_Block_AdminStaticPosts_Index extends Core_Block_Grid_Widget
+class Contents_Block_AdminPosts_Index extends Core_Block_Grid_Widget
 {
 	public function init()
 	{
@@ -52,18 +52,18 @@ class Contents_Block_AdminStaticPosts_Index extends Core_Block_Grid_Widget
 			'title' => $this->__('Date created'),
 			'width' => '1%',
 		));
-		
-		$this->setData(Core::getMapper('contents/static-posts')->fetchAll());
-		
+
+		$this->setData(Core::getMapper('contents/posts')->fetchAll());
+
 		$this->addBlockChild(
-			Core::getBlock('contents/admin-static-posts/index/toolbar'),
+			Core::getBlock('contents/admin-posts/index/toolbar'),
 			self::BLOCK_PLACEMENT_BEFORE
 		);
-		
+
 		$this->addBlockChild(array(
-			'blockName'       => 'contents/admin-static-posts/index/pagination',
+			'blockName'       => 'contents/admin-posts/index/pagination',
 			'type'            => 'pagination',
-			'totalItemsCount' => Core::getMapper('contents/static-posts')->fetchCount()*10,
+			'totalItemsCount' => Core::getMapper('contents/posts')->fetchCount()*10,
 		), self::BLOCK_PLACEMENT_AFTER);
 	}
 }

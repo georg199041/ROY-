@@ -10,7 +10,6 @@ class Contents_Model_Source_StaticPosts extends Core_Model_Source_DbTable
 		
 $this->getAdapter()->query("
 SET FOREIGN_KEY_CHECKS=0;
-SET SQL_MODE=\"NO_AUTO_VALUE_ON_ZERO\";
 SET AUTOCOMMIT=0;
 
 START TRANSACTION;

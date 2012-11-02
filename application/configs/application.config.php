@@ -99,15 +99,19 @@ return array (
 				'registry' => '1',
 			),
 			'pages' => array (
-				'frontend' => array (
-					'type' => 'Zend_Navigation_Page_Uri',
-					'label' => 'Main',
-					'uri' => '/',
+				'default/index/index' => array (
+					'id'         => 'default/index/index',
+					'label'      => 'Main',
+					'module'     => 'default',
+					'controller' => 'index',
+					'action'     => 'index',
 				),
-				'backend' => array (
-					'type' => 'Zend_Navigation_Page_Uri',
-					'label' => 'Administration',
-					'uri' => '/admin',
+				'default/admin-index/index' => array (
+					'id'         => 'default/admin-index/index',
+					'label'      => 'Administration',
+					'module'     => 'default',
+					'controller' => 'admin-index',
+					'action'     => 'index',
 				),
 			),
 		),
