@@ -31,7 +31,8 @@ class Contents_AdminCategoriesController extends Core_Controller_Action
     		try {
 	    		$form = Core::getBlock('contents/admin-categories/edit');
 	    		if (!$form->isValid($data)) {
-	    			throw new Exception(var_export($form->getErrors(), true));
+	    			Core::getSession('admin')->formHasErrors = true;
+	    			throw new Exception($this->__("Invalid form"));
 	    		}
 	    		
 	    		$model = Core::getMapper('contents/categories')->create($form->getValues());

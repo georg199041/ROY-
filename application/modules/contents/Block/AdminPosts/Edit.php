@@ -59,6 +59,11 @@ class Contents_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 			$this->setDefaults(Zend_Registry::get('form_data'));
 		}
 		
+		if (isset(Core::getSession('admin')->formHasErrors) && Core::getSession('admin')->formHasErrors) {
+			$this->isValid($this->getValues());
+			unset(Core::getSession('admin')->formHasErrors);
+		}
+		
 		$this->addBlockChild(
 			Core::getBlock('contents/admin-posts/edit/toolbar'),
 			self::BLOCK_PLACEMENT_BEFORE

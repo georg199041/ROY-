@@ -51,6 +51,11 @@ class Contents_Block_AdminCategories_Edit extends Core_Block_Form_Widget
 		} else if (Zend_Registry::isRegistered('form_data')) {
 			$this->setDefaults(Zend_Registry::get('form_data'));
 		}
+
+		if (isset(Core::getSession('admin')->formHasErrors) && Core::getSession('admin')->formHasErrors) {
+			$this->isValid($this->getValues());
+			unset(Core::getSession('admin')->formHasErrors);
+		}
 		
 		$this->addBlockChild(
 			Core::getBlock('contents/admin-categories/edit/toolbar'),

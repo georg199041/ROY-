@@ -31,7 +31,8 @@ class Contents_AdminPostsController extends Core_Controller_Action
     		try {
 	    		$form = Core::getBlock('contents/admin-posts/edit');
 	    		if (!$form->isValid($data)) {
-	    			throw new Exception(var_export($form->getErrors(), true));
+	    			Core::getSession('admin')->formHasErrors = true;
+	    			throw new Exception($this->__("Invalid form"));
 	    		}
 	    			
 	    		$model = Core::getMapper('contents/posts')->create($form->getValues());
@@ -51,7 +52,7 @@ class Contents_AdminPostsController extends Core_Controller_Action
 	    		return;
     		} catch (Exception $e) {
 		    	Core::getSession('admin')->formData = $data;
-		    	$this->getHelper('FlashMessenger')->addMessage($this->__($e->getMessage()));
+		    	$this->getHelper('FlashMessenger')->addMessage($e->getMessage());
 		    	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/edit/id/' . $this->getRequest()->getParam('id')));
 		    	return;
     		}

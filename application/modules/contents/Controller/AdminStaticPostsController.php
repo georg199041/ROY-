@@ -31,7 +31,8 @@ class Contents_AdminStaticPostsController extends Core_Controller_Action
     		try {
 	    		$form = Core::getBlock('contents/admin-static-posts/edit');
 	    		if (!$form->isValid($data)) {
-	    			throw new Exception(var_export($form->getErrors(), true));
+	    			Core::getSession('admin')->formHasErrors = true;
+	    			throw new Exception($this->__("Invalid form"));
 	    		}
 	    			
 	    		$model = Core::getMapper('contents/static-posts')->create($form->getValues());

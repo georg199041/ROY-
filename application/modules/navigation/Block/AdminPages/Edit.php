@@ -11,7 +11,7 @@ class Navigation_Block_AdminPages_Edit extends Core_Block_Form_Widget
 		$this->addElement('select', 'navigation_pages_id', array(
 			'label'        => $this->__('Parent'),
 			'required'     => true,
-			'multiOptions' => $this->getNavigationPagesId(),
+			'multiOptions' => $this->getNavigationPagesId(Core::getMapper('navigation/pages')->fetchTree(), array('--- NO ---')),
 		));
 		
 		$this->addElement('text', 'label', array(
@@ -81,6 +81,11 @@ class Navigation_Block_AdminPages_Edit extends Core_Block_Form_Widget
 		} else if (Zend_Registry::isRegistered('form_data')) {
 			$this->setDefaults(Zend_Registry::get('form_data'));
 		}
+
+		if (isset(Core::getSession('admin')->formHasErrors) && Core::getSession('admin')->formHasErrors) {
+			$this->isValid($this->getValues());
+			unset(Core::getSession('admin')->formHasErrors);
+		}
 		
 		$this->addBlockChild(
 			Core::getBlock('navigation/admin-pages/edit/toolbar'),
@@ -88,14 +93,13 @@ class Navigation_Block_AdminPages_Edit extends Core_Block_Form_Widget
 		);
 	}
 	
-	public function getNavigationPagesId()
+	public function getNavigationPagesId($collection, array $result = array(), $depth = 0)
 	{
-		$collection = Core::getMapper('navigation/pages')->fetchAll();
-		$options = array('---');
 		foreach ($collection as $item) {
-			$options[$item->getId()] = $item->getLabel();
+			$result[$item->getId()] = str_repeat('--', $depth) . $item->getLabel();
+			$result = $this->getNavigationPagesId($item->getChilds(), $result, $depth + 1);
 		}
 		
-		return $options;
+		return $result;
 	}
 }

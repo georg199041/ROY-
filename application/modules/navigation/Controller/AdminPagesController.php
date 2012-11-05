@@ -9,7 +9,10 @@ class Navigation_AdminPagesController extends Core_Controller_Action
 		$this->getResponse()->appendBody(implode('<br />' ,$this->getHelper('FlashMessenger')->getMessages()));
 	}
 	
-	public function indexAction(){}
+	public function indexAction()
+	{
+		new Navigation_Controller_Plugin_Navigation();
+	}
     
     public function editAction()
     {
@@ -31,7 +34,8 @@ class Navigation_AdminPagesController extends Core_Controller_Action
     		try {
 	    		$form = Core::getBlock('navigation/admin-pages/edit');
 	    		if (!$form->isValid($data)) {
-	    			throw new Exception(var_export($form->getErrors(), true));
+	    			Core::getSession('admin')->formHasErrors = true;
+	    			throw new Exception($this->__("Invalid form"));
 	    		}
 	    			
 	    		$model = Core::getMapper('navigation/pages')->create($form->getValues());
