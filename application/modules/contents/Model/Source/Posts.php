@@ -11,7 +11,6 @@ class Contents_Model_Source_Posts extends Core_Model_Source_DbTable
 $this->getAdapter()->query("
 SET FOREIGN_KEY_CHECKS=0;
 SET AUTOCOMMIT=0;
-
 START TRANSACTION;
 
 DROP TABLE IF EXISTS `contents_posts`;
@@ -41,8 +40,32 @@ CREATE TABLE IF NOT EXISTS `contents_posts` (
   CONSTRAINT `contents_posts_ibfk_4` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-SET FOREIGN_KEY_CHECKS=1;
+CREATE TRIGGER `BEFORE_INSERT_CONTENTS_POSTS` BEFORE INSERT ON `contents_posts`
+FOR EACH ROW
+BEGIN
+	SET `NEW`.`created_ts` = UNIX_TIMESTAMP();
+	IF `NEW`.`checked_out_by` IS NOT NULL THEN
+	    SET `NEW`.`checked_out_ts` = UNIX_TIMESTAMP();
+	ELSE
+	    SET `NEW`.`checked_out_ts` = NULL;
+	END IF;
+END;
 
+CREATE TRIGGER `BEFORE_UPDATE_CONTENTS_POSTS` BEFORE UPDATE ON `contents_posts`
+FOR EACH ROW
+BEGIN
+	SET `NEW`.`modified_ts` = UNIX_TIMESTAMP();
+	IF `NEW`.`checked_out_by` IS NOT NULL THEN
+	    SET `NEW`.`checked_out_ts` = UNIX_TIMESTAMP();
+	ELSE
+	    SET `NEW`.`checked_out_ts` = NULL;
+	END IF;
+END;
+
+INSERT INTO `contents_posts` (`id`, `contents_categories_id`, `title`, `alias`, `introtext`, `fulltext`, `enabled`, `checked_out_by`, `checked_out_ts`, `created_by`, `created_ts`, `modified_by`, `modified_ts`) VALUES
+(1, 1, 'Тестовый контент', 'test_content', '<introtext>', '<fulltext>', 'YES', NULL, NULL, NULL, NULL, NULL, NULL);
+
+SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 ");
 	

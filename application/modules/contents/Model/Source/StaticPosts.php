@@ -11,10 +11,9 @@ class Contents_Model_Source_StaticPosts extends Core_Model_Source_DbTable
 $this->getAdapter()->query("
 SET FOREIGN_KEY_CHECKS=0;
 SET AUTOCOMMIT=0;
-
 START TRANSACTION;
 
-#DROP TABLE IF EXISTS `contents_static_posts`;
+DROP TABLE IF EXISTS `contents_static_posts`;
 CREATE TABLE IF NOT EXISTS `contents_static_posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -38,12 +37,32 @@ CREATE TABLE IF NOT EXISTS `contents_static_posts` (
   CONSTRAINT `contents_static_posts_ibfk_3` FOREIGN KEY (`modified_by`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-INSERT INTO `contents_static_posts` (`id`, `title`, `alias`, `introtext`, `fulltext`, `enabled`, `created_by`, `created_ts`) VALUES
-(1, 'Test static content', 'test-static-alias', '<introtext>', '<fulltext>', 'YES', '1', UNIX_TIMESTAMP()),
-(2, 'Other static content', 'other-static-alias', '<introtext>', '<fulltext>', 'YES', '1', UNIX_TIMESTAMP());
+CREATE TRIGGER `BEFORE_INSERT_CONTENTS_STATIC_POSTS` BEFORE INSERT ON `contents_static_posts`
+FOR EACH ROW
+BEGIN
+	SET `NEW`.`created_ts` = UNIX_TIMESTAMP();
+	IF `NEW`.`checked_out_by` IS NOT NULL THEN
+	    SET `NEW`.`checked_out_ts` = UNIX_TIMESTAMP();
+	ELSE
+	    SET `NEW`.`checked_out_ts` = NULL;
+	END IF;
+END;
+
+CREATE TRIGGER `BEFORE_UPDATE_CONTENTS_STATIC_POSTS` BEFORE UPDATE ON `contents_static_posts`
+FOR EACH ROW
+BEGIN
+	SET `NEW`.`modified_ts` = UNIX_TIMESTAMP();
+	IF `NEW`.`checked_out_by` IS NOT NULL THEN
+	    SET `NEW`.`checked_out_ts` = UNIX_TIMESTAMP();
+	ELSE
+	    SET `NEW`.`checked_out_ts` = NULL;
+	END IF;
+END;
+
+INSERT INTO `contents_static_posts` (`id`, `title`, `alias`, `introtext`, `fulltext`, `enabled`) VALUES
+(1, 'Test static content', 'test_static', '<introtext>', '<fulltext>', 'YES');
 		
 SET FOREIGN_KEY_CHECKS=1;
-
 COMMIT;
 ");
 

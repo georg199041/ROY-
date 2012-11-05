@@ -1,6 +1,6 @@
 <?php
 
-class Contents_Block_AdminCategories_Index extends Core_Block_Grid_Widget
+class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 {
 	public function init()
 	{
@@ -23,21 +23,38 @@ class Contents_Block_AdminCategories_Index extends Core_Block_Grid_Widget
 		));
 		
 		$this->addColumn(array(
-			'name'           => 'title',
+			'name'           => 'label',
 			'type'           => 'hyperlink',
-			'title'          => $this->__('Title'),
+			'title'          => $this->__('Label'),
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),
 		));
-		
+
 		$this->addColumn(array(
-			'name'   => 'alias',
-			'title'  => $this->__('Alias'),
-			'width'  => '1%',
-			'nowrap' => 'nowrap',
+			'name'  => 'type',
+			'title' => $this->__('Type'),
+			'width' => '1%',
 		));
 		
+		$this->addColumn(array(
+			'name'           => 'encode_url',
+			'type'           => 'checkbox',
+			'title'          => $this->__('Encode'),
+			'checkedValue'   => 'YES',
+			'uncheckedValue' => 'NO',
+			'width'          => '1%',
+		));
+		
+		$this->addColumn(array(
+			'name'           => 'reset_params',
+			'type'           => 'checkbox',
+			'title'          => $this->__('Reset'),
+			'checkedValue'   => 'YES',
+			'uncheckedValue' => 'NO',
+			'width'          => '1%',
+		));
+
 		$this->addColumn(array(
 			'name'           => 'enabled',
 			'type'           => 'checkbox',
@@ -59,17 +76,17 @@ class Contents_Block_AdminCategories_Index extends Core_Block_Grid_Widget
 			'width' => '1%',
 		));
 		
-		$this->setData(Core::getMapper('contents/categories')->fetchAll());
+		$this->setData(Core::getMapper('navigation/pages')->fetchAll());
 
 		$this->addBlockChild(
-			Core::getBlock('contents/admin-categories/index/toolbar'),
+			Core::getBlock('navigation/admin-pages/index/toolbar'),
 			self::BLOCK_PLACEMENT_BEFORE
 		);
 
 		$this->addBlockChild(array(
-			'blockName'       => 'contents/admin-categories/index/pagination',
+			'blockName'       => 'navigation/admin-pages/index/pagination',
 			'type'            => 'pagination',
-			'totalItemsCount' => Core::getMapper('contents/categories')->fetchCount()*10,
+			'totalItemsCount' => Core::getMapper('navigation/pages')->fetchCount()*10,
 		), self::BLOCK_PLACEMENT_AFTER);
 	}
 }

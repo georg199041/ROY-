@@ -1,10 +1,10 @@
 <?php
 
-class Contents_Block_AdminCategories_Index_Toolbar extends Core_Block_Toolbar_Widget
+class Navigation_Block_AdminPages_Index_Toolbar extends Core_Block_Toolbar_Widget
 {
 	public function init()
 	{
-		$this->setTitle($this->__('Manage categories'));
+		$this->setTitle($this->__('Manage pages'));
 		
 		$this->addButton(array(
 			'name'       => 'show',

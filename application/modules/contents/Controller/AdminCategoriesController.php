@@ -4,6 +4,8 @@ class Contents_AdminCategoriesController extends Core_Controller_Action
 {	
 	public function init()
 	{
+		$this->getHelper('layout')->setLayout('admin');
+		$this->view->headTitle('Contents categories');
 		$this->getResponse()->appendBody(implode('<br />' ,$this->getHelper('FlashMessenger')->getMessages()));
 	}
 	
@@ -14,10 +16,8 @@ class Contents_AdminCategoriesController extends Core_Controller_Action
     	$id    = $this->getRequest()->getParam('id');
     	$model = Core::getMapper('contents/categories')->find($id);
     	
-    	if ($model || $id == 0) {
-    		if ($model) {
-    			Zend_Registry::set('form_data', $model);
-    		}
+    	if ($model->getId() || $id == 0) {
+    		Zend_Registry::set('form_data', $model);
     		return;
     	}
     	
@@ -33,11 +33,15 @@ class Contents_AdminCategoriesController extends Core_Controller_Action
 	    		if (!$form->isValid($data)) {
 	    			throw new Exception(var_export($form->getErrors(), true));
 	    		}
-	    			
-	    		$model = Core::getMapper('contents/categories')->create($form->getValues());
-	    		$model->save();
 	    		
+	    		$model = Core::getMapper('contents/categories')->create($form->getValues());
+	    		if (!$this->getRequest()->getParam('contents_categories_id')) {
+	    			$model->setContentsCategoriesId(null);
+	    		}
+	    			
+	    		$model->save();	    		
 	    		unset(Core::getSession('admin')->formData);
+	    		
 	    		$this->getHelper('FlashMessenger')->addMessage($this->__('Saved success'));
 	    		if ($this->getRequest()->getParam('back')) {
 	    			$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/edit/id/' . $model->getId()));
@@ -66,9 +70,6 @@ class Contents_AdminCategoriesController extends Core_Controller_Action
     		try {
     			foreach ($ids as $id) {
     				$model = Core::getMapper('contents/categories')->find($id);
-    				if (!$model) {
-    					throw new Exception("Can't delete record with id '$id'");
-    				}
     				$model->delete();
     			}
     			
@@ -90,9 +91,6 @@ class Contents_AdminCategoriesController extends Core_Controller_Action
     		try {
     			foreach ($ids as $id) {
     				$model = Core::getMapper('contents/categories')->find($id);
-    				if (!$model) {
-    					throw new Exception("Can't update record with id '$id'");
-    				}
     				$model->setEnabled($this->getRequest()->getParam('enabled'));
     				$model->save();
     			}

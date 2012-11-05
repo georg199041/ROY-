@@ -10,7 +10,7 @@ class Contents_Block_AdminCategories_Edit extends Core_Block_Form_Widget
 				
 		$this->addElement('text', 'contents_categories_id', array(
 			'label' => $this->__('Category'),
-			'required' => true,
+			'required' => false,
 		));
 		
 		$this->addElement('text', 'title', array(

@@ -8,9 +8,10 @@ class Contents_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 		
 		$this->addElement('hidden', 'id');
 		
-		$this->addElement('text', 'contents_categories_id', array(
+		$this->addElement('select', 'contents_categories_id', array(
 			'label' => $this->__('Category'),
 			'required' => true,
+			'multiOptions' => $this->getContentsCategoriesId(),
 		));
 		
 		$this->addElement('text', 'title', array(
@@ -62,5 +63,16 @@ class Contents_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 			Core::getBlock('contents/admin-posts/edit/toolbar'),
 			self::BLOCK_PLACEMENT_BEFORE
 		);
+	}
+	
+	public function getContentsCategoriesId()
+	{
+		$collection = Core::getMapper('contents/categories')->fetchAll();
+		$options = array('---');
+		foreach ($collection as $item) {
+			$options[$item->getId()] = $item->getTitle();
+		}
+		
+		return $options;
 	}
 }

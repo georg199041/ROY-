@@ -53,6 +53,12 @@ class Contents_Block_AdminPosts_Index extends Core_Block_Grid_Widget
 			'width' => '1%',
 		));
 
+		$this->addColumn(array(
+			'name'  => 'modified_ts',
+			'title' => $this->__('Date modified'),
+			'width' => '1%',
+		));
+		
 		$this->setData(Core::getMapper('contents/posts')->fetchAll());
 
 		$this->addBlockChild(

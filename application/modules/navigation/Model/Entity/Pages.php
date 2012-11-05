@@ -1,6 +1,6 @@
 <?php
 
-class Contents_Model_Entity_Posts extends Core_Model_Entity_Abstract
+class Navigation_Model_Entity_Pages extends Core_Model_Entity_Abstract
 {
 	public function getCreatedTs()
 	{
