@@ -15,7 +15,7 @@ return array (
 		'error_reporting' => /*E_ALL &~E_NOTICE,*/E_WARNING|E_ERROR|E_COMPILE_ERROR|E_COMPILE_WARNING|E_CORE_ERROR|E_CORE_WARNING|E_USER_ERROR|E_USER_WARNING,
 	),
 	'pluginPaths' => array (
-		'Core_Application_Resource' => 'Core/Application/Resource',
+		'Core_Application_Resource'       => 'Core/Application/Resource',
 		'Core_Image_Application_Resource' => 'Core/Image/Application/Resource',
 		'Core_Block_Application_Resource' => 'Core/Block/Application/Resource',
 	),

@@ -1,6 +1,6 @@
 <?php
 
-class Contents_Model_Source_StaticPosts extends Core_Model_Source_DbTable
+class Params_Model_Source_Values extends Core_Model_Source_DbTable
 {
 	public function install()
 	{
