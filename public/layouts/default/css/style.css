@@ -78,11 +78,14 @@ html, body, img, div, a, span {
 }
 html, body {
 	height: 100%;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: 'BlissPro', 'Verdana';
 	font-size: 12px;
 }
 html {
 	background: #f0f0f0;
+}
+body{
+	color: #444444;
 }
 img {
 	border: 0 none;

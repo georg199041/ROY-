@@ -17,7 +17,17 @@
 	</div>
 	<div class="front-footer">
 		<div class="front-footer-width">
-			<div class="front-footer-text">Footer</div>
+			<div class="front-footer-box">
+				<div class="front-footer-box-rights">
+					<div class="front-footer-box-rights-text">
+						© Клуб «РОЙ», 2012. Все права защищены
+					</div>
+					<div class="front-footer-box-rights-logo">
+						<a href="/" class="front-footer-box-rights-logo-a"></a>					
+					</div>
+				</div>
+				<div class="front-footer-box-line"></div>
+			</div>	
 		</div>
 	</div>
 </body>
