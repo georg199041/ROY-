@@ -25,13 +25,6 @@ return array(
 									'controller' => 'admin-posts',
 									'action'     => 'index',
 								),
-								'contents/admin-static-posts/index' => array (
-									'id'         => 'contents/admin-static-posts/index',
-									'label'      => 'Static posts',
-									'module'     => 'contents',
-									'controller' => 'admin-static-posts',
-									'action'     => 'index',
-								),
 							),
 						),
 					),
