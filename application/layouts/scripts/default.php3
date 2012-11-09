@@ -5,19 +5,19 @@
 	<?php echo $this->partial('default/head.php3'); ?>
 </head>
 <body>
-	<div class="layout_fullscreen_wait"></div>
-	<div class="modal_container"></div>
+	<div class="front-fullscreen-wait"></div>
+	<div class="front-modal-container"></div>
 	<?php echo $this->partial('default/header.php3'); ?>
-	<div class="layout_body">
-		<div class="layout_push_top"></div>
-		<div class="layout_body_container">
+	<div class="front-body">
+		<div class="front-push-top"></div>
+		<div class="front-body-container">
 			<?php echo $this->partial('default/body.php3'); ?>
 		</div>
-		<div class="layout_push_bottom"></div>
+		<div class="front-push-bottom"></div>
 	</div>
-	<div class="layout_footer">
-		<div class="layout_footer_width">
-			<div class="layout_footer_text">Footer</div>
+	<div class="front-footer">
+		<div class="front-footer-width">
+			<div class="front-footer-text">Footer</div>
 		</div>
 	</div>
 </body>

@@ -1,1 +1,1 @@
-<?php echo $this->testExtension(); ?>
+ test
