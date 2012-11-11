@@ -1,6 +1,5 @@
 /*footer start*/
 .front-footer {
-	margin-top: -41px;
 	width: 100%;
 	border-top: 1px solid #d9d9d9;
 	height: 40px;
@@ -8,9 +7,9 @@
 .front-footer-width {
 	width: 1000px;
 	margin: 0 auto;
+	height: 140px;
 }
 .front-footer-box {
-    height: 110px;
     margin: 0 auto;
     width: 850px;
     margin-bottom: 22px;
@@ -31,7 +30,7 @@
 	text-align: center;
 	height: 10px;
 	font-size: 11px;
-	padding-top: 15px;
+	padding-top: 22px;
 }
 .front-footer-box-rights-logo{
 	text-align: center;

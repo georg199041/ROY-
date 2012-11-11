@@ -16,10 +16,10 @@
 }
 .front-header-cords__item-content-map__item{
 	display: inline-block;
+	margin-right: 4px;
 }
 .front-header-cords__item-content-map__item-ico{
 	display: inline-block;
-	margin-right: 3px;
 	width: 7px;
 	height: 9px;
 	background: url(../images/map_ico.png);
@@ -137,7 +137,7 @@
 }
 .front-header-menu-center__item{
 	float:left;
-	margin-left: 12px;
+	margin-left: 8px;
     margin-top: 5px;
 }
 .front-header-menu-center__item:before{
@@ -159,6 +159,7 @@
 	top: 3px;
 	padding: 1px;
 	font-family: Verdana;
+	margin-left: 8px;
 }
 .front-header-menu-center__item-href:hover{
 	text-decoration: underline;

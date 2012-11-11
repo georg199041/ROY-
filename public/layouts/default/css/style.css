@@ -117,4 +117,7 @@ ul {
 .front_socials-margin{
 	margin-top: 8px;
 }
-
+.front-result-box{
+	border-top: 1px solid #D9D9D9;
+    width: 100%;
+}
