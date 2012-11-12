@@ -1,11 +1,11 @@
 <?php
 
-class Contacts_AdminContactsController extends Core_Controller_Action
+class Contacts_AdminGroupsController extends Core_Controller_Action
 {	
 	public function init()
 	{
 		$this->getHelper('layout')->setLayout('admin');
-		$this->view->headTitle('Contacts items');
+		$this->view->headTitle('Contacts groups');
 		$this->getResponse()->appendBody(implode('<br />' ,$this->getHelper('FlashMessenger')->getMessages()));
 	}
 	
@@ -14,7 +14,7 @@ class Contacts_AdminContactsController extends Core_Controller_Action
     public function editAction()
     {
     	$id    = $this->getRequest()->getParam('id');
-    	$model = Core::getMapper('contacts/contacts')->find($id);
+    	$model = Core::getMapper('contacts/groups')->find($id);
     	
     	if ($model->getId() || $id == 0) {
     		Zend_Registry::set('form_data', $model);
@@ -29,13 +29,13 @@ class Contacts_AdminContactsController extends Core_Controller_Action
     {
     	if ($data = $this->getRequest()->getPost()) {
     		try {
-    			$form = Core::getBlock('contacts/admin-contacts/edit');
+    			$form = Core::getBlock('contacts/admin-groups/edit');
     			if (!$form->isValid($data)) {
     				Core::getSession('admin')->formHasErrors = true;
     				throw new Exception($this->__("Invalid form"));
     			}
     
-    			$model = Core::getMapper('contacts/contacts')->create($form->getValues());
+    			$model = Core::getMapper('contacts/groups')->create($form->getValues());
     			$model->save();
     			unset(Core::getSession('admin')->formData);
     	   
@@ -66,7 +66,7 @@ class Contacts_AdminContactsController extends Core_Controller_Action
     	} else {
     		try {
     			foreach ($ids as $id) {
-    				$model = Core::getMapper('contacts/contacts')->find($id);
+    				$model = Core::getMapper('contacts/groups')->find($id);
     				$model->delete();
     			}
     			 
@@ -87,56 +87,11 @@ class Contacts_AdminContactsController extends Core_Controller_Action
     	} else {
     		try {
     			foreach ($ids as $id) {
-    				$model = Core::getMapper('contacts/contacts')->find($id);
+    				$model = Core::getMapper('contacts/groups')->find($id);
     				$model->setEnabled($this->getRequest()->getParam('enabled'));
     				$model->save();
     			}
     			
-    			$this->getHelper('FlashMessenger')->addMessage(count($ids) . ' record(s) have been successfully updated');
-    		} catch (Exception $e) {
-    			$this->getHelper('FlashMessenger')->addMessage($e->getMessage());
-    		}
-    	}
-    	
-    	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'), null, true);
-    }
-    
-    public function moveAction()
-    {
-    	$ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
-    		$this->getHelper('FlashMessenger')->addMessage($this->__('Please select item(s)'));
-    	} else {
-    		try {
-    			foreach ($ids as $id) {
-    				$model = Core::getMapper('contacts/contacts')->find($id);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
-   					$model->save();
-    			}
-				
-    			$this->getHelper('FlashMessenger')->addMessage(count($ids) . ' record(s) have been successfully updated');
-    		} catch (Exception $e) {
-    			$this->getHelper('FlashMessenger')->addMessage($e->getMessage());
-    		}
-    	}
-    	
-    	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'), null, true);
-    }
-    
-    public function copyAction()
-    {
-    	$ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
-    		$this->getHelper('FlashMessenger')->addMessage($this->__('Please select item(s)'));
-    	} else {
-    		try {
-    			foreach ($ids as $id) {
-    				$model = Core::getMapper('contacts/contacts')->find($id);
-    				$model->setId(null);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
-   					$model->save();
-    			}
-				
     			$this->getHelper('FlashMessenger')->addMessage(count($ids) . ' record(s) have been successfully updated');
     		} catch (Exception $e) {
     			$this->getHelper('FlashMessenger')->addMessage($e->getMessage());

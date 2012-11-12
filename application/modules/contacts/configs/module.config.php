@@ -8,11 +8,19 @@ return array(
 					'pages' => array(
 						'contacts/admin-contacts/index' => array (
 							'id'         => 'contacts/admin-contacts/index',
-							'type'       => 'Zend_Navigation_Page_Mvc',
 							'label'      => 'Contacts',
 							'module'     => 'contacts',
 							'controller' => 'admin-contacts',
 							'action'     => 'index',
+							'pages'      => array(
+								'contacts/admin-groups/index' => array(
+									'id'         => 'contacts/admin-groups/index',
+									'label'      => 'Contacts groups',
+									'module'     => 'contacts',
+									'controller' => 'admin-groups',
+									'action'     => 'index',
+								),
+							),
 						),
 					),
 				),
