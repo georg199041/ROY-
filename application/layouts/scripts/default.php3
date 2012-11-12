@@ -19,12 +19,12 @@
 				</ul>
 			</div>
 			<div class="front-body-slider-color">
-				<ul class="front-body-slider-color-wrap">
+				<ul class="front-body-slider-color-wrap" >
 					<li class="front-body-slider-color__item">
 						<img src="/layouts/default/images/main-banner-color.jpg"/>
 					</li>
 				</ul>
-				<div class="front-body-slider-color-cutter"></div>
+<!-- 				<div class="front-body-slider-color-cutter-container"><div class="front-body-slider-color-cutter"></div></div> -->
 			</div>
 			<div class="front-body-slider-rectangle">
 				<input type="button" id="slider_back" class="slider_buttons" />
