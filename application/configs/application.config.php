@@ -99,12 +99,10 @@ return array (
 				'registry' => '1',
 			),
 			'pages' => array (
-				'default/index/index' => array (
-					'id'         => 'default/index/index',
-					'label'      => 'Main',
-					'module'     => 'default',
-					'controller' => 'index',
-					'action'     => 'index',
+				'frontend' => array (
+					'id'    => 'frontend',
+					'label' => 'Frontend',
+					'type'  => 'Zend_Navigation_Page_Uri',
 				),
 				'default/admin-index/index' => array (
 					'id'         => 'default/admin-index/index',

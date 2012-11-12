@@ -78,21 +78,27 @@
 		<div class="front-header-menu-container">
 			<div class="front-header-menu-left"></div>
 			<ul class="front-header-menu">
-				<li class="front-header-menu__item">
-					<a href="/" class="front-header-menu__item-href front-header-menu__item-href_active"><span class="front-header-menu_gradient">главная</span></a>
-				</li>
-				<li class="front-header-menu__item">
-					<a href="/" class="front-header-menu__item-href"><span class="front-header-menu_gradient">о клубе</span></a>
-				</li>
-				<li class="front-header-menu__item">
-					<a href="/" class="front-header-menu__item-href"><span class="front-header-menu_gradient">оздоравление и реабилитация</span></a>
-				</li>
-				<li class="front-header-menu__item">
-					<a href="/" class="front-header-menu__item-href"><span class="front-header-menu_gradient">база клуба</span></a>
-				</li>
-				<li class="front-header-menu__item">
-					<a href="/" class="front-header-menu__item-href"><span class="front-header-menu_gradient">контакты</span></a>
-				</li>
+				<?php if ($this->getHeaderMenu()->hasPages()): ?>
+					<?php foreach ($this->getHeaderMenu() as $page): ?>
+						<li class="front-header-menu__item">
+							<a href="<?php echo $page->getHref(); ?>" class="front-header-menu__item-href <?php if ($page->isActive()): ?>front-header-menu__item-href_active<?php endif; ?>">
+								<span class="front-header-menu_gradient"><?php echo $page->getLabel(); ?></span>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				<?php endif; ?>
+						<!--li class="front-header-menu__item">
+							<a href="/" class="front-header-menu__item-href front-header-menu__item-href_active"><span class="front-header-menu_gradient">о клубе</span></a>
+						</li>
+						<li class="front-header-menu__item">
+							<a href="/" class="front-header-menu__item-href"><span class="front-header-menu_gradient">оздоравление и реабилитация</span></a>
+						</li>
+						<li class="front-header-menu__item">
+							<a href="/" class="front-header-menu__item-href"><span class="front-header-menu_gradient">база клуба</span></a>
+						</li>
+						<li class="front-header-menu__item">
+							<a href="/" class="front-header-menu__item-href"><span class="front-header-menu_gradient">контакты</span></a>
+						</li-->
 			</ul>
 			<div class="front-header-menu-right"></div>
 		</div>
