@@ -5,26 +5,37 @@
 	<div class="front-header-width">
 		<div class="front-header-infobox">
 			<div class="front-header-cords front-header-cords__left">
+				<?php if ($this->getMoscowOfficeMainPhone()->getId() || $this->getMoscowOfficeAddress()->getId()): ?>
 				<div class="front-header-cords__item">
 					<div class="front-header-cords__item-title">
 						<b>Координаты в Москве:</b>
 					</div>
 					<div class="front-header-cords__item-content">
-						<span class="front-header-cords__item-content-text">	
-							г.Москва, ул.Дубнинская д.14, к.2 <br/>+7 (495) 668-12-73
-						</span>	
+						<?php if ($this->getMoscowOfficeAddress()->getId()): ?>
+						<div class="front-header-cords__item-content-text">
+							<?php echo $this->getMoscowOfficeAddress()->getDescription(); ?>
+						</div>
+						<?php endif; ?>
+						<?php if ($this->getMoscowOfficeMainPhone()->getId()): ?>
+						<div class="front-header-cords__item-content-text">
+							<?php echo $this->getMoscowOfficeMainPhone()->getDescription(); ?>
+						</div>
+						<?php endif; ?>
 					</div>
 				</div>
+				<?php endif; ?>
+				<?php if ($this->getCrimeaBaseMainPhone()->getId()): ?>
 				<div class="front-header-cords__item">
 					<div class="front-header-cords__item-title">
 						Основной телефон в Украине:
 					</div>
 					<div class="front-header-cords__item-content">
-						<span class="front-header-cords__item-content-text">	
-							
-						</span>	
+						<div class="front-header-cords__item-content-text">	
+							<?php echo $this->getCrimeaBaseMainPhone()->getDescription(); ?>
+						</div>	
 					</div>	
 				</div>
+				<?php endif; ?>
 			</div>
 			<div class="front-header-cords front-header-cords__right">
 				<div class="front-header-cords__item">
