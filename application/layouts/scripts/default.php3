@@ -7,7 +7,7 @@
 <body>
 	<div class="front-fullscreen-wait"></div>
 	<div class="front-modal-container"></div>
-	<?php echo $this->partial('default/header.php3'); ?>
+	<?php echo Core::getBlock('application/default/header'); ?>
 	<div class="front-body">
 		<div class="front-push-top"></div>
 		<div class="front-body-container">

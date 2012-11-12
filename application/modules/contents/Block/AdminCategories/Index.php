@@ -31,12 +31,12 @@ class Contents_Block_AdminCategories_Index extends Core_Block_Grid_Widget
 			'linkBindFields' => array('id'),
 		));
 		
-		$this->addColumn(array(
-			'name'   => 'alias',
-			'title'  => $this->__('Alias'),
-			'width'  => '1%',
-			'nowrap' => 'nowrap',
-		));
+ 		$this->addColumn(array(
+ 			'name'   => 'alias',
+ 			'title'  => $this->__('Alias'),
+ 			'width'  => '1%',
+ 			'nowrap' => 'nowrap',
+ 		));
 		
 		$this->addColumn(array(
 			'name'           => 'enabled',

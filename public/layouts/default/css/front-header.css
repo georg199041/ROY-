@@ -65,7 +65,7 @@
 .front-header-menu-container {
 	position: relative;
 	width: 970px;
-	height: 50px;
+	height: 80px;
 	margin: 0 auto;
 }
 .front-header-menu-left {
@@ -74,27 +74,17 @@
 	height: 51px;
 	background: url("/layouts/default/images/menu_corners.png") left no-repeat;
 }
-.front-header-menu-center {
+.front-header-menu {
 	float: left;
 	width: 850px;
-	height: 41px;
-	background: url("/layouts/default/images/menu_bg.png") repeat;
+	height: 80px;
+	background: url("/layouts/default/images/menu_bg.png") repeat-x #fff;
 }
 .front-header-menu-right {
 	float: left;
 	width: 60px;
 	height: 51px;
 	background: url("/layouts/default/images/menu_corners.png") right no-repeat;
-}
-.front-header-menu-ul {
-	position: absolute;
-	color: #eee;
-	background-color: #333;
-	margin: 0;
-	padding: 4px 0;
-	white-space: nowrap;
-	display: none;
-	list-style: none;
 }
 .front-header-menu-ul__li-a {
 	color: #eee;
@@ -135,35 +125,34 @@
 .front_header-google{
 	background-position: -63px 0;
 }
-.front-header-menu-center__item{
+.front-header-menu__item{
 	float:left;
-	margin-left: 12px;
-    margin-top: 5px;
+	margin: 5px 6px 0;
 }
-.front-header-menu-center__item:before{
+.front-header-menu__item:before{
 	content: url(../images/point.png);
 }
-.front-header-menu-center__item:last-child:after{
+.front-header-menu__item:last-child:after{
 	content: url(../images/point.png);
 }
-.front-header-menu-center__item-href{
+.front-header-menu__item-href{
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 15px;
 	color: #FFF;
 	text-shadow: 0 -1px 0 #62861A;
 	display: inline-block;
-	border-radius: 12px;
+	border-radius: 11px;
 	background: transparent;
 	position: relative;
 	top: 3px;
 	padding: 1px;
 	font-family: Verdana;
 }
-.front-header-menu-center__item-href:hover{
+.front-header-menu__item-href:hover{
 	text-decoration: underline;
 }
-.front-header-menu-center__item-href_active{
+.front-header-menu__item-href_active{
 	background-image: linear-gradient(bottom, #B3D673 0%, #456506 51%, #497100 100%);
 	background-image: -o-linear-gradient(bottom, #B3D673 0%, #456506 51%, #497100 100%);
 	background-image: -moz-linear-gradient(bottom, #B3D673 0%, #456506 51%, #497100 100%);
@@ -179,15 +168,15 @@
 		color-stop(1, #497100)
 	);
 }
-.front-header-menu-center__item-href_active:hover{
+.front-header-menu__item-href_active:hover{
 	text-decoration: none;
 }
-.front-header-menu-center_gradient{
+.front-header-menu_gradient{
 	padding: 1px 10px;
 	display: block;
 }
-.front-header-menu-center__item-href_active .front-header-menu-center_gradient{
-	border-radius: 12px;
+.front-header-menu__item-href_active .front-header-menu_gradient{
+	border-radius: 10px;
 
 	background-image: linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
 	background-image: -o-linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
