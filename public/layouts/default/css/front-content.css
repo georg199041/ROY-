@@ -1,12 +1,10 @@
 /*content start*/
 .front-body {
-	width: 1000px;
+	width: 100%;
 	margin: 0 auto;
 	height: auto !important;
 	height: 100%;
 	min-height: 100%;
-	border: solid #eee;
-	border-width: 0 1px;
 }
 .front_cbpw-block {
 	text-align: center;
@@ -19,4 +17,12 @@
 	font-size: 37px;
 	text-transform: uppercase;
 }
+.front-body-container{
+	width: 1000px;
+	margin: 0 auto;
+	height: auto !important;
+	border: solid #eee;
+	border-width: 0 1px;
+}
+
 /*content end*/

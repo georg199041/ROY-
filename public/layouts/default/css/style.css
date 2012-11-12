@@ -122,3 +122,86 @@ ul {
     width: 100%;
     background: url(../images/main-pattern-dark.png);
 }
+.front-body-slider-body{
+	width: 100%;
+	position: relative;
+}
+.front-body-slider-blackwhite{
+	position: absolute;
+    width: 100%;
+}
+.front-body-slider-color{
+	position: absolute;
+    width: 100%;
+}
+.front-body-slider-rectangle{
+	
+}
+.front-body-slider-blackwhite-wrap{
+	list-style: none outside none;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    width: 1150px;
+}
+.front-body-slider-blackwhite__item{
+	
+}
+.front-body-slider-color-wrap{
+	list-style: none outside none;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    width: 970px;
+}
+.front-body-slider-color__item{
+	
+}
+.front-body-slider-color-cutter{
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 970px;
+	box-shadow:
+    0 0 0 1em red,
+    0 1em 0 1em red,
+    -2.5em 1.5em 0 .5em red,
+    2.5em 1.5em 0 .5em red,
+    -3em -3em 0 0 red,
+    3em -3em 0 0 red,
+    -2em -2em 0 0 red,
+    2em -2em 0 0 red,
+    -3em -1em 0 0 red,
+    -2em -1em 0 0 red,
+    2em -1em 0 0 red,
+    3em -1em 0 0 red,
+    -4em 0 0 0 red,
+    -3em 0 0 0 red,
+    3em 0 0 0 red,
+    4em 0 0 0 red,
+    -5em 1em 0 0 red,
+    -4em 1em 0 0 red,
+    4em 1em 0 0 red,
+    5em 1em 0 0 red,
+    -5em 2em 0 0 red,
+    5em 2em 0 0 red,
+    -5em 3em 0 0 red,
+    -3em 3em 0 0 red,
+    3em 3em 0 0 red,
+    5em 3em 0 0 red,
+    -2em 4em 0 0 red,
+    -1em 4em 0 0 red,
+    1em 4em 0 0 red,
+    2em 4em 0 0 red;
+
+    background: red;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+
+    margin: 50px 0 70px 65px;
+    position: absolute;
+}
+.front-body-slider-color-cutter:after{
+	
+}
