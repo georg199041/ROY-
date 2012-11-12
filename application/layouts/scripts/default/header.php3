@@ -1,8 +1,10 @@
+<?php
+/** Application_Block_Default_Header */
+?>
 <div class="front-header">
 	<div class="front-header-width">
 		<div class="front-header-infobox">
 			<div class="front-header-cords front-header-cords__left">
-				<?php if ($this->getMainUkraineTelephone()->getId()): ?>
 				<div class="front-header-cords__item">
 					<div class="front-header-cords__item-title">
 						<b>Координаты в Москве:</b>
@@ -13,19 +15,16 @@
 						</span>	
 					</div>
 				</div>
-				<?php endif; ?>
-				<?php if ($this->getMainUkraineTelephone()->getId()): ?>
 				<div class="front-header-cords__item">
 					<div class="front-header-cords__item-title">
 						Основной телефон в Украине:
 					</div>
 					<div class="front-header-cords__item-content">
 						<span class="front-header-cords__item-content-text">	
-							<?php echo $this->getMainUkraineTelephone()->getDescription(); ?>
+							
 						</span>	
 					</div>	
 				</div>
-				<?php endif; ?>
 			</div>
 			<div class="front-header-cords front-header-cords__right">
 				<div class="front-header-cords__item">
