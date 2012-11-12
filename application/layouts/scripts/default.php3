@@ -10,6 +10,27 @@
 	<?php echo Core::getBlock('application/default/header'); ?>
 	<div class="front-body">
 		<div class="front-push-top"></div>
+		<div class="front-body-slider-body">
+			<div class="front-body-slider-blackwhite">
+				<ul class="front-body-slider-blackwhite-wrap">
+					<li class="front-body-slider-blackwhite__item">
+						<img src="/layouts/default/images/bw_slide1.jpg"/>
+					</li>
+				</ul>
+			</div>
+			<div class="front-body-slider-color">
+				<ul class="front-body-slider-color-wrap">
+					<li class="front-body-slider-color__item">
+						<img src="/layouts/default/images/main-banner-color.jpg"/>
+					</li>
+				</ul>
+				<div class="front-body-slider-color-cutter"></div>
+			</div>
+			<div class="front-body-slider-rectangle">
+				<input type="button" id="slider_back" class="slider_buttons" />
+				<input type="button" id="slider_next" class="slider_buttons" />
+			</div>
+		</div>
 		<div class="front-body-container">
 			<?php echo $this->partial('default/body.php3'); ?>
 		</div>
