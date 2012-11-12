@@ -15,9 +15,35 @@
 		</div>
 		<div class="front-push-bottom"></div>
 	</div>
+	<div class="front-result-box">
+		<div class="front-footer-box">	
+			<div class="front-result-box-cont">
+				<div class="front-result-box-title">
+					<span class="front-title-content">Мы нацелены на результат</span>
+				</div>
+				<div class="front-result-box-text">
+					<p>Авторская программа реабилитации наркозависимых включает в себя проживание в деревянных домиках в природных условиях, а так же использование природных оздоровительных процедур.</p>
+					<p>На территории лагеря оборудована баня, речная купель, спортивная площадка. Проживание и столовая расположены в комфортабельных домиках "финского типа". Жилые помещения центра имеют все условия для круглогодичной реабилитации наркозависимых и лечения наркомании. Спортивный зал с мягким покрытием предназначен для круглогодичного использования и расположен в утепленных палатках армейского типа. В зимний период жилые помещения обогреваются русскими печами.</p>
+				</div>
+			</div>
+			<div class="front-result-box-button">
+			
+			</div>
+		</div>	
+	</div>
 	<div class="front-footer">
 		<div class="front-footer-width">
-			<div class="front-footer-text">Footer</div>
+			<div class="front-footer-box">
+				<div class="front-footer-box-rights">
+					<div class="front-footer-box-rights-text">
+						© Клуб «РОЙ», 2012. Все права защищены
+					</div>
+					<div class="front-footer-box-rights-logo">
+						<a href="/" class="front-footer-box-rights-logo-a"></a>					
+					</div>
+				</div>
+				<div class="front-footer-box-line"></div>
+			</div>	
 		</div>
 	</div>
 </body>

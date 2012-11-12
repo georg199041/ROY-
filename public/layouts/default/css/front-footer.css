@@ -1,6 +1,5 @@
 /*footer start*/
 .front-footer {
-	margin-top: -41px;
 	width: 100%;
 	border-top: 1px solid #d9d9d9;
 	height: 40px;
@@ -8,10 +7,43 @@
 .front-footer-width {
 	width: 1000px;
 	margin: 0 auto;
+	height: 140px;
 }
-.front-footer-text {
-	color: #fff;
-	font-size: 18px;
-	padding: 10px 0 0;
+.front-footer-box {
+    margin: 0 auto;
+    width: 850px;
+    margin-bottom: 22px;
 }
+.front-footer-box-rights {
+    background: #FFF;
+    height: 50px;
+    margin: 0 auto;
+    width: 850px;
+}
+.front-footer-box-line {
+    background: url(../images/bottom_footer.png) no-repeat ;
+    height: 16px;
+    margin: 0 auto;
+    width: 850px;
+}
+.front-footer-box-rights-text{
+	text-align: center;
+	height: 10px;
+	font-size: 11px;
+	padding-top: 22px;
+}
+.front-footer-box-rights-logo{
+	text-align: center;
+	height: 0;
+}
+.front-footer-box-rights-logo-a{
+	position:relative;
+	bottom: 0;
+	display: inline-block;
+	background: url(../images/logo_sunny.png) no-repeat ;
+	width: 72px;
+	height: 37px;
+    top: 48px;
+}
+
 /*footer end*/
