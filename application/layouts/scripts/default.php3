@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<?php $this->headTitle($this->translate('Skeleton Application')); ?>
+	<?php $this->headTitle($this->translate('Roy')); ?>
 	<?php echo $this->partial('default/head.php3'); ?>
 </head>
 <body>
@@ -26,11 +26,16 @@
 					<p>На территории лагеря оборудована баня, речная купель, спортивная площадка. Проживание и столовая расположены в комфортабельных домиках "финского типа". Жилые помещения центра имеют все условия для круглогодичной реабилитации наркозависимых и лечения наркомании. Спортивный зал с мягким покрытием предназначен для круглогодичного использования и расположен в утепленных палатках армейского типа. В зимний период жилые помещения обогреваются русскими печами.</p>
 				</div>
 			</div>
-			<div class="front-result-box-button">
 			
-			</div>
 		</div>	
+		
 	</div>
+	<div class="front-result-result-box-align">
+				<a href="/" class="front-result-box-button">
+					<span class="front-result-box-button-text">СДЕЛАЕМ ЭТО ВМЕСТЕ!</span>
+				</a>
+			</div>	
+	<div class="front-footer-white-stripe"></div>
 	<div class="front-footer">
 		<div class="front-footer-width">
 			<div class="front-footer-box">
@@ -44,7 +49,9 @@
 				</div>
 				<div class="front-footer-box-line"></div>
 			</div>	
+			
 		</div>
+		
 	</div>
 </body>
 </html>
