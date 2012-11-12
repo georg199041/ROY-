@@ -43,4 +43,9 @@ class Application_Block_Default_Header extends Core_Block_View
 		
 		return $this->_moscowOfficeAddress;
 	}
+	
+	public function getHeaderMenu()
+	{
+		return Zend_Registry::get('Zend_Navigation')->findOneById('2');
+	}
 }

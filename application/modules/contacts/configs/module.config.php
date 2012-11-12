@@ -2,6 +2,19 @@
 
 return array(
 	'resources' => array (
+		'router' => array (
+			'routes' => array (
+				'contacts' => array (
+					'type' => 'Zend_Controller_Router_Route',
+					'route' => 'contacts.html',
+					'defaults' => array (
+						'module' => 'contacts',
+						'controller' => 'index',
+						'action' => 'index',
+					),
+				),
+			),
+		),
 		'navigation' => array (
 			'pages' => array (
 				'default/admin-index/index' => array (
