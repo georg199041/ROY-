@@ -82,7 +82,7 @@
 					<a href="/" class="front-header-menu__item-href front-header-menu__item-href_active"><span class="front-header-menu_gradient">главная</span></a>
 				</li>
 				<li class="front-header-menu__item">
-					<a href="/" class="front-header-menu__item-href front-header-menu__item-href_active"><span class="front-header-menu_gradient">о клубе</span></a>
+					<a href="/" class="front-header-menu__item-href"><span class="front-header-menu_gradient">о клубе</span></a>
 				</li>
 				<li class="front-header-menu__item">
 					<a href="/" class="front-header-menu__item-href"><span class="front-header-menu_gradient">оздоравление и реабилитация</span></a>

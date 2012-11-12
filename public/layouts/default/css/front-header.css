@@ -76,8 +76,9 @@
 }
 .front-header-menu {
 	float: left;
-	width: 850px;
+	width: 838px;
 	height: 80px;
+	padding-left: 12px;
 	background: url("/layouts/default/images/menu_bg.png") repeat-x #fff;
 }
 .front-header-menu-right {
@@ -127,13 +128,21 @@
 }
 .front-header-menu__item{
 	float:left;
-	margin: 5px 6px 0;
+	position: relative;
+	margin: 5px 11px 0;
 }
 .front-header-menu__item:before{
 	content: url(../images/point.png);
+	position: absolute;
+	top: 6px;
+	left: -15px;
 }
 .front-header-menu__item:last-child:after{
 	content: url(../images/point.png);
+	float: right;
+	position: absolute;
+	top: 6px;
+	right: -15px;
 }
 .front-header-menu__item-href{
 	text-decoration: none;
@@ -141,14 +150,14 @@
 	font-size: 15px;
 	color: #FFF;
 	text-shadow: 0 -1px 0 #62861A;
-	display: inline-block;
+	display: block;
 	border-radius: 11px;
 	background: transparent;
 	position: relative;
 	top: 3px;
 	padding: 1px;
 	font-family: Verdana;
-	margin-left: 8px;
+	/*margin-left: 8px;*/
 }
 .front-header-menu__item-href:hover{
 	text-decoration: underline;
