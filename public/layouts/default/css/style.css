@@ -125,6 +125,7 @@ ul {
 .front-body-slider-body{
 	width: 100%;
 	position: relative;
+	height: 310px;
 }
 .front-body-slider-blackwhite{
 	position: absolute;
@@ -135,8 +136,10 @@ ul {
 	position: absolute;
     width: 100%;
     z-index: 10;
+    overflow: hidden;
 }
 .front-body-slider-rectangle{
+	float: left;
 	
 }
 .front-body-slider-blackwhite-wrap{
