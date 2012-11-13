@@ -2,6 +2,7 @@
 @import 'front-header.css';
 @import 'front-content.css';
 @import 'front-footer.css';
+@import 'front-contents-view-static.css';
 @font-face {
 	font-family: 'BlissPro-Bold';
 	src: url('../fonts/blisspro-bold.eot');
