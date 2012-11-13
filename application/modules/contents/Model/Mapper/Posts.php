@@ -11,4 +11,13 @@ class Contents_Model_Mapper_Posts extends Core_Model_Mapper_Abstract
 		// get relations by parents branch ids
 		// load params data
 	}
+	
+	public function getStaticPost($alias)
+	{
+		return $this->fetchRow(array(
+			'enabled = ?' => 'YES',
+			'contents_categories_id IS NULL',
+			'alias = ?' => $alias
+		));
+	}
 }
