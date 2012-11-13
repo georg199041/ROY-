@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-@import 'fonts.css';
+@import '/layouts/default/css/fonts.css';
 @import 'e404-header.css';
 @import 'e404-footer.css';
 html, body, img, div, a, span {
