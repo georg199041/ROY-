@@ -260,6 +260,10 @@ ul {
     padding-top:12px;
     font-size:15px;
 }
+.front-body-sidebar-left_top:hover {
+    text-decoration:none;
+    color:#434f56;
+}
 .front-body-sidebar-left_bottom {
     background: url(../images/bg_bottom_menu.png);
     height:30px;
