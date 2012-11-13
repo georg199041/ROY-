@@ -185,7 +185,7 @@
 	padding: 1px 10px;
 	display: block;
 }
-.front-header-menu__item-href_active .front-header-menu_gradient{
+.front-header-menu__item-href_active .front-header-menu-gradient{
 	border-radius: 10px;
 
 	background-image: linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
