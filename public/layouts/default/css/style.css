@@ -86,16 +86,42 @@ html {
 	background: #EAEFF3;
 }
 body{
-	color: #444444;
+	color: #434f56;
 }
 img {
 	border: 0 none;
 }
 a {
-	color: #444;
+	color: #0e8dcd;
 }
 a:hover {
-	text-decoration: none;
+	color:#00aaff;
+}
+p {
+    font-size:13px;
+    font-weight:normal;
+    line-height:18px;
+    margin:9px 0;
+}
+h1 {
+    font-size:36px;
+    font-weight:normal;
+    font-family: 'Verdana';
+    text-transform:uppercase;
+}
+h2 {
+    font-size:26px;
+    font-weight:normal;
+    font-family: 'Verdana';
+    text-transform:uppercase;
+    margin-bottom: 14px;
+}
+h3 {
+    font-size:18px;
+    font-weight:normal;
+    font-family: 'Verdana';
+    text-transform:uppercase;
+    margin-bottom: 10px;
 }
 ul {
 	list-style: none;
@@ -176,4 +202,66 @@ ul {
 	height: 323px;
 	margin-top: -6px;
 	background: url(../images/rectangle.png);
+}
+.front-body-content {
+    float: left;
+    height: 100%;
+    padding: 0 20px 30px 210px;
+    background-color:#fff;
+}
+.front-body-content:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.front-body-sidebar-left {
+    float: left;
+    height: 100%;
+    margin: 0px 0 0 -100%;
+    position: relative;
+    width: 210px;
+}
+.front-body-sidebar-left ul {
+    width:170px;
+    margin:15px auto 0;
+}
+.front-body-sidebar-left ul li {
+    font-size:12px;
+    font-weight:normal;
+    font-family: 'Verdana';
+    text-transform:uppercase;
+    text-align:center;
+}
+.front-body-sidebar-left_center {
+    text-decoration:none;
+    color:#434f56;
+    display:block;
+    height:20px;
+    padding-top:3px;
+    background-color:#f6f8f9;
+}
+.front-body-sidebar-left_center:hover {
+    text-decoration:none;
+    color:#434f56;
+    background-color:#dbe9f2;
+}
+.front-body-sidebar-left_indent {
+    height:2px;
+    background-color:#f6f8f9;
+}
+.front-body-sidebar-left_top {
+    text-decoration:none;
+    color:#434f56;
+    display:block;
+    background: url("../images/main-pattern-dark.png") repeat scroll 0 0 transparent;
+    height:30px;
+    padding-top:12px;
+    font-size:15px;
+}
+.front-body-sidebar-left_bottom {
+    background: url(../images/bg_bottom_menu.png);
+    height:30px;
+    padding:0;
 }
