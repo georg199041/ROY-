@@ -181,7 +181,7 @@
 .front-header-menu__item-href_active:hover{
 	text-decoration: none;
 }
-.front-header-menu_gradient{
+.front-header-menu-gradient{
 	padding: 1px 10px;
 	display: block;
 }

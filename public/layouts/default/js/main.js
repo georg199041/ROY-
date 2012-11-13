@@ -9,11 +9,11 @@ $(document).ready(function(){
 		$(this).find(".front-body-schema__item-background-wrap").animate({"width":"471px"}, 200);
 		$(this).find(".front-body-schema__item-title").css({"color":"#FFF","marginTop":"0px"});
 	},function(){
-		$(this).stop();
-		$(this).find(".front-body-schema__item-image-beforehover").fadeIn("fast");
-		$(this).find(".front-body-schema__item-image-afterhover").fadeOut("fast");
-		$(this).find(".front-body-schema__item-introtext").hide();
-		$(this).find(".front-body-schema__item-background-wrap").animate({"width":"0"}, 200);
-		$(this).find(".front-body-schema__item-title").css({"color":"#FF8053","marginTop":"40px"});
+//		$(this).stop();
+//		$(this).find(".front-body-schema__item-image-beforehover").fadeIn("fast");
+//		$(this).find(".front-body-schema__item-image-afterhover").fadeOut("fast");
+//		$(this).find(".front-body-schema__item-introtext").hide();
+//		$(this).find(".front-body-schema__item-background-wrap").animate({"width":"0"}, 200);
+//		$(this).find(".front-body-schema__item-title").css({"color":"#FF8053","marginTop":"40px"});
 	});
 });

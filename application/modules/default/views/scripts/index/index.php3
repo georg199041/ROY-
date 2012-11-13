@@ -27,7 +27,7 @@
 				</div>	
 				<div class="front-body-schema__item-background-wrap"><div class="front-body-schema__item-background"></div></div>
 			</div>
-			<div class="front-body-schema__item schema__item_text-right">
+			<div class="front-body-schema__item schema__item_text-right front-body-schema_orange">
 				<div class="front-body-schema__item-title">
 					Коллектив профессионалов
 				</div>
@@ -36,10 +36,10 @@
 				</div>
 				<div class="front-body-schema__item-images">
 					<div class="front-body-schema__item-image-beforehover">
-						
+						<img src="/layouts/default/images/scheme_orange.png" />
 					</div>
 					<div class="front-body-schema__item-image-afterhover">
-						
+						<img src="/layouts/default/images/scheme_orange_hover.png" />
 					</div>
 				</div>	
 			</div>

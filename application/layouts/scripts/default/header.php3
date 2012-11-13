@@ -82,7 +82,7 @@
 					<?php foreach ($this->getHeaderMenu() as $page): ?>
 						<li class="front-header-menu__item">
 							<a href="<?php echo $page->getHref(); ?>" class="front-header-menu__item-href <?php if ($page->isActive()): ?>front-header-menu__item-href_active<?php endif; ?>">
-								<span class="front-header-menu_gradient"><?php echo $page->getLabel(); ?></span>
+								<span class="front-header-menu-gradient"><?php echo $page->getLabel(); ?></span>
 							</a>
 						</li>
 					<?php endforeach; ?>
