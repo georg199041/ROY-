@@ -1,23 +1,30 @@
 <div class="front-body-content">
     <h1>РекомендациИ</h1>
     <div class="front-body-content-picture-big"><img alt="" src="/uploads/photo_1.jpg" /></div>
+    <a href=""></a>
     <div class="front-body-content-carousel">
         <ul>
-            <li class="front-body-content-carousel__preview-picture">
+            <li class="front-content-carousel__preview-picture front-content-carousel__preview-picture_left">
                 <a href="">
-                    <span class="front-body-content-carousel__preview-picture_bg-image"></span>
+                    <span class="front-carousel__preview-mask"></span>
                     <img alt="" src="/uploads/photo_2.jpg" />
                 </a>
             </li>
-            <li class="front-body-content-carousel__preview-picture">
+            <li class="front-content-carousel__preview-picture">
                 <a href="">
-                    <span class="front-body-content-carousel__preview-picture_bg-image"></span>
+                    <span class="front-carousel__preview-mask"></span>
                     <img alt="" src="/uploads/photo_2.jpg" />
                 </a>
             </li>
-            <li class="front-body-content-carousel__preview-picture">
+            <li class="front-content-carousel__preview-picture front-content-carousel__preview-picture_left">
                 <a href="">
-                    <span class="front-body-content-carousel__preview-picture_bg-image"></span>
+                    <span class="front-carousel__preview-mask front-carousel__preview-mask_active"></span>
+                    <img alt="" src="/uploads/photo_2.jpg" />
+                </a>
+            </li>
+            <li class="front-content-carousel__preview-picture">
+                <a href="">
+                    <span class="front-carousel__preview-mask"></span>
                     <img alt="" src="/uploads/photo_2.jpg" />
                 </a>
             </li>

@@ -2,12 +2,22 @@
 .front-body-content-carousel {
     float:right;
 }
-.front-body-content-carousel__preview-picture {
+.front-content-carousel__preview-picture {
+    margin-bottom:10px;
+}
+.front-content-carousel__preview-picture a{
     position:relative;
     padding:0;
     margin:0;
+    display:block;
+    overflow: hidden;
+    height:118px;
 }
-.front-body-content-carousel__preview-picture_bg-image {
+.front-content-carousel__preview-picture_left {
+    position:relative;
+    left: -53px;
+}
+.front-carousel__preview-mask {
     display:block;
     background-image: url("../images/doc-viewer-thumbnail-shaper-idle.png");
     background-repeat:no-repeat;
@@ -15,11 +25,19 @@
     height:118px;
     position:absolute;
 }
-.front-body-content-carousel__preview-picture_bg-image:hover {
+.front-carousel__preview-mask:hover {
     background-image: url("../images/doc-viewer-thumbnail-shaper-hover.png");
     background-repeat:no-repeat;
 }
-.front-body-content-carousel__preview-picture_bg-image img{
+.front-carousel__preview-mask_active {
+    background-image: url("../images/doc-viewer-thumbnail-shaper-current.png");
+    background-repeat:no-repeat;
+}
+.front-carousel__preview-mask_active:hover {
+    background-image: url("../images/doc-viewer-thumbnail-shaper-current.png");
+    background-repeat:no-repeat;
+}
+.front-carousel__preview-mask img{
     width:110px;
     height:118px;
 }
