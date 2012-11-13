@@ -1,6 +1,6 @@
 <?php
 
-class Default_ErrorController extends Zend_Controller_Action
+class Default_ErrorController extends Core_Controller_Action
 {
 	/**
 	 * Initialize error action for work with ajax
@@ -13,6 +13,7 @@ class Default_ErrorController extends Zend_Controller_Action
         $context = $this->_helper->AjaxContext();
         $context->addActionContext('error', 'json');
         $context->initContext('json');
+        $this->getHelper('layout')->setLayout('e404');
 	}
 
 	/**
