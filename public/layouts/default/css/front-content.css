@@ -39,7 +39,7 @@
 	height: 200px;
 }
 .front-body-schema__item{
-	width: 485px;
+	width: 471px;
 	height: 180px;
 }
 .schema__item_text-left{
@@ -69,8 +69,10 @@
 }
 .front-body-schema__item-images{
 	position: absolute;
-	right: 0;
 	z-index: 5;
+}
+.schema__item_text-left .front-body-schema__item-images{
+	right: 0;
 }
 .schema__item_text-left .front-body-schema__item-image-beforehover{
 	text-align: right;
@@ -91,13 +93,21 @@
 .schema__item_text-left .front-body-schema__item-titlebox{
 	position: absolute;
 	left: 0;
-	padding: 20px 0 20px 90px;
+	padding: 20px 10px 20px 80px;
     width: 240px;
 	z-index: 5;
 }
-
+.schema__item_text-left .front-body-schema__item-background-wrap{
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: hidden;
+	height: 180px;
+    /*width: 471px;*/
+    width: 0;
+}
 .schema__item_text-right .front-body-schema__item-title{
-	text-align: right;
+	text-align: left;
 	font-family: 'Verdana';
 	font-size: 18px;
 	line-height: 22px;
@@ -106,12 +116,16 @@
 	margin-top: 40px;
 }
 .schema__item_text-right .front-body-schema__item-introtext{
-	text-align: right;
+	text-align: left;
 	font-family: 'BlissPro-Italic';
 	font-size: 13px;
 	margin-top: 10px;
 	color: #FFF;
 	line-height: 17px;
+}
+.schema__item_text-right .front-body-schema__item-images{
+	left: 0;
+	width: 145px;
 }
 .schema__item_text-right .front-body-schema__item-image-beforehover{
 	text-align: right;
@@ -131,24 +145,24 @@
 }
 .schema__item_text-right .front-body-schema__item-titlebox{
 	position: absolute;
-	left: 0;
-	padding: 20px 0 20px 90px;
+	right: 0;
+	padding: 20px 80px 20px 10px;
     width: 240px;
 	z-index: 5;
 }
 
-.front-body-schema__item-background-wrap{
+.schema__item_text-right .front-body-schema__item-background-wrap{
 	position: absolute;
 	top: 0;
-	right: 0;
+	left: 0;
 	overflow: hidden;
 	height: 180px;
     /*width: 471px;*/
     width: 0;
 }
 .front-body-container-schema{
-    width: 1000px;
-    margin-left: -75px;
+    margin-left: -60px;
+    width: 970px;
     height: 608px;
 }
 .front-body-white-space{
@@ -158,8 +172,6 @@
     height: 41px;
 }
 .front-body-schema_orange .front-body-schema__item-background{
-	background: url(../images/scheme_orange_bg.png);
-	background-repeat: no-repeat;
 	width: 471px;
 	height: 180px;
 }
