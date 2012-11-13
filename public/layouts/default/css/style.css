@@ -1,78 +1,10 @@
 @CHARSET "UTF-8";
+@import 'fonts.css';
 @import 'front-header.css';
 @import 'front-content.css';
 @import 'front-footer.css';
 @import 'front-contents-view-static.css';
-@font-face {
-	font-family: 'BlissPro-Bold';
-	src: url('../fonts/blisspro-bold.eot');
-	src: url('../fonts/blisspro-bold.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/blisspro-bold.woff') format('woff'),
-		 url('../fonts/blisspro-bold.ttf') format('truetype'),
-		 url('../fonts/blisspro-bold.svg#blisspro-bold') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'BlissPro-BoldItalic';
-	src: url('../fonts/blisspro-italic.eot');
-	src: url('../fonts/blisspro-italic.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/blisspro-italic.woff') format('woff'),
-		 url('../fonts/blisspro-italic.ttf') format('truetype'),
-		 url('../fonts/blisspro-italic.svg#blisspro-italic') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'BlissPro-Italic';
-	src: url('../fonts/blisspro-italic.eot');
-	src: url('../fonts/blisspro-italic.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/blisspro-italic.woff') format('woff'),
-		 url('../fonts/blisspro-italic.ttf') format('truetype'),
-		 url('../fonts/blisspro-italic.svg#blisspro-italic') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'BlissPro';
-	src: url('../fonts/blisspro-regular.eot');
-	src: url('../fonts/blisspro-regular.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/blisspro-regular.woff') format('woff'),
-		 url('../fonts/blisspro-regular.ttf') format('truetype'),
-		 url('../fonts/blisspro-regular.svg#blisspro-regular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Verdana';
-	src: url('../fonts/verdana.eot');
-	src: url('../fonts/verdana.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/verdana.woff') format('woff'),
-		 url('../fonts/verdana.ttf') format('truetype'),
-		 url('../fonts/verdana.svg#verdana') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Verdana-Bold';
-	src: url('../fonts/verdanab_0.eot');
-	src: url('../fonts/verdanab_0.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/verdanab_0.woff') format('woff'),
-		 url('../fonts/verdanab_0.ttf') format('truetype'),
-		 url('../fonts/verdanab_0.svg#verdanab_0') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Verdana-Italic';
-	src: url('../fonts/verdanai_0.eot');
-	src: url('../fonts/verdanai_0.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/verdanai_0.woff') format('woff'),
-		 url('../fonts/verdanai_0.ttf') format('truetype'),
-		 url('../fonts/verdanai_0.svg#verdanai_0') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+@import 'front-recommendations.css';
 html, body, img, div, a, span {
 	margin: 0;
 	padding: 0;
