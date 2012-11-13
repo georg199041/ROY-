@@ -25,15 +25,5 @@
     <p>Наш центр расположен в горной части Крыма, в лесу, проживание осуществляется в деревянных домиках. Методика, применяемая для реабилитации наркозависимых и лечения наркоманов. Методика, применяемая для реабилитации наркозависимых и лечения наркоманов. Методика, применяемая для реабилитации наркозависимых и лечения наркоманов. Методика, применяемая для реабилитации наркозависимых и лечения наркоманов.</p>
 </div>
 <div class="front-body-sidebar-left">
-    <ul>
-        <li><a class="front-body-sidebar-left_top" href="">О клубе</a></li>
-        <li class="front-body-sidebar-left_indent"></li>
-        <li><a class="front-body-sidebar-left_center" href="">Слово Руководителя</a></li>
-        <li><a class="front-body-sidebar-left_center" href="">История</a></li>
-        <li><a class="front-body-sidebar-left_center" href="">Миссия и цели</a></li>
-        <li><a class="front-body-sidebar-left_center" href="">Документы</a></li>
-        <li><a class="front-body-sidebar-left_center" href="">Персонал</a></li>
-        <li><a class="front-body-sidebar-left_center" href="">Рекомендации</a></li>
-        <li class="front-body-sidebar-left_bottom"></li>
-    </ul>
+    <?php echo Core::getBlock('navigation/index/sidebar-menu'); ?>
 </div>
