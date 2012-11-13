@@ -1,10 +1,10 @@
 @CHARSET "UTF-8";
-@import 'fonts.css';
-@import 'front-header.css';
-@import 'front-content.css';
-@import 'front-footer.css';
-@import 'front-contents-view-static.css';
-@import 'front-recommendations.css';
+@import '/layouts/default/css/fonts.css';
+@import '/layouts/default/css/front-header.css';
+@import '/layouts/default/css/front-content.css';
+@import '/layouts/default/css/front-footer.css';
+@import '/layouts/default/css/front-contents-view-static.css';
+@import '/layouts/default/css/front-recommendations.css';
 html, body, img, div, a, span {
 	margin: 0;
 	padding: 0;

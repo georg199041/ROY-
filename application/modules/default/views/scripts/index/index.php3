@@ -25,23 +25,26 @@
 						<img src="/layouts/default/images/scheme_orange_hover.png" />
 					</div>
 				</div>	
-				<div class="front-body-schema__item-background-wrap"><div class="front-body-schema__item-background"></div></div>
+				<div class="front-body-schema__item-background-wrap"><img src="/layouts/default/images/scheme_orange_bg.png" /></div>
 			</div>
 			<div class="front-body-schema__item schema__item_text-right front-body-schema_orange">
-				<div class="front-body-schema__item-title">
-					Коллектив профессионалов
-				</div>
-				<div class="front-body-schema__item-introtext">
-					
-				</div>
-				<div class="front-body-schema__item-images">
-					<div class="front-body-schema__item-image-beforehover">
-						<img src="/layouts/default/images/scheme_orange.png" />
+				<div class="front-body-schema__item-titlebox">	
+					<div class="front-body-schema__item-title">
+						Коллектив профессионалов
 					</div>
-					<div class="front-body-schema__item-image-afterhover">
-						<img src="/layouts/default/images/scheme_orange_hover.png" />
+					<div class="front-body-schema__item-introtext">
+						Кадровая политика компании ориентирована на постоянный профессиональный рост и поддержку сотрудников
 					</div>
 				</div>	
+				<div class="front-body-schema__item-images">
+					<div class="front-body-schema__item-image-beforehover">
+						<img src="/layouts/default/images/scheme_dblue.png" />
+					</div>
+					<div class="front-body-schema__item-image-afterhover">
+						<img src="/layouts/default/images/scheme_dblue_hover.png" />
+					</div>
+				</div>
+				<div class="front-body-schema__item-background-wrap"><img src="/layouts/default/images/scheme_dblue_bg.png" /></div>	
 			</div>
 		</div>
 	</div>
