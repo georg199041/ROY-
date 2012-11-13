@@ -1,18 +1,18 @@
-.front-body-content ol {
+.front-body-content-static ol {
     list-style: none;
     counter-reset: point;
     font-size:13px;
     padding-left: 22px;
     margin:10px 0;
 }
-.front-body-content ol li {
+.front-body-content-static ol li {
     margin-bottom: 6px;
     padding-left: 33px;
     position: relative;
     min-height:21px;
     line-height:19px;
 }
-.front-body-content ol li:before {
+.front-body-content-static ol li:before {
     content: counter(point);
     counter-increment: point 1;
     position: absolute;
@@ -24,19 +24,19 @@
     padding: 2px;
     text-align: center;
 }
-.front-body-content ul {
+.front-body-content-static ul {
     list-style: none;
     font-size:13px;
     padding-left: 22px;
 }
-.front-body-content ul li {
+.front-body-content-static ul li {
     margin-bottom: 6px;
     padding-left: 33px;
     position: relative;
     min-height:21px;
     line-height:19px;
 }
-.front-body-content ul li:before {
+.front-body-content-static ul li:before {
     content: "\2192";
     position: absolute;
     left: 0;

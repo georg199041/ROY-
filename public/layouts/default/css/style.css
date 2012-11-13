@@ -138,6 +138,7 @@ ul {
 .front-body-content {
     float: left;
     height: 100%;
+    width:620px;
     padding: 0 20px 30px 210px;
     background-color:#fff;
 }
@@ -174,6 +175,7 @@ ul {
     padding-top:3px;
     background-color:#f6f8f9;
 }
+.front-body-sidebar-left_active,
 .front-body-sidebar-left_center:hover {
     text-decoration:none;
     color:#434f56;
