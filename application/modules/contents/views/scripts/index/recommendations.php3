@@ -1,5 +1,28 @@
 <div class="front-body-content">
-    
+    <h1>РекомендациИ</h1>
+    <div class="front-body-content-picture-big"><img alt="" src="/uploads/photo_1.jpg" /></div>
+    <div class="front-body-content-carousel">
+        <ul>
+            <li class="front-body-content-carousel__preview-picture">
+                <a href="">
+                    <span class="front-body-content-carousel__preview-picture_bg-image"></span>
+                    <img alt="" src="/uploads/photo_2.jpg" />
+                </a>
+            </li>
+            <li class="front-body-content-carousel__preview-picture">
+                <a href="">
+                    <span class="front-body-content-carousel__preview-picture_bg-image"></span>
+                    <img alt="" src="/uploads/photo_2.jpg" />
+                </a>
+            </li>
+            <li class="front-body-content-carousel__preview-picture">
+                <a href="">
+                    <span class="front-body-content-carousel__preview-picture_bg-image"></span>
+                    <img alt="" src="/uploads/photo_2.jpg" />
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
 <div class="front-body-sidebar-left">
     <ul>
