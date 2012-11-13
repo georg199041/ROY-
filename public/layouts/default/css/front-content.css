@@ -41,6 +41,7 @@
 .front-body-schema__item{
 	width: 471px;
 	height: 180px;
+	z-index: 10;
 }
 .schema__item_text-left{
 	float: left;
@@ -56,7 +57,6 @@
 	font-size: 18px;
 	line-height: 22px;
 	text-transform: uppercase;
-	color: #FF8053;
 	margin-top: 40px;
 }
 .schema__item_text-left .front-body-schema__item-introtext{
@@ -103,7 +103,6 @@
 	right: 0;
 	overflow: hidden;
 	height: 180px;
-    /*width: 471px;*/
     width: 0;
 }
 .schema__item_text-right .front-body-schema__item-title{
@@ -145,10 +144,11 @@
 }
 .schema__item_text-right .front-body-schema__item-titlebox{
 	position: absolute;
-	right: 0;
+	left: 0;
 	padding: 20px 80px 20px 10px;
     width: 240px;
 	z-index: 5;
+	padding-left: 150px;
 }
 
 .schema__item_text-right .front-body-schema__item-background-wrap{
@@ -157,7 +157,6 @@
 	left: 0;
 	overflow: hidden;
 	height: 180px;
-    /*width: 471px;*/
     width: 0;
 }
 .front-body-container-schema{
@@ -171,8 +170,61 @@
     background: #FFF;
     height: 41px;
 }
-.front-body-schema_orange .front-body-schema__item-background{
+.front-body-schema__item-background{
 	width: 471px;
 	height: 180px;
 }
+.front-body-schema_orange .front-body-schema__item-title{
+	color: #FF8053;
+}
+.front-body-schema_dblue .front-body-schema__item-title{
+	color: #007FBF;
+}
+
+
+
+
+
+.front-body-schema_brown .front-body-schema__item-title{
+	color: #B7660D;
+}
+.front-body-schema_brown .front-body-schema__item-background-wrap{
+	
+}
+.front-body-schema_brown .front-body-schema__item{
+	
+}
+.front-body-schema_brown{
+	top: -30px;
+	z-index: 1;
+}
+.front-body-schema_brown .front-body-schema__item-titlebox{
+	padding: 20px 10px 20px 55px !important; 
+	width: 175px !important;
+}
+.front-body-schema_brown .front-body-schema__item-images{
+	right: 53px;
+}
+
+
+.front-body-schema_green .front-body-schema__item-title{
+	color: #A2D346;
+}
+.front-body-schema_green .front-body-schema__item-background-wrap{
+	
+}
+.front-body-schema_green .front-body-schema__item{
+	
+}
+.front-body-schema_green{
+	top: -30px;
+	z-index: 1;
+}
+.front-body-schema_green .front-body-schema__item-titlebox{
+	width: 175px !important;
+	padding: 20px 50px 20px 223px;
+}
+.front-body-schema_green .front-body-schema__item-images{
+	left: 84px;
+}	
 /*content end*/
