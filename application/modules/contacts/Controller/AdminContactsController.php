@@ -27,7 +27,7 @@ class Contacts_AdminContactsController extends Core_Controller_Action
 
     public function saveAction()
     {
-    	if ($data = $this->getRequest()->getPost() && !$this->getRequest()->getParam('cancel')) {
+    	if (($data = $this->getRequest()->getPost()) && !$this->getRequest()->getParam('cancel')) {
     		try {
     			$form = Core::getBlock('contacts/admin-contacts/edit');
     			if (!$form->isValid($data)) {

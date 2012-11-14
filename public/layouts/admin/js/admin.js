@@ -16,10 +16,13 @@ function checkAllObserve()
 	});
 }
 
+/**
+ * Observe grid show button handle
+ */
 function showSelectedObserve()
 {
 	var elms = $('.cbtw-button-show a, .cbtw-button-hide a, .cbtw-button-move a, .cbtw-button-copy a, .cbtw-button-delete a');
-	elms.bind('click', function(e){
+	elms.unbind('click').bind('click', function(e){
 		e.preventDefault();
 		var cbs = $(this).parents('.cbgw-block')
 		                 .find('.cbgw-column-ids input[type="checkbox"]:checked');
@@ -36,7 +39,23 @@ function showSelectedObserve()
 	});
 }
 
+/**
+ * Prepare tinimce editors before requests
+ */
+function triggerSaveTinyMCE() {
+	if (tinyMCE) {
+		for (var i in tinyMCE.editors) {
+			tinyMCE.editors[i].save();
+		}
+	}
+}
+
+$(document).ajaxSend(function(e, jqxhr, settings) {
+	triggerSaveTinyMCE();
+});
+
 $(document).ready(function(){
 	checkAllObserve();
 	showSelectedObserve();
+	triggerSaveTinyMCE();
 });

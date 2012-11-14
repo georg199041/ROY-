@@ -3,11 +3,31 @@
 .cbfw-block {
 	padding: 10px;
 }
-.cbfw-block dl {
-	padding: 0;
-	margin: 0;
+.cbfw-form:last-child:after {
+	content: '.';
+	display: block;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	clear: both;
 }
-.cbfw-block fieldset {
-	padding: 0;
-	margin: 0;
+.cbfw-fieldset {
+	border: 1px solid #eee;
 }
+.cbfw-fieldset__center {
+	float: left;
+	width: 630px;
+	/*overflow: hidden;*/
+}
+.cbfw-fieldset__right {
+	float: right;
+	width: 330px;
+	/*overflow: hidden;*/
+}
+.cbfw-fieldset fieldset {
+	padding: 0;
+	margin: 10px;
+	border: 0 none;
+}
+

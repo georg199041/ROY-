@@ -41,6 +41,8 @@ class Contacts_Block_AdminContacts_Edit extends Core_Block_Form_Widget
 
 		$this->addElement('textarea', 'description', array(
 			'label' => $this->__('Description'),
+			'cols' => 70,
+			'rows' => 15,
 		));
 
 		$this->addElement('text', 'image', array(
@@ -53,7 +55,7 @@ class Contacts_Block_AdminContacts_Edit extends Core_Block_Form_Widget
 			'uncheckedValue' => 'NO',
 		));
 		
-		$this->addDisplayGroup(array('contacts_groups_id', 'title', 'alias', 'description'), 'center', array('legend' => 'Основнвя информация'));
+		$this->addDisplayGroup(array('contacts_groups_id', 'title', 'alias', 'description'), 'center');
 		$this->addDisplayGroup(array('type', 'image', 'enabled'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
