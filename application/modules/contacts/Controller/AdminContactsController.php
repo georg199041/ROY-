@@ -27,14 +27,14 @@ class Contacts_AdminContactsController extends Core_Controller_Action
 
     public function saveAction()
     {
-    	if ($data = $this->getRequest()->getPost()) {
+    	if ($data = $this->getRequest()->getPost() && !$this->getRequest()->getParam('cancel')) {
     		try {
     			$form = Core::getBlock('contacts/admin-contacts/edit');
     			if (!$form->isValid($data)) {
     				Core::getSession('admin')->formHasErrors = true;
     				throw new Exception($this->__("Invalid form"));
     			}
-    
+    			
     			$model = Core::getMapper('contacts/contacts')->create($form->getValues());
     			$model->save();
     			unset(Core::getSession('admin')->formData);

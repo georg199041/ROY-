@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+.cbfw-block {
+	padding: 10px;
+}
+.cbfw-block dl {
+	padding: 0;
+	margin: 0;
+}
+.cbfw-block fieldset {
+	padding: 0;
+	margin: 0;
+}

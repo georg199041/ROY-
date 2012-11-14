@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 @import 'core-block-toolbar-widget.css';
+@import 'core-block-form-widget.css';
 @import 'core-block-grid-widget.css';
 
 html, body, img, div, a, span {

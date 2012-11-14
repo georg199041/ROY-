@@ -53,15 +53,8 @@ class Contacts_Block_AdminContacts_Edit extends Core_Block_Form_Widget
 			'uncheckedValue' => 'NO',
 		));
 		
-		$this->addElement('submit', 'back', array(
-			'label'  => $this->__('Save and continue'),
-			'ignore' => true,
-		));
-
-		$this->addElement('submit', 'save', array(
-			'label'  => $this->__('Save'),
-			'ignore' => true,
-		));
+		$this->addDisplayGroup(array('contacts_groups_id', 'title', 'alias', 'description'), 'center', array('legend' => 'Основнвя информация'));
+		$this->addDisplayGroup(array('type', 'image', 'enabled'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);
@@ -76,7 +69,7 @@ class Contacts_Block_AdminContacts_Edit extends Core_Block_Form_Widget
 		}
 		
 		$this->addBlockChild(
-			Core::getBlock('contacts/admin-groups/edit/toolbar'),
+			Core::getBlock('contacts/admin-contacts/edit/toolbar'),
 			self::BLOCK_PLACEMENT_BEFORE
 		);
 	}

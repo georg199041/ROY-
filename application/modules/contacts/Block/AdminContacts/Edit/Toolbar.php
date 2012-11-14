@@ -9,11 +9,12 @@ class Contacts_Block_AdminContacts_Edit_Toolbar extends Core_Block_Toolbar_Widge
 		$this->addButton(array(
 			'name'  => 'save',
 			'title' => $this->__('Save'),
-			'urlOptions' => '*/*/save/back/true'
+			'urlOptions' => '*/*/save'
 		));
 		
 		$this->addButton(array(
-			'name'  => 'apply',
+			'type'  => 'submit',
+			'name'  => 'back',
 			'title' => $this->__('Apply'),
 			'urlOptions' => '*/*/save'
 		));
