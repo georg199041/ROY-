@@ -1,12 +1,6 @@
 //SCHEMA INDEX PAGE
 
 $(document).ready(function(){
-//	$(".front-body-schema__item-image-beforehover").css({
-//		"width"   : "86px",
-//		"height"  : "100px",
-//		"opacity" : "1",
-//		"display" : "block",
-//	});
 	
 	$(".front-body-schema__item-image").css({
 		"width"   : "86px",
@@ -36,27 +30,25 @@ $(document).ready(function(){
 			"margin": "5px 7px 0",
 		}
 		
-		$(this).find(".front-body-schema__item-image_beforehover").stop().animate($.extend(css, {"opacity":"0"}), 1000);
-		$(this).find(".front-body-schema__item-image_afterhover").stop().animate($.extend(css, {"opacity":"1"}), 1000);
+		$(this).find(".front-body-schema__item-image_beforehover").stop().animate($.extend(css, {"opacity":"0"}), 300);
+		$(this).find(".front-body-schema__item-image_afterhover").stop().animate($.extend(css, {"opacity":"1"}), 300);
 		
-		$(this).find(".front-body-schema__item-title").css({"color":"#FFF"});
 		$(this).find(".front-body-schema__item-introtext").show();
-		$(this).find(".front-body-schema__item-background-wrap").animate({"width":"100%"});
+		$(this).find(".front-body-schema__item-background-wrap").stop().delay(300).animate({"width":"100%"}, 300);
 		
 	},function(){
 		
-		//$(this).find(".front-body-schema__item-titlebox").removeClass("front-body-schema__item_titlebox-hover");
+		$(this).find(".front-body-schema__item-titlebox").removeClass("front-body-schema__item_titlebox-hover");
 		
-		//$(this).find(".front-body-schema__item-image").stop().animate(css, 1000);
-		//var css = $(this).find(".front-body-schema__item-image").data("css");
-		//$(this).find(".front-body-schema__item-image_beforehover").stop().animate($.extend(css, {"opacity":"1"}), 1000);
-		//$(this).find(".front-body-schema__item-image_afterhover").stop().animate($.extend(css, {"opacity":"0"}), 1000);
 		
-		//$(this).find(".front-body-schema__item-image_beforehover").stop().animate({"opacity":"1"}, 1000);
-		//$(this).find(".front-body-schema__item-image_afterhover").stop().animate({"opacity":"0"}, 1000);
+		 
+		var css = $(this).find(".front-body-schema__item-image").data("css");
+		$(this).find(".front-body-schema__item-image_beforehover").stop().animate($.extend(css, {"opacity":"1"}), 300);
+		$(this).find(".front-body-schema__item-image_afterhover").stop().animate($.extend(css, {"opacity":"0"}), 300);
+		
 
-		//$(this).find(".front-body-schema__item-introtext").hide();
-		//$(this).find(".front-body-schema__item-background-wrap").animate({"width":"0"}, 200);
+		$(this).find(".front-body-schema__item-introtext").hide();
+		$(this).find(".front-body-schema__item-background-wrap").stop().animate({"width":"0"}, 300);
 		
 
 	});

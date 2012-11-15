@@ -65,10 +65,15 @@
 .front-body-schema__item-list-dots{
 	margin: 0;
 	padding: 0;
-	
+	list-style: disc;
+	color: red;
+	position: absolute;
+	height: 0;
+    width: 0;
 }
 .front-body-schema__item-list-dots li{
-	display: inline;
+	height: 11px;
+    width: 0;
 }
 .front-body-schema__item-titlebox{
 	position: relative;
@@ -77,6 +82,7 @@
 .front-body-schema__item-background-wrap{
 	margin-top: -5px;
 }
+
 
 /*orange*/
 .front-body-schema_orange{
@@ -88,8 +94,15 @@
     width: 240px;
 	float: right;
 }
+.front-body-schema_orange .front-body-schema__item-list-dots{
+	right: 0;
+	bottom: 0;
+}
 .front-body-schema_orange .front-body-schema__item_titlebox-hover{
 	padding: 20px 150px 20px 10px;
+}
+.front-body-schema__item .front-body-schema__item_titlebox-hover .front-body-schema__item-title{
+	color: #FFF;
 }
 .front-body-schema_orange .front-body-schema__item-title{
 	text-align: right;
@@ -143,6 +156,10 @@
 	padding: 62px 10px 20px 140px;
     width: 240px;
 	float: left;
+}
+.front-body-schema_dblue .front-body-schema__item-list-dots{
+	left: 0;
+	bottom: 0;
 }
 .front-body-schema_dblue .front-body-schema__item_titlebox-hover{
 	padding: 20px 10px 20px 150px;
@@ -202,6 +219,12 @@
 	width: 175px;
 	float: right;
 }
+.front-body-schema_brown .front-body-schema__item-list-dots{
+	right: 0;
+	transform: rotate(90deg);
+	margin-right: -27px;
+    margin-top: 97px;
+}
 .front-body-schema_brown .front-body-schema__item_titlebox-hover{
 	padding: 20px 150px 20px 10px;
 }
@@ -260,6 +283,12 @@
 	padding: 62px 10px 20px 140px;
 	float: left;
 }
+.front-body-schema_green .front-body-schema__item-list-dots{
+	left: 0;
+	transform: rotate(90deg);
+	margin-left: 25px;
+    margin-top: 97px;
+}
 .front-body-schema_green .front-body-schema__item_titlebox-hover{
 	padding: 20px 10px 20px 150px;
 }
@@ -316,6 +345,13 @@
 	padding: 62px 132px 20px 10px;
 	float: right;
 }
+.front-body-schema_red .front-body-schema__item-list-dots{
+	right: 0;
+	top: 0;
+	transform: rotate(30deg);
+	margin-right: 15px;
+    margin-top: 5px;
+}
 .front-body-schema_red .front-body-schema__item_titlebox-hover{
 	padding: 20px 150px 20px 10px;
 }
@@ -370,6 +406,10 @@
 	width: 175px;
 	padding: 60px 50px 20px 136px;
 	float: left
+}
+.front-body-schema_lbue .front-body-schema__item-list-dots{
+	top: 0;
+	left: 0;
 }
 .front-body-schema_lbue .front-body-schema__item_titlebox-hover{
 	padding: 20px 10px 20px 150px;
