@@ -1,41 +1,18 @@
 /**
  * Check all checkboxes if checked main checkbox
  */
-function checkAllObserve()
+function observeCheckAll()
 {
-	var cb = $('.cbgw-block .cbgw-header-ids input[type=checkbox]');
+	var cb = jQuery('.cbgw-block .cbgw-header-ids input[type=checkbox]');
 	cb.bind('change', function(){
-		var cbs = $(this).parents('.cbgw-block')
-		                 .find('.cbgw-column-ids input[type="checkbox"]');
+		var cbs = jQuery(this).parents('.cbgw-block')
+		                      .find('.cbgw-column-ids input[type="checkbox"]');
 		
-		if ($(this).attr('checked') == 'checked') {
+		if (jQuery(this).attr('checked') == 'checked') {
 			cbs.attr('checked', 'checked');
 		} else {
 			cbs.attr('checked', null);
 		}
-	});
-}
-
-/**
- * Observe grid show button handle
- */
-function showSelectedObserve()
-{
-	var elms = $('.cbtw-button-show a, .cbtw-button-hide a, .cbtw-button-move a, .cbtw-button-copy a, .cbtw-button-delete a');
-	elms.unbind('click').bind('click', function(e){
-		e.preventDefault();
-		var cbs = $(this).parents('.cbgw-block')
-		                 .find('.cbgw-column-ids input[type="checkbox"]:checked');
-		
-		var post = [];
-		cbs.each(function(){
-			var name = $(this).attr('name');
-			name = name.substr(0, name.indexOf(']'));
-			name = name.substr(name.indexOf('[') + 1)
-			post.push('ids[]=' + name);
-		});
-		
-		window.location.href= $(this).attr('href') + (post.length > 0 ? '?' + post.join('&') : '');
 	});
 }
 
@@ -50,12 +27,69 @@ function triggerSaveTinyMCE() {
 	}
 }
 
-$(document).ajaxSend(function(e, jqxhr, settings) {
-	triggerSaveTinyMCE();
-});
+/**
+ * Preprocessing form data here
+ */
+function observeFormSubmit()
+{
+	jQuery('form').unbind('submit').bind('submit', function(){
+		triggerSaveTinyMCE();
+	});
+}
 
-$(document).ready(function(){
-	checkAllObserve();
-	showSelectedObserve();
-	triggerSaveTinyMCE();
+/**
+ * Observe submit buttons
+ */
+function observeGridFilters()
+{
+	jQuery('.cbgw-filter input').unbind('keyup mouseup').bind('keyup mouseup', function(){
+		if (jQuery(this).data('timer')) {
+			clearTimeout(jQuery(this).data('timer'));
+		}
+		
+		if (!jQuery(this).data('val')) {
+			jQuery(this).data('val', jQuery(this).val());
+		}
+		
+		if (jQuery(this).val() != '') {
+			var el  = jQuery(this);
+			var t = setTimeout(function(){
+				if (el.val() == el.data('val')) {
+					return;
+				}
+				
+				submitGridFilter(el);
+			}, 3000);
+			
+			jQuery(this).data('timer', t);
+		}
+	});
+	
+	jQuery('.cbgw-filter select').unbind('change').bind('change', function(){
+		submitGridFilter(jQuery(this));
+	});
+}
+
+/**
+ * Submit grid filter
+ * 
+ * @param e jQuery object
+ */
+function submitGridFilter(e)
+{
+	var filters = {};
+	jQuery(e).parents('.cbgw-block').find('.cbgw-filter input, .cbgw-filter select').each(function(){
+		filters[jQuery(this).attr('name')] = jQuery(this).val();
+	});
+	
+	window.location.href = jQuery(e).parents('.cbgw-block').attr('action') + '?' + jQuery.param(filters);
+}
+
+/**
+ * Observe events on dom tree loaded
+ */
+jQuery(document).ready(function(){
+	observeFormSubmit();
+	observeGridFilters();
+	observeCheckAll();
 });

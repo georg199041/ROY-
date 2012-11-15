@@ -42,7 +42,6 @@ $this->previous;
 /** @var integer Total number of items */
 $this->totalItemCount;
 ?>
-<?php if ($this->pageCount): ?>
 <?php $push1 = false; ?>
 <?php $push2 = false; ?>
 <?php
@@ -69,6 +68,7 @@ function isViewedPage($object, $page)
 	return false;
 }
 ?>
+<?php if ($this->pageCount): ?>
 <div class="cbpw-wrapper">
 	<!-- First page link -->
 		<?php $firstTitle = isset($this->widget->firstTitle) ? $this->widget->firstTitle : 'First'; ?>

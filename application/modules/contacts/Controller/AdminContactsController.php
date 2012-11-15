@@ -79,17 +79,19 @@ class Contacts_AdminContactsController extends Core_Controller_Action
     	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'));
     }
     
-    public function statusAction()
+    public function enabledAction()
     {
         $ids = $this->getRequest()->getParam('ids');
     	if (!is_array($ids)) {
     		$this->getHelper('FlashMessenger')->addMessage($this->__('Please select item(s)'));
     	} else {
     		try {
-    			foreach ($ids as $id) {
-    				$model = Core::getMapper('contacts/contacts')->find($id);
-    				$model->setEnabled($this->getRequest()->getParam('enabled'));
-    				$model->save();
+    			foreach ($ids as $id => $selected) {
+    				if ($selected) {
+	    				$model = Core::getMapper('contacts/contacts')->find($id);
+	    				$model->setEnabled($this->getRequest()->getParam('value'));
+	    				$model->save();
+    				}
     			}
     			
     			$this->getHelper('FlashMessenger')->addMessage(count($ids) . ' record(s) have been successfully updated');
