@@ -6,6 +6,7 @@
 @import '/layouts/default/css/front-contents-view-static.css';
 @import '/layouts/default/css/front-recommendations.css';
 @import '/layouts/default/css/front-gallery.css';
+@import '/layouts/default/css/front-gallery-album.css';
 html, body, img, div, a, span {
 	margin: 0;
 	padding: 0;

@@ -10,6 +10,7 @@
 	<?php echo Core::getBlock('application/default/header'); ?>
 	<div class="front-body">
 		<div class="front-push-top"></div>
+		<?php if ($this->isHomePage()): ?>
 		<div class="front-body-slider-body">
 			<div class="front-body-slider-blackwhite">
 				<ul class="front-body-slider-blackwhite-wrap">
@@ -31,6 +32,7 @@
 				<input type="button" id="slider_next" class="slider_buttons" />
 			</div>
 		</div>
+		<?php endif; ?>
 		<div class="front-body-container">
 			<?php echo $this->partial('default/body.php3'); ?>
 		</div>
@@ -40,6 +42,7 @@
 			</div>
 		</div>
 	</div>
+	<?php if ($this->isHomePage()): ?>
 	<div class="front-result-box">
 		<div class="front-footer-box">	
 			<div class="front-result-box-cont">
@@ -61,6 +64,7 @@
 				</a>
 			</div>	
 	<div class="front-footer-white-stripe"></div>
+	<?php endif; ?>
 	<div class="front-footer">
 		<div class="front-footer-width">
 			<div class="front-footer-box">

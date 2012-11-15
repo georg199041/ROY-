@@ -4,7 +4,7 @@ return array(
 	'resources' => array (
 		'router' => array (
 			'routes' => array (
-				'contacts' => array (
+				'recommendations' => array (
 					'type' => 'Zend_Controller_Router_Route',
 					'route' => 'recommendations.html',
 					'defaults' => array (

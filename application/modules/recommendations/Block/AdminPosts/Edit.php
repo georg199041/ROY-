@@ -9,33 +9,8 @@ class Recommendations_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 		
 		$this->addElement('hidden', 'id');
 		
-		$this->addElement('select', 'contacts_groups_id', array(
-			'label'        => $this->__('Group'),
-			'required'     => true,
-			'multiOptions' => $this->getContactsGroupsId(Core::getMapper('contacts/groups')->fetchAll()),
-		));
-
-		$this->addElement('select', 'type', array(
-			'label'        => $this->__('Type'),
-			'required'     => true,
-			'multiOptions' => array(
-				'ADDRESS' => 'ADDRESS',
-				'PHONE'   => 'PHONE',
-				'EMAIL'   => 'EMAIL',
-				'SKYPE'   => 'SKYPE',
-				'LATLNG'  => 'LATLNG',
-				'QRCODE'  => 'QRCODE',
-				'IMAGE'   => 'IMAGE',
-			),
-		));
-
 		$this->addElement('text', 'title', array(
 			'label'    => $this->__('Title'),
-			'required' => true,
-		));
-
-		$this->addElement('text', 'alias', array(
-			'label'    => $this->__('Alias'),
 			'required' => true,
 		));
 
@@ -55,8 +30,8 @@ class Recommendations_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 			'uncheckedValue' => 'NO',
 		));
 		
-		$this->addDisplayGroup(array('contacts_groups_id', 'title', 'alias', 'description'), 'center');
-		$this->addDisplayGroup(array('type', 'image', 'enabled'), 'right');
+		$this->addDisplayGroup(array('title', 'description'), 'center');
+		$this->addDisplayGroup(array('image', 'enabled'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);
@@ -71,18 +46,8 @@ class Recommendations_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 		}
 		
 		$this->addBlockChild(
-			Core::getBlock('contacts/admin-contacts/edit/toolbar'),
+			Core::getBlock('recommendations/admin-posts/edit/toolbar'),
 			self::BLOCK_PLACEMENT_BEFORE
 		);
-	}
-	
-	public function getContactsGroupsId($collection)
-	{
-		$result = array();
-		foreach ($collection as $item) {
-			$result[$item->getId()] = $item->getTitle();
-		}
-		
-		return $result;
 	}
 }
