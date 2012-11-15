@@ -11,7 +11,7 @@ echo $this->headMeta();
 /**
  * All title branch renders here
  */
-echo $this->headTitle();
+echo $this->headTitle()->setSeparator(' | ');
 
 ?>
 <?php
