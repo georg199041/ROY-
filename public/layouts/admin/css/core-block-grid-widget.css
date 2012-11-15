@@ -33,3 +33,13 @@
 	border-left: 0px;
 	border-right: 0px;
 }
+.cbgw-block .cbgw-filter input {
+	width: 90%;
+	border-collapse: collapse;
+}
+.cbgw-block .cbgw-filter-form-submit {
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+	position: absolute;
+}

@@ -9,13 +9,13 @@ class Contacts_Block_AdminContacts_Index_Toolbar extends Core_Block_Toolbar_Widg
 		$this->addButton(array(
 			'name'       => 'show',
 			'title'      => $this->__('Show'),
-			'urlOptions' => '*/*/status/enabled/YES'
+			'urlOptions' => '*/*/enabled/value/YES'
 		));
 		
 		$this->addButton(array(
 			'name'       => 'hide',
 			'title'      => $this->__('Hide'),
-			'urlOptions' => '*/*/status/enabled/NO'
+			'urlOptions' => '*/*/enabled/value/NO'
 		));
 
 		$this->addButton(array(

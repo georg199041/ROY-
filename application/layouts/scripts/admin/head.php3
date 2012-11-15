@@ -30,6 +30,7 @@ echo $this->headLink();
  * All scripts files add here
  */
 $this->headScript()->appendFile('/js/jquery/jquery-1.8.2.min.js', 'text/javascript');
+$this->headScript()->appendScript('jQuery.noConflict();', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/tinymce/tiny_mce_gzip.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/admin.js', 'text/javascript');
 echo $this->headScript();
