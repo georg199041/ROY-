@@ -106,10 +106,17 @@ return array (
 				),
 				'default/admin-index/index' => array (
 					'id'         => 'default/admin-index/index',
-					'label'      => 'Administration',
+					'label'      => 'Администратор',
 					'module'     => 'default',
 					'controller' => 'admin-index',
 					'action'     => 'index',
+					'pages'      => array(
+						'default/admin-index/modules' => array(
+							'id'         => 'default/admin-index/modules',
+							'type'       => 'Zend_Navigation_Page_Uri',
+							'label'      => 'Модули',
+						),
+					),
 				),
 			),
 		),

@@ -5,12 +5,12 @@ return array(
 		'router' => array (
 			'routes' => array (
 				'recommendations' => array (
-					'type' => 'Zend_Controller_Router_Route',
-					'route' => 'recommendations.html',
+					'type'     => 'Zend_Controller_Router_Route',
+					'route'    => 'recommendations.html',
 					'defaults' => array (
-						'module' => 'recommendations',
+						'module'     => 'recommendations',
 						'controller' => 'index',
-						'action' => 'index',
+						'action'     => 'index',
 					),
 				),
 			),
@@ -19,12 +19,16 @@ return array(
 			'pages' => array (
 				'default/admin-index/index' => array (
 					'pages' => array(
-						'recommendations/admin-posts/index' => array (
-							'id'         => 'recommendations/admin-posts/index',
-							'label'      => 'Рекоммендации',
-							'module'     => 'recommendations',
-							'controller' => 'admin-posts',
-							'action'     => 'index',
+						'default/admin-index/modules' => array (
+							'pages' => array(
+								'recommendations/admin-posts/index' => array (
+									'id'         => 'recommendations/admin-posts/index',
+									'label'      => 'Рекоммендации',
+									'module'     => 'recommendations',
+									'controller' => 'admin-posts',
+									'action'     => 'index',
+								),
+							),
 						),
 					),
 				),
