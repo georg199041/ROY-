@@ -104,3 +104,49 @@
     width: 28px;
     z-index: 10;
 }
+.front-block-user-comments__tab_before {
+    background: url("../images/tab-user-comments.png") no-repeat scroll 0 0 transparent;
+    width:30px;
+    height:24px;
+    display:block;
+    float:left;
+}
+.front-block-user-comments__tab_after {
+    background: url("../images/tab-user-comments.png") no-repeat scroll 0 -24px transparent;
+    width:30px;
+    height:19px;
+    display:block;
+    float:left;
+    margin-left:-23px;
+}
+.front-block-user-comments__tab_center {
+    background: url("../images/tab-user-comments.png") repeat-x scroll 0 -46px transparent;
+    width:auto;
+    height:19px;
+    display:block;
+    float:left;
+    position:relative;
+}
+.front-block-user-comments__tab_user-name {
+    font-size:12px;
+    font-weight:bold;
+    color:#fff;
+    margin-left:-23px;
+    line-height:17px;
+}
+.front-block-user-comments__tab_user-data {
+    font-size:10px;
+    font-weight:normal;
+    color:#fff;
+    line-height:17px;
+}
+.front-block-user-comments__tab_arrow {
+    font-size:10px;
+    font-weight:normal;
+    color:#fff;
+    line-height:17px;
+}
+.front-block-user-comments-text {
+    font-size:14px;
+    clear:left;
+}

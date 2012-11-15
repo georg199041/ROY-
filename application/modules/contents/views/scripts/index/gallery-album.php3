@@ -34,7 +34,40 @@
         <div class="front-block-comments">
             <h2>Комментарии</h2>
             <div class="front-block-user-comments">
+                <div class="front-block-user-comments__tab">
+                    <span class="front-block-user-comments__tab_before"></span>
+                    <span class="front-block-user-comments__tab_center">
+                        <span class="front-block-user-comments__tab_user-name">Пётр Фролов</span>
+                        <span class="front-block-user-comments__tab_arrow">&larr;</span>
+                        <span class="front-block-user-comments__tab_user-data">25 Октября 2012, 21:03</span>
+                    </span>
+                    <span class="front-block-user-comments__tab_after"></span>
+                </div>
+                <div class="front-block-user-comments-text">
+                    <p>Авторская программа реабилитации наркозависимых включает в себя проживание в деревянных домиках в природных условиях, а так же использование природных оздоровительных процедур.</p>
+                </div>
+            </div>
+            <div class="front-block-user-comments">
+                <div class="front-block-user-comments__tab">
+                    <span class="front-block-user-comments__tab_before"></span>
+                    <span class="front-block-user-comments__tab_center">
+                        <span class="front-block-user-comments__tab_user-name">Пётр Фролов</span>
+                        <span class="front-block-user-comments__tab_arrow">&larr;</span>
+                        <span class="front-block-user-comments__tab_user-data">25 Октября 2012, 21:03</span>
+                    </span>
+                    <span class="front-block-user-comments__tab_after"></span>
+                </div>
+                <div class="front-block-user-comments-text">
+                    <p>Авторская программа реабилитации наркозависимых включает в себя проживание в деревянных домиках в природных условиях, а так же использование природных оздоровительных процедур.</p>
+                </div>
+            </div>
+            <div class="front-block-comment-add">
+                <h3>Ваш комментарий</h3>
+                <form method="" action="">
+                    <fieldset>
 
+                    </fieldset>
+                </form>
             </div>
         </div>
     </div>
