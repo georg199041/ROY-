@@ -6,6 +6,7 @@
 }
 .front-content-carousel {
     overflow:hidden;
+    position:relative;
     width:175px;
     height:515px;
 }
