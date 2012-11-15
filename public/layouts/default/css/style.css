@@ -5,6 +5,7 @@
 @import '/layouts/default/css/front-footer.css';
 @import '/layouts/default/css/front-contents-view-static.css';
 @import '/layouts/default/css/front-recommendations.css';
+@import '/layouts/default/css/front-gallery.css';
 html, body, img, div, a, span {
 	margin: 0;
 	padding: 0;
@@ -22,12 +23,6 @@ body{
 }
 img {
 	border: 0 none;
-}
-a {
-	color: #0e8dcd;
-}
-a:hover {
-	color:#00aaff;
 }
 p {
     font-size:13px;
@@ -148,6 +143,12 @@ ul {
     display: block;
     height: 0;
     visibility: hidden;
+}
+.front-body-content a {
+    color: #0e8dcd;
+}
+.front-body-content a:hover {
+    color:#00aaff;
 }
 .front-body-sidebar-left {
     float: left;

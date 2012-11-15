@@ -31,6 +31,9 @@
 	padding: 0 0 0 20px;
 	margin: 0;
 }
+.cbtw-buttons button {
+	cursor: pointer;
+}
 .cbtw-links {
 	float: left;
 	display: block;

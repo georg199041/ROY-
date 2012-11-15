@@ -18,8 +18,10 @@ class Contacts_Block_AdminContacts_Index extends Core_Block_Grid_Widget
 		$this->addColumn(array(
 			'name'  => 'id',
 			'title' => $this->__('ID'),
-			'width' => '1%',
+			'width' => '50',
 			'align' => 'right',
+			'filterable'        => 'true',
+			'filterableType'    => Core_Block_Grid_Widget::FILTER_EQUAL,
 		));
 		
 		$this->addColumn(array(
@@ -29,6 +31,8 @@ class Contacts_Block_AdminContacts_Index extends Core_Block_Grid_Widget
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),
+			'filterable'     => 'true',
+			'filterableType' => Core_Block_Grid_Widget::FILTER_LIKE,
 		));
 		
 		$this->addColumn(array(
@@ -36,6 +40,21 @@ class Contacts_Block_AdminContacts_Index extends Core_Block_Grid_Widget
 			'title'  => $this->__('Alias'),
 			'width'  => '1%',
 			'nowrap' => 'nowrap',
+			'filterable'     => 'true',
+			'filterableType' => Core_Block_Grid_Widget::FILTER_LIKE,
+		));
+		
+		$this->addColumn(array(
+			'type'              => 'hyperlink',
+			'name'              => 'contacts_groups_id',
+			'title'             => $this->__('Group'),
+			'linkOptions'       => 'contacts/admin-groups/index',
+			'linkBindFields'    => array('contacts_groups_id'),
+			'width'             => '1%',
+			'nowrap'            => 'nowrap',
+			'filterable'        => 'true',
+			'filterableType'    => Core_Block_Grid_Widget::FILTER_SELECT,
+			'filterableOptions' => $this->getContactsGroupsId(),
 		));
 		
 		$this->addColumn(array(
@@ -59,5 +78,20 @@ class Contacts_Block_AdminContacts_Index extends Core_Block_Grid_Widget
 			'type'            => 'pagination',
 			'totalItemsCount' => Core::getMapper('contacts/contacts')->fetchCount(),
 		), self::BLOCK_PLACEMENT_AFTER);
+	}
+	
+	protected $_contactsGroupsId;
+	public function getContactsGroupsId()
+	{
+		if (null === $this->_contactsGroupsId) {
+			$groups = Core::getMapper('contacts/groups')->fetchAll();
+			$this->_contactsGroupsId = array('--- NO ---');
+			
+			foreach ($groups as $group) {
+				$this->_contactsGroupsId[$group->getId()] = $group->getTitle();
+			}
+		}
+		
+		return $this->_contactsGroupsId;
 	}
 }

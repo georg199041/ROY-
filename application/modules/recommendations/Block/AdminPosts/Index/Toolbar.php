@@ -1,10 +1,10 @@
 <?php
 
-class Contacts_Block_AdminContacts_Index_Toolbar extends Core_Block_Toolbar_Widget
+class Recommendations_Block_AdminPosts_Index_Toolbar extends Core_Block_Toolbar_Widget
 {
 	public function init()
 	{
-		$this->setTitle($this->__('Manage contacts items'));
+		$this->setTitle($this->__('Рекоммендации'));
 		
 		$this->addButton(array(
 			'name'       => 'show',
