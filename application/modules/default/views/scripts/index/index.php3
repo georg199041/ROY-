@@ -17,15 +17,15 @@
 					</div>
 					
 				</div>	
-				<div class="front-body-schema__item-images">
-					<div class="front-body-schema__item-image-beforehover">
-						<img src="/layouts/default/images/scheme_orange.png" />
-					</div>
-					<div class="front-body-schema__item-image-afterhover">
-						<img src="/layouts/default/images/scheme_orange_hover.png" />
-					</div>
-				</div>	
-				<div class="front-body-schema__item-background-wrap"><img src="/layouts/default/images/scheme_orange_bg.png" /></div>
+				<img class="front-body-schema__item-image front-body-schema__item-image_beforehover" src="/layouts/default/images/scheme_orange.png" />
+				<img class="front-body-schema__item-image front-body-schema__item-image_afterhover" src="/layouts/default/images/scheme_orange_hover.png" />
+				<ul class="front-body-schema__item-list-dots">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="front-body-schema__item-background-wrap"></div>
 			</div>
 			<div class="front-body-schema__item front-body-schema_dblue">
 				<div class="front-body-schema__item-titlebox">	
@@ -36,15 +36,15 @@
 						Кадровая политика компании ориентирована на постоянный профессиональный рост и поддержку сотрудников
 					</div>
 				</div>	
-				<div class="front-body-schema__item-images">
-					<div class="front-body-schema__item-image-beforehover">
-						<img src="/layouts/default/images/scheme_dblue.png" />
-					</div>
-					<div class="front-body-schema__item-image-afterhover">
-						<img src="/layouts/default/images/scheme_dblue_hover.png" />
-					</div>
-				</div>
-				<div class="front-body-schema__item-background-wrap"><img src="/layouts/default/images/scheme_dblue_bg.png" /></div>	
+				<img class="front-body-schema__item-image front-body-schema__item-image_beforehover" src="/layouts/default/images/scheme_dblue.png" />
+				<img class="front-body-schema__item-image front-body-schema__item-image_afterhover" src="/layouts/default/images/scheme_dblue_hover.png" />	
+				<ul class="front-body-schema__item-list-dots">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="front-body-schema__item-background-wrap"></div>	
 			</div>
 			<div class="front-body-schema__item front-body-schema_brown">
 				<div class="front-body-schema__item-titlebox">	
@@ -56,15 +56,15 @@
 					</div>
 					
 				</div>	
-				<div class="front-body-schema__item-images">
-					<div class="front-body-schema__item-image-beforehover">
-						<img src="/layouts/default/images/scheme_brown.png" />
-					</div>
-					<div class="front-body-schema__item-image-afterhover">
-						<img src="/layouts/default/images/scheme_brown_hover.png" />
-					</div>
-				</div>	
-				<div class="front-body-schema__item-background-wrap"><img src="/layouts/default/images/scheme_brown_bg.png" /></div>
+				<img class="front-body-schema__item-image front-body-schema__item-image_beforehover" src="/layouts/default/images/scheme_brown.png" />
+				<img class="front-body-schema__item-image front-body-schema__item-image_afterhover" src="/layouts/default/images/scheme_brown_hover.png" />
+				<ul class="front-body-schema__item-list-dots">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="front-body-schema__item-background-wrap"></div>
 			</div>
 			<div class="front-body-schema__item front-body-schema_green">
 				<div class="front-body-schema__item-titlebox">	
@@ -75,15 +75,15 @@
 						Кадровая политика компании ориентирована на постоянный профессиональный рост и поддержку сотрудников
 					</div>
 				</div>	
-				<div class="front-body-schema__item-images">
-					<div class="front-body-schema__item-image-beforehover">
-						<img src="/layouts/default/images/scheme_green.png" />
-					</div>
-					<div class="front-body-schema__item-image-afterhover">
-						<img src="/layouts/default/images/scheme_green_hover.png" />
-					</div>
-				</div>
-				<div class="front-body-schema__item-background-wrap"><img src="/layouts/default/images/scheme_green_bg.png" /></div>	
+				<img class="front-body-schema__item-image front-body-schema__item-image_beforehover" src="/layouts/default/images/scheme_green.png" />
+				<img class="front-body-schema__item-image front-body-schema__item-image_afterhover" src="/layouts/default/images/scheme_green_hover.png" />
+				<ul class="front-body-schema__item-list-dots">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="front-body-schema__item-background-wrap"></div>	
 			</div>
 			<div class="front-body-schema__item front-body-schema_red">
 				<div class="front-body-schema__item-titlebox">	
@@ -95,15 +95,15 @@
 					</div>
 					
 				</div>	
-				<div class="front-body-schema__item-images">
-					<div class="front-body-schema__item-image-beforehover">
-						<img src="/layouts/default/images/scheme_red.png" />
-					</div>
-					<div class="front-body-schema__item-image-afterhover">
-						<img src="/layouts/default/images/scheme_red_hover.png" />
-					</div>
-				</div>	
-				<div class="front-body-schema__item-background-wrap"><img src="/layouts/default/images/scheme_red_bg.png" /></div>
+				<img class="front-body-schema__item-image front-body-schema__item-image_beforehover" src="/layouts/default/images/scheme_red.png" />
+				<img class="front-body-schema__item-image front-body-schema__item-image_afterhover" src="/layouts/default/images/scheme_red_hover.png" />
+				<ul class="front-body-schema__item-list-dots">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="front-body-schema__item-background-wrap"></div>
 			</div>
 			<div class="front-body-schema__item front-body-schema_lbue">
 				<div class="front-body-schema__item-titlebox">	
@@ -111,18 +111,18 @@
 						Ориентация <br/>на результат
 					</div>
 					<div class="front-body-schema__item-introtext">
-						Мы очень оринтированына результатЧто бы это не значило...Черт побери!
+						Мы очень оринтированы на результат Что бы это не значило... Черт побери!
 					</div>
 				</div>	
-				<div class="front-body-schema__item-images">
-					<div class="front-body-schema__item-image-beforehover">
-						<img src="/layouts/default/images/scheme_lblue.png" />
-					</div>
-					<div class="front-body-schema__item-image-afterhover">
-						<img src="/layouts/default/images/scheme_lblue_hover.png" />
-					</div>
-				</div>
-				<div class="front-body-schema__item-background-wrap"><img src="/layouts/default/images/scheme_lblue_bg.png" /></div>	
+				<img class="front-body-schema__item-image front-body-schema__item-image_beforehover" src="/layouts/default/images/scheme_lblue.png" />
+				<img class="front-body-schema__item-image front-body-schema__item-image_afterhover" src="/layouts/default/images/scheme_lblue_hover.png" />
+				<ul class="front-body-schema__item-list-dots">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>					
+				<div class="front-body-schema__item-background-wrap"></div>	
 			</div>
 		</div>
 	</div>
