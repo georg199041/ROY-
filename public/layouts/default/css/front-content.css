@@ -74,6 +74,7 @@
 .front-body-schema__item-list-dots li{
 	height: 11px;
     width: 0;
+    text-align: right;
 }
 .front-body-schema__item-titlebox{
 	position: relative;
@@ -96,7 +97,10 @@
 }
 .front-body-schema_orange .front-body-schema__item-list-dots{
 	right: 0;
-	bottom: 0;
+	top: 0;
+	transform: rotate(-30deg);
+	margin-right: 40px;
+    margin-top: 122px;
 }
 .front-body-schema_orange .front-body-schema__item_titlebox-hover{
 	padding: 20px 150px 20px 10px;
@@ -159,7 +163,10 @@
 }
 .front-body-schema_dblue .front-body-schema__item-list-dots{
 	left: 0;
-	bottom: 0;
+	top: 0;
+	transform: rotate(30deg);
+	margin-left: 60px;
+    margin-top: 132px;
 }
 .front-body-schema_dblue .front-body-schema__item_titlebox-hover{
 	padding: 20px 10px 20px 150px;
@@ -410,6 +417,9 @@
 .front-body-schema_lbue .front-body-schema__item-list-dots{
 	top: 0;
 	left: 0;
+	transform: rotate(-30deg);
+	margin-left: 35px;
+    margin-top: -5px;
 }
 .front-body-schema_lbue .front-body-schema__item_titlebox-hover{
 	padding: 20px 10px 20px 150px;
