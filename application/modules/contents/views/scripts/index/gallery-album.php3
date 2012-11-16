@@ -1,6 +1,5 @@
 <div class="front-body-content">
     <h1>НАЗВАНИЕ АЛЬБОМА</h1>
-    <div class="front-content-gallery">
         <p>Описание альбома, если нужно. Методика, применяемая для реабилитации наркозависимых и лечения наркоманов, не связана с медицинскими препаратами и не имеет аналогов, защищена Авторским Свидетельством.</p>
         <div class="front-content-gallery-album">
             <div class="front-content-gallery-album-horizontal_carousel">
@@ -81,7 +80,6 @@
                 </form>
             </div>
         </div>
-    </div>
 </div>
 <div class="front-body-sidebar-left">
     <?php echo Core::getBlock('navigation/index/sidebar-menu'); ?>
