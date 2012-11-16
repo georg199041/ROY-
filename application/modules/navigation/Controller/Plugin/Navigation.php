@@ -22,8 +22,11 @@ class Navigation_Controller_Plugin_Navigation extends Zend_Controller_Plugin_Abs
 				'reset_params' => $item->getResestParams() == 'YES' ? true : false,
 				'encode_url'   => $item->getEncodeUrl() == 'YES' ? true : false,
 				'order'        => $item->getOrder(),
-				'active'       => $item->getUri() == $_SERVER['REQUEST_URI'] ? true : false,
 			);
+			
+			if ($item->getType() == 'URI' && $item->getUri() == $_SERVER['REQUEST_URI']) {
+				$page['active'] = true;
+			}
 			
 			if (count($item->getChilds())) {
 				$page['pages'] = $this->_buildNavigation($item->getChilds());

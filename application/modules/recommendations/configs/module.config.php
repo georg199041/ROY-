@@ -6,7 +6,7 @@ return array(
 			'routes' => array (
 				'recommendations' => array (
 					'type'     => 'Zend_Controller_Router_Route',
-					'route'    => 'recommendations.html',
+					'route'    => 'recommendations',
 					'defaults' => array (
 						'module'     => 'recommendations',
 						'controller' => 'index',
