@@ -64,9 +64,20 @@
             <div class="front-block-comment-add">
                 <h3>Ваш комментарий</h3>
                 <form method="" action="">
-                    <fieldset>
-
-                    </fieldset>
+                        <div class="front-block-comment__input-box">
+                            <label>Ваше имя</label>
+                            <input type="text" />
+                        </div>
+                        <div class="front-block-comment__input-box">
+                            <label>Адрес электроной почты (не публикуется)</label>
+                            <input type="text" />
+                        </div>
+                        <div class="front-block-comment__input-box">
+                            <label>Текст сообщения</label>
+                            <textarea rows="" cols=""></textarea>
+                        </div>
+                    <button class="front-block-comment__button" type="submit" value=""><span>Отправить</span></button>
+                    <span class="front-block-comment__required">Все поля обязательны к заполнению</span>
                 </form>
             </div>
         </div>
