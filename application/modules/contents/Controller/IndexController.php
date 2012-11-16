@@ -30,4 +30,6 @@ class Contents_IndexController extends Core_Controller_Action
     }
 
 	public function galleryAlbumAction(){}
+
+	public function personalAction(){}
 }
