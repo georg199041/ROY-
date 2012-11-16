@@ -21,14 +21,6 @@
 	height: auto !important;
 	border: solid #eee;
 	border-width: 0 1px;
-    position:relative;
-}
-.front-body-container:after{
-	display:block;
-    height:0;
-    content:'.';
-    visibility:hidden;
-    clear:both;
 }
 .front-body-container-schema-main{
 	height: 482px;
