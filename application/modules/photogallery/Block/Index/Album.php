@@ -18,4 +18,21 @@ class Photogallery_Block_Index_Album extends Core_Block_View
 		
 		return $this->_album;
 	}
+	
+	protected $_albumPhotos;
+	public function getAlbumPhotos()
+	{
+		if (null === $this->_albumPhotos) {
+			$this->_albumPhotos = Core::getMapper('photogallery/images')->fetchAll(array(
+				'enabled = ?' => 'YES',
+				'photogallery_albums_id = ?' => $this->getAlbum()->getId()
+			));
+			
+			if ($this->_albumPhotos->count() == 0) {
+				throw new Exception('Page not found');
+			}
+		}
+		
+		return $this->_albumPhotos;
+	}
 }
