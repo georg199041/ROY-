@@ -24,62 +24,10 @@
 		</div>
 		<?php echo $current->getDescription(); ?>
 	</div>
-	<div class="front-block-comments">
-		<h2>Комментарии</h2>
-		<div class="front-block-user-comments">
-			<div class="front-block-user-comments__tab">
-				<span class="front-block-user-comments__tab_before"></span> <span
-					class="front-block-user-comments__tab_center"> <span
-					class="front-block-user-comments__tab_user-name">Пётр Фролов</span>
-					<span class="front-block-user-comments__tab_arrow">&larr;</span> <span
-					class="front-block-user-comments__tab_user-data">25 Октября 2012,
-						21:03</span>
-				</span> <span class="front-block-user-comments__tab_after"></span>
-			</div>
-			<div class="front-block-user-comments-text">
-				<p>Авторская программа реабилитации наркозависимых включает в себя
-					проживание в деревянных домиках в природных условиях, а так же
-					использование природных оздоровительных процедур.</p>
-			</div>
-		</div>
-		<div class="front-block-user-comments">
-			<div class="front-block-user-comments__tab">
-				<span class="front-block-user-comments__tab_before"></span> <span
-					class="front-block-user-comments__tab_center"> <span
-					class="front-block-user-comments__tab_user-name">Пётр Фролов</span>
-					<span class="front-block-user-comments__tab_arrow">&larr;</span> <span
-					class="front-block-user-comments__tab_user-data">25 Октября 2012,
-						21:03</span>
-				</span> <span class="front-block-user-comments__tab_after"></span>
-			</div>
-			<div class="front-block-user-comments-text">
-				<p>Авторская программа реабилитации наркозависимых включает в себя
-					проживание в деревянных домиках в природных условиях, а так же
-					использование природных оздоровительных процедур.</p>
-			</div>
-		</div>
-		<div class="front-block-comment-add">
-			<h3>Ваш комментарий</h3>
-			<form method="" action="">
-				<div class="front-block-comment__input-box">
-					<label>Ваше имя</label> <input type="text" />
-				</div>
-				<div class="front-block-comment__input-box">
-					<label>Адрес электроной почты (не публикуется)</label> <input
-						type="text" />
-				</div>
-				<div class="front-block-comment__input-box">
-					<label>Текст сообщения</label>
-					<textarea rows="" cols=""></textarea>
-				</div>
-				<button class="front-block-comment__button" type="submit" value="">
-					<span>Отправить</span>
-				</button>
-				<span class="front-block-comment__required">Все поля обязательны к
-					заполнению</span>
-			</form>
-		</div>
-	</div>
+	<?php
+		echo Core::getBlock('comments/index/comments')->setCommentsTable('photogallery_albums')
+		                                              ->setCommentsTableId($this->getAlbum()->getId());
+	?>
 </div>
 <div class="front-body-sidebar-left">
     <?php echo Core::getBlock('navigation/index/sidebar-menu')->forseActivePageUrl('/photogallery'); ?>
