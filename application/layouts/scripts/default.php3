@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<link rel="favicon.ico" href="/favicon.ico" type="image/x-icon">
 	<?php $this->headTitle($this->translate('Roy')); ?>
 	<?php echo $this->partial('default/head.php3'); ?>
 </head>
@@ -33,7 +34,7 @@
 			</div>
 		</div>
 		<?php endif; ?>
-		<div class="front-body-container">
+		<div class="front-body-container front_clearfix">
 			<?php echo $this->partial('default/body.php3'); ?>
 			<div class="front_clearfix"></div>
 		</div>
