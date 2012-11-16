@@ -1,103 +1,27 @@
 /*footer start*/
+.front-push-bottom {
+	height: 142px;
+}
 .front-footer {
 	width: 100%;
-	border-top: 1px solid #d9d9d9;
-	height: 40px;
+	height: 140px;
+	margin-top: -140px;
+	position: relative;
+	z-index: 10;
 }
 .front-footer-width {
 	width: 1000px;
 	margin: 0 auto;
 	height: 140px;
 }
+.front-result-box{
+	width: 100%;
+	position: relative;
+    background: url(/layouts/images/main-pattern-dark.png);
+}
 .front-footer-box {
     margin: 0 auto;
     width: 850px;
-}
-.front-result-box-cont{
-	text-align: left;
-	padding-bottom: 40px;
-	padding-top: 22px;
-	background: url(../images/main-pattern-light.png);
-}
-.front-result-box-title{
-	text-align: center;
-}
-.front-result-box-text{
-	text-align: center;
-	font-size: 13px;
-    line-height: 17px;
-    margin: 0 auto;
-    padding-top: 5px;
-    width: 710px;
-}
-.front-result-result-box-align{
-	margin: 0 auto;
-	width: 260px;
-	height: 50px;
-	margin-top: -25px;
-}
-.front-footer-white-stripe{
-	background: #FFF;
-	bottom: 0;
-	margin: 0 auto;
-	width: 850px;
-	height: 25px;
-    margin-top: -23px;
-}
-.front-result-box-button {
-    width: 260px;
-    float: left;
-    height: 52px;
-    background: red;
-    position: relative;
-    background: url(../images/buttons_center.png);
-    margin: 0 auto;
-    text-align: center;
-    font-family: Verdana;
-    text-decoration: none;
-}
-
-.front-result-box-button:before {
-    content: "";
-    position: absolute;
-    top: -1px; 
-    left: -18px;
-    width: 22px;
-    height: 54px;
-    background: url(../images/button_corners.png) left;
-    background-repeat: no-repeat;
-}
-.front-result-box-button:after {
-    content: "";
-    position: absolute;
-    top: -1px;
-    right: -19px;
-    width: 22px;
-    height: 54px;
-    background: url(../images/button_corners.png) right;
-    background-repeat: no-repeat;
-}
-.front-result-box-button-text{
-	text-transform: uppercase;
-	font-size: 16px;
-	color: #FFF;
-	text-shadow: 0 -1px 0 #333;
-	margin-top: 15px;
-	display: inline-block;
-}
-.front-result-box-button-text:before{
-	content: url(../images/point.png);
-	position: absolute;
-	left: 10px;
-    top: 14px;
-    position: absolute;
-}
-.front-result-box-button-text:after{
-	content: url(../images/point.png);
-	position: absolute;
-	right: 10px;
-    top: 14px;
-    position: absolute;
 }
 .front-footer-box-rights {
     background: #FFF;
@@ -125,7 +49,7 @@
 	position:relative;
 	bottom: 0;
 	display: inline-block;
-	background: url(../images/logo_sunny.png) no-repeat ;
+	background: url("/layouts/default/images/logo_sunny.png") no-repeat ;
 	width: 72px;
 	height: 37px;
     top: 48px;

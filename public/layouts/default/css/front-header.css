@@ -4,7 +4,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	border-bottom: 1px solid #d9d9d9;
+	z-index: 10;
 }
 .front-header-cords__item-content-text{
 	text-align: center;
@@ -79,7 +79,8 @@
 	width: 838px;
 	height: 80px;
 	padding-left: 12px;
-	background: url("/layouts/default/images/menu_bg.png") repeat-x #fff;
+	background: url("/layouts/default/images/menu_bg.png") repeat-x;
+	background-color: #fff;
 }
 .front-header-menu-right {
 	float: left;

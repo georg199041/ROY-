@@ -8,6 +8,8 @@
 @import '/layouts/default/css/front-gallery.css';
 @import '/layouts/default/css/front-gallery-album.css';
 @import '/layouts/default/css/front-personal.css';
+@import '/layouts/default/css/front-focused-on-results.css';
+@import '/layouts/default/css/front-google.css';
 html, body, img, div, a, span {
 	margin: 0;
 	padding: 0;
@@ -79,11 +81,6 @@ ul {
 .front_socials-margin{
 	margin-top: 8px;
 }
-.front-result-box{
-	border-top: 1px solid #D9D9D9;
-    width: 100%;
-    background: url(../images/main-pattern-dark.png);
-}
 .front-body-slider-body{
 	width: 100%;
 	position: relative;
@@ -145,7 +142,7 @@ ul {
     padding: 0 20px 30px 210px;
     background-color:#fff;
 }
-.front-body-content:after {
+.front-body-content:last-child:after {
     clear: both;
     content: ".";
     display: block;
