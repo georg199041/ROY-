@@ -1,17 +1,27 @@
-<style>
-.template_name_highlighter {
-	background-color: #f0f0f0;
-	display: inline-block;
-	border: 1px solid #e0e0e0;
-	border-radius: 3px;
-	padding: 3px;
-	font-size: 10px;
-	font-family: Arial;
-}
-</style>
-<div class="template_name_highlighter">
-	<?php echo __FILE__; ?>
+<div class="front-body-content">
+	<h1>Галерея</h1>
+    <div class="front-content-gallery">
+    	<?php foreach ($this->getAlbums() as $album): ?>
+    		<?php
+    			$url = $this->url(
+					array('album' => $album->getAlias()),
+					'photogallery-album',
+					true
+				);
+			?>
+	    	<div class="front-content-gallery-photos">
+	            <a class="front-content-gallery__unit-link"
+	               title="<?php echo $album->getTitle(); ?>"
+	               href="<?php echo $url; ?>">
+	                <img alt="<?php echo $album->getTitle(); ?>" src="/uploads/photo_3.jpg"  />
+	            </a>
+	            <a class="front-content-gallery__description"
+	               title="<?php echo $album->getTitle(); ?>"
+	               href="<?php echo $url; ?>"><?php echo $album->getTitle(); ?></a>
+	        </div>
+        <?php endforeach; ?>
+    </div>
 </div>
-<?php// echo $this->image('/uploads/slide1.jpg', array('width' => '20'))->resizeToCrop(100, 100); ?>
-<?php //echo $this->getBlock('default/index/grid'); ?>
-<?php echo get_class($this); ?>
+<div class="front-body-sidebar-left">
+    <?php echo Core::getBlock('navigation/index/sidebar-menu'); ?>
+</div>

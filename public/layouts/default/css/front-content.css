@@ -33,7 +33,7 @@
 	margin: 0 auto;
 	width: 136px;
 	height: 156px;
-	top: 160px;
+	top: 153px;
 	position: relative;
 }
 .front-body-schema-list{
@@ -68,12 +68,14 @@
 	list-style: disc;
 	color: red;
 	position: absolute;
-	height: 0;
+	height: 20px;
     width: 0;
 }
 .front-body-schema__item-list-dots li{
 	height: 11px;
     width: 0;
+    text-align: right;
+    overflow: visible !important;
 }
 .front-body-schema__item-titlebox{
 	position: relative;
@@ -96,7 +98,11 @@
 }
 .front-body-schema_orange .front-body-schema__item-list-dots{
 	right: 0;
-	bottom: 0;
+	top: 0;
+	transform: rotate(150deg);
+	margin-right: 36px;
+    margin-top: 155px;
+    color: #EF6407;
 }
 .front-body-schema_orange .front-body-schema__item_titlebox-hover{
 	padding: 20px 150px 20px 10px;
@@ -159,7 +165,11 @@
 }
 .front-body-schema_dblue .front-body-schema__item-list-dots{
 	left: 0;
-	bottom: 0;
+	top: 0;
+	transform: rotate(210deg);
+	margin-left: 18px;
+    margin-top: 147px;
+    color: #0078B4;
 }
 .front-body-schema_dblue .front-body-schema__item_titlebox-hover{
 	padding: 20px 10px 20px 150px;
@@ -222,8 +232,9 @@
 .front-body-schema_brown .front-body-schema__item-list-dots{
 	right: 0;
 	transform: rotate(90deg);
-	margin-right: -27px;
-    margin-top: 97px;
+	margin-right: -22px;
+    margin-top: 82px;
+    color: #BE6B00;
 }
 .front-body-schema_brown .front-body-schema__item_titlebox-hover{
 	padding: 20px 150px 20px 10px;
@@ -285,9 +296,10 @@
 }
 .front-body-schema_green .front-body-schema__item-list-dots{
 	left: 0;
-	transform: rotate(90deg);
-	margin-left: 25px;
-    margin-top: 97px;
+	transform: rotate(270deg);
+	margin-left: -20px;
+    margin-top: 60px;
+    color: #93CD09;
 }
 .front-body-schema_green .front-body-schema__item_titlebox-hover{
 	padding: 20px 10px 20px 150px;
@@ -349,8 +361,9 @@
 	right: 0;
 	top: 0;
 	transform: rotate(30deg);
-	margin-right: 15px;
-    margin-top: 5px;
+	margin-right: 16px;
+    margin-top: -8px;
+    color: #9E0039;
 }
 .front-body-schema_red .front-body-schema__item_titlebox-hover{
 	padding: 20px 150px 20px 10px;
@@ -410,6 +423,10 @@
 .front-body-schema_lbue .front-body-schema__item-list-dots{
 	top: 0;
 	left: 0;
+	transform: rotate(-30deg);
+	margin-left: 36px;
+    margin-top: -18px;
+    color: #00AEEF;
 }
 .front-body-schema_lbue .front-body-schema__item_titlebox-hover{
 	padding: 20px 10px 20px 150px;

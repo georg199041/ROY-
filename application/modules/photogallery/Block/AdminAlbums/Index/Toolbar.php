@@ -1,10 +1,10 @@
 <?php
 
-class Recommendations_Block_AdminPosts_Index_Toolbar extends Core_Block_Toolbar_Widget
+class Photogallery_Block_AdminAlbums_Index_Toolbar extends Core_Block_Toolbar_Widget
 {
 	public function init()
 	{
-		$this->setTitle($this->__('Рекоммендации'));
+		$this->setTitle($this->__('Альбомы фотогалереи'));
 		
 		$this->addButton(array(
 			'name'       => 'show',
@@ -16,6 +16,18 @@ class Recommendations_Block_AdminPosts_Index_Toolbar extends Core_Block_Toolbar_
 			'name'       => 'hide',
 			'title'      => $this->__('Скрыть'),
 			'urlOptions' => '*/*/enabled/value/NO'
+		));
+
+		$this->addButton(array(
+			'name'       => 'move',
+			'title'      => $this->__('Переместить'),
+			'urlOptions' => '*/*/move'
+		));
+		
+		$this->addButton(array(
+			'name'       => 'copy',
+			'title'      => $this->__('Копировать'),
+			'urlOptions' => '*/*/copy'
 		));
 		
 		$this->addButton(array(
