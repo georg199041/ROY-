@@ -24,3 +24,15 @@
 	height: 100%;
 	z-index: 5;
 }
+.front-content-contacts {
+    background:url("../images/bg_translucent.png") repeat scroll 0 0 transparent;
+    width:431px;
+    height: 402px;
+    -webkit-box-shadow: 0px 0px 19px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:0px 0px 19px rgba(50, 50, 50, 0.75);
+    box-shadow:0px 0px 19px rgba(50, 50, 50, 0.75);
+    position:absolute;
+    right:0;
+    bottom:0;
+    z-index:10;
+}
