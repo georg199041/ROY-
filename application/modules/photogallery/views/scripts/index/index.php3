@@ -10,14 +10,12 @@
 				);
 			?>
 	    	<div class="front-content-gallery-photos">
-	            <a class="front-content-gallery__unit-link"
-	               title="<?php echo $album->getTitle(); ?>"
-	               href="<?php echo $url; ?>">
-	                <img alt="<?php echo $album->getTitle(); ?>" src="/uploads/photo_3.jpg"  />
+	            <a class="front-content-gallery__unit-link" title="<?php echo $album->getTitle(); ?>" href="<?php echo $url; ?>">
+	                <img alt="<?php echo $album->getTitle(); ?>" src="<?php echo $album->getImage(); ?>"  />
 	            </a>
-	            <a class="front-content-gallery__description"
-	               title="<?php echo $album->getTitle(); ?>"
-	               href="<?php echo $url; ?>"><?php echo $album->getTitle(); ?></a>
+	            <a class="front-content-gallery__description" title="<?php echo $album->getTitle(); ?>" href="<?php echo $url; ?>">
+	            	<?php echo $album->getTitle(); ?>
+	            </a>
 	        </div>
         <?php endforeach; ?>
     </div>

@@ -5,5 +5,5 @@
     </div>
 </div>
 <div class="front-body-sidebar-left">
-    <?php echo Core::getBlock('navigation/index/sidebar-menu'); ?>
+    <?php echo Core::getBlock('navigation/index/sidebar-menu')->forseActivePageUrl('/photogallery'); ?>
 </div>
