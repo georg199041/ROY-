@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+.front-map-page .front-header-menu {
+	background-color: transparent;
+}
+.front-map-page .front-footer-box-rights-logo-a {
+	background: url('/layouts/e404/images/developer-logo.png') no-repeat;
+}
+.front-map-page .front-footer-box-rights {
+	background: none;
+	color: #fff;
+}
+.front-map-page .front-footer-box-line {
+	background: none;
+}
+.front-map-page .front-footer-box-rights-text {
+	padding-top: 18px;
+}
+.front-map-page .front-footer-box-rights-logo-a {
+	top: 30px;
+}
+#front-fullscreen-map {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}

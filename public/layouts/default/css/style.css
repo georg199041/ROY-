@@ -8,6 +8,8 @@
 @import '/layouts/default/css/front-gallery.css';
 @import '/layouts/default/css/front-gallery-album.css';
 @import '/layouts/default/css/front-personal.css';
+@import '/layouts/default/css/front-focused-on-results.css';
+@import '/layouts/default/css/front-google.css';
 html, body, img, div, a, span {
 	margin: 0;
 	padding: 0;
