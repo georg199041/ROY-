@@ -1,6 +1,8 @@
-//SCHEMA INDEX PAGE
+
 
 $(document).ready(function(){
+	
+	//SCHEMA INDEX PAGE
 	
 	$(".front-body-schema__item-image").css({
 		"width"   : "86px",
@@ -53,4 +55,6 @@ $(document).ready(function(){
 		
 
 	});
+		
 });
+
