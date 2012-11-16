@@ -30,7 +30,7 @@ $(document).ready(function(){
 			"margin": "5px 7px 0",
 		}
 		
-		//$(this).find(".front-body-schema__item-list-dots li").stop().animate({}, 300);
+		$(this).find(".front-body-schema__item-list-dots li").stop().animate({"height":"4px"}, 200);
 		$(this).find(".front-body-schema__item-image_beforehover").stop().animate($.extend(css, {"opacity":"0"}), 300);
 		$(this).find(".front-body-schema__item-image_afterhover").stop().animate($.extend(css, {"opacity":"1"}), 300);
 		
@@ -42,14 +42,14 @@ $(document).ready(function(){
 		$(this).find(".front-body-schema__item-titlebox").removeClass("front-body-schema__item_titlebox-hover");
 		
 		
-		//$(this).find(".front-body-schema__item-list-dots li").stop().animate({}, 300);
+		$(this).find(".front-body-schema__item-list-dots li").stop().animate({"height":"11px","":""}, 300);
 		var css = $(this).find(".front-body-schema__item-image").data("css");
 		$(this).find(".front-body-schema__item-image_beforehover").stop().animate($.extend(css, {"opacity":"1"}), 300);
 		$(this).find(".front-body-schema__item-image_afterhover").stop().animate($.extend(css, {"opacity":"0"}), 300);
 		
 
 		$(this).find(".front-body-schema__item-introtext").hide();
-		$(this).find(".front-body-schema__item-background-wrap").stop().animate({"width":"0"}, 300);
+		$(this).find(".front-body-schema__item-background-wrap").stop().animate({"width":"0"}, 100);
 		
 
 	});
