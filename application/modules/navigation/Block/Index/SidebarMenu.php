@@ -12,4 +12,14 @@ class Navigation_Block_Index_SidebarMenu extends Core_Block_View
 		
 		return $active;
 	}
+	
+	public function forseActivePageUrl($href)
+	{
+		$page = Zend_Registry::get('Zend_Navigation')->findOneByHref($href);
+		if ($page) {
+			$page->setActive(true);
+		}
+		
+		return $this;
+	}
 }
