@@ -34,6 +34,7 @@ echo $this->headLink();
 $this->headScript()->appendFile('/js/jquery/jquery-1.8.2.min.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/default/js/main.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/default/js/recommendations.js', 'text/javascript');
+$this->headScript()->appendFile('/layouts/default/js/photogallery.js', 'text/javascript');
 echo $this->headScript();
 
 ?>

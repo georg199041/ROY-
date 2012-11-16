@@ -66,6 +66,7 @@
 }
 .front-content-gallery-album-big-foto__photo {
     position:relative;
+    width: 570px;
 }
 .front-content-gallery-album-big-foto__arrow_left {
     background:url("../images/arrow-left-big-foto.png") no-repeat scroll center center transparent;
@@ -215,3 +216,5 @@
     font-size:11px;
     font-style:italic;
 }
+
+
