@@ -1,11 +1,11 @@
 <?php
 
-class Photogallery_AdminAlbumsController extends Core_Controller_Action
+class Photogallery_AdminImagesController extends Core_Controller_Action
 {	
 	public function init()
 	{
 		$this->getHelper('layout')->setLayout('admin');
-		$this->view->headTitle('Альбомы фотогалереи');
+		$this->view->headTitle('Изображения фотогалереи');
 		$this->getResponse()->appendBody(implode('<br />' ,$this->getHelper('FlashMessenger')->getMessages()));
 	}
 	
@@ -14,7 +14,7 @@ class Photogallery_AdminAlbumsController extends Core_Controller_Action
     public function editAction()
     {
     	$id    = $this->getRequest()->getParam('id');
-    	$model = Core::getMapper('photogallery/albums')->find($id);
+    	$model = Core::getMapper('photogallery/images')->find($id);
     	
     	if ($model->getId() || $id == 0) {
     		Zend_Registry::set('form_data', $model);
@@ -29,13 +29,13 @@ class Photogallery_AdminAlbumsController extends Core_Controller_Action
     {
     	if (($data = $this->getRequest()->getPost()) && !$this->getRequest()->getParam('cancel')) {
     		try {
-    			$form = Core::getBlock('photogallery/admin-albums/edit');
+    			$form = Core::getBlock('photogallery/admin-images/edit');
     			if (!$form->isValid($data)) {
     				Core::getSession('admin')->formHasErrors = true;
     				throw new Exception($this->__("Invalid form"));
     			}
     			
-    			$model = Core::getMapper('photogallery/albums')->create($form->getValues());
+    			$model = Core::getMapper('photogallery/images')->create($form->getValues());
     			$model->save();
     			unset(Core::getSession('admin')->formData);
     	   
@@ -66,7 +66,7 @@ class Photogallery_AdminAlbumsController extends Core_Controller_Action
     	} else {
     		try {
     			foreach ($ids as $id) {
-    				$model = Core::getMapper('photogallery/albums')->find($id);
+    				$model = Core::getMapper('photogallery/images')->find($id);
     				$model->delete();
     			}
     			 
@@ -88,7 +88,7 @@ class Photogallery_AdminAlbumsController extends Core_Controller_Action
     		try {
     			foreach ($ids as $id => $selected) {
     				if ($selected) {
-	    				$model = Core::getMapper('photogallery/albums')->find($id);
+	    				$model = Core::getMapper('photogallery/images')->find($id);
 	    				$model->setEnabled($this->getRequest()->getParam('value'));
 	    				$model->save();
     				}
@@ -111,7 +111,7 @@ class Photogallery_AdminAlbumsController extends Core_Controller_Action
     	} else {
     		try {
     			foreach ($ids as $id) {
-    				$model = Core::getMapper('photogallery/albums')->find($id);
+    				$model = Core::getMapper('photogallery/images')->find($id);
    					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
    					$model->save();
     			}
@@ -133,7 +133,7 @@ class Photogallery_AdminAlbumsController extends Core_Controller_Action
     	} else {
     		try {
     			foreach ($ids as $id) {
-    				$model = Core::getMapper('photogallery/albums')->find($id);
+    				$model = Core::getMapper('photogallery/images')->find($id);
     				$model->setId(null);
    					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
    					$model->save();
