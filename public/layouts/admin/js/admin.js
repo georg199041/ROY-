@@ -3,16 +3,26 @@
  */
 function observeCheckAll()
 {
-	var cb = jQuery('.cbgw-block .cbgw-header-ids input[type=checkbox]');
+	var cb = jQuery('.cbgw-block .cbgw-header__ids input[type=checkbox]');
 	cb.bind('change', function(){
-		var cbs = jQuery(this).parents('.cbgw-block')
-		                      .find('.cbgw-column-ids input[type="checkbox"]');
+		var cbs = jQuery(this).parents('table').find('.cbgw-column__ids input[type="checkbox"]');
 		
 		if (jQuery(this).attr('checked') == 'checked') {
 			cbs.attr('checked', 'checked');
 		} else {
 			cbs.attr('checked', null);
 		}
+	});
+}
+
+function observeEnabledColumn()
+{
+	var cb = jQuery('.cbgw-block .cbgw-column__enabled input[type=checkbox]');
+	cb.unbind('change').bind('change', function(e){
+		e.preventDefault();
+		var name = jQuery(this).attr('name');
+		//jQuery(this).parent().find('input[name=' + name + ']')
+		alert(name[0]);
 	});
 }
 
@@ -92,4 +102,5 @@ jQuery(document).ready(function(){
 	observeFormSubmit();
 	observeGridFilters();
 	observeCheckAll();
+	observeEnabledColumn();
 });
