@@ -25,7 +25,7 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 		$this->addColumn(array(
 			'name'           => 'label',
 			'type'           => 'hyperlink',
-			'title'          => $this->__('Label'),
+			'title'          => $this->__('Заголовок'),
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),
@@ -33,14 +33,14 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 
 		$this->addColumn(array(
 			'name'  => 'type',
-			'title' => $this->__('Type'),
+			'title' => $this->__('Тип'),
 			'width' => '1%',
 		));
 		
 		$this->addColumn(array(
 			'name'           => 'encode_url',
 			'type'           => 'checkbox',
-			'title'          => $this->__('Encode'),
+			'title'          => $this->__('Кодировать'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 			'width'          => '1%',
@@ -49,7 +49,7 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 		$this->addColumn(array(
 			'name'           => 'reset_params',
 			'type'           => 'checkbox',
-			'title'          => $this->__('Reset'),
+			'title'          => $this->__('Сброс<br>параметров'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 			'width'          => '1%',
@@ -58,22 +58,10 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 		$this->addColumn(array(
 			'name'           => 'enabled',
 			'type'           => 'checkbox',
-			'title'          => $this->__('On'),
+			'title'          => $this->__('Вкл.'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 			'width'          => '1%',
-		));
-		
-		$this->addColumn(array(
-			'name'  => 'created_ts',
-			'title' => $this->__('Date created'),
-			'width' => '1%',
-		));
-
-		$this->addColumn(array(
-			'name'  => 'modified_ts',
-			'title' => $this->__('Date modified'),
-			'width' => '1%',
 		));
 		
 		$this->setData(Core::getMapper('navigation/pages')->fetchAll());

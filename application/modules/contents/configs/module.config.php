@@ -6,23 +6,18 @@ return array(
 			'pages' => array (
 				'default/admin-index/index' => array (
 					'pages' => array(
-						'contents/admin' => array (
-							'id'    => 'contents/admin',
-							'type'  => 'Zend_Navigation_Page_Uri',
-							'label' => 'Contents',
+						'contents/admin-posts/index' => array (
+							'id'         => 'contents/admin-posts/index',
+							'label'      => 'Контент',
+							'module'     => 'contents',
+							'controller' => 'admin-posts',
+							'action'     => 'index',
 							'pages' => array(
 								'contents/admin-categories/index' => array (
 									'id'         => 'contents/admin-categories/index',
-									'label'      => 'Categories',
+									'label'      => 'Категории контента',
 									'module'     => 'contents',
 									'controller' => 'admin-categories',
-									'action'     => 'index',
-								),
-								'contents/admin-posts/index' => array (
-									'id'         => 'contents/admin-posts/index',
-									'label'      => 'Posts',
-									'module'     => 'contents',
-									'controller' => 'admin-posts',
 									'action'     => 'index',
 								),
 							),
