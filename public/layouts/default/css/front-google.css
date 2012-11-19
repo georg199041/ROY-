@@ -118,3 +118,6 @@
 .front-content-contacts .cbfw-element {
     margin-bottom:5px;
 }
+.cbfw-label_formSubmit {
+    display:none;
+}
