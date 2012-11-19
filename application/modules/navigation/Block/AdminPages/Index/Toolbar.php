@@ -4,41 +4,41 @@ class Navigation_Block_AdminPages_Index_Toolbar extends Core_Block_Toolbar_Widge
 {
 	public function init()
 	{
-		$this->setTitle($this->__('Manage pages'));
+		$this->setTitle($this->__('Управление страницами'));
 		
 		$this->addButton(array(
 			'name'       => 'show',
-			'title'      => $this->__('Show'),
+			'title'      => $this->__('Показать'),
 			'urlOptions' => '*/*/status/enabled/YES'
 		));
 		
 		$this->addButton(array(
 			'name'       => 'hide',
-			'title'      => $this->__('Hide'),
+			'title'      => $this->__('Скрыть'),
 			'urlOptions' => '*/*/status/enabled/NO'
 		));
 		
 		$this->addButton(array(
 			'name'       => 'move',
-			'title'      => $this->__('Move'),
+			'title'      => $this->__('Переместить'),
 			'urlOptions' => '*/*/move'
 		));
 		
 		$this->addButton(array(
 			'name'       => 'copy',
-			'title'      => $this->__('Copy'),
+			'title'      => $this->__('Копировать'),
 			'urlOptions' => '*/*/copy'
 		));
 		
 		$this->addButton(array(
 			'name'       => 'delete',
-			'title'      => $this->__('Delete'),
+			'title'      => $this->__('Удалить'),
 			'urlOptions' => '*/*/delete'
 		));
 		
 		$this->addButton(array(
 			'name'       => 'add',
-			'title'      => $this->__('Add'),
+			'title'      => $this->__('Создать'),
 			'urlOptions' => '*/*/edit'
 		));
 	}
