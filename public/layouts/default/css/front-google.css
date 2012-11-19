@@ -18,10 +18,16 @@
 .front-map-page .front-footer-box-rights-logo-a {
 	top: 30px;
 }
+.front-map-page .front-header-infobox {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.front-map-page .front-body {
+	position: relative;
+}
 #front-fullscreen-map {
 	position: absolute;
-	width: 100%;
-	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
 	z-index: 5;
 }
 .front-content-contact {
@@ -40,9 +46,9 @@
 }
 .front-content-contacts {
     background:url("../images/bg_translucent.png") repeat scroll 0 0 transparent;
-    width:400px;
-    height: 378px;
-    padding:26px 0 0 31px;
+    width:372px;
+    height: 387px;
+    padding:16px 29px 0 30px;
     -webkit-box-shadow: 0px 0px 19px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:0px 0px 19px rgba(50, 50, 50, 0.75);
     box-shadow:0px 0px 19px rgba(50, 50, 50, 0.75);
@@ -91,10 +97,21 @@
     font-family: 'Verdana';
     font-size: 14px;
     height: 31px;
-    margin: 5px 10px 0 0;
+    margin: 4px 10px 0 0;
     text-transform: uppercase;
     width: 120px;
     text-shadow: 0 0 1px #013E4D;
+}
+.front-content-contacts-header {
+    margin-top:11px;
+    width:400px;
+}
+.front-content-contacts-header:after {
+    height:0;
+    display:block;
+    content:'.';
+    visibility:hidden;
+    clear:both;
 }
 .front-content-contacts-header a {
     border-bottom: 1px dashed #0E8DCD;
@@ -103,18 +120,74 @@
     float: left;
     font-size: 13px;
     text-decoration: none;
-    margin:1px 19px 0 0;
+    margin:1px 25px 0 0;
 }
 .front-content-contacts-header a:hover {
     border-bottom: 1px dashed #00AAFF;
     color: #00AAFF;
 }
-.front-content-contacts-header h3 {
+a.front-content-contacts-header__tab_active, a.front-content-contacts-header__tab_active:hover {
     margin:0;
     display: inline;
     line-height: 12px;
-    margin-left:10px;
+    margin:0 25px 0 0px;
+    font-size:18px;
+    font-weight:normal;
+    font-family: 'Verdana';
+    text-transform:uppercase;
+    text-decoration:none;
+    color:#434F56;
+    border-bottom:0 none;
 }
 .front-content-contacts .cbfw-element {
     margin-bottom:5px;
+}
+.cbfw-label_formSubmit {
+    display:none;
+}
+.front-content-contacts-form {
+    margin-top:-2px;
+}
+.front-content-contacts-address-form {
+    margin-top:12px;
+}
+.front-content-contacts-address-form p {
+    line-height: 16px;
+    margin:7px 0;
+}
+.front-content-contacts-address-form strong{
+    font-size:13px;
+}
+.front-content-contacts-address-form_left {
+    width:248px;
+    margin-top:15px;
+    float:left;
+}
+.front-content-contacts-address-form_left span {
+    display:block;
+    margin-top:8px;
+}
+.front-content-contacts-address-form__headline {
+    display:block;
+}
+.front-contacts-address-form_left__electronic-information {
+    display:block;
+    margin-top:15px;
+}
+.front-contacts-address-form_left__electronic-information a{
+    color:#0E8DCD;
+    font-weight:normal;
+}
+.front-contacts-address-form_left__electronic-information a:hover{
+    color:#00AAFF;
+}
+span.front-contacts-address-form_left__navigation {
+    margin-top:11px;
+}
+.front-content-contacts-address-form_right{
+    margin-top:15px;
+    float:left;
+}
+.front-content-contacts-address-form__qr {
+    margin-top:11px;
 }

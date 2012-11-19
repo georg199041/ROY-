@@ -6,7 +6,7 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
 	{
 		$this->getHelper('layout')->setLayout('admin');
 		$this->view->headTitle('Рекоммендации');
-		$this->getResponse()->appendBody(implode('<br />' ,$this->getHelper('FlashMessenger')->getMessages()));
+		$this->getResponse()->appendBody('<div>' . implode('<br />' ,$this->getHelper('FlashMessenger')->getMessages()) . '</div>');
 	}
 	
 	public function indexAction(){}
@@ -60,12 +60,16 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     
     public function deleteAction()
     {
-    	$ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
+        $ids = $this->getRequest()->getParam('ids');
+        if (!is_array($ids) && null !== $ids) {
+        	$ids = array($ids => 1);
+        }
+    	
+    	if (null === $ids) {
     		$this->getHelper('FlashMessenger')->addMessage($this->__('Please select item(s)'));
     	} else {
     		try {
-    			foreach ($ids as $id) {
+    			foreach ($ids as $id => $selected) {
     				$model = Core::getMapper('recommendations/posts')->find($id);
     				$model->delete();
     			}
@@ -82,7 +86,12 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     public function enabledAction()
     {
         $ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
+        if (!is_array($ids) && null !== $ids) {
+        	$ids = array($ids => 1);
+        	$this->getRequest()->setParam('value', $this->getRequest()->getParam('value') == 'YES' ? 'NO' : 'YES');
+        }
+        
+        if (null === $ids) {
     		$this->getHelper('FlashMessenger')->addMessage($this->__('Please select item(s)'));
     	} else {
     		try {
@@ -94,51 +103,6 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     				}
     			}
     			
-    			$this->getHelper('FlashMessenger')->addMessage(count($ids) . ' record(s) have been successfully updated');
-    		} catch (Exception $e) {
-    			$this->getHelper('FlashMessenger')->addMessage($e->getMessage());
-    		}
-    	}
-    	
-    	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'), null, true);
-    }
-    
-    public function moveAction()
-    {
-    	$ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
-    		$this->getHelper('FlashMessenger')->addMessage($this->__('Please select item(s)'));
-    	} else {
-    		try {
-    			foreach ($ids as $id) {
-    				$model = Core::getMapper('recommendations/posts')->find($id);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
-   					$model->save();
-    			}
-				
-    			$this->getHelper('FlashMessenger')->addMessage(count($ids) . ' record(s) have been successfully updated');
-    		} catch (Exception $e) {
-    			$this->getHelper('FlashMessenger')->addMessage($e->getMessage());
-    		}
-    	}
-    	
-    	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'), null, true);
-    }
-    
-    public function copyAction()
-    {
-    	$ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
-    		$this->getHelper('FlashMessenger')->addMessage($this->__('Please select item(s)'));
-    	} else {
-    		try {
-    			foreach ($ids as $id) {
-    				$model = Core::getMapper('recommendations/posts')->find($id);
-    				$model->setId(null);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
-   					$model->save();
-    			}
-				
     			$this->getHelper('FlashMessenger')->addMessage(count($ids) . ' record(s) have been successfully updated');
     		} catch (Exception $e) {
     			$this->getHelper('FlashMessenger')->addMessage($e->getMessage());

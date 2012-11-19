@@ -52,7 +52,7 @@
 							</span>
 							<span class="front-header-cords__item-content-map__item">	
 								<span class="front-header-cords__item-content-map__item-ico"></span>
-								<a href="/" class="front-header-cords__item-content-map__item-text">	
+								<a href="/" class="front-header-cords__item-content-map__item-href">	
 									Яндекс
 								</a>
 							</span>

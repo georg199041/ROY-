@@ -1,12 +1,77 @@
 /**
+ * Send sync or async request
+ * 
+ * @param url     string
+ * @param options object json
+ */
+function sendRequest(url, options)
+{
+	if (options && options.async == false) {
+		window.location.href = url;
+		return;
+	}
+	
+	options.url = url;
+	jQuery.ajax(options);
+}
+
+/**
+ * call server action
+ * 
+ * @param action   string|Element|jQuery
+ * @param elements array|jQuery|string
+ */
+function callAction(action, elements)
+{
+	if (action instanceof Element) {
+		action = jQuery(action).attr('formaction');
+	} else if (action instanceof jQuery) {
+		action = action.attr('formaction');
+	}
+	
+	if (typeof action != 'string' || action == '') {
+		throw "Action must be a non empty string or DOM element or jQuery element with non empty formaction attribute";
+	}
+	
+	if (!elements) {
+		elements = '';
+	}
+	
+	if (typeof elements == 'string') {
+		elements = jQuery(elements).serialize();
+	} else if (elements instanceof jQuery) {
+		elements = elements.serialize();
+	} else if (elements instanceof Array) {
+		elements = jQuery.param(elements);
+	}
+	
+	if (typeof elements != 'string') {
+		throw "Elements must be passed as string jQuery selector or jQuery collection or array of params for $.param() method";
+	}
+	
+	sendRequest(action + (elements ? '?' : '') + elements, {async:false});
+}
+
+/**
+ * Observe enabled checkboxes in grid
+ */
+function observeEnabledCheckbox()
+{
+	jQuery('.cbgw-column__enabled input').unbind('click').bind('click', function(event){
+		callAction(jQuery(this).attr('formaction'));
+	});
+}
+
+
+
+/**
  * Check all checkboxes if checked main checkbox
  */
 function observeCheckAll()
 {
-	var cb = jQuery('.cbgw-block .cbgw-header-ids input[type=checkbox]');
+	var cb = jQuery('.cbgw-block .cbgw-header__ids input[type=checkbox]');
 	cb.bind('change', function(){
-		var cbs = jQuery(this).parents('.cbgw-block')
-		                      .find('.cbgw-column-ids input[type="checkbox"]');
+		var cbs = jQuery(this).parents('table').find('.cbgw-column__ids input[type="checkbox"]');
 		
 		if (jQuery(this).attr('checked') == 'checked') {
 			cbs.attr('checked', 'checked');
@@ -92,4 +157,5 @@ jQuery(document).ready(function(){
 	observeFormSubmit();
 	observeGridFilters();
 	observeCheckAll();
+	observeEnabledCheckbox();
 });

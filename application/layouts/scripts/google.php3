@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<?php $this->headTitle($this->translate('Roy')); ?>
+	<?php $this->headTitle($this->translate('РОЙ')); ?>
 	<?php $this->headScript()->appendFile('http://maps.google.com/maps/api/js?sensor=false', 'text/javascript'); ?>
 	<?php echo $this->partial('default/head.php3'); ?>
 </head>
@@ -10,23 +10,54 @@
 	<div class="front-modal-container"></div>
 	<?php echo Core::getBlock('application/default/header'); ?>
 	<div class="front-body">
-		<div id="front-fullscreen-map" class="front-fullscreen-map">1
-		</div>
+		<div id="front-fullscreen-map" class="front-fullscreen-map"></div>
 		<script type="text/javascript">
+			<?php
+				$contact = Core::getBlock('contacts/index/index')->getCrimeaBaseContacts();
+				$description = $contact->getTitle();
+				$lat = 44.836213;
+				$lng = 34.324379;
+				if ($contact) {
+					list($lat, $lng) = explode(',', strip_tags($contact->getContactLatlng()->getDescription()));
+					$lat = (float) trim($lat);
+					$lng = (float) trim($lng);
+				}
+			?>
+			var map, marker;
 			$(document).ready(function(){
 				var options = {
 					zoom:      14,
-					center:    new google.maps.LatLng((44.836213 - 0.005), (34.324379 + 0.025)),
-					mapTypeId: google.maps.MapTypeId.SATELLITE
+					center:    new google.maps.LatLng((<?php echo $lat; ?> - 0.005), (<?php echo $lng; ?> + 0.025)),
+					mapTypeId: google.maps.MapTypeId.HYBRID
 				};
-				var map = new google.maps.Map(document.getElementById("front-fullscreen-map"), options);
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(44.836213, 34.324379),
+
+				map = new google.maps.Map(document.getElementById("front-fullscreen-map"), options);
+
+				marker = new google.maps.Marker({
+					position: new google.maps.LatLng(<?php echo $lat; ?>, <?php echo $lng; ?>),
 					map:      map,
-					title:    "Ya marker",
+					title:    "<?php echo $description; ?>",
 					icon:     "/layouts/default/images/map-marker.png"
 				});
 			});
+
+    		function updateMap(lat, lng, title)
+    		{
+    			lat = parseFloat(lat);
+				lng = parseFloat(lng);
+				
+				if (map) {
+            		map.setCenter(new google.maps.LatLng((lat - 0.005), (lng + 0.025)));
+            		if (marker) {
+        				marker = new google.maps.Marker({
+        					position: new google.maps.LatLng(lat, lng),
+        					map:      map,
+        					title:    title,
+        					icon:     "/layouts/default/images/map-marker.png"
+        				});
+            		}
+        		}
+    		}
 		</script>
 		<div class="front-push-top"></div>
 		<div class="front-body-container">

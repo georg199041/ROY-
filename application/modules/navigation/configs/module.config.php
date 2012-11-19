@@ -9,7 +9,7 @@ return array(
 						'navigation/admin-pages/index' => array (
 							'id'         => 'navigation/admin-pages/index',
 							'type'       => 'Zend_Navigation_Page_Mvc',
-							'label'      => 'Navigation',
+							'label'      => 'Навигация',
 							'module'     => 'navigation',
 							'controller' => 'admin-pages',
 							'action'     => 'index',

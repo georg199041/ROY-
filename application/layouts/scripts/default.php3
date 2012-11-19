@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<link rel="favicon.ico" href="/favicon.ico" type="image/x-icon">
-	<?php $this->headTitle($this->translate('Roy')); ?>
+	<?php $this->headTitle($this->translate('РОЙ')); ?>
 	<?php echo $this->partial('default/head.php3'); ?>
 </head>
 <body>
