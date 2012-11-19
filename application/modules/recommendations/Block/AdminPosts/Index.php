@@ -20,8 +20,6 @@ class Recommendations_Block_AdminPosts_Index extends Core_Block_Grid_Widget
 			'title' => $this->__('ID'),
 			'width' => '50',
 			'align' => 'right',
-			'filterable'        => 'true',
-			'filterableType'    => Core_Block_Grid_Widget::FILTER_EQUAL,
 		));
 		
 		$this->addColumn(array(
@@ -31,8 +29,6 @@ class Recommendations_Block_AdminPosts_Index extends Core_Block_Grid_Widget
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),
-			'filterable'     => 'true',
-			'filterableType' => Core_Block_Grid_Widget::FILTER_LIKE,
 		));
 		
 		$this->addColumn(array(
@@ -42,6 +38,8 @@ class Recommendations_Block_AdminPosts_Index extends Core_Block_Grid_Widget
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 			'width'          => '1%',
+			'formactionOptions' => '*/*/enabled',
+			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
 		));
 		
 		$this->setData(Core::getMapper('recommendations/posts')->fetchAll());

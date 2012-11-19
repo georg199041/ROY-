@@ -1,7 +1,8 @@
 /**
+ * Send sync or async request
  * 
- * 
- * @param url
+ * @param url     string
+ * @param options object json
  */
 function sendRequest(url, options)
 {
@@ -32,6 +33,10 @@ function callAction(action, elements)
 		throw "Action must be a non empty string or DOM element or jQuery element with non empty formaction attribute";
 	}
 	
+	if (!elements) {
+		elements = '';
+	}
+	
 	if (typeof elements == 'string') {
 		elements = jQuery(elements).serialize();
 	} else if (elements instanceof jQuery) {
@@ -44,10 +49,18 @@ function callAction(action, elements)
 		throw "Elements must be passed as string jQuery selector or jQuery collection or array of params for $.param() method";
 	}
 	
-	sendRequest(action + '?' + elements, {async:false});
+	sendRequest(action + (elements ? '?' : '') + elements, {async:false});
 }
 
-
+/**
+ * Observe enabled checkboxes in grid
+ */
+function observeEnabledCheckbox()
+{
+	jQuery('.cbgw-column__enabled input').unbind('click').bind('click', function(event){
+		callAction(jQuery(this).attr('formaction'));
+	});
+}
 
 
 
@@ -65,17 +78,6 @@ function observeCheckAll()
 		} else {
 			cbs.attr('checked', null);
 		}
-	});
-}
-
-function observeEnabledColumn()
-{
-	var cb = jQuery('.cbgw-block .cbgw-column__enabled input[type=checkbox]');
-	cb.unbind('change').bind('change', function(e){
-		e.preventDefault();
-		var name = jQuery(this).attr('name');
-		//jQuery(this).parent().find('input[name=' + name + ']')
-		alert(name[0]);
 	});
 }
 
@@ -155,5 +157,5 @@ jQuery(document).ready(function(){
 	observeFormSubmit();
 	observeGridFilters();
 	observeCheckAll();
-	observeEnabledColumn();
+	observeEnabledCheckbox();
 });
