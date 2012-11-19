@@ -9,7 +9,8 @@ class Recommendations_Block_AdminPosts_Index_Toolbar extends Core_Block_Toolbar_
 		$this->addButton(array(
 			'name'       => 'show',
 			'title'      => $this->__('Показать'),
-			'urlOptions' => '*/*/enabled/value/YES'
+			'urlOptions' => '*/*/enabled/value/YES',
+			'onclick'    => "callAction(this, '.cbgw-column__ids input:checked')",
 		));
 		
 		$this->addButton(array(

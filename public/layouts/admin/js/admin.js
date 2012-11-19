@@ -1,4 +1,57 @@
 /**
+ * 
+ * 
+ * @param url
+ */
+function sendRequest(url, options)
+{
+	if (options && options.async == false) {
+		window.location.href = url;
+		return;
+	}
+	
+	options.url = url;
+	jQuery.ajax(options);
+}
+
+/**
+ * call server action
+ * 
+ * @param action   string|Element|jQuery
+ * @param elements array|jQuery|string
+ */
+function callAction(action, elements)
+{
+	if (action instanceof Element) {
+		action = jQuery(action).attr('formaction');
+	} else if (action instanceof jQuery) {
+		action = action.attr('formaction');
+	}
+	
+	if (typeof action != 'string' || action == '') {
+		throw "Action must be a non empty string or DOM element or jQuery element with non empty formaction attribute";
+	}
+	
+	if (typeof elements == 'string') {
+		elements = jQuery(elements).serialize();
+	} else if (elements instanceof jQuery) {
+		elements = elements.serialize();
+	} else if (elements instanceof Array) {
+		elements = jQuery.param(elements);
+	}
+	
+	if (typeof elements != 'string') {
+		throw "Elements must be passed as string jQuery selector or jQuery collection or array of params for $.param() method";
+	}
+	
+	sendRequest(action + '?' + elements, {async:false});
+}
+
+
+
+
+
+/**
  * Check all checkboxes if checked main checkbox
  */
 function observeCheckAll()
