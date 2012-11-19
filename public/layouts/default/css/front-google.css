@@ -24,10 +24,25 @@
 	height: 100%;
 	z-index: 5;
 }
+.front-content-contact {
+    height: auto !important;
+    min-height: 500px;
+    width:850px;
+    margin:0 auto;
+    position:relative;
+}
+.front-content-contact:after {
+    height:0;
+    display:block;
+    content:'.';
+    visibility:hidden;
+    clear:both;
+}
 .front-content-contacts {
     background:url("../images/bg_translucent.png") repeat scroll 0 0 transparent;
-    width:431px;
-    height: 402px;
+    width:400px;
+    height: 378px;
+    padding:26px 0 0 31px;
     -webkit-box-shadow: 0px 0px 19px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:0px 0px 19px rgba(50, 50, 50, 0.75);
     box-shadow:0px 0px 19px rgba(50, 50, 50, 0.75);
@@ -35,4 +50,71 @@
     right:0;
     bottom:0;
     z-index:10;
+}
+.front-content-contacts form {
+    clear:both; 
+    margin-top:13px;
+}
+.front-content-contacts label {
+    color: #434F56;
+    display: block;
+    font-size: 13px;
+}
+.front-content-contacts input {
+    background-color: #fff;
+    border: 1px solid #434F56;
+    height: 22px;
+    width: 230px;
+}
+.front-content-contacts textarea {
+    background-color: #fff;
+    border: 1px solid #434F56;
+    height: 168px;
+    margin: 0;
+    width: 370px;
+}
+.front-content-contacts .cbfw-tag__submit {
+    float:left;
+}
+.front-content-contacts .cbfw-description__submit {
+    font-size: 11px;
+    font-style: italic;
+    line-height:40px;
+    float:left;
+}
+.front-content-contacts .cbfw-tag__submit input {
+    background: linear-gradient(to bottom, #08B8DA 0%, #035CA7 100%) repeat scroll 0 0 transparent;
+    border: 0 none;
+    border-radius: 15px 15px 15px 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'Verdana';
+    font-size: 14px;
+    height: 31px;
+    margin: 5px 10px 0 0;
+    text-transform: uppercase;
+    width: 120px;
+    text-shadow: 0 0 1px #013E4D;
+}
+.front-content-contacts-header a {
+    border-bottom: 1px dashed #0E8DCD;
+    color: #0E8DCD;
+    display: block;
+    float: left;
+    font-size: 13px;
+    text-decoration: none;
+    margin:1px 19px 0 0;
+}
+.front-content-contacts-header a:hover {
+    border-bottom: 1px dashed #00AAFF;
+    color: #00AAFF;
+}
+.front-content-contacts-header h3 {
+    margin:0;
+    display: inline;
+    line-height: 12px;
+    margin-left:10px;
+}
+.front-content-contacts .cbfw-element {
+    margin-bottom:5px;
 }
