@@ -9,66 +9,18 @@
 			
 			<ul class="front-content-gallery-album-horizontal_carousel__foto-slide slider_items">
 				<?php //active class: front-gallery-album-horizontal_carousel__min-foto_active ?>
+				<?php $i=0; ?>
 				<?php foreach ($this->getAlbumPhotos() as $photo): ?>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
+					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item" index="<?php echo $i ?>">
 						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
 							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
 						</a>
 					</li>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
-						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
-							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
-						</a>
-					</li>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
-						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
-							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
-						</a>
-					</li>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
-						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
-							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
-						</a>
-					</li>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
-						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
-							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
-						</a>
-					</li>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
-						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
-							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
-						</a>
-					</li>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
-						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
-							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
-						</a>
-					</li>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
-						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
-							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
-						</a>
-					</li>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
-						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
-							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
-						</a>
-					</li>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
-						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
-							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
-						</a>
-					</li>
-					<li class="front-content-gallery-album-horizontal_carousel__min-foto slider_item">
-						<a class="front-content-gallery-album-horizontal_carousel__open-photo" href="#">
-							<img alt="<?php echo $photo->getTitle(); ?>" src="<?php echo $photo->getImage(); ?>" />
-						</a>
-					</li>
+				<?php $i++; ?>	
 				<?php endforeach; ?>
 			</ul>
-			<a href="#" class="front-content-gallery-album-min-foto__arrow_left prevmini" ></a>
-			<a href="#" class="front-content-gallery-album-min-foto__arrow_right nextmini"></a>
+			<input type="button" class="front-content-gallery-album-min-foto__arrow_left prevmini" />
+			<input type="button" class="front-content-gallery-album-min-foto__arrow_right nextmini"/>
 		</div>
 
 		<div class="front-content-gallery-album-big-foto">

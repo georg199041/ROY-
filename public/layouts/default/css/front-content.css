@@ -97,6 +97,10 @@
 	right: 0;
 	top: 0;
 	transform: rotate(150deg);
+	-ms-transform:rotate(150deg); 
+	-moz-transform:rotate(150deg); 
+	-webkit-transform:rotate(150deg); 
+	-o-transform:rotate(150deg);
 	margin-right: 36px;
     margin-top: 155px;
     color: #EF6407;
@@ -164,6 +168,10 @@
 	left: 0;
 	top: 0;
 	transform: rotate(210deg);
+	-ms-transform:rotate(210deg); 
+	-moz-transform:rotate(210deg); 
+	-webkit-transform:rotate(210deg); 
+	-o-transform:rotate(210deg);
 	margin-left: 18px;
     margin-top: 147px;
     color: #0078B4;
@@ -229,6 +237,10 @@
 .front-body-schema_brown .front-body-schema__item-list-dots{
 	right: 0;
 	transform: rotate(90deg);
+	-ms-transform:rotate(90deg); 
+	-moz-transform:rotate(90deg); 
+	-webkit-transform:rotate(90deg); 
+	-o-transform:rotate(90deg); 
 	margin-right: -22px;
     margin-top: 82px;
     color: #BE6B00;
@@ -294,6 +306,10 @@
 .front-body-schema_green .front-body-schema__item-list-dots{
 	left: 0;
 	transform: rotate(270deg);
+	-ms-transform:rotate(270deg); 
+	-moz-transform:rotate(270deg); 
+	-webkit-transform:rotate(270deg); 
+	-o-transform:rotate(270deg);
 	margin-left: -20px;
     margin-top: 60px;
     color: #93CD09;
@@ -358,6 +374,10 @@
 	right: 0;
 	top: 0;
 	transform: rotate(30deg);
+	-ms-transform:rotate(30deg); 
+	-moz-transform:rotate(30deg); 
+	-webkit-transform:rotate(30deg); 
+	-o-transform:rotate(30deg);
 	margin-right: 16px;
     margin-top: -8px;
     color: #9E0039;
@@ -421,6 +441,10 @@
 	top: 0;
 	left: 0;
 	transform: rotate(-30deg);
+	-ms-transform:rotate(-30deg); 
+	-moz-transform:rotate(-30deg); 
+	-webkit-transform:rotate(-30deg); 
+	-o-transform:rotate(-30deg);
 	margin-left: 36px;
     margin-top: -18px;
     color: #00AEEF;
@@ -468,5 +492,9 @@
 	height: 180px;
     width: 0;
     background: url(../images/scheme_lblue_bg.png) top left no-repeat;
+}
+.front-result-box-title{
+	padding-left: 60px;
+	text-align: center;
 }
 /*content end*/

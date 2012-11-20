@@ -20,7 +20,7 @@
 .front-content-gallery-album-horizontal_carousel {
     float: left;
     height: 86px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     width: 580px;
     position:relative;
     left:-5px;
@@ -97,6 +97,7 @@
     height: 32px;
     width: 28px;
     z-index:10;
+    border: none;
 }
 .front-content-gallery-album-min-foto__arrow_right {
     background: url("../images/arrow-right-min-foto.png") no-repeat scroll 0 0 transparent;
@@ -107,6 +108,7 @@
     top: 25px;
     width: 28px;
     z-index: 10;
+    border: none;
 }
 .front-block-comments {
     padding-top:3px;
