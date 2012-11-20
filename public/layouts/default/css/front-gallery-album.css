@@ -20,7 +20,7 @@
 .front-content-gallery-album-horizontal_carousel {
     float: left;
     height: 86px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     width: 580px;
     position:relative;
     left:-5px;

@@ -6,7 +6,8 @@ $(document).ready(function(){
 	
 	var visible = $(".slider_box").width();
 	var itemWidth = 116;
-	var length = $(".slider_item").length * itemWidth;
+	var max = $(".slider_item").length
+	var length = max * itemWidth;
 	$(".slider_item:first-child").addClass("front-gallery-album-horizontal_carousel__min-foto_active");
 	var i=580;
 	var ramka=1;
@@ -89,41 +90,57 @@ $(document).ready(function(){
     
     $(".front-content-gallery-album-big-foto a").click(function(event){
     	event.preventDefault();
-    	console.log(slideBigImageNext+" -next");
-    	console.log(slideBigImagePrev+" -prev");
+    	//console.log(slideBigImageNext+" -next");
+    	//console.log(slideBigImagePrev+" -prev");
+    	
 	    	if($(this).hasClass("prevmini")){
 	    		//console.log(222);
-	    		if(slideBigImagePrev<4){
+	    		//if(slideBigImagePrev<4){
 	    			thisActive = $(".front-gallery-album-horizontal_carousel__min-foto_active");
 	    			if(!$(".slider_item:first-child").hasClass("front-gallery-album-horizontal_carousel__min-foto_active")){
 	    				$(".slider_item").removeClass("front-gallery-album-horizontal_carousel__min-foto_active");
 	    			}
 	    			thisActive = thisActive.prev().addClass("front-gallery-album-horizontal_carousel__min-foto_active");
+	    			
 	    			curImage = thisActive.find("img").attr("src");
-	    			console.log(curImage);
+	    			//console.log(curImage);
 		    		$(".front-content-gallery-album-big-foto__photo").attr('src',curImage);
 		    		slideBigImagePrev++;
-		    		if(slideBigImageNext=4){slideBigImageNext=0;}
+		    		//if(slideBigImageNext=4){slideBigImageNext=0; }
+		    		//if(slideBigImagePrev=4){slideBigImagePrev=0;}
 		    		
-	    		}
+	    		//}
 	    			
 	    		
 	    	}else{
 	    		//console.log(111);
-	    		if(slideBigImageNext<4){
+	    		//if(slideBigImageNext<4){
 	    			thisActive = $(".front-gallery-album-horizontal_carousel__min-foto_active");
 		    		if(!$(".slider_item:last-child").hasClass("front-gallery-album-horizontal_carousel__min-foto_active")){	
 		    			$(".slider_item").removeClass("front-gallery-album-horizontal_carousel__min-foto_active");
 		    		}
 		    		thisActive.next().addClass("front-gallery-album-horizontal_carousel__min-foto_active");
 		    		thisActive = $(".front-gallery-album-horizontal_carousel__min-foto_active");
+		    		//if($(".slider_item").hasClass("front-gallery-album-horizontal_carousel__min-foto_active")){
+//		    			console.log($(".slider_item").index(""));
+		    		index = $(".front-gallery-album-horizontal_carousel__min-foto_active").attr('index');
+	    			//}
+		    		console.log(index);
+		    		console.log($(".slider_item").length - 1);
+		    		console.log(visible);
+		    		var t = index + 1;
+		    		console.log(t%5);
+		    		if(index != $(".slider_item").length - 1 && !((index + 1)%5)){
+		    			$(".slider_items").animate({"left": "-=" + visible}, 300);
+		    		}	
 		    		curImage = thisActive.find("img").attr("src");
-		    		console.log(curImage);
+		    		//console.log(curImage);
 		    		$(".front-content-gallery-album-big-foto__photo").attr('src',curImage);
 		    		slideBigImageNext++;
-		    		if(slideBigImagePrev=4){slideBigImagePrev=0;}
 		    		
-	    		}
+		    		//if(slideBigImagePrev=4){slideBigImagePrev=0;}
+		    		//if(slideBigImageNext=4){slideBigImageNext=0; }
+	    		//}
 	    		
 	    		
 	    	}
