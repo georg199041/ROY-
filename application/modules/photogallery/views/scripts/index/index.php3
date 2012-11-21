@@ -3,11 +3,12 @@
     <div class="front-content-gallery">
     	<?php foreach ($this->getAlbums() as $album): ?>
     		<?php
-    			$url = $this->url(
-					array('album' => $album->getAlias()),
-					'photogallery-album',
-					true
-				);
+    			$url = $this->url(array(
+					'album' => $album->getAlias(),
+					'module' => 'photogallery',
+					'controller' => 'index',
+    				'action' => 'album'
+				), null, true);
 			?>
 	    	<div class="front-content-gallery-photos">
 	            <a class="front-content-gallery__unit-link" title="<?php echo $album->getTitle(); ?>" href="<?php echo $url; ?>">

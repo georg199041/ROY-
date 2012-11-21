@@ -4,16 +4,6 @@ return array(
 	'resources' => array (
 		'router' => array (
 			'routes' => array (
-				'photogallery-album' => array (
-					'type'     => 'Zend_Controller_Router_Route',
-					'route'    => 'photogallery/:album',
-					'defaults' => array (
-						'module'     => 'photogallery',
-						'controller' => 'index',
-						'action'     => 'album',
-						'album'      => null,
-					),
-				),
 				'photogallery' => array (
 					'type'     => 'Zend_Controller_Router_Route',
 					'route'    => 'photogallery',
@@ -21,6 +11,16 @@ return array(
 						'module'     => 'photogallery',
 						'controller' => 'index',
 						'action'     => 'index',
+					),
+				),
+				'photogallery_album' => array (
+					'type'     => 'Zend_Controller_Router_Route',
+					'route'    => 'photogallery/:album_alias',
+					'defaults' => array (
+						'module'     => 'photogallery',
+						'controller' => 'index',
+						'action'     => 'album',
+						'album_alias'      => '',
 					),
 				),
 			),
