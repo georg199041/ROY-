@@ -10,6 +10,7 @@
 @import '/layouts/default/css/front-personal.css';
 @import '/layouts/default/css/front-focused-on-results.css';
 @import '/layouts/default/css/front-google.css';
+@import '/layouts/default/css/ictinus.css';
 html, body, img, div, a, span {
 	margin: 0;
 	padding: 0;
@@ -98,8 +99,11 @@ ul {
     overflow: hidden;
 }
 .front-body-slider-rectangle{
-	float: left;
-	
+	position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+	margin-top: -7px;
 }
 .front-body-slider-blackwhite-wrap{
 	list-style: none outside none;
