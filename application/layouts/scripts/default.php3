@@ -20,18 +20,29 @@
 					</li>
 				</ul>
 			</div>
+			
 			<div class="front-body-slider-color">
 				<ul class="front-body-slider-color-wrap" >
 					<li class="front-body-slider-color__item">
-						<img src="/layouts/default/images/main-banner-color.jpg"/>
+						<img src="/layouts/default/images/main-banner-color.jpg" width="970" height="310" id="image" />
+<!-- 						<script type="text/javascript"> 
+						        window.onload = function() {
+						                var shape = new ictinus.Shape('M0,155 L75,0 L895,0 L970,155 L895,310 L75,310');
+						                shape.decorate(document.getElementById('image'));
+						        }
+						</script>-->
 					</li>
 				</ul>
-<!-- 				<div class="front-body-slider-color-cutter-container"><div class="front-body-slider-color-cutter"></div></div> -->
+<!-- 				<div class="front-body-slider-color-cutter-container"><div class="front-body-slider-color-cutter"></div></div> --> 
 			</div>
 			<div class="front-body-slider-rectangle">
+				<img src="/layouts/default/images/rectangle.png"/>
+			</div>
+			<div class="front-body-slider-buttons">
 				<input type="button" id="slider_back" class="slider_buttons" />
 				<input type="button" id="slider_next" class="slider_buttons" />
 			</div>
+		
 		</div>
 		<?php endif; ?>
 		<div class="front-body-container front_clearfix">
