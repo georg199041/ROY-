@@ -86,6 +86,7 @@ return array (
 				'default' => array (
 					'type' => 'Zend_Controller_Router_Route',
 					'route' => ':module/:controller/:action/*',
+					'reset_params' => true,	
 					'order' => -1000,
 					'defaults' => array (
 						'module' => 'default',

@@ -55,6 +55,14 @@ $(document).ready(function(){
 		
 
 	});
+	
+	
+	//MAIN PAGE SLIDER
+	$("#slider_back").hover(function(){
+		
+	},function(){
+		
+	});
 		
 });
 

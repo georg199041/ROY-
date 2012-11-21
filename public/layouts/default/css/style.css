@@ -25,6 +25,7 @@ html {
 }
 body{
 	color: #434f56;
+	overflow: hidden;
 }
 img {
 	border: 0 none;
@@ -92,12 +93,6 @@ ul {
     width: 100%;
     z-index: 1;
 }
-.front-body-slider-color{
-	position: absolute;
-    width: 100%;
-    z-index: 10;
-    overflow: hidden;
-}
 .front-body-slider-rectangle{
 	position: absolute;
     text-align: center;
@@ -105,15 +100,44 @@ ul {
     z-index: 10;
 	margin-top: -7px;
 }
+.front-body-slider-prewrap{
+	margin: 0 auto;
+	width: 1150px;
+}
 .front-body-slider-blackwhite-wrap{
 	list-style: none outside none;
-    margin: 0 auto;
+    width: 100000px;
     overflow: hidden;
     padding: 0;
-    width: 1150px;
+    margin-left: -1150px;
 }
 .front-body-slider-blackwhite__item{
-	
+	float: left;
+}
+.front-body-slider-buttons{
+	margin: 0 auto;
+	width: 970px;
+	position: relative;
+}
+.slider_buttons{
+	position: absolute;
+	height: 315px;
+    width: 84px;
+    top: 0;
+    z-index: 20;
+    opacity: 0;
+}
+.slider_buttons#slider_back{
+	left: 0;
+}
+.slider_buttons#slider_next{
+	right: 0;
+}
+.front-body-slider-color{
+	position: absolute;
+    width: 100%;
+    z-index: 10;
+    overflow: hidden;
 }
 .front-body-slider-color-wrap{
 	list-style: none outside none;
@@ -123,7 +147,7 @@ ul {
     width: 970px;
 }
 .front-body-slider-color__item{
-	
+	float: left;
 }
 .front-body-slider-color-cutter-container{
 	position: absolute;
