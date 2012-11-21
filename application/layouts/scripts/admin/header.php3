@@ -9,5 +9,13 @@
 				          ->render();
 			?>
 		</div>
+		<div class="admin-info">
+			<a href="#" class="admin-info__button">(1)</a>
+			<!--<ul>
+				<li class="success">
+					<a class="close"></a>
+				</li>
+			</ul>-->
+		</div>
 	</div>
 </div>
