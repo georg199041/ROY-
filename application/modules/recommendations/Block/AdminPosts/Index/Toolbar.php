@@ -31,7 +31,7 @@ class Recommendations_Block_AdminPosts_Index_Toolbar extends Core_Block_Toolbar_
 			'name'       => 'add',
 			'title'      => $this->__('Создать'),
 			'urlOptions' => '*/*/edit',
-			'onclick'    => "callAction(this, '.cbgw-column__ids input:checked')",
+			'onclick'    => "callAction(this)",
 		));
 	}
 }

@@ -5,7 +5,7 @@ return array(
 		'router' => array (
 			'routes' => array (
 				'contacts' => array (
-					'type' => 'Zend_Controller_Router_Route',
+					'type' => 'Zend_Controller_Router_Route_Static',
 					'route' => 'contacts.html',
 					'defaults' => array (
 						'module' => 'contacts',
