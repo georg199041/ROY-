@@ -5,8 +5,8 @@ return array(
 		'router' => array (
 			'routes' => array (
 				'recommendations' => array (
-					'type'     => 'Zend_Controller_Router_Route',
-					'route'    => 'recommendations',
+					'type'     => 'Zend_Controller_Router_Route_Static',
+					'route'    => 'recommendations.html',
 					'defaults' => array (
 						'module'     => 'recommendations',
 						'controller' => 'index',

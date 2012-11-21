@@ -4,24 +4,26 @@ return array(
 	'resources' => array (
 		'router' => array (
 			'routes' => array (
-				'photogallery-album' => array (
-					'type'     => 'Zend_Controller_Router_Route',
-					'route'    => 'photogallery/:album',
-					'defaults' => array (
-						'module'     => 'photogallery',
-						'controller' => 'index',
-						'action'     => 'album',
-						'album'      => null,
-					),
-				),
 				'photogallery' => array (
-					'type'     => 'Zend_Controller_Router_Route',
-					'route'    => 'photogallery',
+					'type'     => 'Zend_Controller_Router_Route_Static',
+					'route'    => 'photogallery.html',
 					'defaults' => array (
 						'module'     => 'photogallery',
 						'controller' => 'index',
 						'action'     => 'index',
 					),
+				),
+				'photogallery_album' => array (
+					'type'     => 'Zend_Controller_Router_Route_Regex',
+					'route'    => 'photogallery/(.*).html',
+					'defaults' => array (
+						'module'      => 'photogallery',
+						'controller'  => 'index',
+						'action'      => 'album',
+						'album_alias' => '',
+					),
+					'map' => array(1 => 'album_alias'),
+					'reverse' => 'photogallery/%s.html'
 				),
 			),
 		),

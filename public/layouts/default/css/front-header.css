@@ -35,7 +35,7 @@
 	height: 220px;
 }
 .front-push-top {
-	height: 220px;
+	height: 195px;
 }
 .front-header-infobox{
 	width: 850px;
@@ -78,7 +78,7 @@
 .front-header-menu {
 	float: left;
 	width: 838px;
-	height: 80px;
+	height: 55px;
 	padding-left: 12px;
 	background: url("/layouts/default/images/menu_bg.png") repeat-x;
 	background-color: #fff;
