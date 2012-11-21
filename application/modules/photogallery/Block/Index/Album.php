@@ -8,7 +8,7 @@ class Photogallery_Block_Index_Album extends Core_Block_View
 		if (null === $this->_album) {
 			$this->_album = Core::getMapper('photogallery/albums')->fetchRow(array(
 				'enabled = ?' => 'YES',
-				'alias = ?' => $this->getRequest()->getParam('album')
+				'alias = ?' => $this->getRequest()->getParam('album_alias')
 			));
 			
 			if (!$this->_album->getId()) {

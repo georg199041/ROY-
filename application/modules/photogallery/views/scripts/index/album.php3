@@ -41,5 +41,5 @@
 	?>
 </div>
 <div class="front-body-sidebar-left">
-    <?php echo Core::getBlock('navigation/index/sidebar-menu')->forseActivePageUrl('/photogallery/index/index'); ?>
+    <?php echo Core::getBlock('navigation/index/sidebar-menu')->forseActivePageUrl('/photogallery.html'); ?>
 </div>
