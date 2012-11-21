@@ -33,6 +33,7 @@
 }
 .cbtw-buttons button {
 	cursor: pointer;
+	font-size: 12px;
 }
 .cbtw-links {
 	float: left;
