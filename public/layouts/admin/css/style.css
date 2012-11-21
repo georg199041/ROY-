@@ -124,3 +124,17 @@ a {
 	font-size: 18px;
 	padding: 10px 0 0;
 }
+
+.admin-info {
+	float: right;
+	margin: 13px 10px 0 0;
+}
+.admin-info__button {
+	height: 16px;
+	display: block;
+	padding: 0 0 0 18px;
+	background: url("/layouts/admin/images/16px/warning.png") top left no-repeat;
+	color: #efefef;
+	text-decoration: none;
+	font-size: 10px;
+}
