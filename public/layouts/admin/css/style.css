@@ -187,3 +187,7 @@ a {
 	height: 8px;
 	background: url("/layouts/admin/images/close-symbol.png") no-repeat;
 }
+.admin-breadcrumbs{
+	padding: 0 10px 0;
+	margin-top: 10px;
+}
