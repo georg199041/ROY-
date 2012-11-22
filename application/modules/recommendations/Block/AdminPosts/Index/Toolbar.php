@@ -8,14 +8,14 @@ class Recommendations_Block_AdminPosts_Index_Toolbar extends Core_Block_Toolbar_
 		
 		$this->addButton(array(
 			'name'       => 'show',
-			'title'      => $this->__('Показать'),
+			'title'      => $this->__('Включить'),
 			'urlOptions' => '*/*/enabled/value/YES',
 			'onclick'    => "callAction(this, '.cbgw-column__ids input:checked')",
 		));
 		
 		$this->addButton(array(
 			'name'       => 'hide',
-			'title'      => $this->__('Скрыть'),
+			'title'      => $this->__('Выключить'),
 			'urlOptions' => '*/*/enabled/value/NO',
 			'onclick'    => "callAction(this, '.cbgw-column__ids input:checked')",
 		));

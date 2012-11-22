@@ -5,4 +5,5 @@ jQuery(document).ready(function(){
 	$("button[name=back]").addClass("btn-info");
 	$("button[name=delete]").addClass("btn-danger");
 	$("button[name=show]").addClass("btn-info");
+	$("button[name=hide]").addClass("btn-warning");
 });

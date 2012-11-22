@@ -8,14 +8,14 @@ class Contents_Block_AdminPosts_Index_Toolbar extends Core_Block_Toolbar_Widget
 		
 		$this->addButton(array(
 			'name'       => 'show',
-			'title'      => $this->__('Показать'),
+			'title'      => $this->__('Включить'),
 			'urlOptions' => '*/*/status/enabled/YES',
 			'onclick'    => "callAction(this, '.cbgw-column__ids input:checked')",
 		));
 		
 		$this->addButton(array(
 			'name'       => 'hide',
-			'title'      => $this->__('Скрыть'),
+			'title'      => $this->__('Выключить'),
 			'urlOptions' => '*/*/status/enabled/NO',
 			'onclick'    => "callAction(this, '.cbgw-column__ids input:checked')",
 		));
