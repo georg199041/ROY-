@@ -2,6 +2,7 @@
 @import 'core-block-toolbar-widget.css';
 @import 'core-block-form-widget.css';
 @import 'core-block-grid-widget.css';
+@import 'bootstrap.min.css';
 
 html, body, img, div, a, span {
 	margin: 0;
@@ -14,6 +15,9 @@ html, body {
 }
 html {
 	background: #f0f0f0;
+}
+body {
+	background: transparent;
 }
 img {
 	border: 0 none;
@@ -50,7 +54,7 @@ a {
 	display: block;
 	text-decoration: none;
 	height: 30px;
-	background: url("/layouts/default/images/zf-logo.png") left no-repeat;
+	background: url("/layouts/admin/images/zf-logo.png") left no-repeat;
 	padding: 10px 0 0 40px;
 	color: #fff;
 	font-size: 18px
