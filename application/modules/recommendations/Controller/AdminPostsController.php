@@ -47,7 +47,6 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     			return;
     		} catch (Exception $e) {
     			Core::getSession('admin')->formData = $data;
-    			//Core::getBlock('application/admin/messenger')->addError($this->__($e->getMessage()));
     			Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка сохранения'));
     			$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/edit/id/' . $this->getRequest()->getParam('id')));
     			return;

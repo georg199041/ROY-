@@ -18,7 +18,7 @@ class Recommendations_Block_AdminPosts_Index extends Core_Block_Grid_Widget
 		$this->addColumn(array(
 			'name'  => 'id',
 			'title' => $this->__('ID'),
-			'width' => '50',
+			'width' => '2',
 			'align' => 'right',
 		));
 		
