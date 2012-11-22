@@ -65,16 +65,6 @@ class Navigation_Block_AdminPages_Edit extends Core_Block_Form_Widget
 			'uncheckedValue' => 'NO',
 		));
 		
-		$this->addElement('submit', 'back', array(
-			'label'  => $this->__('Save and continue'),
-			'ignore' => true,
-		));
-
-		$this->addElement('submit', 'save', array(
-			'label'  => $this->__('Save'),
-			'ignore' => true,
-		));
-		
 		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);
 			unset(Core::getSession('admin')->formData);

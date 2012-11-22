@@ -7,6 +7,7 @@ class Recommendations_Block_AdminPosts_Edit_Toolbar extends Core_Block_Toolbar_W
 		$this->setTitle($this->__('Редактирование рекоммендации'));
 		
 		$this->addButton(array(
+			'type'  => 'submit',
 			'name'  => 'save',
 			'title' => $this->__('Сохранить'),
 			'urlOptions' => '*/*/save'

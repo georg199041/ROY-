@@ -7,13 +7,15 @@ class Navigation_Block_AdminPages_Edit_Toolbar extends Core_Block_Toolbar_Widget
 		$this->setTitle($this->__('Редактирование страницы'));
 		
 		$this->addButton(array(
+			'type'  => 'submit',
 			'name'  => 'save',
 			'title' => $this->__('Сохранить'),
-			'urlOptions' => '*/*/save/back/true'
+			'urlOptions' => '*/*/save'
 		));
 		
 		$this->addButton(array(
-			'name'  => 'apply',
+			'type'  => 'submit',
+			'name'  => 'back',
 			'title' => $this->__('Применить'),
 			'urlOptions' => '*/*/save'
 		));
