@@ -13,35 +13,50 @@
 		<div class="front-push-top"></div>
 		<?php if ($this->isHomePage()): ?>
 		<div class="front-body-slider-body">
-			<div class="front-body-slider-blackwhite">
-				<ul class="front-body-slider-blackwhite-wrap">
-					<li class="front-body-slider-blackwhite__item">
-						<img src="/layouts/default/images/bw_slide1.jpg"/>
-					</li>
-				</ul>
+			<div class="front-body-slider-blackwhite" style="background: grey;">
+<!-- 				<div class="front-body-slider-prewrap">			 -->
+<!-- 					<ul class="front-body-slider-blackwhite-wrap"> -->
+<!-- 						<li class="front-body-slider-blackwhite__item"> -->
+<!-- 							<img src="/layouts/default/images/bw_slide1.jpg"/> -->
+<!-- 						</li> -->
+<!-- 						<li class="front-body-slider-blackwhite__item"> -->
+<!-- 							<img src="/layouts/default/images/bw_slide1.jpg"/> -->
+<!-- 						</li> -->
+<!-- 						<li class="front-body-slider-blackwhite__item"> -->
+<!-- 							<img src="/layouts/default/images/bw_slide1.jpg"/> -->
+<!-- 						</li> -->
+<!-- 						<li class="front-body-slider-blackwhite__item"> -->
+<!-- 							<img src="/layouts/default/images/bw_slide1.jpg"/> -->
+<!-- 						</li> -->
+<!-- 						<li class="front-body-slider-blackwhite__item"> -->
+<!-- 							<img src="/layouts/default/images/bw_slide1.jpg"/> -->
+<!-- 						</li> -->
+<!-- 					</ul> -->
+<!-- 				</div> -->
 			</div>
 			
 			<div class="front-body-slider-color">
 				<ul class="front-body-slider-color-wrap" >
 					<li class="front-body-slider-color__item">
-						<img src="/layouts/default/images/main-banner-color.jpg" width="970" height="310" id="image" />
-<!-- 						<script type="text/javascript"> 
-						        window.onload = function() {
-						                var shape = new ictinus.Shape('M0,155 L75,0 L895,0 L970,155 L895,310 L75,310');
-						                shape.decorate(document.getElementById('image'));
-						        }
-						</script>-->
+						<img src="/layouts/default/images/main_slide1.jpg" bg="#808080"/>
+					</li>
+					<li class="front-body-slider-color__item">
+						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfsGeufC1mnd5lUc3xegyqdrS2AgjezGNM_8BI5wXJdjbCdDQcMg" bg="#FAE9A1"/>
+					</li>
+					<li class="front-body-slider-color__item">
+						<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS5z29gkLAop8ij7aB1ICpbkvc7uOqCHPMQKr8wP9DKm86wqA2-ig" bg="#DBEAF9"/>
 					</li>
 				</ul>
-<!-- 				<div class="front-body-slider-color-cutter-container"><div class="front-body-slider-color-cutter"></div></div> --> 
+				
 			</div>
 			<div class="front-body-slider-rectangle">
 				<img src="/layouts/default/images/rectangle.png"/>
+				<div class="front-body-slider-buttons">
+					<input type="button" id="slider_back" class="slider_buttons" />
+					<input type="button" id="slider_next" class="slider_buttons" />
+				</div>
 			</div>
-			<div class="front-body-slider-buttons">
-				<input type="button" id="slider_back" class="slider_buttons" />
-				<input type="button" id="slider_next" class="slider_buttons" />
-			</div>
+			
 		
 		</div>
 		<?php endif; ?>
@@ -88,5 +103,6 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
 </html>

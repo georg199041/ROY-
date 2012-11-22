@@ -9,6 +9,14 @@ $(document).ready(function(){
 		"height"  : "100px",
 	});
 	
+	//MENU HOVERS
+	$(".front-header-menu__item-href").hover(function(){
+	
+	},function(){
+		
+	});
+	
+	
 	$(".front-body-schema__item").hover(function(){
 		
 		$(this).find(".front-body-schema__item-titlebox").addClass("front-body-schema__item_titlebox-hover");
@@ -55,6 +63,61 @@ $(document).ready(function(){
 		
 
 	});
+	
+	
+	//MAIN PAGE SLIDER
+	$("#slider_back").hover(function(){
+		$(this).css({
+			"background":"url(/layouts/default/images/slider_arrows.png) no-repeat",
+			"background-position":"20px 40px"
+		})
+	},function(){
+		$(this).css({"background":"transparent"});
+	});
+	$("#slider_next").hover(function(){
+		$(this).css({
+			"background":"url(/layouts/default/images/slider_arrows.png) no-repeat",
+			"background-position":"-108px 40px "
+		})
+	},function(){
+		$(this).css({"background":"transparent"});
+	});
+	
+	
+	
+	$(".front-body-slider-color-wrap .front-body-slider-color__item:first-child").addClass("active");
+	
+	$('.slider_buttons').click(function() {	
+		var button = $(this).attr('id');
+		var current_image = $('.front-body-slider-color-wrap .front-body-slider-color__item.active');
+		var cur_bg;
+		var next;
+		
+		
+		if (button == 'slider_back') {
+			console.log(button);
+			next = ($('.front-body-slider-color-wrap .front-body-slider-color__item.active').prev().length > 0) ?
+				$('.front-body-slider-color-wrap .front-body-slider-color__item.active').prev() :
+				$('.front-body-slider-color-wrap .front-body-slider-color__item:last');
+				
+				
+		}else {
+			
+			next = ($('.front-body-slider-color-wrap .front-body-slider-color__item.active').next().length > 0) ?
+				$('.front-body-slider-color-wrap .front-body-slider-color__item.active').next() :
+				$('.front-body-slider-color-wrap .front-body-slider-color__item:first');
+				
+		} 
+		
+		
+		next.css('z-index', 2).show();				
+		current_image.fadeOut(300, function() {
+			$(this).css('z-index', 1).removeClass('active');
+			next.css('z-index', 3).addClass('active');
+			cur_bg = $('.front-body-slider-color-wrap .front-body-slider-color__item.active img').attr("bg");
+			$(".front-body-slider-blackwhite").attr("style", "background:" +cur_bg );
+		});
+	});	
 		
 });
 

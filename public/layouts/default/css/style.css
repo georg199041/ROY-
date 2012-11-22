@@ -10,7 +10,6 @@
 @import '/layouts/default/css/front-personal.css';
 @import '/layouts/default/css/front-focused-on-results.css';
 @import '/layouts/default/css/front-google.css';
-@import '/layouts/default/css/ictinus.css';
 html, body, img, div, a, span {
 	margin: 0;
 	padding: 0;
@@ -25,6 +24,7 @@ html {
 }
 body{
 	color: #434f56;
+	overflow: hidden;
 }
 img {
 	border: 0 none;
@@ -89,42 +89,85 @@ ul {
 }
 .front-body-slider-blackwhite{
 	position: absolute;
+	top: 0;
     width: 100%;
     z-index: 1;
-}
-.front-body-slider-color{
-	position: absolute;
-    width: 100%;
-    z-index: 10;
-    overflow: hidden;
+    height: 310px;
+    opacity: 1;
 }
 .front-body-slider-rectangle{
 	position: absolute;
+	margin: 0 auto;
     text-align: center;
     width: 100%;
-    z-index: 10;
 	margin-top: -7px;
+	top: 0;
+}
+.front-body-slider-rectangle img{
+	z-index: 12;
+	position: relative;
+}
+.front-body-slider-prewrap{
+	margin: 0 auto;
+	width: 1150px;
 }
 .front-body-slider-blackwhite-wrap{
 	list-style: none outside none;
-    margin: 0 auto;
+    width: 100000px;
     overflow: hidden;
     padding: 0;
-    width: 1150px;
+    margin-left: -1150px;
 }
 .front-body-slider-blackwhite__item{
-	
+	float: left;
+}
+.front-body-slider-buttons{
+	margin: 0 auto;
+	margin-top: -320px;
+	width: 970px;
+	position: relative;
+	top: 0;
+}
+.slider_buttons{
+	position: absolute;
+	height: 315px;
+    width: 100px;
+    top: 0;
+    z-index: 20;
+    background: transparent;
+    border: none;
+    z-index: 13;
+    cursor: pointer;
+}
+.slider_buttons#slider_back{
+	left: 0;
+}
+.slider_buttons#slider_next{
+	right: 0;
+}
+.front-body-slider-color{
+	margin: 0 auto;
+    overflow: hidden;
+  	width: 1150px;
+    z-index: 11;
+    height: 310px;
+    position: relative;
 }
 .front-body-slider-color-wrap{
 	list-style: none outside none;
-    margin: 0 auto;
-    overflow: hidden;
+     width: 100000px;
     padding: 0;
-    width: 970px;
+    position: absolute;
 }
 .front-body-slider-color__item{
-	
+	width: 1150px;
+	height: 310px;
+	position: absolute;
 }
+.front-body-slider-color__item img{
+	width: 1150px;
+	height: 310px;
+}	
 .front-body-slider-color-cutter-container{
 	position: absolute;
 	top: 0;
