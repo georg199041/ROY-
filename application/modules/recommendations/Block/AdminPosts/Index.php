@@ -18,26 +18,27 @@ class Recommendations_Block_AdminPosts_Index extends Core_Block_Grid_Widget
 		$this->addColumn(array(
 			'name'  => 'id',
 			'title' => $this->__('ID'),
-			'width' => '50',
+			'width' => '2',
 			'align' => 'right',
 		));
 		
 		$this->addColumn(array(
 			'name'           => 'title',
 			'type'           => 'hyperlink',
-			'title'          => $this->__('Title'),
+			'title'          => $this->__('Заголовок'),
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),
 		));
 		
 		$this->addColumn(array(
-			'name'           => 'enabled',
-			'type'           => 'checkbox',
-			'title'          => $this->__('On'),
-			'checkedValue'   => 'YES',
-			'uncheckedValue' => 'NO',
-			'width'          => '1%',
+			'name'              => 'enabled',
+			'type'              => 'checkbox',
+			'title'             => $this->__('Вкл'),
+			'align'             => 'center',
+			'checkedValue'      => 'YES',
+			'uncheckedValue'    => 'NO',
+			'width'             => '1%',
 			'formactionOptions' => '*/*/enabled',
 			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
 		));
