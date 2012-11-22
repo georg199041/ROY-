@@ -34,13 +34,13 @@ echo $this->headScript();
 
 ?>
 <script>
-$(document).ready(function(){
-	$(document).bind('keyup', function(e){
+jQuery(document).ready(function(){
+	jQuery(document).bind('keyup', function(e){
 		if (e.keyCode == 192) {
-			if ($('#exception-trace').css('display') == 'block') {
-				$('#exception-trace').hide();
+			if (jQuery('#exception-trace').css('display') == 'block') {
+				jQuery('#exception-trace').hide();
 			} else {
-				$('#exception-trace').show();
+				jQuery('#exception-trace').show();
 			}
 		}
 	});

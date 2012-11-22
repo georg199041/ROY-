@@ -6,7 +6,6 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
 	{
 		$this->getHelper('layout')->setLayout('admin');
 		$this->view->headTitle('Рекоммендации');
-		$this->getResponse()->appendBody('<div>' . implode('<br />' ,$this->getHelper('FlashMessenger')->getMessages()) . '</div>');
 	}
 	
 	public function indexAction(){}
@@ -21,7 +20,7 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     		return;
     	}
     	
-    	$this->getHelper('FlashMessenger')->addMessage($this->__('Item does not exist'));
+    	Core::getBlock('application/admin/messenger')->addSuccess($this->__('Item does not exist'));
     	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'));
     }
 
