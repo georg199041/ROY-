@@ -1,4 +1,4 @@
-<div style="padding: 0 10px 0">
+<div class="admin-breadcrumbs">
 <?php $root = Zend_Registry::get('Zend_Navigation')->findOneById('default/admin-index/index');
 	echo $this->navigation($root)
 	          ->breadcrumbs()

@@ -23,7 +23,7 @@
 	float: right;
 	display: block;
 	list-style: none;
-	padding: 5px 0 0;
+	padding: 0;
 	margin: 0;
 }
 .cbtw-buttons li {
@@ -33,7 +33,7 @@
 }
 .cbtw-buttons button {
 	cursor: pointer;
-	font-size: 12px;
+	/*font-size: 12px;*/
 }
 .cbtw-links {
 	float: left;
