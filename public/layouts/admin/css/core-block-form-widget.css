@@ -30,4 +30,24 @@
 	margin: 10px;
 	border: 0 none;
 }
+.cbfw-tag_formText {
+	padding-right: 10px;
+}
+.cbfw-tag_formText input {
+	width: 100%;
+}
+.cbfw-tag_formRadio label {
+	float: left;
+	margin-right: 20px;
+}
+.cbfw-tag_formRadio label input {
+	float: left;
+	margin-right: 10px;
+}
+.cbfw-tag_formRadio br {
+	display: none;
+}
+.cbfw-errors_formRadio {
+	clear: both;
+}
 

@@ -20,24 +20,20 @@ class Contacts_Block_AdminContacts_Index extends Core_Block_Grid_Widget
 			'title' => $this->__('ID'),
 			'width' => '50',
 			'align' => 'right',
-			'filterable'        => 'true',
-			'filterableType'    => Core_Block_Grid_Widget::FILTER_EQUAL,
 		));
 		
 		$this->addColumn(array(
 			'name'           => 'title',
 			'type'           => 'hyperlink',
-			'title'          => $this->__('Title'),
+			'title'          => $this->__('Заголовок'),
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),
-			'filterable'     => 'true',
-			'filterableType' => Core_Block_Grid_Widget::FILTER_LIKE,
 		));
 		
 		$this->addColumn(array(
 			'name'   => 'alias',
-			'title'  => $this->__('Alias'),
+			'title'  => $this->__('Псевдоним'),
 			'width'  => '1%',
 			'nowrap' => 'nowrap',
 			'filterable'     => 'true',
@@ -47,7 +43,7 @@ class Contacts_Block_AdminContacts_Index extends Core_Block_Grid_Widget
 		$this->addColumn(array(
 			'type'              => 'hyperlink',
 			'name'              => 'contacts_groups_id',
-			'title'             => $this->__('Group'),
+			'title'             => $this->__('Группа'),
 			'linkOptions'       => 'contacts/admin-groups/index',
 			'linkBindFields'    => array('contacts_groups_id'),
 			'width'             => '1%',
@@ -58,14 +54,17 @@ class Contacts_Block_AdminContacts_Index extends Core_Block_Grid_Widget
 		));
 		
 		$this->addColumn(array(
-			'name'           => 'enabled',
-			'type'           => 'checkbox',
-			'title'          => $this->__('On'),
-			'checkedValue'   => 'YES',
-			'uncheckedValue' => 'NO',
-			'width'          => '1%',
+			'name'              => 'enabled',
+			'type'              => 'checkbox',
+			'title'             => $this->__('Вкл'),
+			'align'             => 'center',
+			'checkedValue'      => 'YES',
+			'uncheckedValue'    => 'NO',
+			'width'             => '1%',
+			'formactionOptions' => '*/*/enabled',
+			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
 		));
-		
+				
 		$this->setData(Core::getMapper('contacts/contacts')->fetchAll());
 
 		$this->addBlockChild(

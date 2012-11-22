@@ -64,7 +64,8 @@ var tinyMCECustomOptions = {
         //force_p_newlines: false,
         forced_root_block : '', // Needed for 3.x
         
-
+        width : "100%",
+        
         // Example content CSS (should be your site CSS)
         //content_css : "css/example.css",
 
