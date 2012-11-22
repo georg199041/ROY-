@@ -10,22 +10,22 @@ class Recommendations_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 		$this->addElement('hidden', 'id');
 		
 		$this->addElement('text', 'title', array(
-			'label'    => $this->__('Title'),
+			'label'    => $this->__('Заголовок'),
 			'required' => true,
 		));
 
 		$this->addElement('textarea', 'description', array(
-			'label' => $this->__('Description'),
+			'label' => $this->__('Описание'),
 			'cols' => 70,
 			'rows' => 15,
 		));
 
 		$this->addElement('text', 'image', array(
-			'label' => $this->__('Image'),
+			'label' => $this->__('Картинка'),
 		));
 		
 		$this->addElement('checkbox', 'enabled', array(
-			'label'          => $this->__('Enabled'),
+			'label'          => $this->__('Включено'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 		));

@@ -25,7 +25,7 @@ class Contacts_Block_AdminGroups_Index extends Core_Block_Grid_Widget
 		$this->addColumn(array(
 			'name'           => 'title',
 			'type'           => 'hyperlink',
-			'title'          => $this->__('Title'),
+			'title'          => $this->__('Заголовок'),
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),
@@ -33,20 +33,23 @@ class Contacts_Block_AdminGroups_Index extends Core_Block_Grid_Widget
 		
 		$this->addColumn(array(
 			'name'   => 'alias',
-			'title'  => $this->__('Alias'),
+			'title'  => $this->__('Псевдоним'),
 			'width'  => '1%',
 			'nowrap' => 'nowrap',
 		));
 		
 		$this->addColumn(array(
-			'name'           => 'enabled',
-			'type'           => 'checkbox',
-			'title'          => $this->__('On'),
-			'checkedValue'   => 'YES',
-			'uncheckedValue' => 'NO',
-			'width'          => '1%',
+			'name'              => 'enabled',
+			'type'              => 'checkbox',
+			'title'             => $this->__('Вкл'),
+			'align'             => 'center',
+			'checkedValue'      => 'YES',
+			'uncheckedValue'    => 'NO',
+			'width'             => '1%',
+			'formactionOptions' => '*/*/enabled',
+			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
 		));
-		
+				
 		$this->setData(Core::getMapper('contacts/groups')->fetchAll());
 
 		$this->addBlockChild(
