@@ -9,61 +9,64 @@ class Navigation_Block_AdminPages_Edit extends Core_Block_Form_Widget
 		$this->addElement('hidden', 'id');
 		
 		$this->addElement('select', 'navigation_pages_id', array(
-			'label'        => $this->__('Parent'),
+			'label'        => $this->__('Родитель'),
 			'required'     => true,
 			'multiOptions' => $this->getNavigationPagesId(Core::getMapper('navigation/pages')->fetchTree(), array('--- NO ---')),
 		));
 		
 		$this->addElement('text', 'label', array(
-			'label'    => $this->__('Label'),
+			'label'    => $this->__('Заголовок'),
 			'required' => true,
 		));
 
 		$this->addElement('text', 'uri', array(
-			'label' => $this->__('Url'),
+			'label' => $this->__('УРЛ'),
 		));
 		
 		$this->addElement('text', 'module', array(
-			'label' => $this->__('Module'),
+			'label' => $this->__('Модуль'),
 		));
 
 		$this->addElement('text', 'controller', array(
-			'label' => $this->__('Controller'),
+			'label' => $this->__('Контроллер'),
 		));
 
 		$this->addElement('text', 'action', array(
-			'label' => $this->__('Action'),
+			'label' => $this->__('Действие'),
 		));
 
 		$this->addElement('text', 'route', array(
-			'label' => $this->__('Route'),
+			'label' => $this->__('Роут'),
 		));
 		
 		$this->addElement('radio', 'type', array(
-			'label'        => $this->__('Type'),
+			'label'        => $this->__('Тип'),
 			'multiOptions' => array(
-				'MVC' => $this->__('MVC'),
-				'URI' => $this->__('URI'),
+				'MVC' => $this->__('Конструктор'),
+				'URI' => $this->__('Ссылка'),
 			)
 		));
 
 		$this->addElement('checkbox', 'reset_params', array(
-			'label'          => $this->__('Reset'),
+			'label'          => $this->__('Сбрасывать'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 		));
 
 		$this->addElement('checkbox', 'encode_url', array(
-			'label'          => $this->__('Encode'),
+			'label'          => $this->__('Кодировать спец символы'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 		));
 		
 		$this->addElement('checkbox', 'enabled', array(
-			'label'          => $this->__('Enabled'),
+			'label'          => $this->__('Включено'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 		));
+		
+		$this->addDisplayGroup(array('navigation_pages_id', 'label', 'uri', 'module', 'controller', 'action', 'route'), 'center');
+		$this->addDisplayGroup(array('type', 'enabled', 'reset_params', 'encode_url'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);
