@@ -10,8 +10,11 @@
 			?>
 		</div>
 		<div class="admin-info">
-			<a href="#" class="admin-info__button">(1)</a>
-			<?php //echo $this->flashMessenger(); ?>
+			<a href="#" class="admin-info__button"><?php
+				if (Core::getBlock('application/admin/messenger')->getMessagesCount() > 0) {
+					echo '(' . Core::getBlock('application/admin/messenger')->getMessagesCount() . ')';
+				}
+			?></a>
 			<?php echo Core::getBlock('application/admin/messenger'); ?>
 		</div>
 	</div>

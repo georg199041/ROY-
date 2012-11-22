@@ -20,7 +20,7 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     		return;
     	}
     	
-    	Core::getBlock('application/admin/messenger')->addSuccess($this->__('Item does not exist'));
+    	Core::getBlock('application/admin/messenger')->addError($this->__('Запись не найдена'));
     	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'));
     }
 
@@ -38,7 +38,7 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     			$model->save();
     			unset(Core::getSession('admin')->formData);
     	   
-    			$this->getHelper('FlashMessenger')->addMessage($this->__('Saved success'));
+    			Core::getBlock('application/admin/messenger')->addSuccess($this->__('Запись сохранена'));
     			if ($this->getRequest()->getParam('back')) {
     				$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/edit/id/' . $model->getId()));
     			}
@@ -47,13 +47,14 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     			return;
     		} catch (Exception $e) {
     			Core::getSession('admin')->formData = $data;
-    			$this->getHelper('FlashMessenger')->addMessage($e->getMessage());
+    			//Core::getBlock('application/admin/messenger')->addError($this->__($e->getMessage()));
+    			Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка сохранения'));
     			$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/edit/id/' . $this->getRequest()->getParam('id')));
     			return;
     		}
     	}
     	 
-    	$this->getHelper('FlashMessenger')->addMessage($this->__('Unable to find item to save'));
+    	Core::getBlock('application/admin/messenger')->addError($this->__('Не найдена запись для сохранения'));
     	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'));
     }
     
@@ -65,7 +66,7 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
         }
     	
     	if (null === $ids) {
-    		$this->getHelper('FlashMessenger')->addMessage($this->__('Please select item(s)'));
+    		Core::getBlock('application/admin/messenger')->addError($this->__('Не выбрана ни одна запись'));
     	} else {
     		try {
     			foreach ($ids as $id => $selected) {
@@ -74,6 +75,7 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     			}
     			 
     			$this->getHelper('FlashMessenger')->addMessage(count($ids) . ' record(s) have been successfully deleted');
+    			Core::getBlock('application/admin/messenger')->addError($this->__('Не выбрана ни одна запись'));
     		} catch (Exception $e) {
     			$this->getHelper('FlashMessenger')->addMessage($e->getMessage());
     		}
@@ -91,7 +93,7 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
         }
         
         if (null === $ids) {
-    		$this->getHelper('FlashMessenger')->addMessage($this->__('Please select item(s)'));
+    		Core::getBlock('application/admin/messenger')->addError($this->__('Не выбрана ни одна запись'));
     	} else {
     		try {
     			foreach ($ids as $id => $selected) {

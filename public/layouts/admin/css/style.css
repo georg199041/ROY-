@@ -146,7 +146,7 @@ a {
 	margin: 0;
 	list-style: none;
 	right: 0;
-	top: 16px;
+	top: 24px;
 }
 .admin-info .message {
 	font-size: 11px;
@@ -157,7 +157,7 @@ a {
 	list-style: none;
 	border: 1px solid rgba(0,0,0,0.85);
 	border-radius: 5px;
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.65);
 	background-position: 8px 7px;
 	background-repeat: no-repeat;
 	min-height: 16px;

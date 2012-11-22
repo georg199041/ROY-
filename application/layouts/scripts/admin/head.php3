@@ -34,6 +34,7 @@ $this->headScript()->appendFile('/js/jquery/jquery-1.8.2.min.js', 'text/javascri
 $this->headScript()->appendFile('/js/tinymce/tiny_mce_gzip.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/admin.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/core-block-grid-widget.js', 'text/javascript');
+$this->headScript()->appendFile('/layouts/admin/js/application-admin-messenger.js', 'text/javascript');
 echo $this->headScript();
 
 ?>
