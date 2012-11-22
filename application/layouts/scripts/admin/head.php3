@@ -29,13 +29,17 @@ echo $this->headLink();
 /**
  * All scripts files add here
  */
-$this->headScript()->appendFile('/js/jquery/jquery-1.8.2.min.js', 'text/javascript');
+$this->headScript()->appendFile('/lib/jquery/jquery-1.8.2.min.js', 'text/javascript');
+$this->headScript()->appendFile('/lib/jquery/ui/jquery-ui-1.9.1.custom.min.js', 'text/javascript');
+$this->headScript()->appendFile('/lib/bootstrap/js/bootstrap.min.js', 'text/javascript');
+
 //$this->headScript()->appendScript('jQuery.noConflict();', 'text/javascript');
-$this->headScript()->appendFile('/js/tinymce/tiny_mce_gzip.js', 'text/javascript');
+$this->headScript()->appendFile('/lib/tinymce/tiny_mce_gzip.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/admin.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/core-block-grid-widget.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/application-admin-messenger.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/core-block-toolbar-widget.js', 'text/javascript');
+
 echo $this->headScript();
 
 ?>

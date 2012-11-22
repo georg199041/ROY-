@@ -17,7 +17,7 @@
 	</div>
 	<div class="layout_footer">
 		<div class="layout_footer_width">
-			<div class="layout_footer_text">Footer</div>
+			<div class="layout_footer_text"></div>
 		</div>
 	</div>
 </body>

@@ -2,7 +2,7 @@
 @import 'core-block-toolbar-widget.css';
 @import 'core-block-form-widget.css';
 @import 'core-block-grid-widget.css';
-@import 'bootstrap.min.css';
+@import '/lib/bootstrap/css/bootstrap.min.css';
 
 html, body, img, div, a, span {
 	margin: 0;
@@ -25,6 +25,7 @@ img {
 a {
 	color: #444;
 }
+
 
 .clearfix:after {
 	content: ".";
@@ -59,11 +60,14 @@ a {
 	color: #fff;
 	font-size: 18px
 }
+.layout_logo_text:hover{
+	color: #fff;
+}
 .layout_header_menu {
 	float: left;
 	position: relative;
 	width: 700px;
-	padding: 10px 10px 0;
+	padding: 8px 10px 0;
 }
 .layout_header_menu ul {
 	position: absolute;
@@ -143,6 +147,10 @@ a {
 	color: #efefef;
 	text-decoration: none;
 	font-size: 11px;
+}
+.admin-info__button:hover{
+	color: #efefef;
+	text-decoration: none;
 }
 .admin-info .messages {
 	position: absolute;
