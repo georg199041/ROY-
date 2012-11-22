@@ -74,10 +74,9 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     				$model->delete();
     			}
     			 
-    			$this->getHelper('FlashMessenger')->addMessage(count($ids) . ' record(s) have been successfully deleted');
-    			Core::getBlock('application/admin/messenger')->addError($this->__('Не выбрана ни одна запись'));
+    			Core::getBlock('application/admin/messenger')->addSuccess($this->__('Удалено записей:') . ' ' . count($ids));
     		} catch (Exception $e) {
-    			$this->getHelper('FlashMessenger')->addMessage($e->getMessage());
+    			Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка удаления'));
     		}
     	}
     	 
@@ -104,9 +103,11 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     				}
     			}
     			
-    			$this->getHelper('FlashMessenger')->addMessage(count($ids) . ' record(s) have been successfully updated');
+    			$message = $this->getRequest()->getParam('value') == 'YES' ? 'Включено' : 'Выключено';
+    			Core::getBlock('application/admin/messenger')->addSuccess($this->__($message . ' записей:') . ' ' . count($ids));
     		} catch (Exception $e) {
-    			$this->getHelper('FlashMessenger')->addMessage($e->getMessage());
+    			$message = $this->getRequest()->getParam('value') == 'YES' ? 'включения' : 'выключения';
+    			Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка ' . $message));
     		}
     	}
     	
