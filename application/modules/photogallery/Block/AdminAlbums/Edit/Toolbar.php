@@ -1,19 +1,21 @@
 <?php
 
-class Contents_Block_AdminCategories_Edit_Toolbar extends Core_Block_Toolbar_Widget
+class Photogallery_Block_AdminAlbums_Edit_Toolbar extends Core_Block_Toolbar_Widget
 {
 	public function init()
 	{
-		$this->setTitle($this->__('Редактирование категорий контента'));
+		$this->setTitle($this->__('Редактирование альбома фотогаллереи'));
 		
 		$this->addButton(array(
+			'type'  => 'submit',
 			'name'  => 'save',
 			'title' => $this->__('Сохранить'),
-			'urlOptions' => '*/*/save/back/true'
+			'urlOptions' => '*/*/save'
 		));
 		
 		$this->addButton(array(
-			'name'  => 'apply',
+			'type'  => 'submit',
+			'name'  => 'back',
 			'title' => $this->__('Применить'),
 			'urlOptions' => '*/*/save'
 		));
