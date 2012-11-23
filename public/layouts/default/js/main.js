@@ -90,7 +90,8 @@ $(document).ready(function(){
 	$('.slider_buttons').click(function() {	
 		var button = $(this).attr('id');
 		var current_image = $('.front-body-slider-color-wrap .front-body-slider-color__item.active');
-		var cur_bg;
+		var cur_left_bg;
+		var cur_right_bg;
 		var next;
 		
 		
@@ -114,8 +115,10 @@ $(document).ready(function(){
 		current_image.fadeOut(300, function() {
 			$(this).css('z-index', 1).removeClass('active');
 			next.css('z-index', 3).addClass('active');
-			cur_bg = $('.front-body-slider-color-wrap .front-body-slider-color__item.active img').attr("bg");
-			$(".front-body-slider-blackwhite").attr("style", "background:" +cur_bg );
+			cur_left_bg = $('.front-body-slider-color-wrap .front-body-slider-color__item.active img').attr("bg_left");
+			cur_right_bg = $('.front-body-slider-color-wrap .front-body-slider-color__item.active img').attr("bg_right");
+			$(".front-body-slider-blackwhite-left").css("background", "url(" +cur_left_bg+");" );
+			$(".front-body-slider-blackwhite-right").css("background", "url(" +cur_right_bg+");" );
 		});
 	});	
 		

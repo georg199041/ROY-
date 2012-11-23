@@ -13,7 +13,8 @@
 		<div class="front-push-top"></div>
 		<?php if ($this->isHomePage()): ?>
 		<div class="front-body-slider-body">
-			<div class="front-body-slider-blackwhite" style="background: grey;">
+			<div class="front-body-slider-blackwhite" >
+				<div class="front-body-slider-blackwhite-left"></div>
 <!-- 				<div class="front-body-slider-prewrap">			 -->
 <!-- 					<ul class="front-body-slider-blackwhite-wrap"> -->
 <!-- 						<li class="front-body-slider-blackwhite__item"> -->
@@ -33,18 +34,19 @@
 <!-- 						</li> -->
 <!-- 					</ul> -->
 <!-- 				</div> -->
+				<div class="front-body-slider-blackwhite-right"></div>
 			</div>
 			
 			<div class="front-body-slider-color">
 				<ul class="front-body-slider-color-wrap" >
 					<li class="front-body-slider-color__item">
-						<img src="/layouts/default/images/main_slide1.jpg" bg="#808080"/>
+						<img src="/uploads/front-page-slider/main-promo-collage--center.jpg" bg_left="/uploads/front-page-slider/main-promo-collage--left.jpg" bg_right="/uploads/front-page-slider/main-promo-collage--right.jpg"/>
 					</li>
 					<li class="front-body-slider-color__item">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfsGeufC1mnd5lUc3xegyqdrS2AgjezGNM_8BI5wXJdjbCdDQcMg" bg="#FAE9A1"/>
+						<img src="/uploads/front-page-slider/main-promo-collage--center.jpg" bg_left="/uploads/front-page-slider/main-promo-collage--left.jpg" bg_right="/uploads/front-page-slider/main-promo-collage--right.jpg"/>
 					</li>
 					<li class="front-body-slider-color__item">
-						<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS5z29gkLAop8ij7aB1ICpbkvc7uOqCHPMQKr8wP9DKm86wqA2-ig" bg="#DBEAF9"/>
+						<img src="/uploads/front-page-slider/main-promo-collage--center.jpg" bg_left="/uploads/front-page-slider/main-promo-collage--left.jpg" bg_right="/layouts/default/images/main-promo-collage--right.jpg"/>
 					</li>
 				</ul>
 				

@@ -88,7 +88,7 @@ ul {
 	height: 310px;
 }
 .front-body-slider-blackwhite{
-	position: absolute;
+	position: relative;
 	top: 0;
     width: 100%;
     z-index: 1;
@@ -151,6 +151,7 @@ ul {
   	width: 1150px;
     z-index: 11;
     height: 310px;
+    margin-top: -310px;
     position: relative;
 }
 .front-body-slider-color-wrap{
@@ -256,4 +257,17 @@ ul {
     height:30px;
     padding:0;
 }
-
+.front-body-slider-blackwhite-left{
+	left: 0;
+	width: 50%;
+	height: 310px;
+	position: absolute;
+	background: url(/uploads/front-page-slider/main-promo-collage--left.jpg) repeat scroll 384px 0;
+}
+.front-body-slider-blackwhite-right{
+	right: 0;
+	width: 50%;
+	height: 310px;
+	position: absolute;
+	background: url(/uploads/front-page-slider/main-promo-collage--right.jpg) repeat scroll 576px 0;
+}
