@@ -263,6 +263,7 @@ ul {
 	height: 310px;
 	position: absolute;
 	background: url(/uploads/front-page-slider/main-promo-collage--left.jpg) top right;
+	margin-left: -480px;
 }
 .front-body-slider-blackwhite-right{
 	right: 0;
@@ -270,4 +271,5 @@ ul {
 	height: 310px;
 	position: absolute;
 	background: url(/uploads/front-page-slider/main-promo-collage--right.jpg) top left;
+	margin-right: -480px;
 }
