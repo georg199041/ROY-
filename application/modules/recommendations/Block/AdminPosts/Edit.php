@@ -10,13 +10,14 @@ class Recommendations_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 		$this->addElement('hidden', 'id');
 		
 		$this->addElement('text', 'title', array(
-			'label'    => $this->__('Заголовок'),
-			'required' => true,
+			'label'      => $this->__('Заголовок'),
+			'required'   => true,
 			'validators' => array(
-				array('notempty', true, array())
+				array('NotEmpty', true, array('messages' => array(
+					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
+				)))
 			)
 		));
-		//$this->getElement('title')->getValidator('NotEmpty')->setMessage('Это поле не может быть пустым', Zend_Validate_NotEmpty::IS_EMPTY);
 
 		$this->addElement('textarea', 'description', array(
 			'label' => $this->__('Описание'),

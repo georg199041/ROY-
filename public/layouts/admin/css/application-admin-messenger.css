@@ -7,13 +7,13 @@
 	color: #efefef;
 }
 .admin-info__button {
-	height: 14px;
+	height: 15px;
 	display: block;
-	padding: 2px 0 0 18px;
+	padding: 1px 0 0 18px;
 	background: url("/layouts/admin/images/16px/info.png") top left no-repeat;
 	color: #efefef;
 	text-decoration: none;
-	font-size: 11px;
+	font-size: 10px;
 }
 .admin-info__button:hover{
 	color: #efefef;
