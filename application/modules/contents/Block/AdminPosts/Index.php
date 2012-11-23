@@ -46,17 +46,18 @@ class Contents_Block_AdminPosts_Index extends Core_Block_Grid_Widget
 			'uncheckedValue' => 'NO',
 			'width'          => '1%',
 		));
-		
-		$this->addColumn(array(
-			'name'  => 'created_ts',
-			'title' => $this->__('Date created'),
-			'width' => '1%',
-		));
 
 		$this->addColumn(array(
-			'name'  => 'modified_ts',
-			'title' => $this->__('Date modified'),
-			'width' => '1%',
+			'type'              => 'hyperlink',
+			'name'              => 'contents_categories_id',
+			'title'             => $this->__('Категория'),
+			'linkOptions'       => 'contents/admin-categories/index',
+			'linkBindFields'    => array('contents_categories_id'),
+			'width'             => '1%',
+			'nowrap'            => 'nowrap',
+			'filterable'        => 'true',
+			'filterableType'    => Core_Block_Grid_Widget::FILTER_SELECT,
+			'filterableOptions' => $this->getContentsCategoriesId(),
 		));
 		
 		$this->setData(Core::getMapper('contents/posts')->fetchAll());
@@ -71,5 +72,20 @@ class Contents_Block_AdminPosts_Index extends Core_Block_Grid_Widget
 			'type'            => 'pagination',
 			'totalItemsCount' => Core::getMapper('contents/posts')->fetchCount()*10,
 		), self::BLOCK_PLACEMENT_AFTER);
+	}
+	
+	protected $_contentsCategoriesId;
+	public function getContentsCategoriesId()
+	{
+		if (null === $this->_contentsCategoriesId) {
+			$groups = Core::getMapper('contents/categories')->fetchAll();
+			$this->_contentsCategoriesId = array('Нет');
+				
+			foreach ($groups as $group) {
+				$this->_contentsCategoriesId[$group->getId()] = $group->getTitle();
+			}
+		}
+		
+		return $this->_contentsCategoriesId;
 	}
 }
