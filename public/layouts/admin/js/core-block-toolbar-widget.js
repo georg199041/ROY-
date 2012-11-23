@@ -4,6 +4,7 @@ jQuery(document).ready(function(){
 	 * BUTTONS DECORATE
 	 */
 	$("button").addClass("btn");
+	$(".cbtw-buttons button").addClass("btn-small");
 	$("button[name=add]").addClass("btn-success");
 	$("button[name=save]").addClass("btn-success");
 	$("button[name=back]").addClass("btn-info");
