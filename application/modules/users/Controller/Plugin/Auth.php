@@ -69,7 +69,7 @@ class Users_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract
 	 * @throws Exception If recursion detected
 	 * @return Core_Controller_Plugin_Auth
 	 */
-	public function setOptions()
+	public function setOptions(array $options)
 	{
 		foreach ($options as $key => $val) {
 			if (false !== stripos('options', $key)) {
@@ -148,8 +148,8 @@ class Users_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract
 				}
 			} else if (is_array($rule)) {
 				if (is_string($rule['module'])
-						&& is_string($rule['controller'])
-						&& is_string($rule['action'])
+					&& is_string($rule['controller'])
+					&& is_string($rule['action'])
 				) {
 					$this->_excludedResources[] = "{$rule['module']}/{$rule['controller']}/{$rule['action']}";
 				}
@@ -233,11 +233,13 @@ class Users_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract
 		
 		$restricted = false;
 		foreach ($this->getRules() as $rule) {
+			var_export();
 			$testRegex = @preg_match($rule, $resource);
 			if ((is_int($testRegex) && $testRegex) || $rule == $resource) {
 				$restricted = true;
 				break;
 			}
+			var_export($restricted . ' ' . $rule . ';');
 		}
 		
 		if ($restricted && !Zend_Auth::getInstance()->hasIdentity()) {
