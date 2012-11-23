@@ -9,13 +9,13 @@ class Contents_Block_AdminCategories_Index_Toolbar extends Core_Block_Toolbar_Wi
 		$this->addButton(array(
 			'name'       => 'show',
 			'title'      => $this->__('Включить'),
-			'urlOptions' => '*/*/status/enabled/YES',
+			'urlOptions' => '*/*/enabled/value/YES',
 		));
 		
 		$this->addButton(array(
 			'name'       => 'hide',
 			'title'      => $this->__('Выключить'),
-			'urlOptions' => '*/*/status/enabled/NO',
+			'urlOptions' => '*/*/enabled/value/NO',
 		));
 		
 		$this->addButton(array(
