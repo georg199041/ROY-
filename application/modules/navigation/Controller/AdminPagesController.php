@@ -6,7 +6,6 @@ class Navigation_AdminPagesController extends Core_Controller_Action
 	{
 		$this->getHelper('layout')->setLayout('admin');
 		$this->view->headTitle('Navigation pages');
-		$this->getResponse()->appendBody(implode('<br />' ,$this->getHelper('FlashMessenger')->getMessages()));
 	}
 	
 	public function indexAction()
@@ -24,7 +23,7 @@ class Navigation_AdminPagesController extends Core_Controller_Action
     		return;
     	}
     	
-    	$this->getHelper('FlashMessenger')->addMessage($this->__('Item does not exist'));
+    	Core::getBlock('application/admin/messenger')->addError($this->__('Запись не найдена'));
     	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'));
     }
     
@@ -46,7 +45,7 @@ class Navigation_AdminPagesController extends Core_Controller_Action
 	    		$model->save();	    		
 	    		unset(Core::getSession('admin')->formData);
 	    		
-	    		$this->getHelper('FlashMessenger')->addMessage($this->__('Saved success'));
+	    		Core::getBlock('application/admin/messenger')->addSuccess($this->__('Запись сохранена'));
 	    		if ($this->getRequest()->getParam('back')) {
 	    			$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/edit/id/' . $model->getId()));
 	    		}
@@ -55,13 +54,13 @@ class Navigation_AdminPagesController extends Core_Controller_Action
 	    		return;
     		} catch (Exception $e) {
 		    	Core::getSession('admin')->formData = $data;
-		    	$this->getHelper('FlashMessenger')->addMessage($this->__($e->getMessage()));
+		    	Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка сохранения'));
 		    	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/edit/id/' . $this->getRequest()->getParam('id')));
 		    	return;
     		}
     	}
     	
-    	$this->getHelper('FlashMessenger')->addMessage($this->__('Unable to find item to save'));
+    	Core::getBlock('application/admin/messenger')->addError($this->__('Не найдена запись для сохранения'));
     	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'));
     }
 }
