@@ -94,7 +94,7 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 	public function getNavigationPagesId($collection, array $result = array(), $depth = 0)
 	{
 		foreach ($collection as $item) {
-			$result[$item->getId()] = str_repeat('--', $depth) . $item->getLabel();
+			$result[$item->getId()] = str_repeat('--', $depth) ." ". $item->getLabel();
 			$result = $this->getNavigationPagesId($item->getChilds(), $result, $depth + 1);
 		}
 		

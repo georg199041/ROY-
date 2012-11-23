@@ -36,7 +36,10 @@ jQuery(document).ready(function(){
 			$(".messages").append('<li class="message message_error message_unreaded"><a href="#" class="close"></a><span>Не выбрана ни одна запись</span></li>');
 			return;
 			
-		}
+		}	
+			
+			var formaction = $(this).attr("formaction");
+			
 			var tbl = $('<div><table width="100%" cellspacing="0" cellpadding="0"></table></div>');
 			
 			tbl.find('table').append('<colgroup><col width="1%"><col></colgroup>');
@@ -70,8 +73,12 @@ jQuery(document).ready(function(){
 			var select = $("select[name='filter["+parent+"]']").clone();
 			select.attr('name', parent);
 			select.attr('id', null);
-			//console.log(select);
 			select.insertAfter(mod.find('.modal-header button'));
+			
+			mod.find('.modal-footer .btn-success').click(function(){
+				var q = $(".cbgw-column__ids input:checked, .modal-header select");
+				console.log(formaction+ decodeURIComponent(q.serialize()));
+			});
 		
 	});
 	
