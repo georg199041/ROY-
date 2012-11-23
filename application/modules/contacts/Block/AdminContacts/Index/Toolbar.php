@@ -22,12 +22,14 @@ class Contacts_Block_AdminContacts_Index_Toolbar extends Core_Block_Toolbar_Widg
 			'name'       => 'move',
 			'title'      => $this->__('Переместить'),
 			'urlOptions' => '*/*/move',
+			'parent'     => 'contacts_groups_id'	
 		));
 		
 		$this->addButton(array(
 			'name'       => 'copy',
 			'title'      => $this->__('Копировать'),
 			'urlOptions' => '*/*/copy',
+			'parent'     => 'contacts_groups_id'
 		));
 		
 		$this->addButton(array(

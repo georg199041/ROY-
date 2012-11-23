@@ -22,12 +22,14 @@ class Navigation_Block_AdminPages_Index_Toolbar extends Core_Block_Toolbar_Widge
 			'name'       => 'move',
 			'title'      => $this->__('Переместить'),
 			'urlOptions' => '*/*/move',
+			'parent'     => 'navigation_pages_id'
 		));
 		
 		$this->addButton(array(
 			'name'       => 'copy',
 			'title'      => $this->__('Копировать'),
 			'urlOptions' => '*/*/copy',
+			'parent'     => 'navigation_pages_id'
 		));
 		
 		$this->addButton(array(

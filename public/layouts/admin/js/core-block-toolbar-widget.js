@@ -64,7 +64,14 @@ jQuery(document).ready(function(){
 			});
 			
 			
-			$('<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-header"><button type="button" class="close admin-close-btn_fix" data-dismiss="modal" aria-hidden="true">×</button><select class="front-widget-select"><option>1</option><option>2</option></select><h3 id="myModalLabel">' + $(this).html() + ' в</h3></div><div class="modal-body cbgw-block">' + tbl.html() + '</div><div class="modal-footer"><button class="btn btn-success">' + $(this).html() + '</button><button class="btn" data-dismiss="modal" aria-hidden="true">Назад</button></div></div>').modal();
+			var mod = $('<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-header"><button type="button" class="close admin-close-btn_fix" data-dismiss="modal" aria-hidden="true">×</button><h3 id="myModalLabel">' + $(this).html() + ' в</h3></div><div class="modal-body cbgw-block">' + tbl.html() + '</div><div class="modal-footer"><button class="btn btn-success">' + $(this).html() + '</button><button class="btn" data-dismiss="modal" aria-hidden="true">Назад</button></div></div>').modal();
+			
+			var parent = $(this).attr("parent");
+			var select = $("select[name='filter["+parent+"]']").clone();
+			select.attr('name', parent);
+			select.attr('id', null);
+			//console.log(select);
+			select.insertAfter(mod.find('.modal-header button'));
 		
 	});
 	

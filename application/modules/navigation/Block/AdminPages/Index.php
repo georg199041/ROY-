@@ -49,7 +49,7 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 		$this->addColumn(array(
 			'name'           => 'reset_params',
 			'type'           => 'checkbox',
-			'title'          => $this->__('Сброс<br>параметров'),
+			'title'          => $this->__('Сброс'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 			'width'          => '1%',
@@ -64,6 +64,19 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 			'width'          => '1%',
 		));
 		
+		$this->addColumn(array(
+			'type'              => 'hyperlink',
+			'name'              => 'navigation_pages_id',
+			'title'             => $this->__('Родитель'),
+			'linkOptions'       => 'navigation/admin-pages/index',
+			'linkBindFields'    => array('navigation_pages_id'),
+			'width'             => '1%',
+			'nowrap'            => 'nowrap',
+			'filterable'        => 'true',
+			'filterableType'    => Core_Block_Grid_Widget::FILTER_SELECT,
+			'filterableOptions' => $this->getNavigationPagesId(Core::getMapper('navigation/pages')->fetchTree(), array('Нет')),
+		));
+		
 		$this->setData(Core::getMapper('navigation/pages')->fetchAll());
 
 		$this->addBlockChild(
@@ -76,5 +89,15 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 			'type'            => 'pagination',
 			'totalItemsCount' => Core::getMapper('navigation/pages')->fetchCount()*10,
 		), self::BLOCK_PLACEMENT_AFTER);
+	}
+	
+	public function getNavigationPagesId($collection, array $result = array(), $depth = 0)
+	{
+		foreach ($collection as $item) {
+			$result[$item->getId()] = str_repeat('--', $depth) . $item->getLabel();
+			$result = $this->getNavigationPagesId($item->getChilds(), $result, $depth + 1);
+		}
+		
+		return $result;
 	}
 }
