@@ -6,4 +6,11 @@ class Users_Model_Entity_Users extends Core_Model_Entity_Abstract
 	{
 		return date('d.m.Y H:m', $this->_data['register_ts']);
 	}
+	
+	public function save()
+	{
+		$this->delRepeatPassword();
+		$this->setPassword(md5($this->getPassword()));
+		parent::save();
+	}
 }

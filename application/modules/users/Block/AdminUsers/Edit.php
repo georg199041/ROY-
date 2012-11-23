@@ -20,16 +20,13 @@ class Users_Block_AdminUsers_Edit extends Core_Block_Form_Widget
 		));
 
 		$this->addElement('password', 'password', array(
-			'label'      => $this->__('Пароль'),
+			'label'          => $this->__('Пароль'),
+			//'renderPassword' => true,
 		));
 
 		$this->addElement('password', 'repeat_password', array(
-			'label'      => $this->__('Повтор пароля'),
-			'validators' => array(
-				array('identical', true, array('token' => 'password', 'messages' => array(
-					Zend_Validate_Identical::NOT_SAME => $this->__('Веденные пароли не совпадают')
-				)))
-			)
+			'label'          => $this->__('Повтор пароля'),
+			//'renderPassword' => true,
 		));
 		
 		$this->addElement('checkbox', 'enabled', array(
@@ -57,5 +54,16 @@ class Users_Block_AdminUsers_Edit extends Core_Block_Form_Widget
 			Core::getBlock('users/admin-users/edit/toolbar'),
 			self::BLOCK_PLACEMENT_BEFORE
 		);
+	}
+	
+	public function isValid($values)
+	{
+		$valid = $this->getForm()->isValid($values);
+		if ($this->getElement('password')->getValue() != $this->getElement('repeat_password')->getValue()) {
+			$this->getElement('repeat_password')->addError($this->__('Веденные пароли не совпадают'));
+			$valid = false;
+		}
+		
+		return $valid;
 	}
 }
