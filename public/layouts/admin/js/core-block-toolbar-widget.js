@@ -33,7 +33,9 @@ jQuery(document).ready(function(){
 	$("button[name=move], button[name=copy]").click(function(event){
 		event.preventDefault();
 		if($(".cbgw-column__ids input:checked").length<1){
+			$(".messages").append('<li class="message message_error message_unreaded"><a href="#" class="close"></a><span>Не выбрана ни одна запись</span></li>');
 			return;
+			
 		}
 			var tbl = $('<div><table width="100%" cellspacing="0" cellpadding="0"></table></div>');
 			
@@ -42,7 +44,7 @@ jQuery(document).ready(function(){
 			tbl.find('table').append(
 					$('<thead></thead>').append(
 							$('<tr></tr>').append(
-									$(".cbgw-column__ids input:checked").parents("table").find('.cbgw-header__id, .cbgw-header__label').clone()
+									$(".cbgw-column__ids input:checked").parents("table").find('.cbgw-header__id, .cbgw-header__label, .cbgw-header__title, .cbgw-header__email').clone()
 							)
 					)
 			);
@@ -53,7 +55,7 @@ jQuery(document).ready(function(){
 			$(".cbgw-column__ids input:checked").each(function(){
 				var tr = $('<tr></tr>');
 				
-				$(this).parents('tr').find('.cbgw-column__id, .cbgw-column__label').each(function(){
+				$(this).parents('tr').find('.cbgw-column__id, .cbgw-column__label, .cbgw-column__title, .cbgw-column__email').each(function(){
 					tbl.find('table').append(tr.append($(this).clone()));
 				});
 				
@@ -62,7 +64,7 @@ jQuery(document).ready(function(){
 			});
 			
 			
-			$('<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h3 id="myModalLabel">' + $(this).html() + '</h3></div><div class="modal-body cbgw-block">' + tbl.html() + '</div><div class="modal-footer"><button class="btn btn-success">' + $(this).html() + '</button><button class="btn" data-dismiss="modal" aria-hidden="true">Назад</button></div></div>').modal();
+			$('<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-header"><button type="button" class="close admin-close-btn_fix" data-dismiss="modal" aria-hidden="true">×</button><select class="front-widget-select"><option>1</option><option>2</option></select><h3 id="myModalLabel">' + $(this).html() + ' в</h3></div><div class="modal-body cbgw-block">' + tbl.html() + '</div><div class="modal-footer"><button class="btn btn-success">' + $(this).html() + '</button><button class="btn" data-dismiss="modal" aria-hidden="true">Назад</button></div></div>').modal();
 		
 	});
 	

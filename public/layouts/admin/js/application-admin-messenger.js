@@ -8,7 +8,7 @@ jQuery(document).ready(function(){
 	/**
 	 * Observe show/hide all messages event
 	 */
-	jQuery('.admin-info__button').on('click', function(event){
+	jQuery('.admin-info__button').live('click', function(event){
 		event.preventDefault();
 		jQuery('.admin-info .message').removeClass('message_unreaded');
 		if (jQuery(this).attr('displayed') != 'true') {
@@ -36,20 +36,23 @@ jQuery(document).ready(function(){
 	/**
 	 * Observe messages autohide event
 	 */
-	jQuery('.admin-info .messages').on('message-auto-close', function(){
+	jQuery('.admin-info .messages').live('message-auto-close', function(){
 		$this = jQuery(this);
-		if ($this.find('.message_unreaded').length) {
+		
 			setTimeout(function(){
-				$this.find('.message_unreaded:first').trigger('message-close');
+				if ($this.find('.message_unreaded').length) {
+					$this.find('.message_unreaded:first').trigger('message-close');
+				}	
 				$this.trigger('message-auto-close');
 			}, MSG_FX_DELAY);
-		}
+		
+			
 	});
 	
 	/**
 	 * Observe message close event
 	 */
-	jQuery('.admin-info .message').on('message-close', function(){
+	jQuery('.admin-info .message').live('message-close', function(){
 		jQuery(this).removeClass('message_unreaded');
 		jQuery(this).animate({
 			'opacity': '0'
@@ -77,7 +80,7 @@ jQuery(document).ready(function(){
 	/**
 	 * Observe message close event
 	 */
-	jQuery('.admin-info .message a.close').on('click', function(event){
+	jQuery('.admin-info .message a.close').live('click', function(event){
 		event.preventDefault();
 		jQuery(this).parents('.message').trigger('message-close');
 	});

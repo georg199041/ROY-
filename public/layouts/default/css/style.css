@@ -148,7 +148,7 @@ ul {
 .front-body-slider-color{
 	margin: 0 auto;
     overflow: hidden;
-  	width: 1150px;
+  	width: 970px;
     z-index: 11;
     height: 310px;
     margin-top: -310px;
@@ -161,12 +161,12 @@ ul {
     position: absolute;
 }
 .front-body-slider-color__item{
-	width: 1150px;
+	width: 97px;
 	height: 310px;
 	position: absolute;
 }
 .front-body-slider-color__item img{
-	width: 1150px;
+	width: 970px;
 	height: 310px;
 }	
 .front-body-slider-color-cutter-container{
@@ -262,12 +262,14 @@ ul {
 	width: 50%;
 	height: 310px;
 	position: absolute;
-	background: url(/uploads/front-page-slider/main-promo-collage--left.jpg) repeat scroll 384px 0;
+	background: url(/uploads/front-page-slider/main-promo-collage--left.jpg) top right;
+	margin-left: -480px;
 }
 .front-body-slider-blackwhite-right{
 	right: 0;
 	width: 50%;
 	height: 310px;
 	position: absolute;
-	background: url(/uploads/front-page-slider/main-promo-collage--right.jpg) repeat scroll 576px 0;
+	background: url(/uploads/front-page-slider/main-promo-collage--right.jpg) top left;
+	margin-right: -480px;
 }

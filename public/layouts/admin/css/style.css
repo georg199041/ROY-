@@ -142,3 +142,11 @@ a {
 	color: #fff;
 	background: url("/layouts/admin/images/16px/door.png") no-repeat;
 }
+.front-widget-select{
+	float: right;
+	margin-bottom: 0;
+	margin-right: 15px;
+}
+.admin-close-btn_fix{
+	margin-top: 6px !important;
+}
