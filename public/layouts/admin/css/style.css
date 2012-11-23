@@ -142,7 +142,7 @@ a {
 	color: #fff;
 	background: url("/layouts/admin/images/16px/door.png") no-repeat;
 }
-.front-widget-select{
+.modal-header select{
 	float: right;
 	margin-bottom: 0;
 	margin-right: 15px;
