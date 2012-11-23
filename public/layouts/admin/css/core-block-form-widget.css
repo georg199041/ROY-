@@ -30,10 +30,12 @@
 	margin: 10px;
 	border: 0 none;
 }
-.cbfw-tag_formText {
-	padding-right: 10px;
+.cbfw-tag_formText,
+.cbfw-tag_formPassword {
+	padding-right: 15px;
 }
-.cbfw-tag_formText input {
+.cbfw-tag_formText input,
+.cbfw-tag_formPassword input {
 	width: 100%;
 }
 .cbfw-tag__image {

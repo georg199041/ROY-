@@ -1,15 +1,27 @@
 <?php
 
-require_once "Core/Controller/Action.php";
-
-class Users_AdminIndexController extends Core_Controller_Action
+class Users_AdminUsersController extends Core_Controller_Action
 {
-	public function indexAction()
+	public function init()
 	{
-		//var_export($this->getHelper('FlashMessenger')->getMessages());
-		
-		//$collection = Core::getMapper('default/onec-students')->fetchAll(null, null, 10);
-		Core::getInstance()->getMapper('users/users')->fetchCount();
+		$this->getHelper('layout')->setLayout('admin');
+		$this->view->headTitle('Пользователи');
+	}
+	
+	public function indexAction(){}
+
+	public function editAction()
+	{
+		$id    = $this->getRequest()->getParam('id');
+		$model = Core::getMapper('users/users')->find($id);
+		 
+		if ($model->getId() || $id == 0) {
+			Zend_Registry::set('form_data', $model);
+			return;
+		}
+		 
+		Core::getBlock('application/admin/messenger')->addError($this->__('Запись не найдена'));
+		$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'));
 	}
 	
 	public function saveAction()
@@ -112,19 +124,6 @@ class Users_AdminIndexController extends Core_Controller_Action
 	public function newAction()
 	{
 		$id = $this->getRequest()->getParam('id'); // WARNING !!! This is parent id
-	}
-	
-	public function editAction()
-	{
-		$id = $this->getRequest()->getParam('id'); // WARNING !!! This is item id
-		$model = Core::getMapper('users/users')->find($id);
-		if ($model->getId()) {
-			if ($model->getCheckedOut() > 0 /*&& user*/)
-			Core::block('application/admin-menu')->setDisabled(true);
-		} else {
-			$this->getHelper('FlashMessenger')->addMessage('Post does not exist');
-			$this->getHelper('Redirector')->gotoRoute(array('action' => 'index'));
-		}
 	}
 	
 	public function logoutAction()
