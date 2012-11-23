@@ -7,9 +7,10 @@
 	color: #efefef;
 }
 .admin-info__button {
-	height: 15px;
+	height: 13px;
 	display: block;
-	padding: 1px 0 0 18px;
+	line-height: normal;
+	padding: 3px 0 0 18px;
 	background: url("/layouts/admin/images/16px/info.png") top left no-repeat;
 	color: #efefef;
 	text-decoration: none;

@@ -9,6 +9,11 @@
 				          ->render();
 			?>
 		</div>
+		<?php if (Zend_Auth::getInstance()->hasIdentity()): ?>
+		<div class="admin-logout">
+			<a href="<?php echo $this->url(Core::urlToOptions('users/admin-users/logout'), null, true); ?>" class="admin-logout__button"></a>
+		</div>
+		<?php endif; ?>
 		<div class="admin-info">
 			<a href="#" class="admin-info__button"><?php
 				if (Core::getBlock('application/admin/messenger')->getMessagesCount() > 0) {

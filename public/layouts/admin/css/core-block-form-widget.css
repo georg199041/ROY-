@@ -38,11 +38,13 @@
 .cbfw-tag_formPassword input {
 	width: 100%;
 }
-.cbfw-tag__image {
+.cbfw-tag__image,
+#login .cbfw-tag__password {
 	padding-right: 100px;
 }
-.cbfw-tag__image button.btn {
-	width: 90px;
+.cbfw-tag__image button.btn,
+#login .cbfw-tag__password button.btn {
+	width: 85px;
 }
 .cbfw-tag_formSelect {
 	padding-right: 10px;
@@ -65,3 +67,8 @@
 	clear: both;
 }
 
+.cbfw-block-users_admin-users_login {
+	width: 300px;
+	top: 50%;
+	margin: 100px auto 0;
+}

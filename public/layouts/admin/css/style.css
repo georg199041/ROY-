@@ -129,3 +129,16 @@ a {
 	padding: 10px 0 0;
 }
 
+.admin-logout {
+	float: right;
+	position: relative;
+	margin: 13px 10px 0 0;
+}
+.admin-logout__button {
+	display: block;
+	cursor: pointer;
+	height: 16px;
+	width: 16px;
+	color: #fff;
+	background: url("/layouts/admin/images/16px/door.png") no-repeat;
+}
