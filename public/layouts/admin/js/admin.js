@@ -52,34 +52,9 @@ function callAction(action, elements)
 	sendRequest(action + (elements ? '?' : '') + elements, {async:false});
 }
 
-/**
- * Observe enabled checkboxes in grid
- */
-function observeEnabledCheckbox()
-{
-	jQuery('.cbgw-column__enabled input').unbind('click').bind('click', function(event){
-		callAction(jQuery(this).attr('formaction'));
-	});
-}
 
 
 
-/**
- * Check all checkboxes if checked main checkbox
- */
-function observeCheckAll()
-{
-	var cb = jQuery('.cbgw-block .cbgw-header__ids input[type=checkbox]');
-	cb.bind('change', function(){
-		var cbs = jQuery(this).parents('table').find('.cbgw-column__ids input[type="checkbox"]');
-		
-		if (jQuery(this).attr('checked') == 'checked') {
-			cbs.attr('checked', 'checked');
-		} else {
-			cbs.attr('checked', null);
-		}
-	});
-}
 
 /**
  * Prepare tinimce editors before requests
@@ -103,59 +78,8 @@ function observeFormSubmit()
 }
 
 /**
- * Observe submit buttons
- */
-function observeGridFilters()
-{
-	jQuery('.cbgw-filter input').unbind('keyup mouseup').bind('keyup mouseup', function(){
-		if (jQuery(this).data('timer')) {
-			clearTimeout(jQuery(this).data('timer'));
-		}
-		
-		if (!jQuery(this).data('val')) {
-			jQuery(this).data('val', jQuery(this).val());
-		}
-		
-		if (jQuery(this).val() != '') {
-			var el  = jQuery(this);
-			var t = setTimeout(function(){
-				if (el.val() == el.data('val')) {
-					return;
-				}
-				
-				submitGridFilter(el);
-			}, 3000);
-			
-			jQuery(this).data('timer', t);
-		}
-	});
-	
-	jQuery('.cbgw-filter select').unbind('change').bind('change', function(){
-		submitGridFilter(jQuery(this));
-	});
-}
-
-/**
- * Submit grid filter
- * 
- * @param e jQuery object
- */
-function submitGridFilter(e)
-{
-	var filters = {};
-	jQuery(e).parents('.cbgw-block').find('.cbgw-filter input, .cbgw-filter select').each(function(){
-		filters[jQuery(this).attr('name')] = jQuery(this).val();
-	});
-	
-	window.location.href = jQuery(e).parents('.cbgw-block').attr('action') + '?' + jQuery.param(filters);
-}
-
-/**
  * Observe events on dom tree loaded
  */
 jQuery(document).ready(function(){
 	observeFormSubmit();
-	observeGridFilters();
-	observeCheckAll();
-	observeEnabledCheckbox();
 });

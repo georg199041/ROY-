@@ -12,7 +12,11 @@ class Recommendations_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 		$this->addElement('text', 'title', array(
 			'label'    => $this->__('Заголовок'),
 			'required' => true,
+			'validators' => array(
+				array('notempty', true, array())
+			)
 		));
+		//$this->getElement('title')->getValidator('NotEmpty')->setMessage('Это поле не может быть пустым', Zend_Validate_NotEmpty::IS_EMPTY);
 
 		$this->addElement('textarea', 'description', array(
 			'label' => $this->__('Описание'),
@@ -23,11 +27,15 @@ class Recommendations_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 		$this->addElement('text', 'image', array(
 			'label' => $this->__('Картинка'),
 		));
+		$this->getElement('image')->setDecorators(array(
+			array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
+		));
 		
 		$this->addElement('checkbox', 'enabled', array(
 			'label'          => $this->__('Включено'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
+			'decorator' => 'CombinedElement',
 		));
 		
 		$this->addDisplayGroup(array('title', 'description'), 'center');

@@ -36,6 +36,18 @@
 .cbfw-tag_formText input {
 	width: 100%;
 }
+.cbfw-tag__image {
+	padding-right: 100px;
+}
+.cbfw-tag__image button.btn {
+	width: 90px;
+}
+.cbfw-tag_formSelect {
+	padding-right: 10px;
+}
+.cbfw-tag_formSelect select {
+	width: 100%;
+}
 .cbfw-tag_formRadio label {
 	float: left;
 	margin-right: 20px;

@@ -20,7 +20,12 @@ echo $this->headTitle()->setSeparator(' | ');
 /**
  * All style sheets add here
  */
+$this->headLink()->appendStylesheet('/lib/bootstrap/css/bootstrap.min.css');
 $this->headLink()->appendStylesheet('/layouts/admin/css/style.css');
+$this->headLink()->appendStylesheet('/layouts/admin/css/core-block-toolbar-widget.css');
+$this->headLink()->appendStylesheet('/layouts/admin/css/core-block-form-widget.css');
+$this->headLink()->appendStylesheet('/layouts/admin/css/core-block-grid-widget.css');
+$this->headLink()->appendStylesheet('/layouts/admin/css/application-admin-messenger.css');
 echo $this->headLink();
 
 ?>
@@ -39,6 +44,7 @@ $this->headScript()->appendFile('/layouts/admin/js/admin.js', 'text/javascript')
 $this->headScript()->appendFile('/layouts/admin/js/core-block-grid-widget.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/application-admin-messenger.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/core-block-toolbar-widget.js', 'text/javascript');
+$this->headScript()->appendFile('/layouts/admin/js/core-block-form-widget.js', 'text/javascript');
 
 echo $this->headScript();
 

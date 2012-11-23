@@ -93,7 +93,7 @@ class Contacts_AdminContactsController extends Core_Controller_Action
     		try {
     			foreach ($ids as $id => $selected) {
     				if ($selected) {
-	    				$model = Core::getMapper('recommendations/posts')->find($id);
+	    				$model = Core::getMapper('contacts/contacts')->find($id);
 	    				$model->setEnabled($this->getRequest()->getParam('value'));
 	    				$model->save();
     				}
