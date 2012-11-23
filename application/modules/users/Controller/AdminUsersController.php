@@ -5,7 +5,9 @@ class Users_AdminUsersController extends Core_Controller_Action
 	public function init()
 	{
 		$this->getHelper('layout')->setLayout('admin');
-		$this->view->headTitle('Пользователи');
+		if (Zend_Auth::getInstance()->hasIdentity()) {
+			$this->view->headTitle('Пользователи');
+		}
 	}
 	
 	public function indexAction(){}
