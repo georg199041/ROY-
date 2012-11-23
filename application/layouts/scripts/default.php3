@@ -13,6 +13,7 @@
 		<div class="front-push-top"></div>
 		<?php if ($this->isHomePage()): ?>
 		<div class="front-body-slider-body">
+			<div class="front-body-slider-top"></div>
 			<div class="front-body-slider-blackwhite" >
 				<div class="front-body-slider-blackwhite-left"></div>
 <!-- 				<div class="front-body-slider-prewrap">			 -->

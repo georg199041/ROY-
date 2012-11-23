@@ -47,7 +47,8 @@
 .front-body-container-schema{
     margin-left: -60px;
     width: 970px;
-    height: 608px;
+    padding-top: 45px;
+    height: 570px;
 }
 .front-body-white-space{
 	margin: 0 auto;

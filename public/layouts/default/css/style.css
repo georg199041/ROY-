@@ -24,7 +24,6 @@ html {
 }
 body{
 	color: #434f56;
-	overflow: hidden;
 }
 img {
 	border: 0 none;
@@ -87,6 +86,12 @@ ul {
 	position: relative;
 	height: 310px;
 }
+.front-body-slider-top{
+	background: #FFF;
+	height: 25px;
+	margin: 0 auto;
+    width: 850px;
+}
 .front-body-slider-blackwhite{
 	position: relative;
 	top: 0;
@@ -94,6 +99,7 @@ ul {
     z-index: 1;
     height: 310px;
     opacity: 1;
+    overflow: hidden;
 }
 .front-body-slider-rectangle{
 	position: absolute;
@@ -101,7 +107,7 @@ ul {
     text-align: center;
     width: 100%;
 	margin-top: -7px;
-	top: 0;
+	top: 25px;
 }
 .front-body-slider-rectangle img{
 	z-index: 12;
