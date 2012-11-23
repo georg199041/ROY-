@@ -8,6 +8,9 @@ class Users_Bootstrap extends Core_Application_Module_Bootstrap
 	{
 		$this->bootstrap('frontController');
 		$front = $this->getResource('frontController');
-		$front->registerPlugin(new Users_Controller_Plugin_Auth(array('route' => 'users/admin-users/login')));
+		$front->registerPlugin(new Users_Controller_Plugin_Auth(array(
+			'route' => 'users/admin-users/login',
+			'excludedResources' => array('users/admin-users/login'),
+		)));
 	}
 }

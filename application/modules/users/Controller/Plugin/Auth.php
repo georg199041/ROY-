@@ -25,7 +25,7 @@ class Users_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract
 	 * 
 	 * @var string
 	 */
-	protected $_defaultRule = '/^(.*)\/(^admin)\/(.*)$/i';
+	protected $_defaultRule = '/^([a-z-]*)\/([admin-]([a-z-]*))\/([a-z-]*)/i';
 	
 	/**
 	 * Restriction rules
@@ -94,9 +94,6 @@ class Users_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract
 	 */
 	public function setRules(array $rules)
 	{
-		// Init first rule to be sure that it will be first in stack
-		$this->_rules = array(-1000000 => $this->_defaultRule);
-		
 		foreach ($rules as $rule) {
 			if (!is_string($rule)) {
 				throw new Exception("Rule must be a string or regex string");
@@ -117,7 +114,9 @@ class Users_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract
 	 */
 	public function getRules()
 	{
-		return $this->_rules;
+		$rules = $this->_rules;
+		$rules[-1000000] = $this->_defaultRule;
+		return $rules;
 	}
 
 	/**
@@ -226,20 +225,21 @@ class Users_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract
 	{
 		$resource = "{$request->getModuleName()}/{$request->getControllerName()}/{$request->getActionName()}";
 		foreach ($this->getExcludedResources() as $rule) {
-			if ($rule == $resource) {
+			$testRegex = @preg_match($rule, $resource);
+			if ((is_int($testRegex) && $testRegex) || $rule == $resource) {
 				return; // Resource allowed for all access
 			}
 		}
 		
 		$restricted = false;
 		foreach ($this->getRules() as $rule) {
-			var_export();
 			$testRegex = @preg_match($rule, $resource);
+			//var_export($rule . ' ' .  $resource);
+			//var_export(!!$testRegex);
 			if ((is_int($testRegex) && $testRegex) || $rule == $resource) {
 				$restricted = true;
 				break;
 			}
-			var_export($restricted . ' ' . $rule . ';');
 		}
 		
 		if ($restricted && !Zend_Auth::getInstance()->hasIdentity()) {
