@@ -25,7 +25,7 @@ class Users_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract
 	 * 
 	 * @var string
 	 */
-	protected $_defaultRule = '/^([a-z-]*)\/([admin-]([a-z-]*))\/([a-z-]*)/i';
+	protected $_defaultRule = '/^([a-z-]*)\/(admin([a-z-]*))\/([a-z-]*)/i';
 	
 	/**
 	 * Restriction rules
@@ -234,15 +234,13 @@ class Users_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract
 		$restricted = false;
 		foreach ($this->getRules() as $rule) {
 			$testRegex = @preg_match($rule, $resource);
-			//var_export($rule . ' ' .  $resource);
-			//var_export(!!$testRegex);
 			if ((is_int($testRegex) && $testRegex) || $rule == $resource) {
 				$restricted = true;
 				break;
 			}
 		}
 		
-		if ($restricted && !Zend_Auth::getInstance()->hasIdentity()) {
+		if ($restricted === true && !Zend_Auth::getInstance()->hasIdentity()) {
 			$this->_gotoErrorPage($request);
 		}
 	}

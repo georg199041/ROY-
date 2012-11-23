@@ -17,7 +17,7 @@
 	</div>
 	<div class="layout_footer">
 		<div class="layout_footer_width">
-			<div class="layout_footer_text"><img src="/uploads/index.png"/ style="
+			<div class="layout_footer_text"><img src="/uploads/index.png" style="
 				display: block;
 			    height: 32px;
 			    margin: -4px auto 0;
