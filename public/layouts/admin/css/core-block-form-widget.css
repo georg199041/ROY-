@@ -46,6 +46,12 @@
 #login .cbfw-tag__password button.btn {
 	width: 85px;
 }
+@media screen and (-webkit-min-device-pixel-ratio:0) { /* Crome hack for valid positioning button */
+	.cbfw-tag__image button.btn,
+	#login .cbfw-tag__password button.btn {
+		position: absolute;
+	}
+}
 .cbfw-tag_formSelect {
 	padding-right: 10px;
 }

@@ -54,4 +54,15 @@
 	padding-right: 15px;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0) { /* Crome hack for valid positioning button */
+	.cbgw-fwrapper {
+		position: relative;
+	}
+	.cbgw-block input, .cbgw-block select {
+		position: static;
+		top:0;
+		left:0;
+	}
+}
+
 
