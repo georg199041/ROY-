@@ -1,10 +1,10 @@
 <?php
 
-class Recommendations_Block_AdminPosts_Edit_Toolbar extends Core_Block_Toolbar_Widget
+class Documents_Block_AdminPosts_Edit_Toolbar extends Core_Block_Toolbar_Widget
 {
 	public function init()
 	{
-		$this->setTitle($this->__('Редактирование рекомендации'));
+		$this->setTitle($this->__('Редактирование документа'));
 		
 		$this->addButton(array(
 			'type'  => 'submit',

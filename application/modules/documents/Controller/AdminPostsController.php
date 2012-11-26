@@ -1,11 +1,11 @@
 <?php
 
-class Recommendations_AdminPostsController extends Core_Controller_Action
+class Documents_AdminPostsController extends Core_Controller_Action
 {	
 	public function init()
 	{
 		$this->getHelper('layout')->setLayout('admin');
-		$this->view->headTitle('Рекомендации');
+		$this->view->headTitle('Документы');
 	}
 	
 	public function indexAction(){}
@@ -13,7 +13,7 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     public function editAction()
     {
     	$id    = $this->getRequest()->getParam('id');
-    	$model = Core::getMapper('recommendations/posts')->find($id);
+    	$model = Core::getMapper('documents/posts')->find($id);
     	
     	if ($model->getId() || $id == 0) {
     		Zend_Registry::set('form_data', $model);
@@ -28,13 +28,13 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     {
     	if (($data = $this->getRequest()->getPost()) && !$this->getRequest()->getParam('cancel')) {
     		try {
-    			$form = Core::getBlock('recommendations/admin-posts/edit');
+    			$form = Core::getBlock('documents/admin-posts/edit');
     			if (!$form->isValid($data)) {
     				Core::getSession('admin')->formHasErrors = true;
     				throw new Exception($this->__("Invalid form"));
     			}
     			
-    			$model = Core::getMapper('recommendations/posts')->create($form->getValues());
+    			$model = Core::getMapper('documents/posts')->create($form->getValues());
     			$model->save();
     			unset(Core::getSession('admin')->formData);
     	   
@@ -69,7 +69,7 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     	} else {
     		try {
     			foreach ($ids as $id => $selected) {
-    				$model = Core::getMapper('recommendations/posts')->find($id);
+    				$model = Core::getMapper('documents/posts')->find($id);
     				$model->delete();
     			}
     			 
@@ -96,7 +96,7 @@ class Recommendations_AdminPostsController extends Core_Controller_Action
     		try {
     			foreach ($ids as $id => $selected) {
     				if ($selected) {
-	    				$model = Core::getMapper('recommendations/posts')->find($id);
+	    				$model = Core::getMapper('documents/posts')->find($id);
 	    				$model->setEnabled($this->getRequest()->getParam('value'));
 	    				$model->save();
     				}
