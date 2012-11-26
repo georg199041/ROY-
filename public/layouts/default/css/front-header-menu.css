@@ -18,7 +18,7 @@
 	top: 6px;
 	right: -15px;
 }
-.front-header-menu__item-href{
+.front-header-menu__item-href {
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 15px;
@@ -31,9 +31,8 @@
 	top: 3px;
 	padding: 1px;
 	font-family: Verdana;
-	/*margin-left: 8px;*/
 }
-.front-header-menu__item-href:hover{
+.front-header-menu__item-href:hover {
 	text-decoration: underline;
 	background-image: linear-gradient(bottom, #B3D673 0%, #456506 51%, #497100 100%);
 	background-image: -o-linear-gradient(bottom, #B3D673 0%, #456506 51%, #497100 100%);
