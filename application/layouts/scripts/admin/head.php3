@@ -37,6 +37,7 @@ echo $this->headLink();
 $this->headScript()->appendFile('/lib/jquery/jquery-1.8.2.min.js', 'text/javascript');
 $this->headScript()->appendFile('/lib/jquery/ui/jquery-ui-1.9.1.custom.min.js', 'text/javascript');
 $this->headScript()->appendFile('/lib/bootstrap/js/bootstrap.min.js', 'text/javascript');
+$this->headScript()->appendFile('/layouts/admin/js/jquery.qtip-1.0.0-rc3.min.js', 'text/javascript');
 
 //$this->headScript()->appendScript('jQuery.noConflict();', 'text/javascript');
 $this->headScript()->appendFile('/lib/tinymce/tiny_mce_gzip.js', 'text/javascript');
