@@ -11,9 +11,9 @@ $(document).ready(function(){
 	
 	//MENU HOVERS
 	$(".front-header-menu__item-href").hover(function(){
-	
+		$(this).find(".front-header-menu-gradient").css({"background":"#7BA628"});
 	},function(){
-		
+		$(this).find(".front-header-menu-gradient").css({"background":""});
 	});
 	
 	
