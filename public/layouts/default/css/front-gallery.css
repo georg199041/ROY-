@@ -28,4 +28,6 @@
     font-size: 13px;
     line-height:13px;
     margin:0 10px 8px 12px;
+    text-align: center;
+    display: inline-block;
 }
