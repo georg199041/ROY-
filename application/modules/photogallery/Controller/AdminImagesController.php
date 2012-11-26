@@ -113,7 +113,7 @@ class Photogallery_AdminImagesController extends Core_Controller_Action
     		try {
     			foreach ($ids as $id) {
     				$model = Core::getMapper('photogallery/images')->find($id);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
+   					$model->setContactsGroupsId($this->getRequest()->getParam('photogallery_albums_id'));
    					$model->save();
     			}
 				
@@ -136,7 +136,7 @@ class Photogallery_AdminImagesController extends Core_Controller_Action
     			foreach ($ids as $id) {
     				$model = Core::getMapper('photogallery/images')->find($id);
     				$model->setId(null);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
+   					$model->setContactsGroupsId($this->getRequest()->getParam('photogallery_albums_id'));
    					$model->save();
     			}
 				

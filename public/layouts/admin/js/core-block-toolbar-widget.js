@@ -77,7 +77,7 @@ jQuery(document).ready(function(){
 			
 			mod.find('.modal-footer .btn-success').click(function(){
 				var q = $(".cbgw-column__ids input:checked, .modal-header select");
-				console.log(formaction+ decodeURIComponent(q.serialize()));
+				window.location.href = formaction + "?" + q.serialize();
 			});
 		
 	});

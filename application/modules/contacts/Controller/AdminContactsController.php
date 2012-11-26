@@ -119,7 +119,7 @@ class Contacts_AdminContactsController extends Core_Controller_Action
     		try {
     			foreach ($ids as $id) {
     				$model = Core::getMapper('contacts/contacts')->find($id);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
+   					$model->setContactsGroupsId($this->getRequest()->getParam('contacts_groups_id'));
    					$model->save();
     			}
 				
@@ -142,7 +142,7 @@ class Contacts_AdminContactsController extends Core_Controller_Action
     			foreach ($ids as $id) {
     				$model = Core::getMapper('contacts/contacts')->find($id);
     				$model->setId(null);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
+   					$model->setContactsGroupsId($this->getRequest()->getParam('contacts_groups_id'));
    					$model->save();
     			}
 				

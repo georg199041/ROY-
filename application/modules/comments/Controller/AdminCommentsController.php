@@ -113,7 +113,7 @@ class Comments_AdminCommentsController extends Core_Controller_Action
     		try {
     			foreach ($ids as $id) {
     				$model = Core::getMapper('сomments/сomments')->find($id);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
+   					$model->setContactsGroupsId($this->getRequest()->getParam('table'));
    					$model->save();
     			}
 				
@@ -136,7 +136,7 @@ class Comments_AdminCommentsController extends Core_Controller_Action
     			foreach ($ids as $id) {
     				$model = Core::getMapper('сomments/сomments')->find($id);
     				$model->setId(null);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('parent'));
+   					$model->setContactsGroupsId($this->getRequest()->getParam('table'));
    					$model->save();
     			}
 				

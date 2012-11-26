@@ -4,6 +4,16 @@
 	<link rel="favicon.ico" href="/favicon.ico" type="image/x-icon">
 	<?php $this->headTitle($this->translate('РОЙ')); ?>
 	<?php echo $this->partial('default/head.php3'); ?>
+	<script type="text/javascript" src="//vk.com/js/api/openapi.js?63"></script>
+
+	<script type="text/javascript">
+	  VK.init({apiId: 3221100, onlyWidgets: true, pageUrl: document.location.hash});
+	</script>
+	
+	<script type="text/javascript" src="http://vk.com/js/api/share.js?11" charset="windows-1251"></script>
+	
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+	
 </head>
 <body>
 	<div class="front-fullscreen-wait"></div>
@@ -17,25 +27,6 @@
 			<div class="front-body-slider-top"></div>
 			<div class="front-body-slider-blackwhite" >
 				<div class="front-body-slider-blackwhite-left"></div>
-<!-- 				<div class="front-body-slider-prewrap">			 -->
-<!-- 					<ul class="front-body-slider-blackwhite-wrap"> -->
-<!-- 						<li class="front-body-slider-blackwhite__item"> -->
-<!-- 							<img src="/layouts/default/images/bw_slide1.jpg"/> -->
-<!-- 						</li> -->
-<!-- 						<li class="front-body-slider-blackwhite__item"> -->
-<!-- 							<img src="/layouts/default/images/bw_slide1.jpg"/> -->
-<!-- 						</li> -->
-<!-- 						<li class="front-body-slider-blackwhite__item"> -->
-<!-- 							<img src="/layouts/default/images/bw_slide1.jpg"/> -->
-<!-- 						</li> -->
-<!-- 						<li class="front-body-slider-blackwhite__item"> -->
-<!-- 							<img src="/layouts/default/images/bw_slide1.jpg"/> -->
-<!-- 						</li> -->
-<!-- 						<li class="front-body-slider-blackwhite__item"> -->
-<!-- 							<img src="/layouts/default/images/bw_slide1.jpg"/> -->
-<!-- 						</li> -->
-<!-- 					</ul> -->
-<!-- 				</div> -->
 				<div class="front-body-slider-blackwhite-right"></div>
 			</div>
 			

@@ -127,6 +127,10 @@
 }
 .front_header-google{
 	background-position: -63px 0;
+	overflow: hidden;
+}
+.front_header-google * {
+	opacity: 0;
 }
 
 /*header menu end*/

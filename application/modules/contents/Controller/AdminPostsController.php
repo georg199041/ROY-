@@ -115,7 +115,7 @@ class Contents_AdminPostsController extends Core_Controller_Action
     		try {
     			foreach ($ids as $id) {
     				$model = Core::getMapper('contents/posts')->find($id);
-   					$model->setContentsCategoriesId($this->getRequest()->getParam('parent'));
+   					$model->setContentsCategoriesId($this->getRequest()->getParam('contents_categories_id'));
    					$model->save();
     			}
 				
