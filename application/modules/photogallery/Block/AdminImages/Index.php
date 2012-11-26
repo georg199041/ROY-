@@ -20,8 +20,6 @@ class Photogallery_Block_AdminImages_Index extends Core_Block_Grid_Widget
 			'title' => $this->__('ID'),
 			'width' => '50',
 			'align' => 'right',
-			'filterable'        => 'true',
-			'filterableType'    => Core_Block_Grid_Widget::FILTER_EQUAL,
 		));
 		
 		$this->addColumn(array(
@@ -31,8 +29,6 @@ class Photogallery_Block_AdminImages_Index extends Core_Block_Grid_Widget
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),
-			'filterable'     => 'true',
-			'filterableType' => Core_Block_Grid_Widget::FILTER_LIKE,
 		));
 		
 		$this->addColumn(array(
@@ -42,6 +38,19 @@ class Photogallery_Block_AdminImages_Index extends Core_Block_Grid_Widget
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 			'width'          => '1%',
+		));
+
+		$this->addColumn(array(
+			'type'              => 'hyperlink',
+			'name'              => 'photogallery_albums_id',
+			'title'             => $this->__('Альбом'),
+			'linkOptions'       => 'photogallery/admin-albums/index',
+			'linkBindFields'    => array('photogallery_albums_id'),
+			'width'             => '1%',
+			'nowrap'            => 'nowrap',
+			'filterable'        => 'true',
+			'filterableType'    => Core_Block_Grid_Widget::FILTER_SELECT,
+			'filterableOptions' => $this->getPhotogalleryAlbumsId(),
 		));
 		
 		$this->setData(Core::getMapper('photogallery/images')->fetchAll());
@@ -56,5 +65,25 @@ class Photogallery_Block_AdminImages_Index extends Core_Block_Grid_Widget
 			'type'            => 'pagination',
 			'totalItemsCount' => Core::getMapper('photogallery/images')->fetchCount(),
 		), self::BLOCK_PLACEMENT_AFTER);
+	}
+	
+	protected function _formatPhotogalleryAlbumsTree($collection, array $result = array(), $depth = 0)
+	{
+		foreach ($collection as $item) {
+			$result[$item->getId()] = str_repeat('--', $depth) ." ". $item->getTitle();
+			$result = $this->_formatPhotogalleryAlbumsTree($item->getChilds(), $result, $depth + 1);
+		}
+		
+		return $result;
+	}
+	
+	protected $_photogalleryAlbumsId;
+	public function getPhotogalleryAlbumsId()
+	{
+		if (null === $this->_photogalleryAlbumsId) {
+			$this->_photogalleryAlbumsId = $this->_formatPhotogalleryAlbumsTree(Core::getMapper('photogallery/albums')->fetchTree(), array('Нет'));
+		}
+		
+		return $this->_photogalleryAlbumsId;
 	}
 }

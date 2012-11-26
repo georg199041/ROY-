@@ -10,35 +10,30 @@ class Contacts_Block_AdminGroups_Edit extends Core_Block_Form_Widget
 		$this->addElement('hidden', 'id');
 		
 		$this->addElement('text', 'title', array(
-			'label'    => $this->__('Title'),
+			'label'    => $this->__('Заголовок'),
 			'required' => true,
 		));
 
 		$this->addElement('text', 'alias', array(
-			'label'    => $this->__('Alias'),
+			'label'    => $this->__('Псевдоним (УРЛ)'),
 			'required' => true,
 		));
 		
 		$this->addElement('textarea', 'description', array(
-			'label' => $this->__('Description'),
+			'label' => $this->__('Описание'),
+			'cols' => 70,
+			'rows' => 15,
 			'class' => 'mce',
 		));
 
 		$this->addElement('checkbox', 'enabled', array(
-			'label'          => $this->__('Enabled'),
+			'label'          => $this->__('Включен'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 		));
 		
-		$this->addElement('submit', 'back', array(
-			'label'  => $this->__('Save and continue'),
-			'ignore' => true,
-		));
-
-		$this->addElement('submit', 'save', array(
-			'label'  => $this->__('Save'),
-			'ignore' => true,
-		));
+		$this->addDisplayGroup(array('title', 'alias', 'description'), 'center');
+		$this->addDisplayGroup(array('enabled'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);

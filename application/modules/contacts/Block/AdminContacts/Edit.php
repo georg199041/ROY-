@@ -10,54 +10,58 @@ class Contacts_Block_AdminContacts_Edit extends Core_Block_Form_Widget
 		$this->addElement('hidden', 'id');
 		
 		$this->addElement('select', 'contacts_groups_id', array(
-			'label'        => $this->__('Group'),
+			'label'        => $this->__('Группа'),
 			'required'     => true,
 			'multiOptions' => $this->getContactsGroupsId(Core::getMapper('contacts/groups')->fetchAll()),
 		));
 
 		$this->addElement('select', 'type', array(
-			'label'        => $this->__('Type'),
+			'label'        => $this->__('Тип'),
 			'required'     => true,
 			'multiOptions' => array(
-				'ADDRESS' => 'ADDRESS',
-				'PHONE'   => 'PHONE',
-				'EMAIL'   => 'EMAIL',
-				'SKYPE'   => 'SKYPE',
-				'LATLNG'  => 'LATLNG',
-				'QRCODE'  => 'QRCODE',
-				'IMAGE'   => 'IMAGE',
+				'ADDRESS'   => $this->__('Адрес'),
+				'MAINPHONE' => $this->__('Основной телефон'),
+				'PHONE'     => $this->__('Телефон'),
+				'EMAIL'     => $this->__('Электронная почта'),
+				'SKYPE'     => $this->__('Скайп'),
+				'LATLNG'    => $this->__('Координаты на карте'),
+				'QRCODE'    => $this->__('QR код'),
+				'IMAGE'     => $this->__('Картинка'),
 			),
 		));
 
 		$this->addElement('text', 'title', array(
-			'label'    => $this->__('Title'),
+			'label'    => $this->__('Заголовок'),
 			'required' => true,
 		));
 
 		$this->addElement('text', 'alias', array(
-			'label'    => $this->__('Alias'),
+			'label'    => $this->__('Псевдоним (УРЛ)'),
 			'required' => true,
 		));
 
 		$this->addElement('textarea', 'description', array(
-			'label' => $this->__('Description'),
+			'label' => $this->__('Описание/значение'),
 			'cols' => 70,
 			'rows' => 15,
 			'class' => 'mce',
 		));
 
 		$this->addElement('text', 'image', array(
-			'label' => $this->__('Image'),
+			'label' => $this->__('Картинка'),
+		));
+		$this->getElement('image')->setDecorators(array(
+			array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
 		));
 		
 		$this->addElement('checkbox', 'enabled', array(
-			'label'          => $this->__('Enabled'),
+			'label'          => $this->__('Включен'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 		));
 		
-		$this->addDisplayGroup(array('contacts_groups_id', 'title', 'alias', 'description'), 'center');
-		$this->addDisplayGroup(array('type', 'image', 'enabled'), 'right');
+		$this->addDisplayGroup(array('title', 'alias', 'description'), 'center');
+		$this->addDisplayGroup(array('contacts_groups_id', 'type', 'image', 'enabled'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);
