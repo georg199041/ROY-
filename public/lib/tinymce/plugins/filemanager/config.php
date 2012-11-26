@@ -6,17 +6,17 @@
         // General options
         $mcFileManagerConfig['general.theme'] = "fm";
         $mcFileManagerConfig['general.user_friendly_paths'] = true;
-        $mcFileManagerConfig['general.tools'] = "imagemanager,createdir,createdoc,refresh,zip,upload,edit,rename,cut,copy,paste,delete,selectall,unselectall,view,download,insert,addfavorite,removefavorite";
-        $mcFileManagerConfig['general.disabled_tools'] = "";
+        $mcFileManagerConfig['general.tools'] = "imagemanager,createdir,createdoc,refresh,upload,edit,rename,cut,copy,paste,delete,selectall,unselectall,view";
+        $mcFileManagerConfig['general.disabled_tools'] = "addfavorite,removefavorite,insert";
         $mcFileManagerConfig['general.error_log'] = "";
         $mcFileManagerConfig['general.language'] = "ru"; // en, sv
-        $mcFileManagerConfig['general.plugins'] = "History,Favorites"; // comma seperated
+        $mcFileManagerConfig['general.plugins'] = false; // comma seperated
         $mcFileManagerConfig['general.demo'] = false;
-        $mcFileManagerConfig['general.debug'] = false;
+        $mcFileManagerConfig['general.debug'] = true;
         $mcFileManagerConfig['general.encrypt_paths'] = true;
         $mcFileManagerConfig['general.remember_last_path'] = false;
         $mcFileManagerConfig['general.allow_override'] = "*";
-        $mcFileManagerConfig['general.allow_export'] = "demo,tools,disabled_tools,debug";
+        $mcFileManagerConfig['general.allow_export'] = "demo,tools,disabled_tools,debug,plugins";
 
         // Preview options
         $mcFileManagerConfig['preview.wwwroot'] = ''; // absolute or relative from this script path (c:/Inetpub/wwwroot).

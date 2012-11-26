@@ -9,9 +9,9 @@
         $mcImageManagerConfig['general.disabled_tools'] = "";
         $mcImageManagerConfig['general.user_friendly_paths'] = true;
         $mcImageManagerConfig['general.encrypt_paths'] = true;
-        $mcImageManagerConfig['general.plugins'] = "History,Favorites"; // comma seperated
+        $mcImageManagerConfig['general.plugins'] = false; // comma seperated
         $mcImageManagerConfig['general.demo'] = false;
-        $mcImageManagerConfig['general.debug'] = false;
+        $mcImageManagerConfig['general.debug'] = true;
         $mcImageManagerConfig['general.error_log'] = "";
         $mcImageManagerConfig['general.language'] = "ru"; // en, sv
         $mcImageManagerConfig['general.remember_last_path'] = false;

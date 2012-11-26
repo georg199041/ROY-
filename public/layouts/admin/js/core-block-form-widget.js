@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
 	 * test
 	 */
 	jQuery('.cbfw-tag-addbtn-image__select').on('click', function(){
-		mcFileManager.browse({
+		mcImageManager.browse({
 		    fields : 'image',
 		    document_base_url : '/',
 	        remove_script_host : true,
