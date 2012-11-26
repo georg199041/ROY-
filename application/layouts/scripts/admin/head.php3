@@ -73,7 +73,7 @@ var tinyMCECustomOptions = {
         width : "100%",
         
         // Example content CSS (should be your site CSS)
-        //content_css : "css/example.css",
+        content_css : "/layouts/admin/css/editor.css",
 
         // Drop lists for link/image/media/template dialogs
         template_external_list_url : "js/template_list.js",
