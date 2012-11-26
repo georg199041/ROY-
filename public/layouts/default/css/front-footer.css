@@ -1,6 +1,7 @@
 /*footer start*/
 .front-push-bottom {
 	height: 142px;
+	background: #EAEFF3;
 }
 .front-footer {
 	width: 100%;
@@ -8,7 +9,7 @@
 	margin-top: -140px;
 	position: relative;
 	z-index: 10;
-	background: #EEF2F5;
+	background: #EAEFF3;
 }
 .front-footer-width {
 	width: 850px;
