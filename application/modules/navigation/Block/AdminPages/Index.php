@@ -74,7 +74,7 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 			'nowrap'            => 'nowrap',
 			'filterable'        => 'true',
 			'filterableType'    => Core_Block_Grid_Widget::FILTER_SELECT,
-			'filterableOptions' => $this->getNavigationPagesId(Core::getMapper('navigation/pages')->fetchTree(), array('Нет')),
+			'filterableOptions' => $this->getNavigationPagesId(),
 		));
 		
 		$this->setData(Core::getMapper('navigation/pages')->fetchAll());
@@ -91,13 +91,23 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 		), self::BLOCK_PLACEMENT_AFTER);
 	}
 	
-	public function getNavigationPagesId($collection, array $result = array(), $depth = 0)
+	protected function _formatNavigationPagesTree($collection, array $result = array(), $depth = 0)
 	{
 		foreach ($collection as $item) {
 			$result[$item->getId()] = str_repeat('--', $depth) ." ". $item->getLabel();
-			$result = $this->getNavigationPagesId($item->getChilds(), $result, $depth + 1);
+			$result = $this->_formatNavigationPagesTree($item->getChilds(), $result, $depth + 1);
 		}
 		
 		return $result;
+	}
+	
+	protected $_navigationPagesId;
+	public function getNavigationPagesId()
+	{
+		if (null === $this->_navigationPagesId) {
+			$this->_navigationPagesId = $this->_formatNavigationPagesTree(Core::getMapper('navigation/pages')->fetchTree(), array('Нет'));
+		}
+		
+		return $this->_navigationPagesId;
 	}
 }
