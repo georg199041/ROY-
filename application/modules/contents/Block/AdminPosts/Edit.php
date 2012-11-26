@@ -23,12 +23,14 @@ class Contents_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 			'label' => $this->__('Краткое описание'),
 			'cols' => 70,
 			'rows' => 15,
+			'class' => 'mce',
 		));
 		
 		$this->addElement('textarea', 'fulltext', array(
 			'label' => $this->__('Полное описание'),
 			'cols' => 70,
 			'rows' => 15,
+			'class' => 'mce',
 		));
 		
 		//$this->addElement('text', 'image', array(

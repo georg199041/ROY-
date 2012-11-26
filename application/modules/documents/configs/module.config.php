@@ -5,8 +5,9 @@ return array(
 		'router' => array (
 			'routes' => array (
 				'documents' => array (
-					'type'     => 'Zend_Controller_Router_Route_Static',
-					'route'    => 'documents.html',
+					'type'  => 'Zend_Controller_Router_Route_Static',
+					'route' => 'documents.html',
+					'label' => 'Документы',
 					'defaults' => array (
 						'module'     => 'documents',
 						'controller' => 'index',

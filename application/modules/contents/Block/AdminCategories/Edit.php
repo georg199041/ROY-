@@ -33,6 +33,7 @@ class Contents_Block_AdminCategories_Edit extends Core_Block_Form_Widget
 			'label' => $this->__('Description'),
 			'rows' => 5,
 			'cols' => 30,
+			'class' => 'mce',
 		));
 		
 		$this->addElement('submit', 'back', array(

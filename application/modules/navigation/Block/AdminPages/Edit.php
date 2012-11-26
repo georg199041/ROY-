@@ -35,11 +35,18 @@ class Navigation_Block_AdminPages_Edit extends Core_Block_Form_Widget
 			'label' => $this->__('Действие'),
 		));
 
-		$this->addElement('text', 'route', array(
-			'label' => $this->__('Роут'),
+		$this->addElement('select', 'route', array(
+			'label'        => $this->__('Роут'),
+			'multiOptions' => $this->getNavigationRoutes(),
 		));
 		
-		$this->addElement('radio', 'type', array(
+		$this->addElement('textarea', 'params', array(
+			'label' => $this->__('Параметры'),
+			'rows' => 4,
+			'cols' => 70,
+		));
+		
+		$this->addElement('select', 'type', array(
 			'label'        => $this->__('Тип'),
 			'multiOptions' => array(
 				'MVC' => $this->__('Конструктор'),
@@ -57,16 +64,18 @@ class Navigation_Block_AdminPages_Edit extends Core_Block_Form_Widget
 			'label'          => $this->__('Кодировать спец символы'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
+			'value'          => 'NO',
 		));
 		
 		$this->addElement('checkbox', 'enabled', array(
 			'label'          => $this->__('Включено'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
+			'value'          => 'YES',
 		));
 		
-		$this->addDisplayGroup(array('navigation_pages_id', 'label', 'uri', 'module', 'controller', 'action', 'route'), 'center');
-		$this->addDisplayGroup(array('type', 'enabled', 'reset_params', 'encode_url'), 'right');
+		$this->addDisplayGroup(array('navigation_pages_id', 'label', 'uri', 'module', 'controller', 'action', 'params'), 'center');
+		$this->addDisplayGroup(array('route', 'type', 'enabled', 'reset_params', 'encode_url'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);
@@ -94,5 +103,22 @@ class Navigation_Block_AdminPages_Edit extends Core_Block_Form_Widget
 		}
 		
 		return $result;
+	}
+	
+	public function getNavigationRoutes()
+	{
+		$config = Zend_Registry::get('config');
+		
+		$routes = array();		
+		foreach ((array) $config['resources']['router']['routes'] as $name => $options) {
+			$label = (string) $options['label'];
+			if (!$label) {
+				$label = ucfirst(str_ireplace(array('-', '_'), ' ', $name));
+			}
+			
+			$routes[$name] = $this->__($label);
+		}
+		
+		return $routes;
 	}
 }

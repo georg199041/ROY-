@@ -5,12 +5,13 @@ return array(
 		'router' => array (
 			'routes' => array (
 				'contacts' => array (
-					'type' => 'Zend_Controller_Router_Route_Static',
+					'type'  => 'Zend_Controller_Router_Route_Static',
 					'route' => 'contacts.html',
+					'label' => 'Контакты',
 					'defaults' => array (
-						'module' => 'contacts',
+						'module'     => 'contacts',
 						'controller' => 'index',
-						'action' => 'index',
+						'action'     => 'index',
 					),
 				),
 			),

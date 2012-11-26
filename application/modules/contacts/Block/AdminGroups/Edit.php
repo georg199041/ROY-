@@ -21,6 +21,7 @@ class Contacts_Block_AdminGroups_Edit extends Core_Block_Form_Widget
 		
 		$this->addElement('textarea', 'description', array(
 			'label' => $this->__('Description'),
+			'class' => 'mce',
 		));
 
 		$this->addElement('checkbox', 'enabled', array(
