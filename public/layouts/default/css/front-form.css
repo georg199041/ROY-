@@ -16,6 +16,9 @@
 .cbfw-element {
 	margin: 0 0 5px;
 }
+.cbfw-label_formText, .cbfw-label_formTextarea{
+	margin-bottom: 3px;
+}
 .cbfw-label label {
     display: block;
     font-size: 13px;
