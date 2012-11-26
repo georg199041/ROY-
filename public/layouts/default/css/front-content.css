@@ -1,10 +1,13 @@
 /*content start*/
 .front-body {
-	width: 100%;
+	/*width: 100%;*/
 	margin: 0 auto;
 	height: auto !important;
 	height: 100%;
 	min-height: 100%;
+	width: 850px;
+	background: #FFF;
+	
 }
 .front_cbpw-block {
 	text-align: center;

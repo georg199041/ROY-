@@ -23,8 +23,14 @@
 }
 .front-map-page .front-body {
 	position: relative;
+	width: 100%;
+}
+.front-map-page .front-footer {
+	background: none;
 }
 #front-fullscreen-map {
+	left: 0;
+	top: 0;
 	position: absolute;
 	min-width: 100%;
 	min-height: 100%;

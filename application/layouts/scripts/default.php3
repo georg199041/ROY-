@@ -12,6 +12,7 @@
 	<div class="front-body">
 		<div class="front-push-top"></div>
 		<?php if ($this->isHomePage()): ?>
+		
 		<div class="front-body-slider-body">
 			<div class="front-body-slider-top"></div>
 			<div class="front-body-slider-blackwhite" >
@@ -62,6 +63,7 @@
 			
 		
 		</div>
+		<div class="front-push-slider"></div>
 		<?php endif; ?>
 		<div class="front-body-container front_clearfix">
 			<?php echo $this->partial('default/body.php3'); ?>

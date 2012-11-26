@@ -24,6 +24,7 @@ html {
 }
 body{
 	color: #434f56;
+	min-width: 1000px;
 }
 img {
 	border: 0 none;
@@ -83,7 +84,8 @@ ul {
 }
 .front-body-slider-body{
 	width: 100%;
-	position: relative;
+	left: 0;
+    position: absolute;
 	height: 310px;
 }
 .front-body-slider-top{
@@ -278,4 +280,7 @@ ul {
 	position: absolute;
 	background: url(/uploads/front-page-slider/main-promo-collage--right.jpg) top left;
 	margin-right: -480px;
+}
+.front-push-slider{
+	height: 310px;
 }
