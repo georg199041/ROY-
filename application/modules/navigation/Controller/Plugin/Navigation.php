@@ -19,7 +19,7 @@ class Navigation_Controller_Plugin_Navigation extends Zend_Controller_Plugin_Abs
 				'action'       => $item->getAction(),
 				'params'       => $item->getParams() ? json_decode($item->getParams(), true) : null,
 				'route'        => $item->getRoute() ? $item->getRoute() : 'default',
-				'reset_params' => $item->getResestParams() == 'YES' ? true : false,
+				'reset_params' => $item->getResetParams() == 'YES' ? true : false,
 				'encode_url'   => $item->getEncodeUrl() == 'YES' ? true : false,
 				'order'        => $item->getOrder(),
 			);

@@ -36,8 +36,16 @@
 		</div>
 	</div>
 	<?php
-		echo Core::getBlock('comments/index/comments')->setCommentsTable('photogallery_albums')
-		                                              ->setCommentsTableId($this->getAlbum()->getId());
+		$addComment = Core::getBlock('comments/index/add-comment');
+		$addComment->setCommentsTable('photogallery_albums');
+		$addComment->setCommentsTableId($this->getAlbum()->getId());
+		$addComment->setBackUrl($_SERVER['REQUEST_URI']);
+		
+		$comments = Core::getBlock('comments/index/comments');
+		$comments->setCommentsTable('photogallery_albums');
+		$comments->setCommentsTableId($this->getAlbum()->getId());
+		
+		echo $comments;
 	?>
 </div>
 <div class="front-body-sidebar-left">
