@@ -2,6 +2,21 @@
 
 return array(
 	'resources' => array (
+		'router' => array (
+			'routes' => array (
+				'contents-static' => array (
+					'type'     => 'Zend_Controller_Router_Route_Regex',
+					'route'    => 'contents/(.*).html',
+					'defaults' => array (
+						'module'     => 'contents',
+						'controller' => 'index',
+						'action'     => 'view-static',
+					),
+					'map'     => array(1 => 'alias'),
+					'reverse' => 'contents/%s.html',
+				),
+			),
+		),
 		'navigation' => array (
 			'pages' => array (
 				'default/admin-index/index' => array (

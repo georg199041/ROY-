@@ -16,7 +16,6 @@ class Contents_AdminPostsController extends Core_Controller_Action
     	$model = Core::getMapper('contents/posts')->find($id);
     	
     	if ($model->getId() || $id == 0) {
-    		var_dump($model->toArray());
     		Zend_Registry::set('form_data', $model);
     		return;
     	}
@@ -28,7 +27,6 @@ class Contents_AdminPostsController extends Core_Controller_Action
     public function saveAction()
     {
     	if ($data = $this->getRequest()->getPost()) {
-    		var_export($data);die;
     		try {
 	    		$form = Core::getBlock('contents/admin-posts/edit');
 	    		if (!$form->isValid($data)) {
