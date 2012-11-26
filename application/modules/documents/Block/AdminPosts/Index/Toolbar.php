@@ -1,10 +1,10 @@
 <?php
 
-class Recommendations_Block_AdminPosts_Index_Toolbar extends Core_Block_Toolbar_Widget
+class Documents_Block_AdminPosts_Index_Toolbar extends Core_Block_Toolbar_Widget
 {
 	public function init()
 	{
-		$this->setTitle($this->__('Рекомендации'));
+		$this->setTitle($this->__('Документы'));
 		
 		$this->addButton(array(
 			'name'       => 'show',
