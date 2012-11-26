@@ -21,6 +21,7 @@ echo $this->headTitle()->setSeparator(' | ');
  * All style sheets add here
  */
 $this->headLink()->appendStylesheet('/layouts/default/css/style.css');
+$this->headLink()->appendStylesheet('/layouts/default/css/front-form.css');
 echo $this->headLink();
 
 ?>
