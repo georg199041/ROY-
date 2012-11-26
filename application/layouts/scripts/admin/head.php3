@@ -45,6 +45,7 @@ $this->headScript()->appendFile('/layouts/admin/js/core-block-grid-widget.js', '
 $this->headScript()->appendFile('/layouts/admin/js/application-admin-messenger.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/core-block-toolbar-widget.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/admin/js/core-block-form-widget.js', 'text/javascript');
+$this->headScript()->appendFile('/lib/tinymce/plugins/filemanager/js/mcfilemanager.js', 'text/javascript');
 
 echo $this->headScript();
 
@@ -54,7 +55,7 @@ var tinyMCECustomOptions = {
         // General options
         mode : "textareas",
         theme : "advanced",
-        plugins : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
+        plugins : "imagemanager,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
         extended_valid_elements : "iframe[align|allowtransparency|frameborder|height|hspace|marginheight|marginwidth|name|sandbox|scrolling|seamless|src|srcdoc|vspace|width]",
         
         // Theme options
@@ -69,6 +70,11 @@ var tinyMCECustomOptions = {
         force_br_newlines: true,
         //force_p_newlines: false,
         forced_root_block : '', // Needed for 3.x
+
+        document_base_url : '/',
+        remove_script_host : true,
+        relative_urls : false,
+        //convert_urls : false,
         
         width : "100%",
         
