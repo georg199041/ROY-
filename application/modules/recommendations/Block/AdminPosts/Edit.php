@@ -23,6 +23,7 @@ class Recommendations_Block_AdminPosts_Edit extends Core_Block_Form_Widget
 			'label' => $this->__('Описание'),
 			'cols' => 70,
 			'rows' => 15,
+			'class' => 'mce',
 		));
 
 		$this->addElement('text', 'image', array(

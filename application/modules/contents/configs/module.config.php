@@ -7,6 +7,7 @@ return array(
 				'contents-static' => array (
 					'type'     => 'Zend_Controller_Router_Route_Regex',
 					'route'    => 'contents/(.*).html',
+					'label'    => 'Статический контент',
 					'defaults' => array (
 						'module'     => 'contents',
 						'controller' => 'index',

@@ -5,8 +5,9 @@ return array(
 		'router' => array (
 			'routes' => array (
 				'photogallery' => array (
-					'type'     => 'Zend_Controller_Router_Route_Static',
-					'route'    => 'photogallery.html',
+					'type'  => 'Zend_Controller_Router_Route_Static',
+					'route' => 'photogallery.html',
+					'label' => 'Фотогалерея',
 					'defaults' => array (
 						'module'     => 'photogallery',
 						'controller' => 'index',
@@ -14,8 +15,9 @@ return array(
 					),
 				),
 				'photogallery_album' => array (
-					'type'     => 'Zend_Controller_Router_Route_Regex',
-					'route'    => 'photogallery/(.*).html',
+					'type'  => 'Zend_Controller_Router_Route_Regex',
+					'route' => 'photogallery/(.*).html',
+					'label' => 'Фотогалерея - альбом',
 					'defaults' => array (
 						'module'      => 'photogallery',
 						'controller'  => 'index',

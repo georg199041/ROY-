@@ -84,14 +84,15 @@ return array (
 		'router' => array (
 			'routes' => array (
 				'default' => array (
-					'type' => 'Zend_Controller_Router_Route',
-					'route' => ':module/:controller/:action/*',
+					'label'        => 'По умолчанию',
+					'type'         => 'Zend_Controller_Router_Route',
+					'route'        => ':module/:controller/:action/*',
 					'reset_params' => true,	
-					'order' => -1000,
+					'order'        => -1000,
 					'defaults' => array (
-						'module' => 'default',
+						'module'     => 'default',
 						'controller' => 'index',
-						'action' => 'index',
+						'action'     => 'index',
 					),
 				),
 			),

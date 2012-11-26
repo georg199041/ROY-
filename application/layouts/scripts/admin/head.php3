@@ -55,7 +55,9 @@ echo $this->headScript();
 <script type="text/javascript">
 var tinyMCECustomOptions = {
         // General options
-        mode : "textareas",
+        mode : "specific_textareas",
+		editor_selector : 'mce',
+        
         theme : "advanced",
         plugins : "imagemanager,filemanager,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
         extended_valid_elements : "iframe[align|allowtransparency|frameborder|height|hspace|marginheight|marginwidth|name|sandbox|scrolling|seamless|src|srcdoc|vspace|width]",
