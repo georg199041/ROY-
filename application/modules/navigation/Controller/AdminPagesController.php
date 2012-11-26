@@ -5,7 +5,7 @@ class Navigation_AdminPagesController extends Core_Controller_Action
 	public function init()
 	{
 		$this->getHelper('layout')->setLayout('admin');
-		$this->view->headTitle('Navigation pages');
+		$this->view->headTitle('Навигация');
 	}
 	
 	public function indexAction()
