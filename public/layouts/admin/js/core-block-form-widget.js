@@ -31,14 +31,19 @@ jQuery(document).ready(function(){
 	 * test
 	 */
 	jQuery('.cbfw-tag-addbtn-image__select').on('click', function(){
-		alert('select');
+		mcFileManager.browse({
+		    fields : 'image',
+		    document_base_url : '/',
+	        remove_script_host : true,
+	        relative_urls : false
+		});
 	});
 	
 	jQuery(".cbfw-tag__image input").qtip({
 		content: '',
 		position: { target: 'mouse' },
 		api: {
-	        onRender:function() {
+	        beforeShow:function() {
 	           //alert('test');
 	           this.updateContent('<img class="img-polaroid" style="display: block; width:230px;" src="' + this.elements.target.val() + '"/>');
 	        }
