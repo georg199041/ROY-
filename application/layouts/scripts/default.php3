@@ -90,6 +90,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="front-focused-on-results-push"></div>
 		<?php endif; ?>
 		<div class="front-push-bottom"></div>
 	</div>
