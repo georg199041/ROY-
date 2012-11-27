@@ -29,13 +29,13 @@
 	                    </a>
 	                </li>
 	                <?php if ($i < $this->getRecommendationsPosts()->count() - 1): ?>
-	                	<li class="front-content-carousel-dots <?php echo $dotClass; ?>"></li>
+	                	<li class="front-content-carousel-dots <?php echo $dotClass; ?>"><span></span></li>
 	                <?php endif; ?>
 	                <?php $i++; ?>
                 <?php endforeach; ?>
             </ul>
         </div>
-        <a class="front-content-carousel__arrow_bottom carousel-buttom_modleft next" href="#"></a>
+        <a class="front-content-carousel__arrow_bottom <?php echo !($this->getRecommendationsPosts()->count() & 2) ? 'carousel-buttom_modleft' : '' ?> next" href="#"></a>
     </div>
 </div>
 <div class="front-body-sidebar-left">

@@ -23,7 +23,7 @@
     margin: 0;
     width: 100px;
     position:absolute;
-    top:-25px;
+    top:-15px;
     left:0;
     z-index:3;
 }
@@ -46,7 +46,7 @@
 }
 .front-content-carousel__preview-picture {
     width:100px;
-    height:130px;
+    /*height:130px;*/
 }
 .front-content-carousel__preview-picture a{
     position:relative;
@@ -59,41 +59,13 @@
 }
 .front-content-carousel__preview-picture_right {
     position:relative;
-    left:75px;
-    top:-33px;
+    margin-left:75px;
+    /*top:-33px;*/
     z-index:3;
-}
-.front-content-carousel__preview-picture_right:after {
-    /*background-image: url("../images/i_ellipse_right.png");
-    background-repeat: no-repeat;*/
-    color: transparent;
-    content: ".";
-    display: block;
-    height: 25px;
-    left: 4px;
-    position: relative;
-    top: -5px;
-    width: 17px;
-}
-.front-content-carousel__preview-picture_right-last:after{
-    background-image:none; 
 }
 .front-content-carousel__preview-picture_left{
     position:relative;
-    top:-6px;
-}
-.front-content-carousel__preview-picture_right:before {
-    /*background-image: url("../images/i_ellipse.png");
-    background-repeat: no-repeat;*/
-    color: transparent;
-    content: ".";
-    display: block;
-    height: 25px;
-    left: 4px;
-    position: relative;
-    top: 8px;
-    width: 17px;
-    z-index: 4;
+    /*top:-6px;*/
 }
 .front-carousel__preview-mask {
     display:block;
@@ -135,21 +107,31 @@
     margin: 7px 0;
 }
 .front-content-carousel-dots{
+	width: 175px;
+    height: 11px;
+    display: block;
+    position: relative;
+}
+.front-content-carousel-dots span{
+	display: block;
+	position: absolute;
 	width: 17px;
+	margin-left: 79px;
+	margin-top: -7px;
     z-index: 4;
     content: ".";
     display: none;
     height: 25px;
     color: transparent;
 }
-.carousel_dots-right{
+.carousel_dots-right span {
 	display: block;
-	background-image: url("../images/i_ellipse_right.png");
+	background-image: url("/layouts/default/images/i_ellipse_right.png");
     background-repeat: no-repeat;
 }
-.carousel_dots-left{
+.carousel_dots-left span {
 	display: block;
-	background-image: url("../images/i_ellipse.png");
+	background-image: url("/layouts/default/images/i_ellipse.png");
     background-repeat: no-repeat;
 }
 .carousel-buttom_modleft{
