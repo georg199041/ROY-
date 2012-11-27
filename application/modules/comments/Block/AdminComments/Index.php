@@ -49,12 +49,14 @@ class Comments_Block_AdminComments_Index extends Core_Block_Grid_Widget
 
 		$this->addColumn(array(
 			'name'           => 'enabled2',
-			'type'           => 'checkbox',
+			'type'           => 'radio',
 			'title'          => $this->__('Нов'),
-			'align'          => 'center',
-			'checkedValue'   => 'YES',
-			'uncheckedValue' => 'NO',
 			'width'          => '1%',
+			'radioOptions' => array(
+				'MODERATED' => $this->__('Проверен'),
+				'NOTVIEWED' => $this->__('Новый'),
+				'REJECTED'  => $this->__('Отклонен')
+			),
 		));
 		
 		$this->setData(Core::getMapper('comments/comments')->fetchAll());

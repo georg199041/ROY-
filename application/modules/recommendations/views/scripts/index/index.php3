@@ -3,7 +3,7 @@
     <?php $current = $this->getRecommendationsPosts()->current(); ?>
 	    
 	    <div class="front-body-content-picture-big">
-	        <img id="recommend-image" alt="<?php echo $current->getTitle(); ?>" src="<?php echo $current->getImage(); ?>" />
+	        <img id="recommend-image" alt="<?php echo $this->escape($current->getTitle()); ?>" src="<?php echo $current->getImage(); ?>" />
 	        <h2 id="recommend-title"><?php echo $current->getTitle(); ?></h2>
 	        <span id="recommend-description"><?php echo $current->getDescription(); ?></span>
 	    </div>
@@ -21,9 +21,9 @@
 						}
             		?>
 	                <li class="front-content-carousel__preview-picture <?php echo $addClass; ?>">
-	                    <a href="#" title="<?php echo $post->getTitle(); ?>" description="<?php echo $post->getDescription(); ?>" image="<?php echo $post->getImage(); ?>">
+	                    <a href="#" title="<?php echo $this->escape($post->getTitle()); ?>" description="<?php echo $this->escape($post->getDescription()); ?>" image="<?php echo $post->getImage(); ?>">
 	                        <span class="front-carousel__preview-mask"></span>
-	                        <img alt="<?php echo $post->getTitle(); ?>" src="<?php echo $post->getImage(); ?>" />
+	                        <img alt="<?php echo $this->escape($post->getTitle()); ?>" src="<?php echo $post->getImage(); ?>" />
 	                    </a>
 	                </li>
 	                <?php $i++; ?>

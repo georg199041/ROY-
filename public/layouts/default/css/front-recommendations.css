@@ -115,9 +115,9 @@
     background-image: url("../images/doc-viewer-thumbnail-shaper-current.png");
     background-repeat:no-repeat;
 }
-.front-carousel__preview-mask img{
-    width:100px;
-    height:118px;
+.front-content-carousel__preview-picture img{
+    max-width:100px;
+    max-height:118px;
 }
 .front-body-content-picture-big {
     float:left;
