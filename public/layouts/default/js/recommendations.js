@@ -18,24 +18,31 @@ $(document).ready(function(){
 		$("#recommend-image").attr("src", image);
 		$("#recommend-title").html(title);
 		$("#recommend-description").html(description);
-		console.log(image);
-		console.log(title);
-		console.log(description);
+		
 		
 		
 	});
-	
 	//NAVI CLICK
-	$(".front-content-arrow_right a").click(function(event){
+	
+	var PG_ITEM  	   = 130;
+	var PG_FX_STEP_DUR = 400;
+	var PG_PAGE_SIZE   = 4;
+	var PG_LENGTH      = $('.front-content-carousel__preview-picture').length;
+	
+	
+	$(".front-content-arrow_right>a").click(function(event){
 		
 		event.preventDefault();
-		
-		if($(".front-content-arrow_right a").hasClass('back')){
+		if($(".front-content-arrow_right>a").hasClass('back')){
 			
 		}else{
 			
 		}	
 		
 	});
+	
+	
+	
+	
 	
 });

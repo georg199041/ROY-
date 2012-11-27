@@ -12,6 +12,7 @@
         <a class="front-content-carousel__arrow_top back" href="#"></a>
         <div class="front-content-carousel">
             <ul>
+            	
             	<?php $i = 0; ?>
             	<?php foreach ($this->getRecommendationsPosts() as $post): ?>
             		<?php 
@@ -26,6 +27,8 @@
 	                        <img alt="<?php echo $this->escape($post->getTitle()); ?>" src="<?php echo $post->getImage(); ?>" />
 	                    </a>
 	                </li>
+	                <li class="front-content-carousel-dots carousel_dots-right"></li>
+	                <li class="front-content-carousel-dots carousel_dots-left"></li>
 	                <?php $i++; ?>
                 <?php endforeach; ?>
             </ul>
