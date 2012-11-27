@@ -36,21 +36,17 @@ class Comments_Block_AdminComments_Index extends Core_Block_Grid_Widget
 			'title'          => $this->__('Комментарий'),
 			'th-align'       => 'left',
 		));
-		
-		$this->addColumn(array(
-			'name'           => 'enabled',
-			'type'           => 'checkbox',
-			'title'          => $this->__('Вкл'),
-			'align'          => 'center',
-			'checkedValue'   => 'YES',
-			'uncheckedValue' => 'NO',
-			'width'          => '1%',
-		));
 
 		$this->addColumn(array(
-			'name'           => 'enabled2',
+			'name'     => 'userinfo',
+			'title'    => $this->__('Пользователь'),
+			'th-align' => 'left',
+		));
+		
+		$this->addColumn(array(
+			'name'           => 'status',
 			'type'           => 'radio',
-			'title'          => $this->__('Нов'),
+			'title'          => $this->__('Состояние'),
 			'width'          => '1%',
 			'radioOptions' => array(
 				'MODERATED' => $this->__('Проверен'),

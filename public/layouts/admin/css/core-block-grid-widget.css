@@ -65,4 +65,21 @@
 	}
 }
 
+.cbgw-block .cbgw-column_formRadio br {
+	display: none;
+}
+.cbgw-block .cbgw-column_formRadio label {
+	display: block;
+	white-space: nowrap;
+	padding-left: 16px;
+}
+.cbgw-block .cbgw-column_formRadio label input {
+	float: left;
+	margin-left: -16px;
+}
+.cbgw-column__userinfo {
+	font-size: 10px;
+	line-height: normal;
+}
+
 
