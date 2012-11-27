@@ -29,18 +29,33 @@ jQuery(document).ready(function(){
 	});
 	
 	/**
+	 * Observe row status radio event
+	 */
+	jQuery('.cbgw-column__status input[type=radio]').on('change', function(){
+		var action = jQuery(this).attr('formaction') + '/value/' + jQuery(this).val();
+		jQuery(this).parents('.cbgw-block').find('input, select').attr('disabled', true);
+		window.location.href = action; //TODO
+	});
+	
+	/**
 	 * Observe filter (user-)submit event
 	 */
 	jQuery('.cbgw-block').on('submit-filter', function(){
-		var f = jQuery(this).find('.cbgw-filter input, .cbgw-filter select');
-		jQuery(this).find('.cbtw-block button, .cbgw-header__ids input, .cbgw-column__enabled input').attr('disabled', true);
+		var filters = jQuery(this).find('.cbgw-filter input, .cbgw-filter select');
+		var form    = jQuery('<form style="overflow:hidden;padding:0;margin:0;border:0;width:0;height:0;visibility:hidden;" method="post" action=""></form>');
 		
-		var q = '/';
-		f.each(function(){
-			q += jQuery(this).attr('name') + '/' + jQuery(this).val();
+		filters.each(function(item){
+			if (jQuery(this).val() != '' && parseInt(jQuery(this).val()) != 0) {
+				var f = jQuery(this).clone();
+				f.val(jQuery(this).val());
+				form.append(f)
+			}
 		});
 		
-		window.location.href = jQuery(this).attr('action') + q;// + '?' + f.serialize(); //TODO
+		form.append('<input type="submit" />');
+		jQuery(this).append(form);
+		jQuery(this).find('.cbtw-block button, .cbgw-header__ids input, .cbgw-column__enabled input').attr('disabled', true);
+		form.submit();
 	});
 	
 	/**

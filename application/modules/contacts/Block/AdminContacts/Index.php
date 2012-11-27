@@ -64,8 +64,8 @@ class Contacts_Block_AdminContacts_Index extends Core_Block_Grid_Widget
 			'formactionOptions' => '*/*/enabled',
 			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
 		));
-				
-		$this->setData(Core::getMapper('contacts/contacts')->fetchAll());
+		
+		$this->setData(Core::getMapper('contacts/contacts')->fetchAll($this->createWhere()));
 
 		$this->addBlockChild(
 			Core::getBlock('contacts/admin-contacts/index/toolbar'),
@@ -75,8 +75,30 @@ class Contacts_Block_AdminContacts_Index extends Core_Block_Grid_Widget
 		$this->addBlockChild(array(
 			'blockName'       => 'contacts/admin-contacts/index/pagination',
 			'type'            => 'pagination',
-			'totalItemsCount' => Core::getMapper('contacts/contacts')->fetchCount(),
+			'totalItemsCount' => Core::getMapper('contacts/contacts')->fetchCount($this->createWhere()),
 		), self::BLOCK_PLACEMENT_AFTER);
+	}
+	
+	public function createWhere()
+	{
+		if (count($this->getFilterValues()) == 0) {
+			return null;
+		}
+		
+		$where = array();
+		foreach ($this->getFilterValues() as $name => $options) {
+			switch ($options['type']) {
+				case self::FILTER_EQUAL:
+				case self::FILTER_SELECT:
+					$where[$name . ' = ?'] = $options['value'];
+					break;
+				case self::FILTER_LIKE:
+					$where[$name . ' LIKE "%?%"'] = new Zend_Db_Expr($options['value']);
+					break;
+			}
+		}
+		
+		return $where;
 	}
 	
 	protected $_contactsGroupsId;

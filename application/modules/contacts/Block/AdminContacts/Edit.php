@@ -27,6 +27,7 @@ class Contacts_Block_AdminContacts_Edit extends Core_Block_Form_Widget
 				'LATLNG'    => $this->__('Координаты на карте'),
 				'QRCODE'    => $this->__('QR код'),
 				'IMAGE'     => $this->__('Картинка'),
+				'LINK'      => $this->__('Ссылка'),
 			),
 		));
 

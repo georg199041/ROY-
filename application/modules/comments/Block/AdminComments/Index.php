@@ -49,10 +49,12 @@ class Comments_Block_AdminComments_Index extends Core_Block_Grid_Widget
 			'title'          => $this->__('Состояние'),
 			'width'          => '1%',
 			'radioOptions' => array(
-				'MODERATED' => $this->__('Проверен'),
 				'NOTVIEWED' => $this->__('Новый'),
-				'REJECTED'  => $this->__('Отклонен')
+				'MODERATED' => $this->__('Проверен'),
+				'REJECTED'  => $this->__('Отклонен'),
 			),
+			'formactionOptions' => '*/*/status',
+			'formactionBind'    => array('ids' => 'id')
 		));
 		
 		$this->setData(Core::getMapper('comments/comments')->fetchAll());

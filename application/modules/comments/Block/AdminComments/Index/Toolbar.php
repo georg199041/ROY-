@@ -7,15 +7,21 @@ class Comments_Block_AdminComments_Index_Toolbar extends Core_Block_Toolbar_Widg
 		$this->setTitle($this->__('Комментарии'));
 		
 		$this->addButton(array(
-			'name'       => 'show',
-			'title'      => $this->__('Включить'),
-			'urlOptions' => '*/*/enabled/value/YES',
+			'name'       => 'setNotviewed',
+			'title'      => $this->__('Не просмотрен'),
+			'urlOptions' => '*/*/status/value/NOTVIEWED',
 		));
 		
 		$this->addButton(array(
-			'name'       => 'hide',
-			'title'      => $this->__('Выключить'),
-			'urlOptions' => '*/*/enabled/value/NO',
+			'name'       => 'setModerated',
+			'title'      => $this->__('Подтвержден'),
+			'urlOptions' => '*/*/status/value/MODERATED',
+		));
+		
+		$this->addButton(array(
+			'name'       => 'setRegected',
+			'title'      => $this->__('Отклонен'),
+			'urlOptions' => '*/*/status/value/REJECTED',
 		));
 		
 		$this->addButton(array(

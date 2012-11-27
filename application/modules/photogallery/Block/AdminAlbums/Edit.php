@@ -10,25 +10,21 @@ class Photogallery_Block_AdminAlbums_Edit extends Core_Block_Form_Widget
 		$this->addElement('hidden', 'id');
 
 		$this->addElement('text', 'title', array(
-				'label'    => $this->__('Заголовок'),
-				'required' => true,
+			'label'    => $this->__('Заголовок'),
+			'required' => true,
 		));
 
 		$this->addElement('textarea', 'description', array(
-				'label' => $this->__('Описание'),
-				'cols' => 70,
-				'rows' => 15,
+			'label' => $this->__('Описание'),
+			'cols' => 70,
+			'rows' => 15,
 			'class' => 'mce',
 		));
-
-		$this->addElement('text', 'image', array(
-				'label' => $this->__('Картинка'),
-		));
-
+		
 		$this->addElement('checkbox', 'enabled', array(
-				'label'          => $this->__('Включено'),
-				'checkedValue'   => 'YES',
-				'uncheckedValue' => 'NO',
+			'label'          => $this->__('Включено'),
+			'checkedValue'   => 'YES',
+			'uncheckedValue' => 'NO',
 		));
 
 		$this->addDisplayGroup(array('title', 'description'), 'center');
