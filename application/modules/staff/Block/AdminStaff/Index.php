@@ -1,6 +1,6 @@
 <?php
 
-class Photogallery_Block_AdminAlbums_Index extends Core_Block_Grid_Widget
+class Staff_Block_AdminStaff_Index extends Core_Block_Grid_Widget
 {
 	public function init()
 	{
@@ -18,43 +18,42 @@ class Photogallery_Block_AdminAlbums_Index extends Core_Block_Grid_Widget
 		$this->addColumn(array(
 			'name'  => 'id',
 			'title' => $this->__('ID'),
-			'width' => '50',
+			'width' => '2',
 			'align' => 'right',
-			'filterable'        => 'true',
-			'filterableType'    => Core_Block_Grid_Widget::FILTER_EQUAL,
 		));
 		
 		$this->addColumn(array(
 			'name'           => 'title',
 			'type'           => 'hyperlink',
-			'title'          => $this->__('Title'),
+			'title'          => $this->__('Заголовок'),
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),
-			'filterable'     => 'true',
-			'filterableType' => Core_Block_Grid_Widget::FILTER_SELECT,
 		));
 		
 		$this->addColumn(array(
-			'name'           => 'enabled',
-			'type'           => 'checkbox',
-			'title'          => $this->__('On'),
-			'checkedValue'   => 'YES',
-			'uncheckedValue' => 'NO',
-			'width'          => '1%',
+			'name'              => 'enabled',
+			'type'              => 'checkbox',
+			'title'             => $this->__('Вкл'),
+			'align'             => 'center',
+			'checkedValue'      => 'YES',
+			'uncheckedValue'    => 'NO',
+			'width'             => '1%',
+			'formactionOptions' => '*/*/enabled',
+			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
 		));
 		
-		$this->setData(Core::getMapper('photogallery/albums')->fetchAll());
+		$this->setData(Core::getMapper('staff/staff')->fetchAll());
 
 		$this->addBlockChild(
-			Core::getBlock('photogallery/admin-albums/index/toolbar'),
+			Core::getBlock('staff/admin-staff/index/toolbar'),
 			self::BLOCK_PLACEMENT_BEFORE
 		);
 
 		$this->addBlockChild(array(
-			'blockName'       => 'photogallery/admin-albums/index/pagination',
+			'blockName'       => 'staff/admin-staff/index/pagination',
 			'type'            => 'pagination',
-			'totalItemsCount' => Core::getMapper('photogallery/albums')->fetchCount(),
+			'totalItemsCount' => Core::getMapper('staff/staff')->fetchCount(),
 		), self::BLOCK_PLACEMENT_AFTER);
 	}
 }

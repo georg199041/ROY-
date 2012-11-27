@@ -59,9 +59,12 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 			'name'           => 'enabled',
 			'type'           => 'checkbox',
 			'title'          => $this->__('Вкл.'),
-			'checkedValue'   => 'YES',
-			'uncheckedValue' => 'NO',
-			'width'          => '1%',
+			'align'             => 'center',
+			'checkedValue'      => 'YES',
+			'uncheckedValue'    => 'NO',
+			'width'             => '1%',
+			'formactionOptions' => '*/*/enabled',
+			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
 		));
 		
 		$this->addColumn(array(
@@ -69,7 +72,7 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 			'name'              => 'navigation_pages_id',
 			'title'             => $this->__('Родитель'),
 			'linkOptions'       => 'navigation/admin-pages/index',
-			'linkBindFields'    => array('navigation_pages_id'),
+			'linkBindFields'    => array('filter[navigation_pages_id]' => 'navigation_pages_id'),
 			'width'             => '1%',
 			'nowrap'            => 'nowrap',
 			'filterable'        => 'true',
@@ -87,7 +90,7 @@ class Navigation_Block_AdminPages_Index extends Core_Block_Grid_Widget
 		$this->addBlockChild(array(
 			'blockName'       => 'navigation/admin-pages/index/pagination',
 			'type'            => 'pagination',
-			'totalItemsCount' => Core::getMapper('navigation/pages')->fetchCount()*10,
+			'totalItemsCount' => Core::getMapper('navigation/pages')->fetchCount(),
 		), self::BLOCK_PLACEMENT_AFTER);
 	}
 	

@@ -33,8 +33,14 @@ jQuery(document).ready(function(){
 	 */
 	jQuery('.cbgw-block').on('submit-filter', function(){
 		var f = jQuery(this).find('.cbgw-filter input, .cbgw-filter select');
-		jQuery(this).find('input, select').attr('disabled', true);
-		window.location.href = jQuery(this).attr('action') + '?' + f.serialize(); //TODO
+		jQuery(this).find('.cbtw-block button, .cbgw-header__ids input, .cbgw-column__enabled input').attr('disabled', true);
+		
+		var q = '/';
+		f.each(function(){
+			q += jQuery(this).attr('name') + '/' + jQuery(this).val();
+		});
+		
+		window.location.href = jQuery(this).attr('action') + q;// + '?' + f.serialize(); //TODO
 	});
 	
 	/**
