@@ -64,7 +64,7 @@ class Photogallery_AdminImagesController extends Core_Controller_Action
     		Core::getBlock('application/admin/messenger')->addError($this->__('Не выбрана ни одна запись'));
     	} else {
     		try {
-    			foreach ($ids as $id) {
+    			foreach ($ids as $id => $selected) {
     				$model = Core::getMapper('photogallery/images')->find($id);
     				$model->delete();
     			}
@@ -81,7 +81,12 @@ class Photogallery_AdminImagesController extends Core_Controller_Action
     public function enabledAction()
     {
         $ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
+        if (!is_array($ids) && null !== $ids) {
+        	$ids = array($ids => 1);
+        	$this->getRequest()->setParam('value', $this->getRequest()->getParam('value') == 'YES' ? 'NO' : 'YES');
+        }
+        
+        if (null === $ids) {
     		Core::getBlock('application/admin/messenger')->addError($this->__('Не выбрана ни одна запись'));
     	} else {
     		try {

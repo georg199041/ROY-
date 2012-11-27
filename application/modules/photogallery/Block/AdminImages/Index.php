@@ -38,6 +38,8 @@ class Photogallery_Block_AdminImages_Index extends Core_Block_Grid_Widget
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 			'width'          => '1%',
+			'formactionOptions' => '*/*/enabled',
+			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
 		));
 
 		$this->addColumn(array(
@@ -53,7 +55,7 @@ class Photogallery_Block_AdminImages_Index extends Core_Block_Grid_Widget
 			'filterableOptions' => $this->getPhotogalleryAlbumsId(),
 		));
 		
-		$this->setData(Core::getMapper('photogallery/images')->fetchAll());
+		$this->setData(Core::getMapper('photogallery/images')->fetchAll($this->createWhere()));
 
 		$this->addBlockChild(
 			Core::getBlock('photogallery/admin-images/index/toolbar'),
@@ -63,8 +65,30 @@ class Photogallery_Block_AdminImages_Index extends Core_Block_Grid_Widget
 		$this->addBlockChild(array(
 			'blockName'       => 'photogallery/admin-images/index/pagination',
 			'type'            => 'pagination',
-			'totalItemsCount' => Core::getMapper('photogallery/images')->fetchCount(),
+			'totalItemsCount' => Core::getMapper('photogallery/images')->fetchCount($this->createWhere()),
 		), self::BLOCK_PLACEMENT_AFTER);
+	}
+
+	public function createWhere()
+	{
+		if (count($this->getFilterValues()) == 0) {
+			return null;
+		}
+	
+		$where = array();
+		foreach ($this->getFilterValues() as $name => $options) {
+			switch ($options['type']) {
+				case self::FILTER_EQUAL:
+				case self::FILTER_SELECT:
+					$where[$name . ' = ?'] = $options['value'];
+					break;
+				case self::FILTER_LIKE:
+					$where[$name . ' LIKE "%?%"'] = new Zend_Db_Expr($options['value']);
+					break;
+			}
+		}
+	
+		return $where;
 	}
 	
 	protected function _formatPhotogalleryAlbumsTree($collection, array $result = array(), $depth = 0)
