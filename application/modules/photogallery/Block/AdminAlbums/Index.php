@@ -32,7 +32,7 @@ class Photogallery_Block_AdminAlbums_Index extends Core_Block_Grid_Widget
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),
 			'filterable'     => 'true',
-			'filterableType' => Core_Block_Grid_Widget::FILTER_LIKE,
+			'filterableType' => Core_Block_Grid_Widget::FILTER_SELECT,
 		));
 		
 		$this->addColumn(array(

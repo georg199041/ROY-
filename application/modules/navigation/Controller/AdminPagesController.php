@@ -8,10 +8,7 @@ class Navigation_AdminPagesController extends Core_Controller_Action
 		$this->view->headTitle('Навигация');
 	}
 	
-	public function indexAction()
-	{
-		new Navigation_Controller_Plugin_Navigation();
-	}
+	public function indexAction(){}
     
     public function editAction()
     {

@@ -20,29 +20,43 @@ class Comments_Block_AdminComments_Index extends Core_Block_Grid_Widget
 			'title' => $this->__('ID'),
 			'width' => '1%',
 			'align' => 'right',
-			'filterable'        => 'true',
-			'filterableType'    => Core_Block_Grid_Widget::FILTER_EQUAL,
-			'filterableOptions' => array('size' => '1'),
+		));
+
+		$this->addColumn(array(
+			'name'           => 'table',
+			'title'          => $this->__('Модуль / компонент'),
+			'th-align'       => 'left',
+			'width'          => '1%',
+			'filterable'     => 'true',
+			'filterableType' => Core_Block_Grid_Widget::FILTER_SELECT,
 		));
 		
 		$this->addColumn(array(
-			'name'           => 'title',
-			'type'           => 'hyperlink',
-			'title'          => $this->__('Title'),
+			'name'           => 'comment',
+			'title'          => $this->__('Комментарий'),
 			'th-align'       => 'left',
-			'linkOptions'    => '*/*/edit',
-			'linkBindFields' => array('id'),
-			'filterable'     => 'true',
-			'filterableType' => Core_Block_Grid_Widget::FILTER_LIKE,
 		));
 		
 		$this->addColumn(array(
 			'name'           => 'enabled',
 			'type'           => 'checkbox',
-			'title'          => $this->__('On'),
+			'title'          => $this->__('Вкл'),
+			'align'          => 'center',
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 			'width'          => '1%',
+		));
+
+		$this->addColumn(array(
+			'name'           => 'enabled2',
+			'type'           => 'radio',
+			'title'          => $this->__('Нов'),
+			'width'          => '1%',
+			'radioOptions' => array(
+				'MODERATED' => $this->__('Проверен'),
+				'NOTVIEWED' => $this->__('Новый'),
+				'REJECTED'  => $this->__('Отклонен')
+			),
 		));
 		
 		$this->setData(Core::getMapper('comments/comments')->fetchAll());
