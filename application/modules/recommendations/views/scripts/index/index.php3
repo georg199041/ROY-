@@ -12,13 +12,14 @@
         <a class="front-content-carousel__arrow_top back" href="#"></a>
         <div class="front-content-carousel">
             <ul>
-            	
             	<?php $i = 0; ?>
             	<?php foreach ($this->getRecommendationsPosts() as $post): ?>
             		<?php 
             			$addClass = 'front-content-carousel__preview-picture_right';
+            			$dotClass = 'carousel_dots-right';
             			if (!($i % 2)) {
 							$addClass = 'front-content-carousel__preview-picture_left';
+							$dotClass = 'carousel_dots-left';
 						}
             		?>
 	                <li class="front-content-carousel__preview-picture <?php echo $addClass; ?>">
@@ -27,8 +28,9 @@
 	                        <img alt="<?php echo $this->escape($post->getTitle()); ?>" src="<?php echo $post->getImage(); ?>" />
 	                    </a>
 	                </li>
-	                <li class="front-content-carousel-dots carousel_dots-right"></li>
-	                <li class="front-content-carousel-dots carousel_dots-left"></li>
+	                <?php if ($i < $this->getRecommendationsPosts()->count() - 1): ?>
+	                	<li class="front-content-carousel-dots <?php echo $dotClass; ?>"></li>
+	                <?php endif; ?>
 	                <?php $i++; ?>
                 <?php endforeach; ?>
             </ul>
