@@ -152,3 +152,6 @@
 	background-image: url("../images/i_ellipse.png");
     background-repeat: no-repeat;
 }
+.carousel-buttom_modleft{
+	margin-right: 75px;
+}

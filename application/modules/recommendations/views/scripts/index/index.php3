@@ -33,7 +33,7 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-        <a class="front-content-carousel__arrow_bottom next" href="#"></a>
+        <a class="front-content-carousel__arrow_bottom carousel-buttom_modleft next" href="#"></a>
     </div>
 </div>
 <div class="front-body-sidebar-left">
