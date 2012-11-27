@@ -27,6 +27,8 @@
 	                        <img alt="<?php echo $this->escape($post->getTitle()); ?>" src="<?php echo $post->getImage(); ?>" />
 	                    </a>
 	                </li>
+	                <li class="front-content-carousel-dots carousel_dots-right"></li>
+	                <li class="front-content-carousel-dots carousel_dots-left"></li>
 	                <?php $i++; ?>
                 <?php endforeach; ?>
             </ul>
