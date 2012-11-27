@@ -39,13 +39,7 @@ class Staff_Block_AdminStaff_Edit extends Core_Block_Form_Widget
 		));
 		
 		$this->addElement('text', 'image', array(
-			'label'    => $this->__('Картинка'),
-			'required' => true,
-			'validators' => array(
-				array('NotEmpty', true, array('messages' => array(
-					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Картинка является обязательной')
-				)))
-			)
+			'label' => $this->__('Картинка'),
 		));
 		$this->getElement('image')->setDecorators(array(
 			array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
@@ -55,7 +49,6 @@ class Staff_Block_AdminStaff_Edit extends Core_Block_Form_Widget
 			'label'          => $this->__('Включено'),
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
-			'decorator'      => 'CombinedElement',
 		));
 		
 		$this->addDisplayGroup(array('name', 'description'), 'center');

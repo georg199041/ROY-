@@ -2,8 +2,10 @@
     <h1>Персонал</h1>
     <?php foreach ($this->getStaff() as $post): ?>
     <div class="front-content-personal">
+    	<?php if ($post->getImage()): ?>
         <img class="front-content-personal__photo" alt="<?php echo $post->getName(); ?>" src="<?php echo $post->getImage(); ?>" />
-        <div class="front-content-personal-employee">
+        <?php endif; ?>
+        <div class="front-content-personal-employee" <?php echo !$post->getImage() ? 'style="width: 618px;"' : ''; ?>>
             <h4><?php echo $post->getName(); ?></h4>
             <div class="front-content-personal-employee-text">
             	<?php if ($post->getDescription()): ?>

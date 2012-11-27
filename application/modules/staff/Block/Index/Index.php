@@ -8,7 +8,6 @@ class Staff_Block_Index_Index extends Core_Block_View
 		if (null === $this->_staff) {
 			$this->_staff = Core::getMapper('staff/staff')->fetchAll(array(
 				'enabled = ?' => 'YES',
-				'image != ""',
 			));
 			
 			if ($this->_staff->count() == 0) {
