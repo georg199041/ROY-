@@ -23,9 +23,9 @@ class Staff_Block_AdminStaff_Index extends Core_Block_Grid_Widget
 		));
 		
 		$this->addColumn(array(
-			'name'           => 'title',
+			'name'           => 'name',
 			'type'           => 'hyperlink',
-			'title'          => $this->__('Заголовок'),
+			'title'          => $this->__('Имя'),
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),

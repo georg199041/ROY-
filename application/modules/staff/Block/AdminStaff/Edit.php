@@ -9,8 +9,8 @@ class Staff_Block_AdminStaff_Edit extends Core_Block_Form_Widget
 		
 		$this->addElement('hidden', 'id');
 		
-		$this->addElement('text', 'title', array(
-			'label'      => $this->__('Заголовок'),
+		$this->addElement('text', 'name', array(
+			'label'      => $this->__('Имя'),
 			'required'   => true,
 			'validators' => array(
 				array('NotEmpty', true, array('messages' => array(
@@ -26,8 +26,26 @@ class Staff_Block_AdminStaff_Edit extends Core_Block_Form_Widget
 			'class' => 'mce',
 		));
 
+		$this->addElement('text', 'phone', array(
+			'label' => $this->__('Телефон'),
+		));
+
+		$this->addElement('text', 'email', array(
+			'label' => $this->__('Электронная почта'),
+		));
+
+		$this->addElement('text', 'skype', array(
+			'label' => $this->__('Скайп'),
+		));
+		
 		$this->addElement('text', 'image', array(
-			'label' => $this->__('Картинка'),
+			'label'    => $this->__('Картинка'),
+			'required' => true,
+			'validators' => array(
+				array('NotEmpty', true, array('messages' => array(
+					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Картинка является обязательной')
+				)))
+			)
 		));
 		$this->getElement('image')->setDecorators(array(
 			array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
@@ -40,8 +58,8 @@ class Staff_Block_AdminStaff_Edit extends Core_Block_Form_Widget
 			'decorator'      => 'CombinedElement',
 		));
 		
-		$this->addDisplayGroup(array('title', 'description'), 'center');
-		$this->addDisplayGroup(array('image', 'enabled'), 'right');
+		$this->addDisplayGroup(array('name', 'description'), 'center');
+		$this->addDisplayGroup(array('phone', 'email', 'skype', 'image', 'enabled'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);
