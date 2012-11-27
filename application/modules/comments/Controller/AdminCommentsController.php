@@ -13,7 +13,7 @@ class Comments_AdminCommentsController extends Core_Controller_Action
     public function editAction()
     {
     	$id    = $this->getRequest()->getParam('id');
-    	$model = Core::getMapper('сomments/сomments')->find($id);
+    	$model = Core::getMapper('comments/comments')->find($id);
     	
     	if ($model->getId() || $id == 0) {
     		Zend_Registry::set('form_data', $model);
@@ -34,7 +34,7 @@ class Comments_AdminCommentsController extends Core_Controller_Action
     				throw new Exception($this->__("Invalid form"));
     			}
     			
-    			$model = Core::getMapper('сomments/сomments')->create($form->getValues());
+    			$model = Core::getMapper('comments/comments')->create($form->getValues());
     			$model->save();
     			unset(Core::getSession('admin')->formData);
     	   
@@ -65,7 +65,7 @@ class Comments_AdminCommentsController extends Core_Controller_Action
     	} else {
     		try {
     			foreach ($ids as $id) {
-    				$model = Core::getMapper('сomments/сomments')->find($id);
+    				$model = Core::getMapper('comments/comments')->find($id);
     				$model->delete();
     			}
     			 
@@ -78,71 +78,28 @@ class Comments_AdminCommentsController extends Core_Controller_Action
     	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'));
     }
     
-    public function enabledAction()
+    public function statusAction()
     {
         $ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
+        if (!is_array($ids) && null !== $ids) {
+        	$ids = array($ids => 1);
+        }
+    	
+    	if (null === $ids) {
     		Core::getBlock('application/admin/messenger')->addError($this->__('Не выбрана ни одна запись'));
     	} else {
     		try {
     			foreach ($ids as $id => $selected) {
     				if ($selected) {
-	    				$model = Core::getMapper('сomments/сomments')->find($id);
-	    				$model->setEnabled($this->getRequest()->getParam('value'));
+	    				$model = Core::getMapper('comments/comments')->find($id);
+	    				$model->setStatus($this->getRequest()->getParam('value'));
 	    				$model->save();
     				}
     			}
     			
-    			$message = $this->getRequest()->getParam('value') == 'YES' ? 'Включено' : 'Выключено';
-    			Core::getBlock('application/admin/messenger')->addSuccess($this->__($message . ' записей:') . ' ' . count($ids));
+    			Core::getBlock('application/admin/messenger')->addSuccess($this->__('Изменено записей:') . ' ' . count($ids));
     		} catch (Exception $e) {
-    			$message = $this->getRequest()->getParam('value') == 'YES' ? 'включения' : 'выключения';
-    			Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка ' . $message));
-    		}
-    	}
-    	
-    	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'), null, true);
-    }
-    
-    public function moveAction()
-    {
-    	$ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
-    		Core::getBlock('application/admin/messenger')->addError($this->__('Не выбрана ни одна запись'));
-    	} else {
-    		try {
-    			foreach ($ids as $id) {
-    				$model = Core::getMapper('сomments/сomments')->find($id);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('table'));
-   					$model->save();
-    			}
-				
-    			Core::getBlock('application/admin/messenger')->addSuccess($this->__('Перемещено записей:') . ' ' . count($ids));
-    		} catch (Exception $e) {
-    			Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка перемещения'));
-    		}
-    	}
-    	
-    	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'), null, true);
-    }
-    
-    public function copyAction()
-    {
-    	$ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
-    		Core::getBlock('application/admin/messenger')->addError($this->__('Не выбрана ни одна запись'));
-    	} else {
-    		try {
-    			foreach ($ids as $id) {
-    				$model = Core::getMapper('сomments/сomments')->find($id);
-    				$model->setId(null);
-   					$model->setContactsGroupsId($this->getRequest()->getParam('table'));
-   					$model->save();
-    			}
-				
-    			Core::getBlock('application/admin/messenger')->addSuccess($this->__('Скопировано записей:') . ' ' . count($ids));
-    		} catch (Exception $e) {
-    			Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка копирования'));
+    			Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка изменения статуса'));
     		}
     	}
     	

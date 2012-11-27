@@ -29,6 +29,15 @@ jQuery(document).ready(function(){
 	});
 	
 	/**
+	 * Observe row status radio event
+	 */
+	jQuery('.cbgw-column__status input[type=radio]').on('change', function(){
+		var action = jQuery(this).attr('formaction') + '/value/' + jQuery(this).val();
+		jQuery(this).parents('.cbgw-block').find('input, select').attr('disabled', true);
+		window.location.href = action; //TODO
+	});
+	
+	/**
 	 * Observe filter (user-)submit event
 	 */
 	jQuery('.cbgw-block').on('submit-filter', function(){

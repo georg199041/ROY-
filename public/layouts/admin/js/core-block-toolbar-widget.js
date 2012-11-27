@@ -15,7 +15,7 @@ jQuery(document).ready(function(){
 	/**
 	 * 
 	 */
-	$("button[name=show], button[name=hide], button[name=delete]").click(function(event){
+	$("button[name=setNotviewed], button[name=setModerated], button[name=setRegected], button[name=show], button[name=hide], button[name=delete]").click(function(event){
 		callAction($(this), '.cbgw-column__ids input:checked');
 	});
 	
