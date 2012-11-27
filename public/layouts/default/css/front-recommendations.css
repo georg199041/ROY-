@@ -5,7 +5,7 @@
     height:590px;
 }
 .front-content-carousel {
-    overflow:hidden;
+    /*overflow:hidden;*/
     position:relative;
     width:175px;
     height:515px;
@@ -14,7 +14,8 @@
     position: absolute;
     white-space: nowrap;
     height:10000px;
-    top:11px;
+    top:0px;
+    margin-top: 11px;
 }
 .front-content-carousel__arrow_top {
     background-image: url("../images/arrow-up-idle.png");
@@ -46,7 +47,7 @@
 }
 .front-content-carousel__preview-picture {
     width:100px;
-    /*height:130px;*/
+    height:118px;
 }
 .front-content-carousel__preview-picture a{
     position:relative;

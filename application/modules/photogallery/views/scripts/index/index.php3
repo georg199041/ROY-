@@ -12,7 +12,18 @@
 			?>
 	    	<div class="front-content-gallery-photos">
 	            <a class="front-content-gallery__unit-link" title="<?php echo $album->getTitle(); ?>" href="<?php echo $url; ?>">
-	                <img alt="<?php echo $album->getTitle(); ?>" src="<?php echo $album->getImage(); ?>"  />
+	                <?php if ($album->getImage()): ?>
+			    	<?php
+			    		$noImage = false;
+			    		try {
+			    			echo $this->image($album->getImage(), array(
+			    				"alt"   => $album->getTitle()
+			    			))->resizeToCrop(178, 120);
+			    		} catch (Exception $e) {
+							$noImage = true;
+						}
+			    	?>
+			        <?php endif; ?>
 	            </a>
 	            <a class="front-content-gallery__description" title="<?php echo $album->getTitle(); ?>" href="<?php echo $url; ?>">
 	            	<?php echo $album->getTitle(); ?>

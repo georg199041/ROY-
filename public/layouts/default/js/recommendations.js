@@ -24,19 +24,36 @@ $(document).ready(function(){
 	});
 	//NAVI CLICK
 	
-	var PG_ITEM  	   = 130;
-	var PG_FX_STEP_DUR = 400;
-	var PG_PAGE_SIZE   = 4;
-	var PG_LENGTH      = $('.front-content-carousel__preview-picture').length;
+	var item_height = 130;
+	var step_size   = 4;
+	var length      = $('.front-content-carousel__preview-picture').length;
+	var move = step_size*item_height;
+	//var removed = $(".front-content-carousel ul").position().top;
 	
 	
-	$(".front-content-arrow_right>a").click(function(event){
+	
+	
+	$(".front-content-arrow_right > a").click(function(event){
 		
 		event.preventDefault();
-		if($(".front-content-arrow_right>a").hasClass('back')){
-			
+		if($(this).hasClass('back')){
+			if(move>=0){
+				$(".front-content-carousel ul").css({"top": "-=" + move});
+				removed = $(".front-content-carousel ul").position().top;
+			}else{
+				removed = $(".front-content-carousel ul").position().top;
+				console.log(length-removed)
+				$(".front-content-carousel ul").css({"top": "-=" + item_height});
+			}
 		}else{
-			
+			if(move<=0){
+				$(".front-content-carousel ul").css({"top": "+=" + move});
+				removed = $(".front-content-carousel ul").position().top;
+			}else{
+				removed = $(".front-content-carousel ul").position().top;
+				console.log(length-removed)
+				$(".front-content-carousel ul").css({"top": "+=" + item_height});
+			}
 		}	
 		
 	});

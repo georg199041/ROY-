@@ -3,9 +3,19 @@
     <?php foreach ($this->getStaff() as $post): ?>
     <div class="front-content-personal">
     	<?php if ($post->getImage()): ?>
-        <img class="front-content-personal__photo" alt="<?php echo $post->getName(); ?>" src="<?php echo $post->getImage(); ?>" />
+    	<?php
+    		$noImage = false;
+    		try {
+    			echo $this->image($post->getImage(), array(
+    				"class" => "front-content-personal__photo",
+    				"alt"   => $post->getName()
+    			))->resizeToCrop(110, 150);
+    		} catch (Exception $e) {
+				$noImage = true;
+			}
+    	?>
         <?php endif; ?>
-        <div class="front-content-personal-employee" <?php echo !$post->getImage() ? 'style="width: 618px;"' : ''; ?>>
+        <div class="front-content-personal-employee" <?php echo !$post->getImage() || $noImage ? 'style="width: 618px;"' : ''; ?>>
             <h4><?php echo $post->getName(); ?></h4>
             <div class="front-content-personal-employee-text">
             	<?php if ($post->getDescription()): ?>

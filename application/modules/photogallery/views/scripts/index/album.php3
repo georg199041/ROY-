@@ -11,11 +11,26 @@
 				<?php foreach ($this->getAlbumPhotos() as $photo): ?>
 					<li class="front-photogallery-slider__item front-photogallery-slider_item-active">
 						<a href="#" index="<?php echo $i; ?>">
-							<img alt="<?php echo $photo->getTitle(); ?>"
+							<!-- <img alt="<?php /*echo $photo->getTitle(); ?>"
 							     src="<?php echo $photo->getImage(); ?>"
 							     image="<?php echo $photo->getImage(); ?>"
 							     description="<?php echo $photo->getDescription(); ?>"
-							     title="<?php echo $photo->getTitle(); ?>" />
+							     title="<?php echo $photo->getTitle(); */?>" /> -->
+							<?php if ($photo->getImage()): ?>
+					    	<?php
+					    		$noImage = false;
+					    		try {
+					    			echo $this->image($photo->getImage(), array(
+					    				"image" => $photo->getImage(),
+										"description" => $photo->getDescription(),
+										"title" => $photo->getTitle(),
+					    				"alt"   => $photo->getTitle()
+					    			))->resizeToCrop(104, 70);
+					    		} catch (Exception $e) {
+									$noImage = true;
+								}
+					    	?>
+					        <?php endif; ?>     
 						</a>
 					</li>
 					<?php $i++; ?>
@@ -26,7 +41,20 @@
 		</div>
 		<div class="front-photogallery__bigimage">
 			<div class="front-photogallery-bigimage__container">
-				<img class="current" alt="<?php echo $current->getTitle(); ?>" src="<?php echo $current->getImage(); ?>" />
+				<!-- <img class="current" alt="<?php /*echo $current->getTitle();*/ ?>" src="<?php /*echo $current->getImage();*/ ?>" /> -->
+				<?php if ($current->getImage()): ?>
+		    	<?php
+		    		$noImage = false;
+		    		try {
+		    			echo $this->image($current->getImage(), array(
+		    				"class" => "current",
+		    				"alt"   => $current->getTitle()
+		    			))->resizeToWidth(570);
+		    		} catch (Exception $e) {
+						$noImage = true;
+					}
+		    	?>
+		        <?php endif; ?>
 				<a href="#" class="front-photogallery-bigimage__btn front-photogallery-bigimage_btn-left"><span></span></a>
 				<a href="#" class="front-photogallery-bigimage__btn front-photogallery-bigimage_btn-right"><span></span></a>
 			</div>
