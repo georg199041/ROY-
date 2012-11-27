@@ -12,6 +12,7 @@
         <a class="front-content-carousel__arrow_top back" href="#"></a>
         <div class="front-content-carousel">
             <ul>
+            	
             	<?php $i = 0; ?>
             	<?php foreach ($this->getRecommendationsPosts() as $post): ?>
             		<?php 

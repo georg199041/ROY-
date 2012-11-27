@@ -119,17 +119,3 @@ $(document).ready(function(){
 	photogalleryControlsObserve();
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
