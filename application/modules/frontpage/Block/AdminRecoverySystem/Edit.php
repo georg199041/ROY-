@@ -27,20 +27,21 @@ class Frontpage_Block_AdminRecoverySystem_Edit extends Core_Block_Form_Widget
 		));
 
 		$this->addElement('text', 'image', array(
-			'label' => $this->__('Картинка'),
+			'label' => $this->__('Картинка (основное состояние)'),
 		));
 		$this->getElement('image')->setDecorators(array(
 			array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
 		));
 		
-		$this->addElement('checkbox', 'enabled', array(
-			'label'          => $this->__('Включено'),
-			'checkedValue'   => 'YES',
-			'uncheckedValue' => 'NO',
+		$this->addElement('text', 'image_hover', array(
+			'label' => $this->__('Картинка (при наведении)'),
+		));
+		$this->getElement('image_hover')->setDecorators(array(
+			array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
 		));
 		
 		$this->addDisplayGroup(array('title', 'description'), 'center');
-		$this->addDisplayGroup(array('image', 'enabled'), 'right');
+		$this->addDisplayGroup(array('image', 'image_hover'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);

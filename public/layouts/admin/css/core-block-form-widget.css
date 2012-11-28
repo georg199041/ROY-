@@ -38,11 +38,11 @@
 .cbfw-tag_formPassword input {
 	width: 100%;
 }
-.cbfw-tag__image,
+.input-append,
 #login .cbfw-tag__password {
 	padding-right: 100px;
 }
-.cbfw-tag__image button.btn,
+.input-append button.btn,
 #login .cbfw-tag__password button.btn {
 	width: 85px;
 }

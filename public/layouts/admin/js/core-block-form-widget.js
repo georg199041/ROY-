@@ -30,22 +30,26 @@ jQuery(document).ready(function(){
 	/**
 	 * test
 	 */
-	jQuery('.cbfw-tag-addbtn-image__select').on('click', function(){
+	jQuery('.cbfw-tag-addbtn-image__select, .cbfw-tag-addbtn-image-hover__select').on('click', function(){
 		mcImageManager.browse({
-		    fields : 'image',
+		    fields : jQuery(this).siblings('input').attr('name'),
 		    document_base_url : '/',
 	        remove_script_host : true,
 	        relative_urls : false
 		});
 	});
 	
-	jQuery(".cbfw-tag__image input").qtip({
+	jQuery(".cbfw-tag__image input, .cbfw-tag__image-hover input").qtip({
 		content: '',
 		position: { target: 'mouse' },
 		api: {
 	        beforeShow:function() {
-	           //alert('test');
-	           this.updateContent('<img class="img-polaroid" style="display: block; width:230px;" src="' + this.elements.target.val() + '"/>');
+	        	//alert('test');
+	        	if (this.elements.target.val()) {
+	        		this.updateContent('<img class="img-polaroid" style="display: block; width:230px;" src="' + this.elements.target.val() + '"/>');
+	        	} else {
+	        		this.updateContent('');
+	        	}
 	        }
 	    },
 	    style: {

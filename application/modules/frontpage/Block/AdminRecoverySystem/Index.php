@@ -32,15 +32,10 @@ class Frontpage_Block_AdminRecoverySystem_Index extends Core_Block_Grid_Widget
 		));
 		
 		$this->addColumn(array(
-			'name'              => 'enabled',
-			'type'              => 'checkbox',
-			'title'             => $this->__('Вкл'),
-			'align'             => 'center',
-			'checkedValue'      => 'YES',
-			'uncheckedValue'    => 'NO',
-			'width'             => '1%',
-			'formactionOptions' => '*/*/enabled',
-			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
+			'name'     => 'description',
+			'title'    => $this->__('Описание'),
+			'th-align' => 'left',
+			'width'    => '50%',
 		));
 		
 		$this->setData(Core::getMapper('frontpage/recovery-system')->fetchAll());
