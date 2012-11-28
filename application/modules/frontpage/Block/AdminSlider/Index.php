@@ -23,7 +23,7 @@ class Frontpage_Block_AdminSlider_Index extends Core_Block_Grid_Widget
 		));
 		
 		$this->addColumn(array(
-			'name'           => 'image1',
+			'name'           => 'image',
 			'type'           => 'hyperlink',
 			'title'          => $this->__('Адрес основной картинки'),
 			'th-align'       => 'left',

@@ -5,7 +5,7 @@ class Frontpage_AdminSliderController extends Core_Controller_Action
 	public function init()
 	{
 		$this->getHelper('layout')->setLayout('admin');
-		$this->view->headTitle('Схема "Система восстановления"');
+		$this->view->headTitle('Слайдер');
 	}
 	
 	public function indexAction(){}

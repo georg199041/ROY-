@@ -10,7 +10,7 @@ class Frontpage_Block_AdminSlider_Edit extends Core_Block_Form_Widget
 		$this->addElement('hidden', 'id');
 		
 
-		$this->addElement('text', 'image1', array(
+		$this->addElement('text', 'image', array(
 			'label' => $this->__('Основная картинка'),
 			'required'   => true,
 			'validators' => array(
@@ -19,34 +19,34 @@ class Frontpage_Block_AdminSlider_Edit extends Core_Block_Form_Widget
 				)))
 			)
 		));
-		$this->getElement('image1')->setDecorators(array(
+		$this->getElement('image')->setDecorators(array(
 			array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
 		));
 		
-		$this->addElement('text', 'image2', array(
-				'label' => $this->__('Фон слева'),
-				'required'   => true,
-				'validators' => array(
-						array('NotEmpty', true, array('messages' => array(
-								Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
-						)))
-				)
+		$this->addElement('text', 'image_left', array(
+			'label' => $this->__('Фон слева'),
+			'required'   => true,
+			'validators' => array(
+				array('NotEmpty', true, array('messages' => array(
+					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
+				)))
+			)
 		));
-		$this->getElement('image2')->setDecorators(array(
-				array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
+		$this->getElement('image_left')->setDecorators(array(
+			array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
 		));
 		
-		$this->addElement('text', 'image3', array(
-				'label' => $this->__('Фон справа'),
-				'required'   => true,
-				'validators' => array(
-						array('NotEmpty', true, array('messages' => array(
-								Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
-						)))
-				)
+		$this->addElement('text', 'image_right', array(
+			'label' => $this->__('Фон справа'),
+			'required'   => true,
+			'validators' => array(
+				array('NotEmpty', true, array('messages' => array(
+					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
+				)))
+			)
 		));
-		$this->getElement('image3')->setDecorators(array(
-				array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
+		$this->getElement('image_right')->setDecorators(array(
+			array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
 		));
 		
 		$this->addElement('checkbox', 'enabled', array(
@@ -55,7 +55,7 @@ class Frontpage_Block_AdminSlider_Edit extends Core_Block_Form_Widget
 			'uncheckedValue' => 'NO',
 		));
 		
-		$this->addDisplayGroup(array('image1', 'image2', 'image3'), 'center');
+		$this->addDisplayGroup(array('image', 'image_left', 'image_right'), 'center');
 		$this->addDisplayGroup(array('enabled'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
