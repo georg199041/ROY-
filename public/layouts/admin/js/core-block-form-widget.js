@@ -30,7 +30,7 @@ jQuery(document).ready(function(){
 	/**
 	 * test
 	 */
-	jQuery('.cbfw-tag-addbtn-image__select, .cbfw-tag-addbtn-image-hover__select').on('click', function(){
+	jQuery('.cbfw-tag-addbtn-image__select, .cbfw-tag-addbtn-image-hover__select, .cbfw-tag-addbtn-image-left__select, .cbfw-tag-addbtn-image-right__select').on('click', function(){
 		mcImageManager.browse({
 		    fields : jQuery(this).siblings('input').attr('name'),
 		    document_base_url : '/',
@@ -39,7 +39,7 @@ jQuery(document).ready(function(){
 		});
 	});
 	
-	jQuery(".cbfw-tag__image input, .cbfw-tag__image-hover input").qtip({
+	jQuery(".cbfw-tag__image input, .cbfw-tag__image-hover input, .cbfw-tag__image-left input, .cbfw-tag__image-right input").qtip({
 		content: '',
 		position: { target: 'mouse' },
 		api: {
