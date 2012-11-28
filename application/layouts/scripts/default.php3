@@ -57,6 +57,7 @@
 		<div class="front-push-slider"></div>
 		<?php endif; ?>
 		<div class="front-body-container front_clearfix">
+			<?php echo Core::getBlock('frontpage/index/recovery-system'); ?>
 			<?php echo $this->partial('default/body.php3'); ?>
 			<div class="front_clearfix"></div>
 		</div>

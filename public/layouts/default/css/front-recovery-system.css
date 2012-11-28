@@ -1,1 +1,108 @@
 @CHARSET "UTF-8";
+
+.front-schema__container {
+	position: relative;
+	height: 472px;
+	width: 970px;
+	margin-left: -60px;
+}
+.front-schema__container * {
+	outline: 1px dotted #f00;
+}
+.front-schema__center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -78px;
+	margin-left: -78px;
+	z-index: 1;
+	width: 156px;
+	height: 156px;
+	background: url("/layouts/default/images/schema_center.png") no-repeat center;
+}
+.front-schema__item {
+	position: absolute;
+	height: 170px;
+	border: 1px solid #f00;
+}
+.front-schema-item__icons {
+	position: absolute;
+	top: 0;
+	width: 130px;
+	height: 150px;
+	margin: 10px 9px 0;
+}
+.front-schema-item__icon {
+	position: absolute;
+	top: 0;
+	opacity: 0.5;
+	z-index: 10;
+}
+.front-schema-item_icon-normal {
+	z-index: 20;
+	margin-top: 25px;
+	margin-left: 22px;
+}
+.front-schema-item__text {
+	position: relative;
+	padding: 10px 0 0;
+	height: 150px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.front-schema-item__title {
+    font-family: 'Verdana';
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+.front-schema-item__description {
+	color: #FFF000;
+    font-family: 'BlissPro-Italic';
+    font-size: 13px;
+    line-height: 17px;
+    padding: 10px 0 0;
+    display: none;
+}
+
+/* Size modificators */
+.front-schema-item_long {
+	width: 471px;
+}
+.front-schema-item_short {
+	width: 385px;
+}
+
+/* Position modificators */
+.front-schema-item_left {
+	left: 0;
+}
+.front-schema-item_left .front-schema-item__icons {
+	right: 0;
+}
+.front-schema-item_left .front-schema-item__text {
+	text-align: right;
+	/* normal state */
+	padding-left: 80px;
+	padding-right: 145px;
+
+	/* hover state */
+	/*padding-left: 80px;
+	padding-right: 157px;*/
+}
+.front-schema-item_right {
+	right: 0;
+}
+.front-schema-item_right .front-schema-item__icons {
+	left: 0;
+}
+.front-schema-item_right .front-schema-item__text {
+	text-align: left;
+	/* normal state */
+	padding-left: 145px;
+	padding-right: 80px;
+
+	/* hover state */
+	padding-left: 157px;
+	padding-right: 80px;
+}
