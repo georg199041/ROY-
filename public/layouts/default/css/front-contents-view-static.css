@@ -1,7 +1,8 @@
+
 .front-body-content-static ol {
     list-style: none;
     counter-reset: point;
-    font-size:13px;
+    font-size:14px;
     padding-left: 22px;
     margin:10px 0;
 }
@@ -26,7 +27,7 @@
 }
 .front-body-content-static ul {
     list-style: none;
-    font-size:13px;
+    font-size:14px;
     padding-left: 22px;
 }
 .front-body-content-static ul li {

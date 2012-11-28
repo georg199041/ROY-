@@ -32,10 +32,10 @@
 		                <?php endif; ?>
 		                <?php if ($contacts->getContactEmail()): ?>
 		                	<?php $email = $contacts->getContactEmail()->getDescription(); ?>
-		                	<strong class="front-contacts-address-form_left__electronic-information">e-mail: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></strong>
+		                	<strong class="front-contacts-address-form_left__electronic-information">Почта: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></strong>
 		                <?php endif; ?>
 		                <?php if ($contacts->getContactSkype()): ?>
-		                	<strong class="front-contacts-address-form_left__electronic-information">skype: <a href=""><?php echo $contacts->getContactSkype()->getDescription(); ?></a></strong>
+		                	<strong class="front-contacts-address-form_left__electronic-information">Skype: <a href=""><?php echo $contacts->getContactSkype()->getDescription(); ?></a></strong>
 		                <?php endif; ?>
 		                <?php if ($contacts->getContactLatlng()): ?>
                				<?php
@@ -43,7 +43,7 @@
                					$lat = trim($lat);
                					$lng = trim($lng);
                				?>
-		                	<span class="front-contacts-address-form_left__navigation" description="База в Крыму" lat="<?php echo $lat; ?>" lng="<?php echo $lng; ?>"><?php echo $contacts->getContactLatlng()->getDescription(); ?></span>
+		                	<strong class="front-contacts-address-form_left__electronic-information">Координаты GPS: <span class="front-contacts-address-form_left__navigation" description="База в Крыму" lat="<?php echo $lat; ?>" lng="<?php echo $lng; ?>"><?php echo $contacts->getContactLatlng()->getDescription(); ?></span></strong>
 		                	<script>
 		                		$('.front-content-contacts-header a[rel=#contacts-crimea]').click(function(){
 			                		var el = $('#contacts-crimea .front-contacts-address-form_left__navigation');
@@ -66,7 +66,7 @@
 		            <strong>Адрес:</strong><br />
 		            <div><?php echo $contacts->getDescription(); ?></div>
 		            <?php if ($contacts->getContactAddress()): ?>
-		            	<?php echo $contacts->getContactAddress()->getDescription(); ?>
+		            	<div><p><?php echo $contacts->getContactAddress()->getDescription(); ?></p></div>
 		            <?php endif; ?>
 		            <div class="front-content-contacts-address-form_left">
 		            	<?php if ($contacts->getContactMainphone() || $contacts->getContactPhones()->count() > 0): ?>
@@ -82,10 +82,10 @@
 		                <?php endif; ?>
 		                <?php if ($contacts->getContactEmail()): ?>
 		                	<?php $email = $contacts->getContactEmail()->getDescription(); ?>
-		                	<strong class="front-contacts-address-form_left__electronic-information">e-mail: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></strong>
+		                	<strong class="front-contacts-address-form_left__electronic-information">Почта: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></strong>
 		                <?php endif; ?>
 		                <?php if ($contacts->getContactSkype()): ?>
-		                	<strong class="front-contacts-address-form_left__electronic-information">skype: <a href=""><?php echo $contacts->getContactSkype()->getDescription(); ?></a></strong>
+		                	<strong class="front-contacts-address-form_left__electronic-information">Skype: <a href=""><?php echo $contacts->getContactSkype()->getDescription(); ?></a></strong>
 		                <?php endif; ?>
 		                <?php if ($contacts->getContactLatlng()): ?>
                				<?php
@@ -93,7 +93,7 @@
                					$lat = trim($lat);
                					$lng = trim($lng);
                				?>
-		                	<span class="front-contacts-address-form_left__navigation" description="Офис в Москве" lat="<?php echo $lat; ?>" lng="<?php echo $lng; ?>"><?php echo $contacts->getContactLatlng()->getDescription(); ?></span>
+		                	<strong class="front-contacts-address-form_left__electronic-information">Координаты GPS: <span class="front-contacts-address-form_left__navigation" description="Офис в Москве" lat="<?php echo $lat; ?>" lng="<?php echo $lng; ?>"><?php echo $contacts->getContactLatlng()->getDescription(); ?></span></strong>
 		                	<script>
 		                		$('.front-content-contacts-header a[rel=#contacts-moscow]').click(function(){
 			                		var el = $('#contacts-moscow .front-contacts-address-form_left__navigation');
