@@ -86,7 +86,7 @@ ul {
 	width: 100%;
 	left: 0;
     position: absolute;
-	height: 310px;
+	height: 340px;
 }
 .front-body-slider-top{
 	background: #FFF;
@@ -282,7 +282,7 @@ ul {
 	margin-right: -480px;
 }
 .front-push-slider{
-	height: 310px;
+	height: 340px;
 }
 /*browser*/
 #getBrowser

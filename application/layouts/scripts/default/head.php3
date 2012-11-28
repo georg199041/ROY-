@@ -23,6 +23,7 @@ echo $this->headTitle()->setSeparator(' | ');
 $this->headLink()->appendStylesheet('/layouts/default/css/style.css');
 $this->headLink()->appendStylesheet('/layouts/default/css/front-form.css');
 $this->headLink()->appendStylesheet('/layouts/default/css/front-header-menu.css');
+$this->headLink()->appendStylesheet('/layouts/default/css/front-recovery-system.css');
 echo $this->headLink();
 
 ?>
