@@ -26,6 +26,7 @@ $this->headLink()->appendStylesheet('/layouts/default/css/front-header-menu.css'
 echo $this->headLink();
 
 ?>
+
 <?php
 
 /**
@@ -35,7 +36,7 @@ echo $this->headLink();
 
 $this->headScript()->appendFile('/lib/jquery/jquery-1.8.2.min.js', 'text/javascript');
 $this->headScript()->appendFile('/lib/jquery/ui/jquery-ui-1.9.1.custom.min.js', 'text/javascript');
-$this->headScript()->appendFile('/layouts/default/js/main.js', 'text/javascript');
+$this->headScript()->appendFile('/layouts/default/js/browser.js', 'text/javascript');
 
 $this->headScript()->appendFile('/layouts/default/js/main.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/default/js/recommendations.js', 'text/javascript');
