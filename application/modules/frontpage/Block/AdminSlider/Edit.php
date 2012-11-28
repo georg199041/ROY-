@@ -9,8 +9,9 @@ class Frontpage_Block_AdminSlider_Edit extends Core_Block_Form_Widget
 		
 		$this->addElement('hidden', 'id');
 		
-		$this->addElement('text', 'title', array(
-			'label'      => $this->__('Заголовок'),
+
+		$this->addElement('text', 'image1', array(
+			'label' => $this->__('Основная картинка'),
 			'required'   => true,
 			'validators' => array(
 				array('NotEmpty', true, array('messages' => array(
@@ -18,19 +19,34 @@ class Frontpage_Block_AdminSlider_Edit extends Core_Block_Form_Widget
 				)))
 			)
 		));
-
-		$this->addElement('textarea', 'description', array(
-			'label' => $this->__('Описание'),
-			'cols' => 70,
-			'rows' => 15,
-			'class' => 'mce',
-		));
-
-		$this->addElement('text', 'image', array(
-			'label' => $this->__('Картинка'),
-		));
-		$this->getElement('image')->setDecorators(array(
+		$this->getElement('image1')->setDecorators(array(
 			array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
+		));
+		
+		$this->addElement('text', 'image2', array(
+				'label' => $this->__('Фон слева'),
+				'required'   => true,
+				'validators' => array(
+						array('NotEmpty', true, array('messages' => array(
+								Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
+						)))
+				)
+		));
+		$this->getElement('image2')->setDecorators(array(
+				array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
+		));
+		
+		$this->addElement('text', 'image3', array(
+				'label' => $this->__('Фон справа'),
+				'required'   => true,
+				'validators' => array(
+						array('NotEmpty', true, array('messages' => array(
+								Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
+						)))
+				)
+		));
+		$this->getElement('image3')->setDecorators(array(
+				array('CombinedElement', array('btns' => array('select' => array('label' => 'Выбрать'))))
 		));
 		
 		$this->addElement('checkbox', 'enabled', array(
@@ -39,8 +55,8 @@ class Frontpage_Block_AdminSlider_Edit extends Core_Block_Form_Widget
 			'uncheckedValue' => 'NO',
 		));
 		
-		$this->addDisplayGroup(array('title', 'description'), 'center');
-		$this->addDisplayGroup(array('image', 'enabled'), 'right');
+		$this->addDisplayGroup(array('image1', 'image2', 'image3'), 'center');
+		$this->addDisplayGroup(array('enabled'), 'right');
 		
 		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);

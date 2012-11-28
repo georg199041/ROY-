@@ -23,9 +23,9 @@ class Frontpage_Block_AdminSlider_Index extends Core_Block_Grid_Widget
 		));
 		
 		$this->addColumn(array(
-			'name'           => 'title',
+			'name'           => 'image1',
 			'type'           => 'hyperlink',
-			'title'          => $this->__('Заголовок'),
+			'title'          => $this->__('Адрес основной картинки'),
 			'th-align'       => 'left',
 			'linkOptions'    => '*/*/edit',
 			'linkBindFields' => array('id'),

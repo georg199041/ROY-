@@ -3,7 +3,7 @@
 .front-header-menu__item {
 	float:left;
 	position: relative;
-	margin: 5px 11px 0;
+	margin: 5px 12px 0;
 }
 .front-header-menu__item:before {
 	content: url(/layouts/default/images/point.png);
