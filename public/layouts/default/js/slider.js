@@ -37,7 +37,6 @@ $(document).ready(function(){
 				next = $('.front-body-slider-color__item:first');
 			}
 		}
-		console.log(prev.prev().length);
 		
 		if (next) {
 			next.css({'zIndex': '2', 'opacity': '1'});
