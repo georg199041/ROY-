@@ -16,8 +16,8 @@ html, body, img, div, a, span {
 }
 html, body {
 	height: 100%;
-	font-family: 'BlissPro', 'Verdana';
-	font-size: 12px;
+	font-family: 'BlissPro', 'Verdana', 'Arial';
+	font-size: 14px;
 }
 html {
 	background: #EAEFF3;
@@ -30,7 +30,7 @@ img {
 	border: 0 none;
 }
 p {
-    font-size:13px;
+    font-size:14px;
     font-weight:normal;
     line-height:18px;
     margin:9px 0;
@@ -223,7 +223,7 @@ ul {
     margin:25px auto 0;
 }
 .front-body-sidebar-left ul li {
-    font-size:12px;
+    font-size:14px;
     font-weight:normal;
     font-family: 'Verdana';
     text-transform:uppercase;

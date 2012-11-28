@@ -93,7 +93,7 @@
 						© Клуб «РОЙ», 2012. Все права защищены
 					</div>
 					<div class="front-footer-box-rights-logo">
-						<a href="/" class="front-footer-box-rights-logo-a"></a>					
+						<a href="http://sunny.net.ua/" target="_blank" class="front-footer-box-rights-logo-a"></a>					
 					</div>
 				</div>
 				<div class="front-footer-box-line"></div>
