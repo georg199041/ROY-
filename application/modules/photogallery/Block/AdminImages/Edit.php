@@ -13,7 +13,7 @@ class Photogallery_Block_AdminImages_Edit extends Core_Block_Form_Widget
 			'label'    => $this->__('Заголовок'),
 			'required' => true,
 		));
-
+		
 		$this->addElement('textarea', 'description', array(
 			'label' => $this->__('Описание'),
 			'cols' => 70,

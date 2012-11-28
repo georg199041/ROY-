@@ -14,6 +14,11 @@ class Photogallery_Block_AdminAlbums_Edit extends Core_Block_Form_Widget
 			'required' => true,
 		));
 
+		$this->addElement('text', 'alias', array(
+			'label'    => $this->__('Псевдоним (УРЛ)'),
+			'required' => true,
+		));
+		
 		$this->addElement('textarea', 'description', array(
 			'label' => $this->__('Описание'),
 			'cols' => 70,
@@ -27,7 +32,7 @@ class Photogallery_Block_AdminAlbums_Edit extends Core_Block_Form_Widget
 			'uncheckedValue' => 'NO',
 		));
 
-		$this->addDisplayGroup(array('title', 'description'), 'center');
+		$this->addDisplayGroup(array('title', 'alias', 'description'), 'center');
 		$this->addDisplayGroup(array('image', 'enabled'), 'right');
 
 		if (isset(Core::getSession('admin')->formData)) {

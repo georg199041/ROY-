@@ -28,7 +28,7 @@ $(document).ready(function(){
 	var step_size   = 4;
 	var length      = $('.front-content-carousel__preview-picture').length;
 	var move = step_size*item_height;
-	//var removed = $(".front-content-carousel ul").position().top;
+	
 	
 	
 	
@@ -36,6 +36,8 @@ $(document).ready(function(){
 	$(".front-content-arrow_right > a").click(function(event){
 		
 		event.preventDefault();
+		
+		var removed = $(".front-content-carousel ul").position().top;
 		if($(this).hasClass('back')){
 			if(move>=0){
 				$(".front-content-carousel ul").css({"top": "-=" + move});

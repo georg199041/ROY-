@@ -33,7 +33,7 @@
 	font-family: Verdana;
 }
 .front-header-menu-gradient {
-	padding: 1px 10px;
+	padding: 2px 10px;
 	display: block;
 	border-radius: 11px;
 }
@@ -73,4 +73,20 @@
 }
 .front-header-menu__item-href:hover .front-header-menu-gradient {
 	background: #7BA628;
+}
+.front-header-menu__item-href_active:hover .front-header-menu-gradient {
+	background-image: linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
+	background-image: -o-linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
+	background-image: -moz-linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
+	background-image: -webkit-linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
+	background-image: -ms-linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.17, #5E8908),
+		color-stop(0.54, #456506),
+		color-stop(0.84, #334B04)
+	);
 }

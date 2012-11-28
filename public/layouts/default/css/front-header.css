@@ -5,6 +5,7 @@
 	left: 0;
 	width: 100%;
     min-width:1140px;
+	font-size: 13px;
 }
 .front-header-cords__item-content-text{
 	text-align: center;
@@ -28,6 +29,9 @@
 .front-header-cords__item-content-map__item-href{
 	display: inline-block;
 	color: #434F56;
+}
+.front-header-cords__item-content-map__item-href:hover{
+	text-decoration:none;
 }
 .front-header-width {
 	width: 1000px;
@@ -103,6 +107,7 @@
 .front-header-cords__item-title{
 	text-align: center;
 	font-family: 'BlissPro-BoldItalic';
+	font-weight: bold;
 }
 .front-header-cords__item-content{
 	text-align: center;

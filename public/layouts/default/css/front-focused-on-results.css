@@ -44,6 +44,11 @@
 	width: 710px;
 	padding-left: 70px;
 	text-align: center;
+	margin-bottom: 10px;
+}
+.front-focused-on-results__content p{
+	font-style: italic;
+	font-size: 14px;
 }
 .front-focused-on-results__button-placeholder {
 	position: absolute;
