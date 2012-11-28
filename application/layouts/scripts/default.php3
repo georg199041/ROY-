@@ -22,39 +22,7 @@
 	<div class="front-body">
 		<div class="front-push-top"></div>
 		<?php if ($this->isHomePage()): ?>
-		
-		<div class="front-body-slider-body">
-			<div class="front-body-slider-top"></div>
-			<div class="front-body-slider-blackwhite" >
-				<div class="front-body-slider-blackwhite-left"></div>
-				<div class="front-body-slider-blackwhite-right"></div>
-			</div>
-			
-			<div class="front-body-slider-color">
-				<ul class="front-body-slider-color-wrap" >
-					<li class="front-body-slider-color__item">
-						<img src="/uploads/front-page-slider/main-promo-collage--center.jpg" bg_left="/uploads/front-page-slider/main-promo-collage--left.jpg" bg_right="/uploads/front-page-slider/main-promo-collage--right.jpg"/>
-					</li>
-					<li class="front-body-slider-color__item">
-						<img src="/uploads/front-page-slider/main-promo-collage--center.jpg" bg_left="/uploads/front-page-slider/main-promo-collage--left.jpg" bg_right="/uploads/front-page-slider/main-promo-collage--right.jpg"/>
-					</li>
-					<li class="front-body-slider-color__item">
-						<img src="/uploads/front-page-slider/main-promo-collage--center.jpg" bg_left="/uploads/front-page-slider/main-promo-collage--left.jpg" bg_right="/layouts/default/images/main-promo-collage--right.jpg"/>
-					</li>
-				</ul>
-				
-			</div>
-			<div class="front-body-slider-rectangle">
-				<img src="/layouts/default/images/rectangle.png"/>
-				<div class="front-body-slider-buttons">
-					<input type="button" id="slider_back" class="slider_buttons" />
-					<input type="button" id="slider_next" class="slider_buttons" />
-				</div>
-			</div>
-			
-		
-		</div>
-		<div class="front-push-slider"></div>
+		<?php echo Core::getBlock('frontpage/index/slider'); ?>
 		<?php endif; ?>
 		<div class="front-body-container front_clearfix">
 			<?php echo $this->partial('default/body.php3'); ?>

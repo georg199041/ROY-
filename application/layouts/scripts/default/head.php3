@@ -24,6 +24,7 @@ $this->headLink()->appendStylesheet('/layouts/default/css/style.css');
 $this->headLink()->appendStylesheet('/layouts/default/css/front-form.css');
 $this->headLink()->appendStylesheet('/layouts/default/css/front-header-menu.css');
 $this->headLink()->appendStylesheet('/layouts/default/css/front-recovery-system.css');
+$this->headLink()->appendStylesheet('/layouts/default/css/front-slider.css');
 echo $this->headLink();
 
 ?>
@@ -43,6 +44,7 @@ $this->headScript()->appendFile('/layouts/default/js/main.js', 'text/javascript'
 $this->headScript()->appendFile('/layouts/default/js/recommendations.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/default/js/photogallery.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/default/js/recovery-system.js', 'text/javascript');
+$this->headScript()->appendFile('/layouts/default/js/slider.js', 'text/javascript');
 
 echo $this->headScript();
 
