@@ -60,7 +60,7 @@
 	background-image: -moz-linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
 	background-image: -webkit-linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
 	background-image: -ms-linear-gradient(bottom, #5E8908 17%, #456506 54%, #334B04 84%);
-	
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#5E8908', endColorstr='#334B04');/*For IE7-8-9*/
 	background-image: -webkit-gradient(
 		linear,
 		left bottom,
