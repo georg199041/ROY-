@@ -73,6 +73,9 @@
 	text-decoration: none;
 	background: url("/layouts/default/images/buttons_center.png") top repeat-x;
 }
+.front-focused-on-results__button:hover .corners{
+	background: url("/layouts/default/images/buttons_center_hover.png") top repeat-x;
+}
 .front-focused-on-results__button .corners:before,
 .front-focused-on-results__button .corners:after {
 	content: "";
@@ -85,9 +88,17 @@
 	left: -17px;
 	background: url("/layouts/default/images/button_corners.png") top left no-repeat;
 }
+.front-focused-on-results__button:hover .corners:before {
+	left: -17px;
+	background: url("/layouts/default/images/button_corners_hover.png") top left no-repeat;
+}
 .front-focused-on-results__button .corners:after {
 	right: -17px;
 	background: url("/layouts/default/images/button_corners.png") top right no-repeat;
+}
+.front-focused-on-results__button:hover .corners:after {
+	right: -17px;
+	background: url("/layouts/default/images/button_corners_hover.png") top right no-repeat;
 }
 .front-focused-on-results__button .dots {
 	display: block;
@@ -97,7 +108,7 @@
 	color: #FFF;
 	text-shadow: 0 -1px 0 #333;
 	text-decoration: none;
-	padding: 15px 0 0;
+	padding: 16px 0 0;
 }
 .front-focused-on-results__button .dots:before,
 .front-focused-on-results__button .dots:after {
