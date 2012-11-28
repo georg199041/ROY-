@@ -4,7 +4,8 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 10;
+    min-width:1140px;
+	font-size: 13px;
 }
 .front-header-cords__item-content-text{
 	text-align: center;
@@ -29,10 +30,15 @@
 	display: inline-block;
 	color: #434F56;
 }
+.front-header-cords__item-content-map__item-href:hover{
+	text-decoration:none;
+}
 .front-header-width {
 	width: 1000px;
 	margin: 0 auto;
 	height: 220px;
+    z-index:10;
+    position:relative;
 }
 .front-push-top {
 	height: 195px;
@@ -101,6 +107,7 @@
 .front-header-cords__item-title{
 	text-align: center;
 	font-family: 'BlissPro-BoldItalic';
+	font-weight: bold;
 }
 .front-header-cords__item-content{
 	text-align: center;
