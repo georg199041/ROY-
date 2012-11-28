@@ -77,10 +77,10 @@
 					</div>
 					<div class="front-header-cords__item-content">
 						<div class="front-header-cords__item-content_socials">
-							<a href="http://vk.com/share.php?url=/" target="_blank" class="front-header-cords__item-content_socials__item front_header-vk"></a>
-							<a href="http://www.facebook.com/sharer.php?u=/" target="_blank" class="front-header-cords__item-content_socials__item front_header-fb"></a>
-							<a href="http://twitter.com/intent/tweet?source=webclient&text=/" target="_blank" class="front-header-cords__item-content_socials__item front_header-tw"></a>
-							<a href="/" target="_blank" class="front-header-cords__item-content_socials__item front_header-google"><g:plusone></g:plusone></a>
+							<a href="http://vk.com/share.php?url=<?= ($_SERVER['HTTPS'] == 'ON' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" target="_blank" class="front-header-cords__item-content_socials__item front_header-vk"></a>
+							<a href="http://www.facebook.com/sharer.php?u=<?= ($_SERVER['HTTPS'] == 'ON' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" target="_blank" class="front-header-cords__item-content_socials__item front_header-fb"></a>
+							<a href="http://twitter.com/intent/tweet?source=webclient&text=<?= ($_SERVER['HTTPS'] == 'ON' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" target="_blank" class="front-header-cords__item-content_socials__item front_header-tw"></a>
+							<a href="<?= ($_SERVER['HTTPS'] == 'ON' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" target="_blank" class="front-header-cords__item-content_socials__item front_header-google"><g:plusone></g:plusone></a>
 						</div>	
 					</div>	
 				</div>
