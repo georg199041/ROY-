@@ -7,37 +7,39 @@
 		<div class="front-schema__center"></div>
 		<div class="front-schema__list">
 			<?php $i = 0; ?>
-			<?php //foreach ($this->getRecoverySystemItems() as $item): ?>
-			<!-- Example of one element -->
-			<div class="front-schema__item front-schema-item_orange front-schema-item_left front-schema-item_long">
+			<?php 
+				$colors = array(
+					'front-schema-item_orange',
+					'front-schema-item_dblue',
+					'front-schema-item_brown',
+					'front-schema-item_green',
+					'front-schema-item_red',
+					'front-schema-item_lblue');
+			?>
+			<?php foreach ($this->getRecoverySystemItems() as $item): ?>
+			<?php
+				$classes = array($colors[$i]);
+				if (!($i % 2)) {
+					$classes[] = 'front-schema-item_left';
+				} else {
+					$classes[] = 'front-schema-item_right';
+				}
+				
+				if ($i == 2 || $i == 3) {
+					$classes[] = 'front-schema-item_short';
+				} else {
+					$classes[] = 'front-schema-item_long';
+				}
+			?>
+			<div class="front-schema__item <?php echo implode(' ', $classes); ?>">
 				<div class="front-schema-item__icons">
-					<img class="front-schema-item__icon front-schema-item_icon-normal" src="/layouts/default/images/scheme_orange.png">
-					<img class="front-schema-item__icon front-schema-item_icon-hover" src="/layouts/default/images/scheme_orange_hover.png">
+					<img class="front-schema-item__icon front-schema-item_icon-normal" src="<?php echo $item->getImage(); ?>">
+					<img class="front-schema-item__icon front-schema-item_icon-hover" src="<?php echo $item->getImageHover(); ?>">
 				</div>
 				<div class="front-schema-item__text">
-					<div class="front-schema-item__title">Оригинальная методика</div>
-					<div class="front-schema-item__description">
-						М-м-м без слов, это нужн пробовать Так далие и тому подобное профессиональный рост и поддержку сотрудников
-					</div>
-				</div>
-				<ul class="front-schema-item__dots">
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
-				<div class="front-schema-item__background"></div>
-			</div>
-			<div class="front-schema__item front-schema-item_orange front-schema-item_left front-schema-item_short" style="top:150px;">
-				<div class="front-schema-item__icons">
-					<img class="front-schema-item__icon front-schema-item_icon-normal" src="/layouts/default/images/scheme_orange.png">
-					<img class="front-schema-item__icon front-schema-item_icon-hover" src="/layouts/default/images/scheme_orange_hover.png">
-				</div>
-				<div class="front-schema-item__text">
-					<div class="front-schema-item__title">Оригинальная методика</div>
-					<div class="front-schema-item__description">
-						М-м-м без слов, это нужн пробовать Так далие и тому подобное профессиональный рост и поддержку сотрудников
-					</div>
+					<div class="front-schema-item__title"><?php echo $item->getTitle(); ?></div>
+					<div class="front-schema-item__title-white"><?php echo $item->getTitle(); ?></div>
+					<div class="front-schema-item__description"><?php echo $item->getDescription(); ?></div>
 				</div>
 				<ul class="front-schema-item__dots">
 					<li></li>
@@ -48,7 +50,7 @@
 				<div class="front-schema-item__background"></div>
 			</div>
 			<?php $i++; ?>
-			<?php //endforeach; ?>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </div>
