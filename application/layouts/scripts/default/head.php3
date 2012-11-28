@@ -42,6 +42,7 @@ $this->headScript()->appendFile('/layouts/default/js/browser.js', 'text/javascri
 $this->headScript()->appendFile('/layouts/default/js/main.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/default/js/recommendations.js', 'text/javascript');
 $this->headScript()->appendFile('/layouts/default/js/photogallery.js', 'text/javascript');
+$this->headScript()->appendFile('/layouts/default/js/recovery-system.js', 'text/javascript');
 
 echo $this->headScript();
 
