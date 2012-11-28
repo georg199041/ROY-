@@ -192,6 +192,7 @@
     top: 142px;
     transform: rotate(-120deg);
     -ms-transform: rotate(-120deg);
+    -webkit-transform: rotate(-120deg);
 }
 .front-schema-item_orange .front-schema-item__background {
 	background-image: url("/layouts/default/images/scheme_orange_bg.png");
@@ -209,6 +210,7 @@
     top: 142px;
     transform: rotate(-60deg);
     -ms-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
 }
 .front-schema-item_dblue .front-schema-item__background {
 	background-image: url("/layouts/default/images/scheme_dblue_bg.png");
@@ -226,6 +228,7 @@
     top: 78px;
     transform: rotate(180deg);
     -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
 }
 .front-schema-item_brown .front-schema-item__background {
 	background-image: url("/layouts/default/images/scheme_brown_bg.png");
@@ -243,6 +246,7 @@
     top: 78px;
     transform: rotate(0deg);
     -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
 }
 .front-schema-item_green .front-schema-item__background {
 	background-image: url("/layouts/default/images/scheme_green_bg.png");
@@ -260,6 +264,7 @@
     top: 10px;
     transform: rotate(120deg);
     -ms-transform: rotate(120deg);
+    -webkit-transform: rotate(120deg);
 }
 .front-schema-item_red .front-schema-item__background {
 	background-image: url("/layouts/default/images/scheme_red_bg.png");
@@ -277,6 +282,7 @@
     top: 10px;
     transform: rotate(60deg);
     -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
 }
 .front-schema-item_lblue .front-schema-item__background {
 	background-image: url("/layouts/default/images/scheme_lblue_bg.png");
