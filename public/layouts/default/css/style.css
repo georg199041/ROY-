@@ -284,3 +284,110 @@ ul {
 .front-push-slider{
 	height: 310px;
 }
+/*browser*/
+#getBrowser
+{
+	text-align: center;
+	color: #000;
+	line-height: 150%;
+	padding-top: 8px;
+	padding-right: 8px;
+	padding-bottom: 8px;
+	padding-left: 8px;
+	font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+	font-size: 11px;
+	display: none;
+	background-color: rgb(229, 232, 237);
+	position: absolute;
+	z-index: 30;
+	width: 100%;
+}
+#getBrowser DIV.info
+{
+	width: 960px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#getBrowser DIV.close
+{
+	width: 20px;
+	height: 13px;
+	line-height: 10px;
+	padding-top: 0px;
+	padding-right: 45px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 4px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 890px;
+	position: absolute;
+	cursor: pointer;
+	background-image: url("../images/close.png");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position-x: right;
+	background-position-y: top;
+	background-color: transparent;
+}
+#getBrowser .browser
+{
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	padding-top: 80px;
+	float: left;
+}
+#getBrowser .hrefs
+{
+	width: 400px;
+	height: 100px;
+	padding-top: 5px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#getBrowser .hrefs A
+{
+	color: #000;
+}
+#getBrowser .opera
+{
+	background-image: url("../images/opera.gif");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-position-y: 7px;
+	background-color: transparent;
+}
+#getBrowser .safari
+{
+	background-image: url("../images/safari.gif");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-position-y: 0px;
+	background-color: transparent;
+}
+#getBrowser .firefox
+{
+	background-image: url("../images/firefox.gif");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-position-y: 7px;
+	background-color: transparent;
+}
+#getBrowser .chrome
+{
+	background-image: url("../images/chrome.gif");
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-position-y: 6px;
+	background-color: transparent;
+}
+/*browser end*/
