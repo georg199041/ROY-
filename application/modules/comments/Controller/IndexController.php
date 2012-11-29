@@ -29,6 +29,10 @@ class Comments_IndexController extends Core_Controller_Action
 				}
 				
 				$model = Core::getMapper('comments/comments')->create($form->getValues());
+				$model->setCreatedTs(time());
+				$model->setStatus('MODERATED');
+				$model->setIp($_SERVER['REMOTE_ADDR']);
+				$model->setUserAgent($_SERVER['HTTP_USER_AGENT']);
 				$model->save();
 				unset(Core::getSession('front')->formData);
 				
@@ -43,7 +47,7 @@ class Comments_IndexController extends Core_Controller_Action
 			} catch (Exception $e) {
 				if ($this->getRequest()->isXmlHttpRequest()) {
 					$this->getHelper('Json')->sendJson(array(
-						'error' => $this->__('Ошибка добавления комментария<!--save-->')
+						'error' => $this->__('Ошибка добавления комментария' . $e->getMessage())
 					));
 					return;
 				}
@@ -54,7 +58,7 @@ class Comments_IndexController extends Core_Controller_Action
 		
 		if ($this->getRequest()->isXmlHttpRequest()) {
 			$this->getHelper('Json')->sendJson(array(
-				'error' => $this->__('Ошибка добавления комментария<!--request-->')
+				'error' => $this->__('Ошибка передачи данных')
 			));
 			return;
 		}

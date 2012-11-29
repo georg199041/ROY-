@@ -77,3 +77,19 @@
     background: linear-gradient(to bottom, #09dcee 0%, #045fa9 100%) repeat scroll 0 0 transparent;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#09dcee', endColorstr='#045fa9',GradientType=0 ); /* IE6-9 */
 }
+.cbfw-errors {
+	color: #f00;
+	font-weight: 600;
+	font-size: 12px;
+}
+.cbfw-errors ul {
+	padding-left: 15px;
+}
+.cbfw-errors ul:before {
+	content: "↑";
+	float: left;
+	display: block;
+	font-size: 14px;
+	margin-top: -3px;
+	margin-left: -10px;
+}
