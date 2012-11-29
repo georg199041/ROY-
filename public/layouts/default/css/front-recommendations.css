@@ -4,6 +4,32 @@
     position:relative;
     height:590px;
 }
+<<<<<<< HEAD
+.front-content-carousel {
+    /*overflow:hidden;*/
+    position:relative;
+    width:175px;
+    max-height:515px;
+    min-height: 129px;
+}
+.front-content-carousel ul {
+    /*position: absolute;
+    white-space: nowrap;
+    height:10000px;
+    top:0px;*/
+    margin-top: 11px;
+}
+.front-content-carousel__arrow_top {
+    background-image: url("../images/arrow-up-idle.png");
+    display: block;
+    height: 44px;
+    margin: 0;
+    width: 100px;
+    /*position:absolute;
+    top:-15px;
+    left:0;*/
+    z-index:3;
+=======
 
 .front-body-content-picture-big {
     float:left;
@@ -16,6 +42,7 @@
 }
 .front-body-content-picture-big h2 {
     margin:14px 0 7px 0;
+>>>>>>> b062c649f2731e13ab14289b6b5f6ed092b8d013
 }
 .front-body-content-picture-big p {
     margin: 7px 0;

@@ -41,7 +41,7 @@
 					<div class="front-schema-item__title-white"><?php echo $item->getTitle(); ?></div>
 					<div class="front-schema-item__description"><?php echo $item->getDescription(); ?></div>
 				</div>
-				<ul class="front-schema-item__dots">
+				<ul class="front-schema-item__dots ie_dots">
 					<li></li>
 					<li></li>
 					<li></li>

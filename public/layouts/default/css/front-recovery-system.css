@@ -102,6 +102,9 @@
 	width: 50px;
 	list-style: disc inside;
 }
+@media \0screen {
+.ie_dots{display: none;}
+}
 .front-schema-item__dots li {
 	/* Normal state */
 	padding: 0 1px 0 5px;	

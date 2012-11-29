@@ -82,12 +82,12 @@
 	background: url("/layouts/default/images/menu_corners.png") left no-repeat;
 }
 .front-header-menu {
-	float: left;
-	width: 838px;
-	height: 55px;
-	padding-left: 12px;
 	background: url("/layouts/default/images/menu_bg.png") repeat-x;
 	background-color: #fff;
+	float: left;
+    height: 34px;
+    padding: 4px 0 12px;
+    width: 850px;
 }
 .front-header-menu-right {
 	float: left;
