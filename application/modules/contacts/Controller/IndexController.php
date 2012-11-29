@@ -39,7 +39,7 @@ class Contacts_IndexController extends Core_Controller_Action
 			} catch (Exception $e) {
 				if ($this->getRequest()->isXmlHttpRequest()) {
 					$this->getHelper('Json')->sendJson(array(
-						'error' => $this->__('Ошибка отправки<!--save-->')
+						'error' => $this->__('Ошибка отправки')
 					));
 					return;
 				}

@@ -34,6 +34,13 @@ return array(
 									'controller' => 'admin-groups',
 									'action'     => 'index',
 								),
+								'contacts/admin-feedback/index' => array(
+									'id'         => 'contacts/admin-feedback/index',
+									'label'      => 'Обратная связь',
+									'module'     => 'contacts',
+									'controller' => 'admin-feedback',
+									'action'     => 'index',
+								),
 							),
 						),
 					),

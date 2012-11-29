@@ -1,28 +1,32 @@
 <?php
 
-class Comments_Block_Index_AddComment extends Core_Block_Form_Widget
+class Contacts_Block_AdminFeedback_Answer extends Core_Block_Form_Widget
 {
 	public function init()
 	{
-		$this->setAction('/comments/index/add-comment');
+		$this->setAction('*/*/send');
 		$this->getForm()->setName('form_data');
 		
-		$this->addElement('hidden', 'table');
-		$this->addElement('hidden', 'table_id');
-		$this->addElement('hidden', 'back_url', array('ignore' => true));
+		$this->addElement('hidden', 'id');
 		
 		$this->addElement('text', 'name', array(
-			'label'    => 'Ваше имя',
-			'required' => true,
-			'validators' => array(
-				array('NotEmpty', true, array('messages' => array(
-					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
-				)))
-			)
+			'label'    => $this->__('Имя отправителя'),
+			'readonly' => true,
 		));
 		
 		$this->addElement('text', 'email', array(
-			'label'    => 'Адрес электроной почты (не публикуется)',
+			'label'    => $this->__('Адрес отправителя'),
+			'readonly' => true,
+		));
+		
+		$this->addElement('textarea', 'message', array(
+			'label'    => $this->__('Сообщение'),
+			'readonly' => true,
+			'rows'     => 15,
+		));
+		
+		$this->addElement('text', 'answer_from', array(
+			'label'    => $this->__('Адрес отвечающего'),
 			'required' => true,
 			'validators' => array(
 				array('NotEmpty', true, array('messages' => array(
@@ -42,11 +46,9 @@ class Comments_Block_Index_AddComment extends Core_Block_Form_Widget
 			)
 		));
 		
-		$this->addElement('textarea', 'comment', array(
-			'label'    => 'Текст сообщения',
+		$this->addElement('text', 'answer_subject', array(
+			'label'    => $this->__('Тема ответа'),
 			'required' => true,
-			'cols'     => 40,
-			'rows'     => 10,
 			'validators' => array(
 				array('NotEmpty', true, array('messages' => array(
 					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
@@ -54,43 +56,37 @@ class Comments_Block_Index_AddComment extends Core_Block_Form_Widget
 			)
 		));
 		
-		$this->addElement('submit', 'submit', array(
-			'value'       => 'Отправить',
-			'ignore'      => true,
-			'description' => 'Все поля обязательны к заполнению'
+		$this->addElement('textarea', 'answer_message', array(
+			'label'    => $this->__('Текст ответа'),
+			'required' => true,
+			'cols'     => 70,
+			'rows'     => 15,
+			'class'    => 'mce',
+			'validators' => array(
+				array('NotEmpty', true, array('messages' => array(
+					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
+				)))
+			)
 		));
 		
-		if (isset(Core::getSession('front')->formData)) {
+		$this->addDisplayGroup(array('answer_from', 'answer_subject', 'answer_message'), 'center');
+		$this->addDisplayGroup(array('name', 'email', 'message'), 'right');
+		
+		if (isset(Core::getSession('admin')->formData)) {
 			$this->setDefaults(Core::getSession('admin')->formData);
-			unset(Core::getSession('front')->formData);
+			unset(Core::getSession('admin')->formData);
+		} else if (Zend_Registry::isRegistered('form_data')) {
+			$this->setDefaults(Zend_Registry::get('form_data'));
 		}
-		
-		if (isset(Core::getSession('front')->formHasErrors) && Core::getSession('front')->formHasErrors) {
+
+		if (isset(Core::getSession('admin')->formHasErrors) && Core::getSession('admin')->formHasErrors) {
 			$this->isValid($this->getValues());
-			unset(Core::getSession('front')->formHasErrors);
+			unset(Core::getSession('admin')->formHasErrors);
 		}
 		
-		$this->getElement('submit')->setValue('Отправить');
-	}
-	
-	public function setCommentsTable($value)
-	{
-		if ($this->getElement('table')) {
-			$this->getElement('table')->setValue($value);
-		}
-	}
-	
-	public function setCommentsTableId($value)
-	{
-		if ($this->getElement('table_id')) {
-			$this->getElement('table_id')->setValue($value);
-		}
-	}
-	
-	public function setBackUrl($value)
-	{
-		if ($this->getElement('back_url')) {
-			$this->getElement('back_url')->setValue($value);
-		}
+		$this->addBlockChild(
+			Core::getBlock('contacts/admin-feedback/answer/toolbar'),
+			self::BLOCK_PLACEMENT_BEFORE
+		);
 	}
 }
