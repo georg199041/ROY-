@@ -2,12 +2,12 @@
     <div class="front-content-contacts">
         <div class="front-content-contacts-header">
             <?php if ($this->getCrimeaBaseContacts()): ?>
-            	<a href="#" rel="#contacts-crimea">База в Крыму</a>
+            	<a href="#contacts-crimea" rel="#contacts-crimea">База в Крыму</a>
             <?php endif; ?>
             <?php if ($this->getMoscowOfficeContacts()): ?>
-            	<a href="#" rel="#contacts-moscow">Офис в Москве</a>
+            	<a href="#contacts-moscow" rel="#contacts-moscow">Офис в Москве</a>
             <?php endif; ?>
-            <a href="#" rel="#contacts-form">Обратная связь</a>
+            <a href="#contacts-form" rel="#contacts-form">Обратная связь</a>
         </div>
         <div class="front-content-contacts-body">
 	        <?php if ($this->getCrimeaBaseContacts()): ?>
@@ -120,7 +120,7 @@
         	$('.front-content-contacts-header a:first-child').addClass('front-content-contacts-header__tab_active');
         	
         	$('.front-content-contacts-header a').click(function(event){
-            	event.preventDefault();
+            	//event.preventDefault();
             	$('.front-content-contacts-header a').removeClass('front-content-contacts-header__tab_active');
             	$(this).addClass('front-content-contacts-header__tab_active');
 
