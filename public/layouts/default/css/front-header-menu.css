@@ -1,23 +1,22 @@
 @CHARSET "UTF-8";
 
 .front-header-menu__item {
-	float:left;
 	position: relative;
 	margin: 5px 12px 0;
+	text-align: center;
 }
-.front-header-menu__item:before {
-	content: url(/layouts/default/images/point.png);
-	position: absolute;
-	top: 6px;
-	left: -15px;
+.front-header-menu-dots {
+	background: url(/layouts/default/images/point.png) no-repeat center 13px;
+	background-position: center 12px\0/IE8+9;
+	width: 22px;
 }
-.front-header-menu__item:last-child:after {
+/*.front-header-menu__item:last-child:after {
 	content: url(/layouts/default/images/point.png);
 	float: right;
 	position: absolute;
 	top: 6px;
 	right: -15px;
-}
+}*/
 .front-header-menu__item-href {
 	text-decoration: none;
 	text-transform: uppercase;
@@ -54,6 +53,7 @@
 		color-stop(0.51, #456506),
 		color-stop(1, #497100)
 	);
+	
 }
 .front-header-menu__item-href_active .front-header-menu-gradient {
 	background-color: #456506;

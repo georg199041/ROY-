@@ -8,13 +8,14 @@
     /*overflow:hidden;*/
     position:relative;
     width:175px;
-    height:515px;
+    max-height:515px;
+    min-height: 129px;
 }
 .front-content-carousel ul {
-    position: absolute;
+    /*position: absolute;
     white-space: nowrap;
     height:10000px;
-    top:0px;
+    top:0px;*/
     margin-top: 11px;
 }
 .front-content-carousel__arrow_top {
@@ -23,9 +24,9 @@
     height: 44px;
     margin: 0;
     width: 100px;
-    position:absolute;
+    /*position:absolute;
     top:-15px;
-    left:0;
+    left:0;*/
     z-index:3;
 }
 .front-content-carousel__arrow_top:hover {

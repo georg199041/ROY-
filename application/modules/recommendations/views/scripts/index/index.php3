@@ -24,7 +24,7 @@
     <div class="front-content-arrow_right">
         <a class="front-content-carousel__arrow_top back" href="#"></a>
         <div class="front-content-carousel">
-            <ul>
+            <ul style="height: <?php echo $this->getRecommendationsPosts()->count() * 129; ?>px">
             	<?php $i = 0; ?>
             	<?php foreach ($this->getRecommendationsPosts() as $post): ?>
             		<?php 

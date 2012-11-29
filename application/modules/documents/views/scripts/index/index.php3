@@ -11,7 +11,7 @@
     <div class="front-content-arrow_right">
         <a class="front-content-carousel__arrow_top back" href="#"></a>
         <div class="front-content-carousel">
-            <ul>
+            <ul style="height: <?php echo $this->getDocumentsPosts()->count() * 129; ?>px">
             	<?php $i = 0; ?>
             	<?php foreach ($this->getDocumentsPosts() as $post): ?>
             		<?php 
