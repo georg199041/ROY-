@@ -154,6 +154,7 @@
 					if (data.success) {
 						$form.resetForm();
 						alert(data.success);
+						window.location.href = window.location.href;
 					}
 				}
 			});
