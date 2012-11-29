@@ -40,5 +40,36 @@ $months = array(
 	<div class="front-block-comment-add">
 		<h3>Ваш комментарий</h3>
 		<?php echo Core::getBlock('comments/index/add-comment'); ?>
+		<script>
+			$('.cbfw-block-comments_index_add-comment form').ajaxForm({
+				beforeSubmit: function(arr, $form, options){
+					$form.find('.cbfw-element_required input, .cbfw-element_required textarea')
+				         .parents('.cbfw-element')
+				         .find('.cbfw-errors')
+				         .html('');
+				},
+				success: function(data, textStatus, jqXHR, $form) {
+					if (data.errors) {
+						for (var name in data.errors) {
+							var ul = $('<ul></ul>');
+							for (var code in data.errors[name]) {
+								ul.append('<li>' + data.errors[name][code] + '</li>');
+							}
+							
+							$form.find('input[name=' + name + '], textarea[name=' + name + ']')
+							     .parents('.cbfw-element')
+							     .find('.cbfw-errors')
+							     .html(ul);
+						}
+					}
+
+					if (data.error) { alert(data.error); }
+					if (data.success) {
+						$form.resetForm();
+						alert(data.success);
+					}
+				}
+			});
+		</script>
 	</div>
 </div>

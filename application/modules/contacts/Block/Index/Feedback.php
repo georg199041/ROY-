@@ -10,20 +10,35 @@ class Contacts_Block_Index_Feedback extends Core_Block_Form_Widget
 		$this->addElement('hidden', 'id');
 		
 		$this->addElement('text', 'name', array(
-			'label'    => 'Ваше имя',
-			'required' => true,
+			'label'      => 'Ваше имя',
+			'required'   => true,
+			'validators' => array(
+				array('NotEmpty', true, array('messages' => array(
+					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
+				)))
+			)
 		));
 		
 		$this->addElement('text', 'email', array(
-			'label'    => 'Адрес электроной почты (не публикуется)',
-			'required' => true,
+			'label'      => 'Адрес электроной почты (не публикуется)',
+			'required'   => true,
+			'validators' => array(
+				array('NotEmpty', true, array('messages' => array(
+					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
+				)))
+			)
 		));
 		
 		$this->addElement('textarea', 'comment', array(
 			'label'    => 'Текст сообщения',
-			'required' => true,
 			'cols'     => 40,
 			'rows'     => 10,
+			'required' => true,
+			'validators' => array(
+				array('NotEmpty', true, array('messages' => array(
+					Zend_Validate_NotEmpty::IS_EMPTY => $this->__('Это поле не может быть пустым')
+				)))
+			)
 		));
 		
 		$this->addElement('submit', 'submit', array(

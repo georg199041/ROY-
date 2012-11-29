@@ -127,6 +127,36 @@
             	$('.front-content-contacts-body .tab').hide();
             	$('.front-content-contacts-body ' + $(this).attr('rel')).show();
             });
-        </script>
+
+        	$('.cbfw-block-contacts_index_feedback form').ajaxForm({
+				beforeSubmit: function(arr, $form, options){
+					$form.find('.cbfw-element_required input, .cbfw-element_required textarea')
+				         .parents('.cbfw-element')
+				         .find('.cbfw-errors')
+				         .html('');
+				},
+				success: function(data, textStatus, jqXHR, $form) {
+					if (data.errors) {
+						for (var name in data.errors) {
+							var ul = $('<ul></ul>');
+							for (var code in data.errors[name]) {
+								ul.append('<li>' + data.errors[name][code] + '</li>');
+							}
+							
+							$form.find('input[name=' + name + '], textarea[name=' + name + ']')
+							     .parents('.cbfw-element')
+							     .find('.cbfw-errors')
+							     .html(ul);
+						}
+					}
+
+					if (data.error) { alert(data.error); }
+					if (data.success) {
+						$form.resetForm();
+						alert(data.success);
+					}
+				}
+			});
+		</script>
     </div>
 </div>
