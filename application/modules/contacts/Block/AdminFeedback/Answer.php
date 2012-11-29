@@ -42,7 +42,7 @@ class Contacts_Block_AdminFeedback_Answer extends Core_Block_Form_Widget
 					Zend_Validate_EmailAddress::QUOTED_STRING      => $this->__('Неверно экранированая строка'),
 					Zend_Validate_EmailAddress::INVALID_LOCAL_PART => $this->__('Неправильная локальная часть Email адреса'),
 					Zend_Validate_EmailAddress::LENGTH_EXCEEDED    => $this->__('Слишком длинный Email адрес'),
-				)))
+				))),
 			)
 		));
 		
