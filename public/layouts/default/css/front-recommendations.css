@@ -33,6 +33,7 @@
     margin: 0;
     width: 100px;
     z-index: 3;
+    display: none;
 }
 .front-doc-slider_button-back {
 	top: 0;
