@@ -29,7 +29,7 @@ class Contacts_Block_Index_Feedback extends Core_Block_Form_Widget
 			)
 		));
 		
-		$this->addElement('textarea', 'comment', array(
+		$this->addElement('textarea', 'message', array(
 			'label'    => 'Текст сообщения',
 			'cols'     => 40,
 			'rows'     => 10,
