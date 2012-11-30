@@ -20,12 +20,15 @@
 					    	<?php
 					    		$noImage = false;
 					    		try {
+									$bigImage = "/". $this->image($photo->getImage())->resizeToWidth(570)->getPath();
+
 					    			echo $this->image($photo->getImage(), array(
-					    				"image" => $photo->getImage(),
+					    				"image" => $bigImage,
 										"description" => $photo->getDescription(),
 										"title" => $photo->getTitle(),
 					    				"alt"   => $photo->getTitle()
 					    			))->resizeToCrop(104, 70);
+									
 					    		} catch (Exception $e) {
 									$noImage = true;
 								}
