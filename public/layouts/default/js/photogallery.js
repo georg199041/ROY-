@@ -25,6 +25,17 @@ $(document).ready(function(){
 				photogalleryEffectIcon(newIndex);
 			}, PG_FX_STEP_DUR / 10);
 		}
+		
+		
+		var start = newPage * PG_PAGE_SIZE;
+		var end = start + (PG_PAGE_SIZE - 1);
+		$('.front-photogallery-slider__item').each(function(index){
+			if(index>=start && index<=end){
+				var img = new Image();
+				img.src = $(this).find("img").attr("image");
+			}
+		});
+		
 	}
 	
 	function photogallerySelectPage(dir)
@@ -32,6 +43,8 @@ $(document).ready(function(){
 		var oldIndex   = parseInt($('.front-photogallery-slider__active-overlay').attr('index'));
 		var page       = Math.floor(oldIndex / PG_PAGE_SIZE);
 		var pageIndex  = page * PG_PAGE_SIZE;
+		
+		
 		
 		if (dir == 'left') {
 			//if (oldIndex == pageIndex) {
