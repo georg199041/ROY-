@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$("#slider_back").hover(function(){
 		$(this).css({
 			"background":"url(/layouts/default/images/slider_arrows.png) no-repeat",
-			"background-position":"20px 40px"
+			"background-position":"20px center"
 		})
 	},function(){
 		$(this).css({"background":"transparent"});
@@ -14,7 +14,7 @@ $(document).ready(function(){
 	$("#slider_next").hover(function(){
 		$(this).css({
 			"background":"url(/layouts/default/images/slider_arrows.png) no-repeat",
-			"background-position":"-108px 40px "
+			"background-position":"-108px center "
 		})
 	},function(){
 		$(this).css({"background":"transparent"});
