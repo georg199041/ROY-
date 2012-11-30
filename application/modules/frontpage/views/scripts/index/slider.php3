@@ -18,7 +18,7 @@
 		</ul>
 	</div>
 	<div class="front-body-slider-rectangle">
-		<img src="/layouts/default/images/rectangle.png" />
+		
 		<div class="front-body-slider-buttons">
 			<?php if ($this->getSlides()->count() > 0): ?>
 				<input type="button" id="slider_back" class="slider_buttons" />

@@ -31,7 +31,9 @@
 }
 .front-body-slider-rectangle img{
 	z-index: 12;
-	position: relative;
+	position: absolute;
+	left: 50%;
+	margin-left: -485px;
 }
 .front-body-slider-prewrap{
 	margin: 0 auto;
@@ -39,7 +41,7 @@
 }
 .front-body-slider-blackwhite-wrap{
 	list-style: none outside none;
-    width: 100000px;
+    width: 5000px;
     overflow: hidden;
     padding: 0;
     margin-left: -1150px;
@@ -49,20 +51,23 @@
 }
 .front-body-slider-buttons{
 	margin: 0 auto;
-	margin-top: -320px;
+	background: url(/layouts/default/images/rectangle.png) no-repeat center;
+	height: 323px;
+	left: 50%;
+	margin-left: -485px;
 	width: 970px;
-	position: relative;
+	position: absolute;
 	top: 0;
+	z-index: 100;
 }
 .slider_buttons{
 	position: absolute;
-	height: 315px;
+	height: 323px;
     width: 100px;
     top: 0;
     z-index: 20;
     background: transparent;
     border: none;
-    z-index: 13;
     cursor: pointer;
 }
 .slider_buttons#slider_back{
