@@ -39,7 +39,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
-@font-face {
+/*@font-face {
 	font-family: 'Verdana';
 	src: url('/layouts/default/fonts/verdana.eot');
 	src: url('/layouts/default/fonts/verdana.eot?#iefix') format('embedded-opentype'),
@@ -68,4 +68,4 @@
 		 url('/layouts/default/fonts/verdanai_0.svg#verdanai_0') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
+}*/
