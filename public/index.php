@@ -66,6 +66,7 @@ require_once 'Zend/Application.php';
 // Compile configs
 require_once 'Zend/Registry.php';
 require_once 'Core/Config/Autoloader.php';
+clearstatcache();
 $config = Core_Config_Autoloader::load(APPLICATION_PATH, array('/config\.php$/i', '/config\.dev\.php$/i'));
 Zend_Registry::set('config', $config);
 

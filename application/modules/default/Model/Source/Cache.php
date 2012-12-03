@@ -4,6 +4,8 @@ class Default_Model_Source_Cache extends Core_Model_Source_DbTable
 {
 	protected $_cacheManager;
 	
+	protected $_cacheTemplates;
+	
 	public function setCacheManager(Zend_Cache_Manager $manager)
 	{
 		$this->_cacheManager = $manager;
@@ -25,19 +27,84 @@ class Default_Model_Source_Cache extends Core_Model_Source_DbTable
 		return $this->_cacheManager;
 	}
 	
-	public function fetchAll()
+	public function getCacheTemplates()
+	{
+		if (null === $this->_cacheTemplates) {
+			if (!($this->getCacheManager() instanceof Zend_Cache_Manager)) {
+				$this->_cacheTemplates = array();
+			} else {
+				$r = new Zend_Reflection_Class($this->getCacheManager());
+				$p = $r->getProperty('_optionTemplates');
+				$p->setAccessible(true);
+				$this->_cacheTemplates = $p->getValue($this->getCacheManager());
+			}
+		}
+		
+		return $this->_cacheTemplates;
+	}
+	
+	public function find($id)
 	{
 		if ($this->getCacheManager() instanceof Zend_Cache_Manager) {
-			if (method_exists($this->getCacheManager(), 'getCacheTemplates')) {
-				return $this->getCacheManager()->getCaches();
+			if ($this->getCacheManager()->hasCache($id)) {
+				$cache = $this->getCacheManager()->getCache($id);
+				return array(
+					'id'       => $id,
+					'lifetime' => $cache->getOption('lifetime'),
+					'caching'  => $cache->getOption('caching'),
+					'logging'  => $cache->getOption('logging'),
+				);				
 			}
-			
-			$r = new Zend_Reflection_Class($this->getCacheManager());
-			$p = $r->getProperty('_optionTemplates');
-			$p->setAccessible(true);
-			return $p->getValue($manager);
 		}
-
-		return array();
+		
+		return null;
+	}
+	
+	public function fetchAll()
+	{
+		$return = array();
+		if ($this->getCacheManager() instanceof Zend_Cache_Manager) {
+			foreach ($this->getCacheManager()->getCaches() as $name => $row) {
+				$return[] = array(
+					'id'       => $name,
+					'lifetime' => $row->getOption('lifetime'),
+					'caching'  => $row->getOption('caching'),
+					'logging'  => $row->getOption('logging'),
+				);
+			}
+		}
+		
+		return $return;
+	}
+	
+	public function update($data, $id)
+	{
+		if ($this->getCacheManager() instanceof Zend_Cache_Manager) {
+			if ($this->getCacheManager()->hasCache($id)) {
+				// Update template (merge options)
+				$cache = $this->getCacheManager()->getCache($id);
+				$cache->setOption('caching', (bool) $data['caching']);
+				$cache->setOption('logging', (bool) $data['logging']);
+				
+				// Collect options
+				$cm   = array();
+				$rows = $this->fetchAll();
+				foreach ($rows as $row) {
+					$cm[$row['id']] = array(
+						'frontend' => array(
+							'options' => array(
+								'caching' => $row['caching'],
+								'logging' => $row['logging'],
+							)
+						)
+					);
+				}
+				
+				// Create and save config
+				$config = new Zend_Config(array('resources' => array('cachemanager' => $cm)));				
+				$writer = new Zend_Config_Writer_Array();
+				$writer->write(APPLICATION_PATH . '/configs/zend_cache.config.php', $config);
+			}
+		}
 	}
 }

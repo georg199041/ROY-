@@ -9,13 +9,19 @@ class Default_Block_AdminCache_Index_Toolbar extends Core_Block_Toolbar_Widget
 		$this->addButton(array(
 			'name'       => 'show',
 			'title'      => $this->__('Включить'),
-			'urlOptions' => '*/*/enabled/value/YES',
+			'urlOptions' => '*/*/enabled/value/1',
 		));
 		
 		$this->addButton(array(
 			'name'       => 'hide',
 			'title'      => $this->__('Выключить'),
-			'urlOptions' => '*/*/enabled/value/NO',
+			'urlOptions' => '*/*/enabled/value/0',
+		));
+		
+		$this->addButton(array(
+			'name'       => 'clean',
+			'title'      => $this->__('Очистить'),
+			'urlOptions' => '*/*/clean',
 		));
 	}
 }

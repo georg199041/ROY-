@@ -22,7 +22,7 @@ jQuery(document).ready(function(){
 	/**
 	 * Observe row enabled checkbox event
 	 */
-	jQuery('.cbgw-column__enabled input[type=checkbox]').on('change', function(){
+	jQuery('.cbgw-column__enabled input[type=checkbox], .cbgw-column__caching input[type=checkbox]').on('change', function(){
 		var action = jQuery(this).attr('formaction');
 		jQuery(this).parents('.cbgw-block').find('input, select').attr('disabled', true);
 		window.location.href = action; //TODO

@@ -31,7 +31,7 @@ class Default_Block_AdminCache_Index extends Core_Block_Grid_Widget
 		));
 		
 		$this->addColumn(array(
-			'name'              => 'enabled',
+			'name'              => 'caching',
 			'type'              => 'checkbox',
 			'title'             => $this->__('Вкл'),
 			'align'             => 'center',
@@ -39,7 +39,7 @@ class Default_Block_AdminCache_Index extends Core_Block_Grid_Widget
 			'uncheckedValue'    => '0',
 			'width'             => '1%',
 			'formactionOptions' => '*/*/enabled',
-			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
+			'formactionBind'    => array('value' => 'caching', 'ids' => 'id')
 		));
 		
 		$this->addColumn(array(

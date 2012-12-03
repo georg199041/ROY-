@@ -15,7 +15,7 @@ class Default_AdminCacheController extends Core_Controller_Action
 		$ids = $this->getRequest()->getParam('ids');
 		if (!is_array($ids) && null !== $ids) {
 			$ids = array($ids => 1);
-			$this->getRequest()->setParam('value', $this->getRequest()->getParam('value') == 'YES' ? 'NO' : 'YES');
+			$this->getRequest()->setParam('value', $this->getRequest()->getParam('value') == '1' ? '0' : '1');
 		}
 	
 		if (null === $ids) {
@@ -25,16 +25,17 @@ class Default_AdminCacheController extends Core_Controller_Action
 				foreach ($ids as $id => $selected) {
 					if ($selected) {
 						$model = Core::getMapper('default/cache')->find($id);
-						$model->setEnabled($this->getRequest()->getParam('value'));
+						$model->setCaching($this->getRequest()->getParam('value'));
 						$model->save();
 					}
 				}
-				 
-				$message = $this->getRequest()->getParam('value') == 'YES' ? 'Включено' : 'Выключено';
+				
+				Core::getSession('admin')->optionsChanged = true;
+				$message = $this->getRequest()->getParam('value') == '1' ? 'Включено' : 'Выключено';
 				Core::getBlock('application/admin/messenger')->addSuccess($this->__($message . ' записей:') . ' ' . count($ids));
 			} catch (Exception $e) {
-				$message = $this->getRequest()->getParam('value') == 'YES' ? 'включения' : 'выключения';
-				Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка ' . $message));
+				$message = $this->getRequest()->getParam('value') == '1' ? 'включения' : 'выключения';
+				Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка ' . $message . $e->getMessage()));
 			}
 		}
 		 
