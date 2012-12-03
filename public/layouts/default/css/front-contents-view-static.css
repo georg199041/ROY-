@@ -24,6 +24,7 @@
     width: 25px;
     padding: 2px;
     text-align: center;
+    margin-top: -2px;
 }
 .front-body-content-static ul {
     list-style: none;
@@ -47,6 +48,7 @@
     width: 25px;
     padding: 2px;
     text-align: center;
+    margin-top: -2px;
 }
 blockquote {
     font-style:italic;

@@ -70,6 +70,9 @@ input[type='submit']::-moz-focus-inner{
     padding:0;
     border:0
 }
+em, i{
+	font-family: 'BlissPro-Italic';
+}
 .front_clearfix:after {
 	content: ".";
 	display: block;
