@@ -22,9 +22,17 @@ jQuery(document).ready(function(){
 	/**
 	 * Override submit buttons for old browsers handle
 	 */
-	jQuery('button[name=save], button[name=back], button[name=cancel]').on('click', function(event){
+	jQuery('button[name=save], button[name=back]').on('click', function(event){
 		event.preventDefault();
 		jQuery(this).parents('form').attr('action', jQuery(this).attr('formaction')).trigger('submit');
+	});
+	
+	/**
+	 * Override submit buttons for old browsers handle
+	 */
+	jQuery('button[name=cancel]').on('click', function(event){
+		event.preventDefault();
+		window.location.href = jQuery(this).attr('formaction');
 	});
 	
 	/**

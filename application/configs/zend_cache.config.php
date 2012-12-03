@@ -4,17 +4,6 @@ return array (
   array (
     'cachemanager' => 
     array (
-      'configuration' => 
-      array (
-        'frontend' => 
-        array (
-          'options' => 
-          array (
-            'caching' => true,
-            'logging' => false,
-          ),
-        ),
-      ),
       'default' => 
       array (
         'frontend' => 
@@ -38,6 +27,17 @@ return array (
         ),
       ),
       'pagetag' => 
+      array (
+        'frontend' => 
+        array (
+          'options' => 
+          array (
+            'caching' => true,
+            'logging' => false,
+          ),
+        ),
+      ),
+      'configuration' => 
       array (
         'frontend' => 
         array (

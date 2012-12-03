@@ -26,7 +26,7 @@ class Navigation_AdminPagesController extends Core_Controller_Action
     
     public function saveAction()
     {
-    	if ($data = $this->getRequest()->getPost()) {
+    	if (($data = $this->getRequest()->getPost()) && !$this->getRequest()->getParam('cancel')) {
     		try {
 	    		$form = Core::getBlock('navigation/admin-pages/edit');
 	    		if (!$form->isValid($data)) {
@@ -56,7 +56,7 @@ class Navigation_AdminPagesController extends Core_Controller_Action
 		    	return;
     		}
     	}
-    	
+    	var_export($this->getRequest()->getParam('cancel'));die;
     	Core::getBlock('application/admin/messenger')->addError($this->__('Не найдена запись для сохранения'));
     	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'));
     }
