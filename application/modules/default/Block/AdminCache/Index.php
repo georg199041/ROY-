@@ -16,7 +16,7 @@ class Default_Block_AdminCache_Index extends Core_Block_Grid_Widget
 		));
 		
 		$this->addColumn(array(
-			'name'     => 'id',
+			'name'     => 'label',
 			'title'    => $this->__('Название'),
 			'th-align' => 'left',
 		));

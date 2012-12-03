@@ -46,10 +46,15 @@ class Default_Model_Source_Cache extends Core_Model_Source_DbTable
 	public function find($id)
 	{
 		if ($this->getCacheManager() instanceof Zend_Cache_Manager) {
+			if (in_array($id, array('default', 'page', 'pagetag'))) {
+				return null;
+			}
+			
 			if ($this->getCacheManager()->hasCache($id)) {
 				$cache = $this->getCacheManager()->getCache($id);
 				return array(
 					'id'       => $id,
+					'label'    => $cache->getOption('label'),
 					'lifetime' => $cache->getOption('lifetime'),
 					'caching'  => $cache->getOption('caching'),
 					'logging'  => $cache->getOption('logging'),
@@ -65,8 +70,13 @@ class Default_Model_Source_Cache extends Core_Model_Source_DbTable
 		$return = array();
 		if ($this->getCacheManager() instanceof Zend_Cache_Manager) {
 			foreach ($this->getCacheManager()->getCaches() as $name => $row) {
+				if (in_array($name, array('default', 'page', 'pagetag'))) {
+					continue;
+				}
+				
 				$return[] = array(
 					'id'       => $name,
+					'label'    => $row->getOption('label'),
 					'lifetime' => $row->getOption('lifetime'),
 					'caching'  => $row->getOption('caching'),
 					'logging'  => $row->getOption('logging'),

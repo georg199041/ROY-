@@ -22,6 +22,7 @@ return array(
 					'name'                 => 'Core_Cache_Frontend_MasterFile',
 					'customFrontendNaming' => true,
 					'options'              => array(
+						'label'                       => 'Кеш картинок рекомендаций',
 						'automatic_serialization'     => true,
 		    			'lifetime'                    => 3600,
 						'master_files'                => array(),

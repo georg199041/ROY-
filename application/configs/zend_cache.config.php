@@ -4,35 +4,13 @@ return array (
   array (
     'cachemanager' => 
     array (
-      'default' => 
+      'Recomendations' => 
       array (
         'frontend' => 
         array (
           'options' => 
           array (
-            'caching' => true,
-            'logging' => false,
-          ),
-        ),
-      ),
-      'page' => 
-      array (
-        'frontend' => 
-        array (
-          'options' => 
-          array (
-            'caching' => true,
-            'logging' => false,
-          ),
-        ),
-      ),
-      'pagetag' => 
-      array (
-        'frontend' => 
-        array (
-          'options' => 
-          array (
-            'caching' => true,
+            'caching' => false,
             'logging' => false,
           ),
         ),
