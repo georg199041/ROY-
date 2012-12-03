@@ -1,8 +1,20 @@
 <div class="front-body-slider-body">
 	<div class="front-body-slider-top"></div>
 	<div class="front-body-slider-blackwhite">
-		<div class="front-body-slider-blackwhite-left"></div>
-		<div class="front-body-slider-blackwhite-right"></div>
+		<ul class="front-body-slider-blackwhite-left">
+			<?php $i = 0; ?>
+			<?php foreach ($this->getSlides() as $slide): ?>
+			<li class="front-body-slider-blackwhite-left__item <?php echo $i == 0 ? 'active' : ''; ?>" style="background-image: url(<?php echo $slide->getImageLeft(); ?>);"></li>
+			<?php $i++; ?>
+			<?php endforeach; ?>
+		</ul>
+		<ul class="front-body-slider-blackwhite-right">
+		<?php $i = 0; ?>
+			<?php foreach ($this->getSlides() as $slide): ?>
+			<li class="front-body-slider-blackwhite-right__item <?php echo $i == 0 ? 'active' : ''; ?>" style="background-image: url(<?php echo $slide->getImageRight(); ?>);"></li>
+			<?php $i++; ?>
+			<?php endforeach; ?>
+		</ul>
 	</div>
 	<div class="front-body-slider-color">
 		<ul class="front-body-slider-color-wrap">
