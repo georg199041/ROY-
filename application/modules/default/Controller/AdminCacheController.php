@@ -1,5 +1,6 @@
 <?php
 
+// TODO control of lifetime
 class Default_AdminCacheController extends Core_Controller_Action
 {
 	public function init()
