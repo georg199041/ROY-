@@ -16,6 +16,23 @@ return array(
 				),
 			),
 		),
+		'cachemanager' => array(
+			'Recomendations' => array(
+				'frontend' => array(
+					'name'    => 'Core',
+					'options' => array(
+						'automatic_serialization' => true,
+		    			'lifetime'                => 86400,
+					),
+				),
+				'backend'  => array(
+					'name'    => 'File',
+					'options' => array(
+						'cache_dir' => ROOT_PATH . '/data/cache'
+					),
+				),
+			),
+		),
 		'navigation' => array (
 			'pages' => array (
 				'default/admin-index/index' => array (

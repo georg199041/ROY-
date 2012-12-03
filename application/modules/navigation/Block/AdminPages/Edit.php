@@ -5,12 +5,11 @@ class Navigation_Block_AdminPages_Edit extends Core_Block_Form_Widget
 	public function init()
 	{
 		$this->setAction('*/*/save');
-		
+		$this->getForm()->setName('form_data');
 		$this->addElement('hidden', 'id');
 		
 		$this->addElement('select', 'navigation_pages_id', array(
 			'label'        => $this->__('Родитель'),
-			'required'     => true,
 			'multiOptions' => $this->getNavigationPagesId(Core::getMapper('navigation/pages')->fetchTree(), array('Нет')),
 		));
 		
