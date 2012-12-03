@@ -19,10 +19,14 @@ return array(
 		'cachemanager' => array(
 			'Recomendations' => array(
 				'frontend' => array(
-					'name'    => 'Core',
-					'options' => array(
-						'automatic_serialization' => true,
-		    			'lifetime'                => 86400,
+					'name'                 => 'Core_Cache_Frontend_MasterFile',
+					'customFrontendNaming' => true,
+					'options'              => array(
+						'automatic_serialization'     => true,
+		    			'lifetime'                    => 3600,
+						'master_files'                => array(),
+						'master_files_mode'           => Zend_Cache_Frontend_File::MODE_OR,
+						'ignore_missing_master_files' => false,
 					),
 				),
 				'backend'  => array(
