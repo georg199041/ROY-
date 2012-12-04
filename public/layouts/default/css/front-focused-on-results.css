@@ -5,6 +5,7 @@
 	left: 0;
 	padding-bottom: 26px;
 	z-index: 20;
+	min-width: 1140px;
 }
 .front-focused-on-results-push {
 	height: 288px;
