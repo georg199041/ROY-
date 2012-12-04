@@ -82,30 +82,6 @@ class Contents_AdminPostsController extends Core_Controller_Action
     	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'));
     }
     
-    public function statusAction()
-    {
-        $ids = $this->getRequest()->getParam('ids');
-    	if (!is_array($ids)) {
-    		Core::getBlock('application/admin/messenger')->addError($this->__('Не выбрана ни одна запись'));
-    	} else {
-    		try {
-    			foreach ($ids as $id) {
-    				$model = Core::getMapper('contents/posts')->find($id);
-    				$model->setEnabled($this->getRequest()->getParam('enabled'));
-    				$model->save();
-    			}
-    			
-    			$message = $this->getRequest()->getParam('value') == 'YES' ? 'Включено' : 'Выключено';
-    			Core::getBlock('application/admin/messenger')->addSuccess($this->__($message . ' записей:') . ' ' . count($ids));
-    		} catch (Exception $e) {
-    			$message = $this->getRequest()->getParam('value') == 'YES' ? 'включения' : 'выключения';
-    			Core::getBlock('application/admin/messenger')->addError($this->__('Ошибка ' . $message));
-    		}
-    	}
-    	
-    	$this->getHelper('Redirector')->gotoRouteAndExit(Core::urlToOptions('*/*/index'), null, true);
-    }
-    
     public function moveAction()
     {
     	$ids = $this->getRequest()->getParam('ids');
