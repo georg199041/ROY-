@@ -2,7 +2,7 @@
 
 class Recommendations_Model_Entity_Posts extends Core_Model_Entity_Abstract
 {
-	protected static $_imagesCache;
+	/*protected static $_imagesCache;
 	
 	public function setImagesCache(Zend_Cache_Core $cache)
 	{
@@ -43,5 +43,5 @@ class Recommendations_Model_Entity_Posts extends Core_Model_Entity_Abstract
 		}
 		
 		return $this->getImage();
-	}
+	}*/
 }

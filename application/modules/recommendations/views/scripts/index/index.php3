@@ -2,8 +2,7 @@
     <h1>Рекомендации</h1>
     <?php $current = $this->getRecommendationsPosts()->current(); ?>
     <div class="front-body-content-picture-big">
-    	<?php echo $current->getBigImage(); ?>
-        <?php if ($current->getImage()): ?>
+    	<?php if ($current->getImage()): ?>
     	<?php
     		$noImage = false;
     		try {
