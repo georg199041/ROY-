@@ -33,7 +33,7 @@ return array(
 				'backend'  => array(
 					'name'    => 'File',
 					'options' => array(
-						'cache_dir' => ROOT_PATH . '/data/cache'
+						'cache_dir' => PUBLIC_PATH . '/cache'
 					),
 				),
 			),

@@ -22,6 +22,13 @@ return array(
 									'controller' => 'admin-slider',
 									'action'     => 'index',
 								),
+								'frontpage/admin-text/index' => array (
+									'id'         => 'frontpage/admin-text/index',
+									'label'      => 'Текст на главной',
+									'module'     => 'frontpage',
+									'controller' => 'admin-text',
+									'action'     => 'index',
+								),
 							),
 						),
 					),

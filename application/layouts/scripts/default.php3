@@ -29,27 +29,7 @@
 			<div class="front_clearfix"></div>
 		</div>
 		<?php if ($this->isHomePage()): ?>
-		<div class="front-focused-on-results">
-			<div class="front-focused-on-results__bg">
-				<div class="front-focused-on-results__center">
-					<div class="front-focused-on-results__bg-over">
-						<div class="front-focused-on-results__content">
-							<h1>Мы нацелены на результат</h1>
-							<p>Авторская программа реабилитации наркозависимых включает в себя проживание в деревянных домиках в природных условиях, а так же использование природных оздоровительных процедур.</p>
-							<p>На территории лагеря оборудована баня, речная купель, спортивная площадка. Проживание и столовая расположены в комфортабельных домиках "финского типа". Жилые помещения центра имеют все условия для круглогодичной реабилитации наркозависимых и лечения наркомании. Спортивный зал с мягким покрытием предназначен для круглогодичного использования и расположен в утепленных палатках армейского типа. В зимний период жилые помещения обогреваются русскими печами.</p>
-						</div>
-						<div class="front_clearfix"></div>
-					</div>
-					<div class="front-focused-on-results__button-placeholder">
-						<a href="#" class="front-focused-on-results__button">
-							<span class="corners"><span class="dots">СДЕЛАЕМ ЭТО ВМЕСТЕ!</span></span>
-						</a>
-					</div>
-					<div class="front-focused-on-results__ws"></div>
-				</div>
-			</div>
-		</div>
-		<div class="front-focused-on-results-push"></div>
+		<?php echo Core::getBlock('frontpage/index/text'); ?>
 		<?php endif; ?>
 		<div class="front-push-bottom"></div>
 	</div>

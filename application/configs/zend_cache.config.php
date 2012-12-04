@@ -10,7 +10,7 @@ return array (
         array (
           'options' => 
           array (
-            'caching' => false,
+            'caching' => true,
             'logging' => false,
           ),
         ),
