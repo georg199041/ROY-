@@ -17,7 +17,7 @@
         <?php endif; ?>
         <div class="front-content-personal-employee" <?php echo !$post->getImage() || $noImage ? 'style="width: 618px;"' : ''; ?>>
             <h4><?php echo $post->getName(); ?></h4>
-            <div class="front-content-personal-employee-text">
+            <div class="front-content-personal-employee-text" <?php echo !$post->getImage() || $noImage ? 'style="width: auto;"' : ''; ?>>
             	<?php if ($post->getDescription()): ?>
                 <p><?php echo $post->getDescription(); ?></p>
                 <?php endif; ?>

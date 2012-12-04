@@ -24,14 +24,15 @@ return array(
 					'options'              => array(
 						'label'                       => 'Кеш картинок рекомендаций',
 						'automatic_serialization'     => true,
-		    			'lifetime'                    => 3600,
+		    			'lifetime'                    => 3600000,
 						'master_files'                => array(),
 						'master_files_mode'           => Zend_Cache_Frontend_File::MODE_OR,
 						'ignore_missing_master_files' => false,
 					),
 				),
 				'backend'  => array(
-					'name'    => 'File',
+					'name'    => 'Core_Cache_Backend_SlaveFile',
+					'customBackendNaming' => true,
 					'options' => array(
 						'cache_dir' => PUBLIC_PATH . '/cache'
 					),

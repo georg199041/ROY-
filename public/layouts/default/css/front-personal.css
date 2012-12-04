@@ -17,10 +17,11 @@
 }
 .front-content-personal-employee {
     width:508px;
-    height:150px;
+    min-height:130px;
     float:left;
     margin-left:3px;
     padding-left:19px;
+    padding-bottom:20px;
     background:url("../images/main-pattern-light.png") repeat scroll 0 0 transparent;
 }
 .front-content-personal-employee h4 {
