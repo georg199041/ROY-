@@ -29,14 +29,14 @@ class Recommendations_Model_Entity_Posts extends Core_Model_Entity_Abstract
 			$this->getImagesCache()->setMasterFiles(array(PUBLIC_PATH . $this->getImage()));
 			$id = get_class($this) . '_' . $this->getId() . '_570';
 			if (!$this->getImagesCache()->test($id)) {
-				echo 'NOTOK';
+				//echo 'NOTOK';
 				// create file
 				// save file
 				// return path
 				// TODO create slave file control backend
 				$this->getImagesCache()->save(PUBLIC_PATH . $this->getImage(), $id);
 			} else {
-				echo 'OK';
+				//echo 'OK';
 				// return path
 				$this->getImagesCache()->load($id);
 			}

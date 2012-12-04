@@ -45,6 +45,8 @@ class Contents_Block_AdminPosts_Index extends Core_Block_Grid_Widget
 			'checkedValue'   => 'YES',
 			'uncheckedValue' => 'NO',
 			'width'          => '1%',
+			'formactionOptions' => '*/*/enabled',
+			'formactionBind'    => array('value' => 'enabled', 'ids' => 'id')
 		));
 
 		$this->addColumn(array(
