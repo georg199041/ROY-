@@ -10,7 +10,7 @@
 			<?php foreach ($this->getAlbumPhotos() as $photo): ?>
 				<li class="front-photogallery-slider__item front-photogallery-slider_item-active">
 					<a href="#" index="<?php echo $i; ?>">
-						<?php if ($photo->getImage()): ?>
+						<?php /*if ($photo->getImage()): ?>
 				    	<?php
 				    		$noImage = false;
 				    		try {
@@ -27,7 +27,14 @@
 								$noImage = true;
 							}
 				    	?>
-				        <?php endif; ?>     
+				        <?php endif;*/ ?>
+				        <img src="/<?php echo $photo->getIcon104x70(); ?>"
+				             width="104"
+				             height="70"
+				             image="/<?php echo $photo->getBigImage570(); ?>"
+				             description="<?php echo $photo->getDescription(); ?>"
+							 title="<?php echo $photo->getTitle(); ?>"
+				    		 alt="<?php echo $photo->getTitle(); ?>" />
 					</a>
 				</li>
 				<?php $i++; ?>
@@ -39,7 +46,7 @@
 	<div class="front-photogallery__bigimage">
 		<div class="front-photogallery-bigimage__container">
 			<!-- <img class="current" alt="<?php /*echo $current->getTitle();*/ ?>" src="<?php /*echo $current->getImage();*/ ?>" /> -->
-			<?php if ($current->getImage()): ?>
+			<?php /*if ($current->getImage()): ?>
 	    	<?php
 	    		$noImage = false;
 	    		try {
@@ -51,7 +58,12 @@
 					$noImage = true;
 				}
 	    	?>
-	        <?php endif; ?>
+	        <?php endif;*/ ?>
+	        <img src="/<?php echo $current->getBigImage570(); ?>"
+	             width="570"
+	             class="current"
+	             title="<?php echo $current->getTitle(); ?>"
+	    		 alt="<?php echo $current->getTitle(); ?>" />
 			<a href="#" class="front-photogallery-bigimage__btn front-photogallery-bigimage_btn-left"><span></span></a>
 			<a href="#" class="front-photogallery-bigimage__btn front-photogallery-bigimage_btn-right"><span></span></a>
 		</div>

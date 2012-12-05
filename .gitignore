@@ -12,5 +12,5 @@ data/
 library/
 application/configs/application.config.dev.php
 _cache
-cache
+cache*
 mcith

@@ -7,7 +7,7 @@ class Photogallery_Block_Index_AlbumImages extends Core_Block_View
 	 * 
 	 * @var boolean
 	 */
-	protected $_useCache = true;
+	protected $_useCache = false;
 	
 	public function getCacheId(Core_Block_View $block)
 	{

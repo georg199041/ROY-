@@ -19,22 +19,47 @@ return array(
 		'cachemanager' => array(
 			'Recomendations' => array(
 				'frontend' => array(
-					'name'                 => 'Core_Cache_Frontend_MasterFile',
+					'name'                 => 'Core_Image_Cache_Frontend_Image',
 					'customFrontendNaming' => true,
 					'options'              => array(
-						'label'                       => 'Кеш картинок рекомендаций',
-						'automatic_serialization'     => true,
-		    			'lifetime'                    => 3600000,
-						'master_files'                => array(),
-						'master_files_mode'           => Zend_Cache_Frontend_File::MODE_OR,
-						'ignore_missing_master_files' => false,
+						'label'                    => 'Кеш картинок рекомендаций',
+						'lifetime'                 => 3600000,
+						'image_master_check_mtime' => true,
+						'logging'                  => false,
 					),
 				),
 				'backend'  => array(
-					'name'    => 'Core_Cache_Backend_SlaveFile',
+					'name'    => 'Core_Image_Cache_Backend_Image',
 					'customBackendNaming' => true,
 					'options' => array(
-						'cache_dir' => PUBLIC_PATH . '/cache'
+						'cache_dir'        => 'cache',
+						'image_processing' => array(
+							array('method' => 'setCompression', 'arguments' => array(60)),
+							array('method' => 'resizeToCrop', 'arguments' => array(104, 70)),
+						),
+					),
+				),
+			),
+			'Recomendations2' => array(
+				'frontend' => array(
+					'name'                 => 'Core_Image_Cache_Frontend_Image',
+					'customFrontendNaming' => true,
+					'options'              => array(
+						'label'                    => 'Кеш картинок рекомендаций',
+						'lifetime'                 => 3600000,
+						'image_master_check_mtime' => true,
+						'logging'                  => false,
+					),
+				),
+				'backend'  => array(
+					'name'    => 'Core_Image_Cache_Backend_Image',
+					'customBackendNaming' => true,
+					'options' => array(
+						'cache_dir'        => 'cache_width570',
+						'image_processing' => array(
+							array('method' => 'setCompression', 'arguments' => array(70)),
+							array('method' => 'resizeToWidth', 'arguments' => array(570)),
+						),
 					),
 				),
 			),
