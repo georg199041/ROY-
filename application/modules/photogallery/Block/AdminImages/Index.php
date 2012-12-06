@@ -54,8 +54,6 @@ class Photogallery_Block_AdminImages_Index extends Core_Block_Grid_Widget
 			'filterableType'    => Core_Block_Grid_Widget::FILTER_SELECT,
 			'filterableOptions' => $this->getPhotogalleryAlbumsId(),
 		));
-		
-		$this->setData(Core::getMapper('photogallery/images')->fetchAll($this->createWhere()));
 
 		$this->addBlockChild(
 			Core::getBlock('photogallery/admin-images/index/toolbar'),
@@ -67,6 +65,16 @@ class Photogallery_Block_AdminImages_Index extends Core_Block_Grid_Widget
 			'type'            => 'pagination',
 			'totalItemsCount' => Core::getMapper('photogallery/images')->fetchCount($this->createWhere()),
 		), self::BLOCK_PLACEMENT_AFTER);
+		
+		$this->setData(Core::getMapper('photogallery/images')->fetchAll(
+			$this->createWhere(),
+			null,
+			$this->getBlockChild('photogallery/admin-images/index/pagination')->getItemCountPerPage(),
+			Core::getMapper('photogallery/images')->pageToOffset(
+				$this->getBlockChild('photogallery/admin-images/index/pagination')->getItemCountPerPage(),
+				$this->getRequest()->getParam('page', 1)
+			)
+		));
 	}
 
 	public function createWhere()
