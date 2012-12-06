@@ -43,13 +43,13 @@ class Default_Block_AdminCache_Index extends Core_Block_Grid_Widget
 		));
 		
 		$this->addColumn(array(
-			'name'           => 'clear',
+			'name'           => 'clean',
 			'type'           => 'hyperlink',
 			'title'          => '',
 			'th-align'       => 'center',
 			'linkStaticText' => $this->__('Очистить'),
-			'linkOptions'    => '*/*/clear',
-			'linkBindFields' => array('id'),
+			'linkOptions'    => '*/*/clean',
+			'linkBindFields' => array('ids' => 'id'),
 			'width'          => '1%',
 		));
 		
@@ -60,18 +60,4 @@ class Default_Block_AdminCache_Index extends Core_Block_Grid_Widget
 			self::BLOCK_PLACEMENT_BEFORE
 		);
 	}
-	
-	/*public function getData()
-	{
-		//$options = Zend_Registry::get('Zend_Cache_Manager')->getCacheTemplates();
-		
-		//$config = new Zend_Config(array('resources' => array('cachemanager' => $options)), true);
-		//$writer = new Zend_Config_Writer_Array(array('config' => $config, 'filename' => APPLICATION_PATH . '/modules/default/configs/cache.config.php'));
-		//$writer->write();
-		Core::getMapper('default/cache')->fetchAll();
-		
-		//var_dump(Zend_Registry::get('config'));
-		
-		return array(array('title' => 'test'));
-	}*/
 }

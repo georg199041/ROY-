@@ -12,7 +12,7 @@
 			?>
 	    	<div class="front-content-gallery-photos">
 	            <a class="front-content-gallery__unit-link" title="<?php echo $album->getTitle(); ?>" href="<?php echo $url; ?>">
-	                <?php if ($album->getImage()): ?>
+	                <?php /*if ($album->getImage()): ?>
 			    	<?php
 			    		$noImage = false;
 			    		try {
@@ -23,7 +23,9 @@
 							$noImage = true;
 						}
 			    	?>
-			        <?php endif; ?>
+			        <?php endif;*/ ?>
+			        <img alt="<?php echo $album->getTitle(); ?>"
+			             src="/<?php echo $album->getImageResizedToCrop178x120(); ?>" />
 	            </a>
 	            <a class="front-content-gallery__description" title="<?php echo $album->getTitle(); ?>" href="<?php echo $url; ?>">
 	            	<?php echo $album->getTitle(); ?>

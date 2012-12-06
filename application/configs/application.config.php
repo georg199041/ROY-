@@ -38,20 +38,6 @@ return array (
 				'default' => true
 			)
 		),
-		'cachemanager' => array (
-			'configuration' => array (
-				'frontend' => array (
-					'name' => 'Core',
-					'options' => array (
-						'lifetime' => '7200',
-						'automatic_serialization' => '1',
-					),
-				),
-				'backend' => array (
-					'name' => 'Apc',
-				),
-			),
-		),
 		'modules' => array (),
 		'frontController' => array (
 			'controllerDirectory' => APPLICATION_PATH . '/Controller',

@@ -16,54 +16,6 @@ return array(
 				),
 			),
 		),
-		'cachemanager' => array(
-			'Recomendations' => array(
-				'frontend' => array(
-					'name'                 => 'Core_Image_Cache_Frontend_Image',
-					'customFrontendNaming' => true,
-					'options'              => array(
-						'label'                    => 'Кеш картинок рекомендаций',
-						'lifetime'                 => 3600000,
-						'image_master_check_mtime' => true,
-						'logging'                  => false,
-					),
-				),
-				'backend'  => array(
-					'name'    => 'Core_Image_Cache_Backend_Image',
-					'customBackendNaming' => true,
-					'options' => array(
-						'cache_dir'        => 'cache',
-						'image_processing' => array(
-							array('method' => 'setCompression', 'arguments' => array(60)),
-							array('method' => 'resizeToCrop', 'arguments' => array(104, 70)),
-						),
-					),
-				),
-			),
-			'Recomendations2' => array(
-				'frontend' => array(
-					'name'                 => 'Core_Image_Cache_Frontend_Image',
-					'customFrontendNaming' => true,
-					'options'              => array(
-						'label'                    => 'Кеш картинок рекомендаций',
-						'lifetime'                 => 3600000,
-						'image_master_check_mtime' => true,
-						'logging'                  => false,
-					),
-				),
-				'backend'  => array(
-					'name'    => 'Core_Image_Cache_Backend_Image',
-					'customBackendNaming' => true,
-					'options' => array(
-						'cache_dir'        => 'cache_width570',
-						'image_processing' => array(
-							array('method' => 'setCompression', 'arguments' => array(70)),
-							array('method' => 'resizeToWidth', 'arguments' => array(570)),
-						),
-					),
-				),
-			),
-		),
 		'navigation' => array (
 			'pages' => array (
 				'default/admin-index/index' => array (

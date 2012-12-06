@@ -13,4 +13,9 @@ class Default_Model_Entity_Cache extends Core_Model_Entity_Abstract
 		date_default_timezone_set($tz);
 		return $dr;
 	}
+	
+	public function clean()
+	{
+		$this->getMapper()->clean($this);
+	}
 }

@@ -4,7 +4,7 @@ return array (
   array (
     'cachemanager' => 
     array (
-      'Recomendations' => 
+      'resizeToCrop178x120' => 
       array (
         'frontend' => 
         array (
@@ -15,7 +15,7 @@ return array (
           ),
         ),
       ),
-      'configuration' => 
+      'resizeToCrop104x70' => 
       array (
         'frontend' => 
         array (
@@ -26,7 +26,7 @@ return array (
           ),
         ),
       ),
-      'DefaultModule' => 
+      'resizeToWidth570' => 
       array (
         'frontend' => 
         array (

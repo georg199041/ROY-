@@ -117,4 +117,14 @@ class Default_Model_Source_Cache extends Core_Model_Source_DbTable
 			}
 		}
 	}
+	
+	public function clean($id)
+	{
+		if ($this->getCacheManager() instanceof Zend_Cache_Manager) {
+			if ($this->getCacheManager()->hasCache($id)) {
+				$cache = $this->getCacheManager()->getCache($id);
+				$cache->clean();
+			}
+		}
+	}
 }

@@ -28,10 +28,10 @@
 							}
 				    	?>
 				        <?php endif;*/ ?>
-				        <img src="/<?php echo $photo->getIcon104x70(); ?>"
+				        <img src="/<?php echo $photo->getImageResizedToCrop104x70(); ?>"
 				             width="104"
 				             height="70"
-				             image="/<?php echo $photo->getBigImage570(); ?>"
+				             image="/<?php echo $photo->getImageResizedToWidth570(); ?>"
 				             description="<?php echo $photo->getDescription(); ?>"
 							 title="<?php echo $photo->getTitle(); ?>"
 				    		 alt="<?php echo $photo->getTitle(); ?>" />
@@ -59,7 +59,7 @@
 				}
 	    	?>
 	        <?php endif;*/ ?>
-	        <img src="/<?php echo $current->getBigImage570(); ?>"
+	        <img src="/<?php echo $current->getImageResizedToWidth570(); ?>"
 	             width="570"
 	             class="current"
 	             title="<?php echo $current->getTitle(); ?>"

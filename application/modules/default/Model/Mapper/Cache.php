@@ -42,4 +42,13 @@ class Default_Model_Mapper_Cache extends Core_Model_Mapper_Abstract
 		$this->_afterSaveRow($entity);		
 		return $this;
 	}
+	
+	public function clean(Core_Model_Entity_Abstract $entity)
+	{
+		if ($entity->getId()) {
+			$this->getSource()->clean($entity->getId());
+		}
+		
+		return $this;
+	}
 }
