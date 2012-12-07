@@ -9,6 +9,11 @@ class Photogallery_Block_Index_AlbumImages extends Core_Block_View
 	 */
 	protected $_useCache = false;
 	
+	public function init()
+	{
+		$this->headTitle($this->getAlbum()->getTitle());
+	}
+	
 	public function getCacheId(Core_Block_View $block)
 	{
 		return parent::getCacheId($this) . '_' . $this->getAlbum()->getId();
