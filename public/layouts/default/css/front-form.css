@@ -8,6 +8,7 @@
     font-size:13px;
     font-family:'BlissPro','Verdana';
     color:#434F56;
+    padding: 2px 4px;
 }
 .cbfw-tag_formTextarea textarea {
     border: 1px solid #434f56;
@@ -15,7 +16,7 @@
     height: 168px;
     background-color: #f5f8fa;
     margin: 0;
-    padding:0 5px;
+    padding: 2px 4px;
     font-size:13px;
     font-family:'BlissPro','Verdana';
     color:#434F56;

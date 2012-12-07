@@ -31,6 +31,7 @@
 		<?php if ($this->isHomePage()): ?>
 		<?php echo Core::getBlock('frontpage/index/text'); ?>
 		<?php endif; ?>
+		<?php var_dump(Zend_Controller_Front::getInstance()->getRequest()->getParams()); ?>
 		<div class="front-push-bottom"></div>
 	</div>
 	<div class="front-footer">
